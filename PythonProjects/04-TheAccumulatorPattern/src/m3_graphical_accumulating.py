@@ -89,7 +89,7 @@ def draw_parallel_lines(n, point, length, window):
       -- An rg.RoseWindow.
     What goes out:  Nothing (i.e., None).
     Side effects:
-      See   draw_parallel_lines.pdf   in this project for pictures
+      See   1_draw_parallel_lines.pdf   in this project for pictures
         that may help you better understand the following specification:
 
       Draws  n  rg.Lines parallel to each other,
@@ -153,7 +153,7 @@ def draw_lines(n, point, window):
       -- An rg.RoseWindow.
     What goes out:  Nothing (i.e., None).
     Side effects:
-      See   draw_lines.pdf   in this project for pictures that
+      See   2_draw_lines.pdf   in this project for pictures that
         may help you better understand the following specification:
 
       Draws  n  rg.Lines on the given rg.RoseWindow, such that:

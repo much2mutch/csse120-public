@@ -92,7 +92,7 @@ def draw_squares_from_circle(n, circle, window):
       -- An rg.RoseWindow.
     What goes out:  Nothing (i.e., None).
     Side effects:
-      See   draw_squares_from_circle.pdf   in this project for pictures
+      See   3_draw_squares_from_circle.pdf   in this project for pictures
         that may help you better understand the following specification:
 
       First draws the given rg.Circle on the given rg.RoseWindow.
@@ -140,7 +140,7 @@ def run_test_draw_circles_from_rectangle():
     #      ***  at least ONE test is on a DIFFERENT window.
     #  ########################################################################
     #  HINT: Consider using the same test cases as suggested by the
-    #    pictures in  draw_circles_from_rectangle.pdf   in this project.
+    #    pictures in  4_draw_circles_from_rectangle.pdf   in this project.
     #    Follow the same form as the example in a previous problem.
     #  ########################################################################
     # -------------------------------------------------------------------------
@@ -154,7 +154,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
       -- An rg.RoseWindow.
     What goes out:  Nothing (i.e., None).
     Side effects:
-      See   draw_circles_from_rectangle.pdf   in this project for pictures
+      See   4_draw_circles_from_rectangle.pdf   in this project for pictures
         that may help you better understand the following specification:
 
       First draws the given rg.Rectangle on the given rg.RoseWindow.
@@ -248,7 +248,7 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
       -- An rg.RoseWindow.
     What goes out:  Nothing (i.e., None).
     Side effects:
-      See   draw_lines_from_rectangles.pdf   in this project
+      See   5_draw_lines_from_rectangles.pdf   in this project
       for pictures that may help you better understand
       the following specification:
 

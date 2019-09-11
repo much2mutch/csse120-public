@@ -107,12 +107,12 @@ def sum_more_cosines(m, n):
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-FIRST DEVELOPMENT (TFD).
     #  ___
-    #   IMPORTANT: In this and all other problems in this session,
-    #   you must NOT use the 2 or 3-parameter versions
-    #   of the RANGE expression, if you happen to know them.
-    #   That is, no fair using   range(m, n)   or anything like that.
-    #   Just   range(blah)   where blah is a single variable.
-    #   Reason: To ensure that you get more practice using expressions.
+    #  IMPORTANT: In this and all other problems in this session,
+    #    you must NOT use the 2 or 3-parameter versions
+    #    of the RANGE expression, if you happen to know them.
+    #    That is, no fair using   range(m, n)   or anything like that.
+    #    Just   range(blah)   where blah is a single variable.
+    #    Reason: To ensure that you get more practice using expressions.
     # -------------------------------------------------------------------------
 
 
@@ -170,7 +170,7 @@ def count_sines_from(m, n):
     # TODO: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  ___
-    #    IMPORTANT: As in previous problems in this session,
+    #  IMPORTANT: As in previous problems in this session,
     #    you must NOT use the 2 or 3-parameter versions
     #    of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
@@ -235,9 +235,9 @@ def count_sines_vs_cosines(m):
     # TODO: 8. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  ___
-    #   IMPORTANT: As in previous problems in this session,
-    #   you must NOT use the 2 or 3-parameter versions
-    #   of the RANGE expression, if you happen to know them.
+    #  IMPORTANT: As in previous problems in this session,
+    #    you must NOT use the 2 or 3-parameter versions
+    #    of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
 
 
