@@ -29,9 +29,10 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #   form of RANGE statements, like this:
 #      range(blah):
 #   There is a MULTIPLE-ARGUMENT form of RANGE statements (e.g. range(a, b))
-#   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet,
-#   for pedagogical reasons.
+#   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet, for
+#   pedagogical reasons.  Change the above _TODO_ to DONE after reading this.
 ###############################################################################
+
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -104,9 +105,9 @@ def sum_more_cosines(m, n):
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
-    #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
-    #
-    # IMPORTANT: In this and all other problems in this session,
+    #   That is called TEST-FIRST DEVELOPMENT (TFD).
+    #  ___
+    #   IMPORTANT: In this and all other problems in this session,
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     #   That is, no fair using   range(m, n)   or anything like that.
@@ -166,10 +167,10 @@ def count_sines_from(m, n):
       :rtype:  int
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # TODO: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  ___
-    #  IMPORTANT: As in previous problems in this session,
+    #    IMPORTANT: As in previous problems in this session,
     #    you must NOT use the 2 or 3-parameter versions
     #    of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
@@ -178,7 +179,7 @@ def count_sines_from(m, n):
 def run_test_count_sines_vs_cosines():
     """ Tests the   count_sines_vs_cosines   function. """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # TODO: 7. Implement this TEST function.
     #   It TESTS the  count_sines_vs_cosines  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -197,7 +198,7 @@ def run_test_count_sines_vs_cosines():
     print('       actual:  ', answer)
 
     # -------------------------------------------------------------------------
-    # TODO: 6 (continued).
+    # TODO: 7 (continued).
     #   Below this comment, add 5 more test cases of your own choosing.
     # -------------------------------------------------------------------------
 
@@ -231,10 +232,10 @@ def count_sines_vs_cosines(m):
       :rtype:  int
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # TODO: 8. Implement and test this function.
     #   Note that you should write its TEST function first (above).
-    #
-    # IMPORTANT: As in previous problems in this session,
+    #  ___
+    #   IMPORTANT: As in previous problems in this session,
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------

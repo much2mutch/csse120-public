@@ -15,8 +15,8 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #   form of RANGE statements, like this:
 #      range(blah):
 #   There is a MULTIPLE-ARGUMENT form of RANGE statements (e.g. range(a, b))
-#   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet,
-#   for pedagogical reasons.
+#   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet, for
+#   pedagogical reasons.  Change the above _TODO_ to DONE after reading this.
 ###############################################################################
 
 ###############################################################################
@@ -98,16 +98,16 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #                  circle = rg.Circle(point, radius)
 #                  circle.attach_to(window)
 #                  x = x + (2 * radius)
-#
-###############################################################################
+#  ___
+#  ############################################################################
 #   *** MAKE SURE YOU UNDERSTAND THE 3   ACCUMULATOR   PATTERNS    ***
 #   *** shown in this module:  SUMMING, COUNTING, and IN GRAPHICS  ***
-###############################################################################
-#
+#  ############################################################################
+#  ___
 #   When you are confident that you understand the 3 accumulator patterns
 #   and have correct answers to the above questions (ASK QUESTIONS AS NEEDED!),
 #   check your work by asking a student assistant to look at your answers.
-#
+#  ___
 #   After checking your work (making corrections as needed),
 #   change the above _TODO_ to DONE.
 #

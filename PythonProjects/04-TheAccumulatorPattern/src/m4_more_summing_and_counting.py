@@ -36,8 +36,8 @@ import builtins  # Never necessary, but here for pedagogical reasons
 #   form of RANGE statements, like this:
 #      range(blah):
 #   There is a MULTIPLE-ARGUMENT form of RANGE statements (e.g. range(a, b))
-#   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet,
-#   for pedagogical reasons.
+#   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet, for
+#   pedagogical reasons.  Change the above _TODO_ to DONE after reading this.
 ###############################################################################
 
 
@@ -135,10 +135,10 @@ def sum_from(m, n):
     #  ___
     #  IMPORTANT:  Your solution MUST
     #    use an explicit    for ... in range(...):     statement
-    #
-    # IMPORTANT: As in previous problems in this session,
-    #   you must NOT use the 2 or 3-parameter versions
-    #   of the RANGE expression, if you happen to know them.
+    #  ___
+    #  IMPORTANT: As in previous problems in this session,
+    #    you must NOT use the 2 or 3-parameter versions
+    #    of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
 
 
@@ -148,11 +148,11 @@ def run_test_factorial():
     # TODO: 5. Implement this TEST function.
     #   It TESTS the  factorial  function defined below.
     #   Include at least **   5   ** tests (we wrote two for you).
-    ###########################################################################
-    # IMPORTANT: At least 2 of your tests MUST use the
+    #  ########################################################################
+    #  IMPORTANT: At least 2 of your tests MUST use the
     #    math.factorial
-    # function as an ORACLE for testing.  See examples above.
-    ###########################################################################
+    #  function as an ORACLE for testing.  See examples above.
+    #  ########################################################################
     # -------------------------------------------------------------------------
     print()
     print('--------------------------------------------------')
@@ -271,8 +271,8 @@ def count_cosines_from(m, n, x):
     #   Note that you should write its TEST function first (above).
     #  ___
     #  IMPORTANT: As in previous problems in this session,
-    #   you must NOT use the 2 or 3-parameter versions
-    #   of the RANGE expression, if you happen to know them.
+    #    you must NOT use the 2 or 3-parameter versions
+    #    of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
 
 

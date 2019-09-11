@@ -32,8 +32,8 @@ import rosegraphics as rg
 #   form of RANGE statements, like this:
 #      range(blah):
 #   There is a MULTIPLE-ARGUMENT form of RANGE statements (e.g. range(a, b))
-#   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet,
-#   for pedagogical reasons.
+#   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet, for
+#   pedagogical reasons.  Change the above _TODO_ to DONE after reading this.
 ###############################################################################
 
 
@@ -116,11 +116,11 @@ def draw_squares_from_circle(n, circle, window):
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
     #      as in   draw_row_of_circles   in m1e,
     #      instead of directly using the loop variable.
-    ###########################################################################
-    # HINT: To figure out the code that computes the necessary
-    #       positions of each square,
+    #  ########################################################################
+    #  HINT: To figure out the code that computes the necessary
+    #        positions of each square,
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
-    ###########################################################################
+    #  ########################################################################
     # -------------------------------------------------------------------------
 
 
@@ -138,11 +138,11 @@ def run_test_draw_circles_from_rectangle():
     #   defined below.  Include at least **   3   ** tests, of which
     #      ***  at least TWO tests are on ONE window and
     #      ***  at least ONE test is on a DIFFERENT window.
-    ###########################################################################
-    # HINT: Consider using the same test cases as suggested by the
-    #   pictures in  draw_circles_from_rectangle.pdf   in this project.
-    #   Follow the same form as the example in a previous problem.
-    ###########################################################################
+    #  ########################################################################
+    #  HINT: Consider using the same test cases as suggested by the
+    #    pictures in  draw_circles_from_rectangle.pdf   in this project.
+    #    Follow the same form as the example in a previous problem.
+    #  ########################################################################
     # -------------------------------------------------------------------------
 
 
@@ -192,11 +192,11 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
     #      as in   draw_row_of_circles   in m1e,
     #      instead of directly using the loop variable.
-    ###########################################################################
-    # HINT: To figure out the code that computes the necessary
-    #       positions of each circle,
+    #  ########################################################################
+    #  HINT: To figure out the code that computes the necessary
+    #        positions of each circle,
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
-    ###########################################################################
+    #  ########################################################################
     # -------------------------------------------------------------------------
 
 
@@ -283,11 +283,11 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
     #      as in   draw_row_of_circles   in m1e,
     #      instead of directly using the loop variable.
-    ###########################################################################
-    # HINT: To figure out the code that computes the necessary
-    #       endpoints for each line,
+    #  ########################################################################
+    #  HINT: To figure out the code that computes the necessary
+    #        endpoints for each line,
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
-    ###########################################################################
+    #  ########################################################################
     # -------------------------------------------------------------------------
 
 

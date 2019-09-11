@@ -32,8 +32,8 @@ import rosegraphics as rg
 #   form of RANGE statements, like this:
 #      range(blah):
 #   There is a MULTIPLE-ARGUMENT form of RANGE statements (e.g. range(a, b))
-#   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet,
-#   for pedagogical reasons.
+#   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet, for
+#   pedagogical reasons.  Change the above _TODO_ to DONE after reading this.
 ###############################################################################
 
 
@@ -111,15 +111,15 @@ def draw_parallel_lines(n, point, length, window):
     # -------------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
-    #   ___
-    #   CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
+    #  ___
+    #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
     #      as in   draw_row_of_circles   in m1e,
     #      instead of directly using the loop variable.
-    ###########################################################################
-    # HINT: To figure out the code that computes the necessary
-    #       endpoints for each line,
+    #  ########################################################################
+    #  HINT: To figure out the code that computes the necessary
+    #        endpoints for each line,
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
-    ###########################################################################
+    #  ########################################################################
     # -------------------------------------------------------------------------
 
 
@@ -180,11 +180,11 @@ def draw_lines(n, point, window):
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
     #      as in   draw_row_of_circles   in m1e,
     #      instead of directly using the loop variable.
-    ###########################################################################
-    # HINT: To figure out the code that computes the necessary
-    #       endpoints for each line,
+    #  ########################################################################
+    #  HINT: To figure out the code that computes the necessary
+    #        endpoints for each line,
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
-    ###########################################################################
+    #  ########################################################################
     # -------------------------------------------------------------------------
 
 
