@@ -8,6 +8,19 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 
 import rosegraphics as rg
 
+# -----------------------------------------------------------------------------
+# TODO: 2.
+#   Skim this module, noting:
+#     -- You must un-comment the calls to the testing functions as you go.
+#     -- We supplied the tests, each of which has an associated PDF.
+#     -- You will be implementing a CapitalT class per the specification
+#          that is at the ** NEXT **  _TODO_.
+#   After skimming the module per the above,
+#   OPEN the file   03a-dimensions.pdf    that is included with this project
+#   and KEEP IT OPEN as you continue to the next _TODO_.
+#   After you have done the above, mark this _TODO_ as DONE.
+# -----------------------------------------------------------------------------
+
 
 def main():
     """
