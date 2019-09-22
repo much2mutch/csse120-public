@@ -66,6 +66,12 @@ def run_test_simple_t():
     print("See graphics window and compare to the 03b-simple_t PDF")
     window.close_on_mouse_click()
 
+    if len(vars(t1).keys()) > 2:
+        print()
+        print('ERROR: You appear to have used extra instance variables.')
+        print('See the   IMPORTANT RESTRICTION   in the specification.')
+        print('You must do this problem with ONLY  h_rect  and   v_rect.')
+
 
 def run_test_set_colors():
     """
