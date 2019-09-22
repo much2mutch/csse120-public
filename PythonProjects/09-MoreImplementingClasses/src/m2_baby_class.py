@@ -99,14 +99,14 @@ def main():
 #      -- Modifies instance variables as needed.
 #     Example:
 #       Read the code in main (above).
-#       Then read the what the doc-string for  main  says should get printed.
+#       Then read what the doc-string for  main  says should get printed.
 #       Make sure that you understand WHY that output should be produced
 #       by that code.  ASK QUESTIONS AS NEEDED to clarify this specification.
 ###############################################################################
 
 ###############################################################################
 # The   Baby   class (and its methods) should begin here.
-# Here is a reminder for the syntax to create a new class.
+# Here is a reminder for the syntax (notation) to define a new class.
 #
 #      class NameOfClass(object):
 #          """ Brief description of what an object of the class 'is'. """
