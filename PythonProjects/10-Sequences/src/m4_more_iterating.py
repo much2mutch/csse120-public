@@ -16,6 +16,17 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 import random
 import builtins  # Never necessary, but here to make a point about SUM
 import math
+import time
+
+# -----------------------------------------------------------------------------
+# TODO: 2. Your instructor will discuss the next two statements with you:
+#   The first (commented out) sets the pseudo-random number generator
+#   to a FIXED starting point, while the second sets it to a more or less
+#   "random" starting point.  After your instructor talks with you about these,
+#   change the above _TODO_ to DONE.
+# -----------------------------------------------------------------------------
+# random.seed(42)
+random.seed((time.time() * 100) % 1000)
 
 
 def main():
@@ -34,7 +45,7 @@ def run_test_sum_sequence():
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------
-    # TODO: 2. READ the COMMENTS and CODE in this function,
+    # TODO: 3. READ the COMMENTS and CODE in this function,
     #   asking questions as needed.
     #   ___
     #   When you believe that you understand:
@@ -101,7 +112,8 @@ def run_test_sum_sequence():
 
     print()
     print('Test 3: Using the following RANDOMLY generated sequence:')
-    print('   ', sequence3)
+    print('  Un-comment the relevant line of code to see the actual sequence.')
+    # print('   ', sequence3)
     print('  Expected (oracle) result: ', oracle_answer)
     print('  Actual result:            ', actual_answer)
 
@@ -203,7 +215,7 @@ def sum_sequence(sequence):
       :type sequence: list or tuple (of integers)
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #   ___
     #   RESTRICTION:
@@ -217,7 +229,7 @@ def sum_sequence(sequence):
 def run_test_count_items_bigger_than():
     """ Tests the   count_items_bigger_than   function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # TODO: 5. Implement this TEST function.
     #   It TESTS the  count_items_bigger_than  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests.
     #
@@ -341,7 +353,7 @@ def run_test_count_items_bigger_than():
     print('  to see whether or not that seems to be true')
     print('  for your code (and Python\'s pseudo-random numbers).')
 
-    # TODO: 4 (continued):  Add your 2 ADDITIONAL tests here:
+    # TODO: 5 (continued):  Add your 2 ADDITIONAL tests here:
 
 
 def count_items_bigger_than(numbers, threshold):
@@ -378,7 +390,7 @@ def count_items_bigger_than(numbers, threshold):
       :type threshold: float
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # TODO: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
 
@@ -386,7 +398,7 @@ def count_items_bigger_than(numbers, threshold):
 def run_test_count_positive_sines():
     """ Tests the   count_positive_sines   function. """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # TODO: 7. Implement this TEST function.
     #   It TESTS the  count_positive_sines  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond what we supplied.
     #
@@ -481,7 +493,7 @@ def run_test_count_positive_sines():
     print('Test 10 expected:', expected)
     print('        actual:  ', actual)
 
-    # TODO: 6 (continued):  Add your 1 ADDITIONAL test here:
+    # TODO: 7 (continued):  Add your 1 ADDITIONAL test here:
 
 
 def count_positive_sines(numbers):
@@ -508,7 +520,7 @@ def count_positive_sines(numbers):
       :type sequence: list or tuple (of numbers)
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # TODO: 8. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
 
@@ -516,7 +528,7 @@ def count_positive_sines(numbers):
 def run_test_sum_first_n():
     """ Tests the   sum_first_n   function. """
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement this TEST function.
+    # TODO: 9. Implement this TEST function.
     #   It TESTS the  sum_first_n  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests.
     #   ___
@@ -585,7 +597,7 @@ def run_test_sum_first_n():
     print('Test 7 expected:', expected)
     print('       actual:  ', actual)
 
-    # TODO: 8 (continued):  Add your 2 ADDITIONAL tests here:
+    # TODO: 9 (continued):  Add your 2 ADDITIONAL tests here:
 
 
 def sum_first_n(numbers, n):
@@ -610,8 +622,8 @@ def sum_first_n(numbers, n):
       :type n: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
-    #          Tests have been written for you (above).
+    # TODO: 10. Implement and test this function.
+    #           Tests have been written for you (above).
     #  ___
     #  RESTRICTION:
     #    You may NOT use the built-in  sum   function
