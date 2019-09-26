@@ -200,7 +200,8 @@ def run_test_sum_sequence():
     print('  ACTUAL results (should be CLOSE to the above)')
     print('    Sum:     ', actual_sum)
     print('    Average: ', actual_average)
-    print('  where "close" for the sum means absolute value < about 600')
+    print('  where "close" for the sum means absolute value < about 1216')
+    print('  most of the time (about 19 times out of 20)')
 
 
 def sum_sequence(sequence):
