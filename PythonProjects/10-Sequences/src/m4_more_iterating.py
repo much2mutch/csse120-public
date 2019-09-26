@@ -192,7 +192,7 @@ def run_test_sum_sequence():
     print()
     print('Test 6: Using the following RANDOMLY generated sequence:')
     print('  Un-comment the relevant line of code to see the actual sequence.')
-    print('   ', sequence6)
+    # print('   ', sequence6)
 
     print('  Expected results (from PROBABILITY THEORY):')
     print('    Sum:     ', expected_sum_from_probability_theory)
