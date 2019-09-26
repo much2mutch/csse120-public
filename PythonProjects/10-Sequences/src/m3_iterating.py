@@ -83,7 +83,7 @@ def run_test_count_negatives():
     print('       actual:  ', actual)
 
     # -------------------------------------------------------------------------
-    # TODO 2 (continued):  Add your 2 ADDITIONAL tests here:
+    # TODO: 2 (continued):  Add your 2 ADDITIONAL tests here:
     # -------------------------------------------------------------------------
 
 
@@ -185,7 +185,7 @@ def run_test_count_short_ones():
     print('       actual:  ', actual)
 
     # -------------------------------------------------------------------------
-    # TODO 4 (continued):  Add your 2 ADDITIONAL test(s) here:
+    # TODO: 4 (continued):  Add your 2 ADDITIONAL test(s) here:
     # -------------------------------------------------------------------------
 
 

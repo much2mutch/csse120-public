@@ -53,7 +53,7 @@ def run_test_sum_sequence():
     #     -- How one can generate and use RANDOM test cases
     #     -- How one can test using PROBABILITY THEORY
     #   then:
-    #      change the above TO DO to DONE.
+    #      change the above _TODO_ to DONE.
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
