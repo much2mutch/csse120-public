@@ -864,6 +864,7 @@ def run_test_wait_for_sum_of_cubes():
     print('TEST ENDED!')
 
     # Test 11:
+    print()
     print('TEST STARTED!  Has it ended?')
     expected = 5
     print_expected_result_of_test([100.00000001], expected, test_results,
@@ -873,6 +874,7 @@ def run_test_wait_for_sum_of_cubes():
     print('TEST ENDED!')
 
     # Test 12:
+    print()
     print('TEST STARTED!  Has it ended?')
     expected = 8
     print_expected_result_of_test([1000], expected, test_results,
@@ -882,6 +884,7 @@ def run_test_wait_for_sum_of_cubes():
     print('TEST ENDED!')
 
     # Test 13:
+    print()
     print('TEST STARTED!  Has it ended?')
     expected = 1
     print_expected_result_of_test([-4.2], expected, test_results,
@@ -891,6 +894,7 @@ def run_test_wait_for_sum_of_cubes():
     print('TEST ENDED!')
 
     # Test 14:
+    print()
     print('TEST STARTED!  Has it ended?')
     expected = 8
     print_expected_result_of_test([1296], expected, test_results,
@@ -900,6 +904,7 @@ def run_test_wait_for_sum_of_cubes():
     print('TEST ENDED!')
 
     # Test 15:
+    print()
     print('TEST STARTED!  Has it ended?')
     expected = 9
     print_expected_result_of_test([1296.00000001], expected, test_results,
@@ -909,6 +914,7 @@ def run_test_wait_for_sum_of_cubes():
     print('TEST ENDED!')
 
     # Test 16:
+    print()
     print('TEST STARTED!  Has it ended?')
     expected = 25
     print_expected_result_of_test([100000], expected, test_results,
@@ -918,6 +924,7 @@ def run_test_wait_for_sum_of_cubes():
     print('TEST ENDED!')
 
     # Test 17:
+    print()
     print('TEST STARTED!  Has it ended?')
     expected = 38
     print_expected_result_of_test([500000], expected, test_results,
@@ -927,6 +934,7 @@ def run_test_wait_for_sum_of_cubes():
     print('TEST ENDED!')
 
     # Test 18:
+    print()
     print('TEST STARTED!  Has it ended?')
     expected = 251
     print_expected_result_of_test([1000000000], expected, test_results,
