@@ -32,10 +32,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ###############################################################################
 
 ###############################################################################
-# Students: Read and run this program.  There is nothing else
-#           for you to do in here.  Just use it as an example.
-#
-#           Before you leave this example,
+# Students: Before you leave these examples,
 #   *** MAKE SURE YOU UNDERSTAND THE   WAIT-FOR-EVENT   PATTERN,
 #   *** with its use of a    WHILE <condition>:   statement.
 ###############################################################################
