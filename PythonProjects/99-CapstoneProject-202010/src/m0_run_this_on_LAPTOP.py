@@ -106,7 +106,8 @@ def main():
               m4.get_my_frame(root, main_frame, mqtt_sender)]
 
     for k in range(len(frames)):
-        frames[k].grid(row=0, column=k)
+        if frames[k] is not None:
+            frames[k].grid(row=0, column=k)
     # TODO: 4.  Modify the layout of the sub-frames as desired.
 
     # -------------------------------------------------------------------------
