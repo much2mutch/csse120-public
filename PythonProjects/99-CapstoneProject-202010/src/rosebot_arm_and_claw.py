@@ -38,9 +38,6 @@ class ArmAndClaw(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.touch_sensor = touch_sensor
-        self.motor = rosebot_low_level.Motor(port, motor_type='medium')
-        self.is_calibrated = False
 
     def raise_arm(self):
         """ Raises the Arm until its touch sensor is pressed. """

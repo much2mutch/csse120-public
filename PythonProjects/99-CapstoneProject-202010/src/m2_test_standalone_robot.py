@@ -35,7 +35,6 @@ def test_arm_and_claw():
     # -------------------------------------------------------------------------
     # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object.
     # -------------------------------------------------------------------------
-    robot = rosebot.RoseBot()
 
     # -------------------------------------------------------------------------
     # Test the  RAISE_ARM  method of the  arm_and_claw  of the robot:
@@ -49,7 +48,6 @@ def test_arm_and_claw():
     # TODO: 3. Call the  raise_arm  method of the   arm_and_claw   of the robot,
     #   using the input arm_speed.
     # -------------------------------------------------------------------------
-    robot.arm_and_claw.raise_arm(arm_speed)
 
     # -------------------------------------------------------------------------
     # Test the  CALIBRATE_ARM  method of the  arm_and_claw  of the robot:
@@ -64,9 +62,6 @@ def test_arm_and_claw():
     #  of the robot, first using the input arm_speed,
     #  then (after a short pause) using the default arm speed.
     # -------------------------------------------------------------------------
-    robot.arm_and_claw.calibrate_arm(arm_speed)
-    time.sleep(2)
-    robot.arm_and_claw.calibrate_arm()
 
     # -------------------------------------------------------------------------
     # Test the  MOVE_ARM_TO_POSITION  method of the  arm_and_claw  of the robot:
@@ -89,14 +84,6 @@ def test_arm_and_claw():
     #  that indicates whether or not the arm has been calibrated, then call
     #  move_arm_to_position(2000), confirming that it FIRST does a calibration.
     # -------------------------------------------------------------------------
-    robot.arm_and_claw.move_arm_to_position(desired_position, arm_speed)
-    time.sleep(2)
-    robot.arm_and_claw.move_arm_to_position(0)
-    time.sleep(2)
-    robot.arm_and_claw.move_arm_to_position(5000)
-    time.sleep(2)
-    robot.arm_and_claw.is_calibrated = False
-    robot.arm_and_claw.move_arm_to_position(2000)
 
     # -------------------------------------------------------------------------
     # Test the  LOWER_ARM  method of the  arm_and_claw  of the robot:
@@ -110,7 +97,6 @@ def test_arm_and_claw():
     # TODO: 6. Call the  lower_arm  method of the   arm_and_claw
     #  of the robot, using the default arm speed.
     # -------------------------------------------------------------------------
-    robot.arm_and_claw.lower_arm()
 
     # -------------------------------------------------------------------------
     # TODO: 7. Add additional tests as needed to ensure that the arm_and_claw

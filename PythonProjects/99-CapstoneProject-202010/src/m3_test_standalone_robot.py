@@ -31,7 +31,6 @@ def test_color_sensor():
     # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object,
     #  which itself constructs its   color_sensor   instance variable.
     # -------------------------------------------------------------------------
-    robot = rosebot.RoseBot()
 
     # -------------------------------------------------------------------------
     # Test the  get_reading   and   get_detected_color_name   methods
@@ -50,12 +49,6 @@ def test_color_sensor():
     #  each time through the loop asking for input,
     #  and stopping when the user enters a string other than the empty string.
     # -------------------------------------------------------------------------
-    while True:
-        print(robot.color_sensor.get_reading())
-        print(robot.color_sensor.get_detected_color_name())
-        s = input("Press the ENTER key for a reading, or any key to stop.")
-        if s != "":
-            break
 
     # -------------------------------------------------------------------------
     # Test the  wait_until_color  method of the  color_sensor  of the robot:
@@ -70,7 +63,6 @@ def test_color_sensor():
     #  of the robot, checking to be sure that when it senses black
     #  (which you can simulate by lifting the robot) the code continues.
     # -------------------------------------------------------------------------
-    robot.color_sensor.wait_until_color("BLACK")
 
     # -------------------------------------------------------------------------
     # TODO: 5. Add additional tests as needed to ensure that the

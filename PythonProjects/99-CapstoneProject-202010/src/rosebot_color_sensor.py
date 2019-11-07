@@ -33,8 +33,6 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.low_level_color_sensor = rosebot_low_level.ColorSensor(port)
-        self.color_names = self.low_level_color_sensor.color_names
 
     def get_reading(self):
         """
@@ -56,7 +54,6 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        return self.low_level_color_sensor.get_color()
 
     def get_detected_color_name(self):
         """
@@ -66,7 +63,6 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        return self.color_names[self.get_reading()]
 
     def wait_for_color(self, color):
         """
@@ -79,11 +75,3 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
-        while True:
-            if type(color) is int:
-                if self.get_reading() == color:
-                    break
-            else:
-                if self.get_color_name().lower() == color.lower():
-                    break
-            time.sleep(0.05)

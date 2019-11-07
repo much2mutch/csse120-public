@@ -32,7 +32,6 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.low_level_touch_sensor = rosebot_low_level.TouchSensor(port)
 
     def is_pressed(self):
         """
@@ -42,7 +41,6 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        return self.low_level_touch_sensor.is_pressed()
 
     def wait_until_pressed(self):
         """
@@ -52,7 +50,3 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
-        while True:
-            if self.is_pressed():
-                break
-            time.sleep(0.05)

@@ -54,10 +54,6 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.left_motor = rosebot_low_level.Motor(left_motor_port)
-        self.right_motor = rosebot_low_level.Motor(right_motor_port)
-
-        self.wheel_circumference = 1.3 * math.pi
 
     def go(self, left_wheel_speed, right_wheel_speed):
         """

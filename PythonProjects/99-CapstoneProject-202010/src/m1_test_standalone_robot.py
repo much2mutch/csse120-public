@@ -36,7 +36,6 @@ def test_drive_system():
     # -------------------------------------------------------------------------
     # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object.
     # -------------------------------------------------------------------------
-    robot = rosebot.RoseBot()
 
     # -------------------------------------------------------------------------
     # Test the GO and STOP methods of the  drive_system  of the robot:
@@ -51,9 +50,6 @@ def test_drive_system():
     #   sending it the two wheel speeds.  Keep going (time.sleep) for 3 seconds.
     #   Then call the  stop  method of the   drive_system   of the robot.
     # -------------------------------------------------------------------------
-    robot.drive_system.go(left_wheel_speed, right_wheel_speed)
-    time.sleep(3)
-    robot.drive_system.stop()
 
     # -------------------------------------------------------------------------
     # Test the GO_STRAIGHT_FOR_SECONDS method of the drive_system of the robot:
@@ -69,7 +65,6 @@ def test_drive_system():
     #  of the robot, sending it the input  seconds  and  left_wheel_speed.
     #  (The go_straight_for_seconds method uses the same speed for both wheels.)
     # -------------------------------------------------------------------------
-    robot.drive_system.go_straight_for_seconds(seconds, left_wheel_speed)
 
     # -------------------------------------------------------------------------
     # Test the GO_STRAIGHT_FOR_INCHES method of the drive_system of the robot:
@@ -85,7 +80,6 @@ def test_drive_system():
     #  of the robot, sending it the input  inches  and  left_wheel_speed.
     #  (The go_straight_for_inches method uses the same speed for both wheels.)
     # -------------------------------------------------------------------------
-    robot.drive_system.go_straight_for_inches(inches, left_wheel_speed)
 
     # -------------------------------------------------------------------------
     # TODO: 6. Add additional tests as needed to ensure that the other

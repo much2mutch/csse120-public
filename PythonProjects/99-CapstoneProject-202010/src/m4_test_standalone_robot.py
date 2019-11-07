@@ -29,7 +29,6 @@ def test_something():
     # -------------------------------------------------------------------------
     # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object.
     # -------------------------------------------------------------------------
-    robot = rosebot.RoseBot()
 
     # -------------------------------------------------------------------------
     # TODO: 3. Add tests as desired of whatever you are testing.
