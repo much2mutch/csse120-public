@@ -32,6 +32,6 @@ class RoseBot(object):
         # TODO: Implement this class with your instructor.
         self.touch_sensor = rosebot_touch_sensor.TouchSensor(1)
         self.color_sensor = rosebot_color_sensor.ColorSensor(3)
-        self.drive_system = rosebot_drive_system.DriveSystem('A', 'B')
-        self.arm_and_claw = rosebot_arm_and_claw.ArmAndClaw('C',
+        self.drive_system = rosebot_drive_system.DriveSystem('B', 'C')
+        self.arm_and_claw = rosebot_arm_and_claw.ArmAndClaw('A',
                                                             self.touch_sensor)
