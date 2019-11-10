@@ -51,7 +51,7 @@ class TouchSensor(object):
 
     def is_pressed(self):
         """ Returns True if this TouchSensor is pressed, else returns False """
-        return self._touch_sensor.is_pressed
+        return self._touch_sensor.is_pressed == True
 
 
 ###############################################################################
