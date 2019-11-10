@@ -128,8 +128,6 @@ import json
 import collections
 import paho.mqtt.client as mqtt
 
-LEGO_NUMBER = 99  # TODO: Set your LEGO_NUMBER
-
 
 class MqttClient(object):
     """Helper class to make it easier to work with MQTT subscriptions and publications."""
@@ -148,7 +146,7 @@ class MqttClient(object):
 
     def connect_to_mqtt_to_talk_to_robot(self,
                                          mqtt_broker_ip_address=None,
-                                         lego_robot_number=LEGO_NUMBER):
+                                         lego_robot_number=None):
         """
         Code running on the PC should use this command to connect to the EV3 robot.
         Connects to the MQTT broker and begins listening for messages from the EV3.
@@ -159,9 +157,8 @@ class MqttClient(object):
           :type mqtt_broker_ip_address: str
           :type lego_robot_number: int | NoneType
         """
-        if mqtt_broker_ip_address is not None:
-            self.connect("msg4pc", "msg4ev3",
-                         mqtt_broker_ip_address, lego_robot_number)
+        self.connect("msg4pc", "msg4ev3",
+                     mqtt_broker_ip_address, lego_robot_number)
 
     def connect_to_mqtt_to_talk_to_laptop(self,
                                           mqtt_broker_ip_address=None,
@@ -176,12 +173,11 @@ class MqttClient(object):
           :type mqtt_broker_ip_address: str
           :type lego_robot_number: int
         """
-        if mqtt_broker_ip_address is not None:
-            self.connect("msg4ev3", "msg4pc",
-                         mqtt_broker_ip_address, lego_robot_number)
+        self.connect("msg4ev3", "msg4pc",
+                     mqtt_broker_ip_address, lego_robot_number)
 
     def connect(self, subscription_suffix, publish_suffix,
-                mqtt_broker_ip_address="mosquitto.csse.rose-hulman.edu", lego_robot_number=LEGO_NUMBER):
+                mqtt_broker_ip_address=None, lego_robot_number=None):
         """
         Connect this MQTT client to the broker, note that connect_to_mqtt_to_talk_to_robot and connect_to_mqtt_to_talk_to_laptop call this method.
         This connect method is the most generic allowing callers to set the subscription and publish topics.
@@ -203,6 +199,13 @@ class MqttClient(object):
         self.client.on_connect = self._on_connect
         self.client.message_callback_add(self.subscription_topic_name, self._on_message)
 
+        if lego_robot_number is None:
+            print("The lego robot number (in m0_set_robot_number.py) is None.")
+            print("  WARNING: I will NOT connect to the broker!!!")
+            print("  Is this what you want?! (If not, set the robot number.)")
+            return
+        if mqtt_broker_ip_address is None:
+            mqtt_broker_ip_address = self.rose_broker
         self.client.connect(mqtt_broker_ip_address, 1883, 60)
         print("Connecting to mqtt broker {}".format(mqtt_broker_ip_address), end="")
         self.client.loop_start()
