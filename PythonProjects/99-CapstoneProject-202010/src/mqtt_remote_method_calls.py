@@ -162,7 +162,7 @@ class MqttClient(object):
 
     def connect_to_mqtt_to_talk_to_laptop(self,
                                           mqtt_broker_ip_address=None,
-                                          lego_robot_number=LEGO_NUMBER):
+                                          lego_robot_number=None):
         """
         Code running on the EV3 should use this command to connect to the student PC.
         Connects to the MQTT broker and begins listening for messages from the PC.
