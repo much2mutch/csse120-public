@@ -29,17 +29,6 @@ import mqtt_remote_method_calls as mqtt
 import m0_set_robot_number
 
 
-class DelegateForRobotCode(m1.MyRobotDelegate,
-                           m2.MyRobotDelegate,
-                           m3.MyRobotDelegate,
-                           m4.MyRobotDelegate):
-    def __init__(self, robot):
-        super().__init__(robot)
-
-    def set_mqtt_sender(self, mqtt_sender):
-        super().set_mqtt_sender(mqtt_sender)
-
-
 def main():
     """
     This code, which must run on the ROBOT:
@@ -68,6 +57,17 @@ def main():
         time.sleep(0.01)
         if delegate.is_time_to_quit:
             break
+
+
+class DelegateForRobotCode(m1.MyRobotDelegate,
+                           m2.MyRobotDelegate,
+                           m3.MyRobotDelegate,
+                           m4.MyRobotDelegate):
+    def __init__(self, robot):
+        super().__init__(robot)
+
+    def set_mqtt_sender(self, mqtt_sender):
+        super().set_mqtt_sender(mqtt_sender)
 
 
 # -----------------------------------------------------------------------------

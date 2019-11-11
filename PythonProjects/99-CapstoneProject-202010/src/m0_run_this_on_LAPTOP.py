@@ -42,21 +42,6 @@ import mqtt_remote_method_calls as mqtt
 import m0_set_robot_number
 
 
-class DelegateForLaptopCode(m1.MyLaptopDelegate,
-                            m2.MyLaptopDelegate,
-                            m3.MyLaptopDelegate,
-                            m4.MyLaptopDelegate):
-    """
-    Uses "multiple inheritance" to route messages to the "delegates"
-    in the   mX_laptop_code   modules.
-    """
-    def __init__(self, root):
-        super().__init__(root)
-
-    def set_mqtt_sender(self, mqtt_sender):
-        super().set_mqtt_sender(mqtt_sender)
-
-
 def main():
     """
     This code, which must run on a LAPTOP:
@@ -85,6 +70,7 @@ def main():
     mqtt_sender = mqtt.MqttClient(delegate)
     delegate.set_mqtt_sender(mqtt_sender)
 
+    # Use  None  for the robot number to just show the GUI (and NOT connect):
     number = m0_set_robot_number.get_robot_number()
     mqtt_sender.connect_to_mqtt_to_talk_to_robot(lego_robot_number=number)
 
@@ -114,6 +100,21 @@ def main():
     # -------------------------------------------------------------------------
     root.mainloop()
     mqtt_sender.close()
+
+
+class DelegateForLaptopCode(m1.MyLaptopDelegate,
+                            m2.MyLaptopDelegate,
+                            m3.MyLaptopDelegate,
+                            m4.MyLaptopDelegate):
+    """
+    Uses "multiple inheritance" to route messages to the "delegates"
+    in the   mX_laptop_code   modules.
+    """
+    def __init__(self, root):
+        super().__init__(root)
+
+    def set_mqtt_sender(self, mqtt_sender):
+        super().set_mqtt_sender(mqtt_sender)
 
 
 # -----------------------------------------------------------------------------
