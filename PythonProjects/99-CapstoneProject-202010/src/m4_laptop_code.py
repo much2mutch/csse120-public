@@ -62,26 +62,8 @@ def get_my_frame(root, main_frame, mqtt_sender):
     return frame
 
 
-class MyLaptopDelegate(object):
-    """
-    Defines methods that are called by the MQTT listener when that listener
-    gets a message (name of the method, plus its arguments)
-    from the ROBOT via MQTT.
-    """
-    def __init__(self, root):
-        self.root = root  # type: tkinter.Tk
-        self.mqtt_sender = None  # type: mqtt.MqttClient
-
-    def set_mqtt_sender(self, mqtt_sender):
-        self.mqtt_sender = mqtt_sender
-
-        # -------------------------------------------------------------------------
-        # TODO: Add methods here as needed.
-        # -------------------------------------------------------------------------
-
-
 # -----------------------------------------------------------------------------
-# TODO: Add more functions here as needed.
+# TODO: Add functions here as needed.
 # -----------------------------------------------------------------------------
 def print_message_received(method_name, arguments):
     print()
@@ -95,3 +77,26 @@ def print_message_sent(method_name, arguments):
     print("The laptop has SENT a message to the ROBOT")
     print("  for the  ", method_name, "  method")
     print("  with arguments", arguments)
+
+
+# -----------------------------------------------------------------------------
+# The  MyLaptopDelegate   class has methods that are called on the delegate
+#   object by the process running in the background that listens
+#   for messages received from the robot (via the Broker).
+# -----------------------------------------------------------------------------
+class MyLaptopDelegate(object):
+    """
+    Defines methods that are called by the MQTT listener when that listener
+    gets a message (name of the method, plus its arguments)
+    from the ROBOT via MQTT.
+    """
+    def __init__(self, root):
+        self.root = root  # type: tkinter.Tk
+        self.mqtt_sender = None  # type: mqtt.MqttClient
+
+    def set_mqtt_sender(self, mqtt_sender):
+        self.mqtt_sender = mqtt_sender
+
+    # -------------------------------------------------------------------------
+    # TODO: Add methods here as needed.
+    # -------------------------------------------------------------------------

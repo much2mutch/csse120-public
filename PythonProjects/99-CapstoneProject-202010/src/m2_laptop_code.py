@@ -62,6 +62,28 @@ def get_my_frame(root, main_frame, mqtt_sender):
     return frame
 
 
+# -----------------------------------------------------------------------------
+# TODO: Add functions here as needed.
+# -----------------------------------------------------------------------------
+def print_message_received(method_name, arguments):
+    print()
+    print("The laptop's delegate has received a message")
+    print("  for the  ", method_name, "  method")
+    print("  with arguments", arguments)
+
+
+def print_message_sent(method_name, arguments):
+    print()
+    print("The laptop has SENT a message to the ROBOT")
+    print("  for the  ", method_name, "  method")
+    print("  with arguments", arguments)
+
+
+# -----------------------------------------------------------------------------
+# The  MyLaptopDelegate   class has methods that are called on the delegate
+#   object by the process running in the background that listens
+#   for messages received from the robot (via the Broker).
+# -----------------------------------------------------------------------------
 class MyLaptopDelegate(object):
     """
     Defines methods that are called by the MQTT listener when that listener
@@ -78,20 +100,3 @@ class MyLaptopDelegate(object):
     # -------------------------------------------------------------------------
     # TODO: Add methods here as needed.
     # -------------------------------------------------------------------------
-
-
-# -----------------------------------------------------------------------------
-# TODO: Add more functions here as needed.
-# -----------------------------------------------------------------------------
-def print_message_received(method_name, arguments):
-    print()
-    print("The laptop's delegate has received a message")
-    print("  for the  ", method_name, "  method")
-    print("  with arguments", arguments)
-
-
-def print_message_sent(method_name, arguments):
-    print()
-    print("The laptop has SENT a message to the ROBOT")
-    print("  for the  ", method_name, "  method")
-    print("  with arguments", arguments)
