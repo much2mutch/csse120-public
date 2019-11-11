@@ -9,6 +9,6 @@ def get_robot_number():
     return my_robot_number
     # --------------------------------------------------------------------------
     # TODO: 1. Set   my_robot_number   in the above to YOUR team's robot number
-    #   (e.g., 5 or 27).  Set it to   None   if you want to run the GUI
-    #   but NOT send messages to/from the robot.
+    #   (e.g., 5 or 27).  Set it to   None   if you do NOT want to send messages
+    #   to/from the robot (e.g., if you only want to display the GUI).
     # --------------------------------------------------------------------------
