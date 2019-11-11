@@ -85,10 +85,10 @@ def main():
     # Each team member has their own frame for their own GUI.  Get and grid
     # those frames, sending the objects that the separate GUIs may need.
     # -------------------------------------------------------------------------
-    frames = [m1.get_my_frame(root, main_frame, mqtt_sender),
-              m2.get_my_frame(root, main_frame, mqtt_sender),
-              m3.get_my_frame(root, main_frame, mqtt_sender),
-              m4.get_my_frame(root, main_frame, mqtt_sender)]
+    frames = [m1.get_my_frame(main_frame, mqtt_sender, delegate),
+              m2.get_my_frame(main_frame, mqtt_sender, delegate),
+              m3.get_my_frame(main_frame, mqtt_sender, delegate),
+              m4.get_my_frame(main_frame, mqtt_sender, delegate)]
 
     for k in range(len(frames)):
         if frames[k] is not None:
