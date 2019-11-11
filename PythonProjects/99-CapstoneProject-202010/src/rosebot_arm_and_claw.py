@@ -39,13 +39,13 @@ class ArmAndClaw(object):
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
 
-    def raise_arm(self):
+    def raise_arm(self, speed=100):
         """ Raises the Arm until its touch sensor is pressed. """
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
 
-    def calibrate_arm(self):
+    def calibrate_arm(self, speed=100):
         """
         Calibrates its Arm, that is:
           1. Raises its Arm until it is all the way UP
@@ -58,7 +58,7 @@ class ArmAndClaw(object):
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
 
-    def move_arm_to_position(self, desired_arm_position):
+    def move_arm_to_position(self, desired_arm_position, speed=100):
         """
         Move its Arm to the given position, where 0 means all the way DOWN.
         If the robot has not yet calibrated its ArmAndClaw, it does so first.
@@ -67,7 +67,7 @@ class ArmAndClaw(object):
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
 
-    def lower_arm(self):
+    def lower_arm(self, speed=100):
         """
         Lowers the Arm until it is all the way down, i.e., position 0.
         If the robot has not yet calibrated its ArmAndClaw, it does so first.
