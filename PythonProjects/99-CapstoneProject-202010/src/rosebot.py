@@ -14,6 +14,8 @@ import rosebot_touch_sensor
 import rosebot_color_sensor
 import rosebot_drive_system
 import rosebot_arm_and_claw
+import rosebot_low_level
+
 
 ###############################################################################
 #    RoseBot class.
@@ -35,3 +37,6 @@ class RoseBot(object):
         self.drive_system = rosebot_drive_system.DriveSystem('B', 'C')
         self.arm_and_claw = rosebot_arm_and_claw.ArmAndClaw('A',
                                                             self.touch_sensor)
+        self.camera = rosebot_low_level.Camera()
+        self.infrared_proximity_sensor = rosebot_low_level.InfraredProximitySensor(4)
+
