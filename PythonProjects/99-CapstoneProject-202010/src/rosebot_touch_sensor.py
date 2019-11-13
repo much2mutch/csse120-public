@@ -23,11 +23,19 @@ class TouchSensor(object):
     Methods for the TouchSensor on the robot, including:
       get_reading    is_pressed    wait_until_pressed
     """
-
     def __init__(self, port):
         """
-        Constructs the underlying low-level TouchSensor.
+        Constructs the underlying low-level version of this sensor.
           :type port: int  (Must be 1, 2, 3 or 4)
+        """
+        # ---------------------------------------------------------------------
+        # TODO: With your instructor, implement this method.
+        # ---------------------------------------------------------------------
+
+    def get_reading(self):
+        """
+        Returns a reading from the underlying low-level version of this sensor.
+          :rtype: int
         """
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
