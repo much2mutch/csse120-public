@@ -21,7 +21,7 @@ import time
 class TouchSensor(object):
     """
     Methods for the TouchSensor on the robot, including:
-      get_reading    wait_until_pressed
+      get_reading    is_pressed    wait_until_pressed
     """
 
     def __init__(self, port):
