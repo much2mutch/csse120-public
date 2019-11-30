@@ -13,65 +13,59 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Derek Whitley, their colleagues, and PUT_YOUR_NAME_HERE.
 """
 ###############################################################################
-#
 # TODO: 1.
 #   Yes, that means for YOU to DO things per the following instructions:
-#
+#  _
 #   On Line 13 above, replace  PUT_YOUR_NAME_HERE  with your OWN name.
-#
+#  _
 #   BTW, the top block of text above forms what is called a DOC-STRING.
 #   It documents what this module does, in a way that exterior programs
 #   can make sense of.  It has no other effect on this program.
-#
 ###############################################################################
 
 import rosegraphics as rg
 
 ###############################################################################
-#
 # TODO: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
-#
+#  _
 #     In the Project window (to the left), right click on the src  folder,
-#     then select  Mark Directory As  ~  Sources Root.
-#
-#   You will see that  rosegraphics  in the  import  statement above (line 28)
+#     then select   Mark Directory As ~ Sources Root.
+#  _
+#   You will see that  rosegraphics  in the  import  statement above (line 26)
 #   is no longer marked as an error.  You will do this in all projects
 #   that use rosegraphics, so get used to it. :)
-#
+#  _
 #   Once  rosegraphics  in the  import  statement is no longer marked as error,
 #   change this _TODO_ to DONE and  ** continue to the next _TODO_ (below). **
-#
 ###############################################################################
 
 ###############################################################################
-#
 # TODO: 3.
 #   Run this module.  A window will pop up and Turtles will move around.
 #   After the Turtles stop moving,
 #      ** click anywhere in the window to close the window **.
-#
+#  _
 #   Then look at the code below.  Raise your hand when you have questions about
 #   what the code is doing.  Be sure that you understand the notations for:
-#
+#  _
 #     -- CONSTRUCTING an instance of a CLASS, e.g.
 #           rg.SimpleTurtle()
-#
+#  _
 #     -- ASSIGNING the resulting OBJECT (instance of a class) a NAME, e.g.
 #           natasha = rg.SimpleTurtle()
-#
+#  _
 #     -- Applying a METHOD to an object to make the object DO something, e.g.
 #           natasha.forward(100)
-#
+#  _
 #     -- Accessing an INSTANCE VARIABLE of an object, e.g.
 #           natasha.speed = 10
 #           boris.speed = natasha.speed
-#
+#  _
 #   After you are confident that you understand all the code below,
 #   change this _TODO_ to DONE and  ** continue to the next _TODO_ (below). **
-#
 ###############################################################################
 
 # -----------------------------------------------------------------------------
@@ -100,11 +94,12 @@ boris.forward(200)
 
 # -----------------------------------------------------------------------------
 # The next few lines show how to:
-#   - Construct a second SimpleTurtle,
+#   - Construct a second SimpleTurtle
+#       (using an optional argument that sets the shape displayed - try it!),
 #     set its  pen  and  speed  INSTANCE VARIABLES, and ask it to do things.
 # -----------------------------------------------------------------------------
-natasha = rg.SimpleTurtle('turtle')
-natasha.pen = rg.Pen('red', 30)  # Second argument is the Pen's thickness
+natasha = rg.SimpleTurtle("turtle")
+natasha.pen = rg.Pen("red", 30)  # Second argument is the Pen's thickness
 natasha.speed = 5  # Bigger means faster, max is usually about 10
 
 natasha.backward(50)
@@ -115,51 +110,46 @@ natasha.speed = 1  # Now slower
 natasha.go_to(rg.Point(-100, 200))
 
 ###############################################################################
-#
 # TODO: 4.
 #   Add a few more lines of your own code to make one of the existing
 #   SimpleTurtles move some more and/or have different characteristics.
-#
+#  _
 #      ** Nothing fancy is required. **
 #      ** A SUBSEQUENT exercise will let you show your creativity. **
-#
+#  _
 #   As always, test by running the module.
-#
 ###############################################################################
 
 ###############################################################################
-#
 # TODO: 5.
 #   The above code  CONSTRUCTS  two SimpleTurtle objects
 #   and gives those objects NAMES:
 #       boris    natasha
-#
+#  _
 #   Add code of your own that constructs another SimpleTurtle object,
 #   naming it whatever you want.  Names cannot have spaces or special
 #   characters, but they can have digits and underscores, e.g.
 #      this_1_has
-#
+#  _
 #   STYLE RULE: Your names should always begin with a LOWER_CASE letter.
 #   So   mary   is OK   but   Mary   is NOT OK.
-#
+#  _
 #   Then add more code that:
 #     -- Constructs a Pen object,
-#     -- assigns your SimpleTurtle's  pen  to the constructed Pen object, and
-#     -- makes your SimpleTurtle move around a bit.
-#
+#     -- Assigns your SimpleTurtle's  pen  to the constructed Pen object, and
+#     -- Makes your SimpleTurtle move around a bit.
+#  _
 #      ** Nothing fancy is required. **
 #      ** A SUBSEQUENT exercise will let you show your creativity. **
-#
+#  _
 #   As always, test by running the module.
-#
 ###############################################################################
 
 ###############################################################################
-#
 # TODO: 6.
 #   Ensure that no blue bars on the scrollbar-thing to the right remain.
 #   Run one more time to be sure that all is still OK.
-#
+#  _
 #   Then COMMIT-and-PUSH your work as before:
 #     1. Select   VCS   from the menu bar (above).
 #     2. Choose  Commit  from the pull-down menu that appears.
@@ -169,10 +159,9 @@ natasha.go_to(rg.Point(-100, 200))
 #              - HOVER over the  Commit  button
 #                (in the lower-right corner of the window)
 #              - CLICK on  Commit and Push.)
-#
+#  _
 #   You can COMMIT-and-PUSH as often as you like.
 #   DO IT FREQUENTLY; AT LEAST once per module.
-#
 ###############################################################################
 
 # -----------------------------------------------------------------------------

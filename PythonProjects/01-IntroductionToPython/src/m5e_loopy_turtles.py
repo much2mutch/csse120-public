@@ -24,11 +24,13 @@ Concepts include:
        then 2 the next time the body runs,
          etc
        then 40 the last time the body runs.
+     Note how the BODY of the loop (the code that is repeated 41 times)
+     is INDENTED.
 
  * ASSIGNMENT and NAMES
   -- ASSIGNING a VALUE to a NAME (aka VARIABLE), as in these examples:
         jack = 45
-        jill = 'ran down the hill'
+        jill = "ran down the hill"
         size = size - 12
 
  * The DOT trick: If you type expressions like the following,
@@ -52,8 +54,8 @@ window = rg.TurtleWindow()
 ###############################################################################
 # Example 1.
 ###############################################################################
-blue_turtle = rg.SimpleTurtle('turtle')
-blue_turtle.pen = rg.Pen('midnight blue', 3)
+blue_turtle = rg.SimpleTurtle("turtle")
+blue_turtle.pen = rg.Pen("midnight blue", 3)
 blue_turtle.speed = 20  # Fast
 
 # The first square will be 300 x 300 pixels:
@@ -82,8 +84,8 @@ for k in range(6):
 ###############################################################################
 window.tracer(100)  # Bigger numbers make the animation run faster
 
-another_turtle = rg.SimpleTurtle('triangle')
-another_turtle.pen = rg.Pen('magenta', 1)
+another_turtle = rg.SimpleTurtle("triangle")
+another_turtle.pen = rg.Pen("magenta", 1)
 another_turtle.backward(50)
 
 # The name k takes on the values 0, 1, 2, ... 499 as the loop runs
