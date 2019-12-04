@@ -29,6 +29,7 @@ def main():
 
     window.close_on_mouse_click()
 
+
 ###############################################################################
 # TODO: 3a.  Define a function immediately below this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
@@ -36,7 +37,8 @@ def main():
 #   and it returns the length of the hypotenuse of that triangle.
 #     HINT: Apply the Pythagorean theorem.
 #  _
-#   You may name the function and its parameters whatever you wish.
+#   You may name the function and its parameters whatever you wish,
+#   but choose DESCRIPTIVE (self-documenting) names.
 #
 # TODO: 3b.  In main, CALL your function TWICE (with different values
 #   for the arguments) and print the returned values,
@@ -63,12 +65,12 @@ def main():
 #  _
 #     c. Makes the other (thickness 5) SimpleTurtle move BACKWARD 100 pixels.
 #  _
-#   You may name the function and its parameters whatever you wish.
+#   You may name the function and its parameters whatever you wish,
+#   but choose DESCRIPTIVE (self-documenting) names.
 #
 # TODO: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 ###############################################################################
-
 
 ###############################################################################
 # TODO: 5.
@@ -90,6 +92,7 @@ def main():
 #   COMMIT-and-PUSH your work as often as you want, but at the least, commit
 #   and push after you have tested a module and believe that it is correct.
 ###############################################################################
+
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
