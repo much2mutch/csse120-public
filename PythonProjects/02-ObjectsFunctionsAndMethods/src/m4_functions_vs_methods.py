@@ -9,14 +9,11 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 
 ###############################################################################
 # TODO: 2.
-#   With your instructor, READ the file   methods_vs_functions.txt
-#   in this project, ASKING QUESTIONS as needed to understand its contents.
+#   READ the file   methods_vs_functions.txt   in this project,
+#   ASKING QUESTIONS as needed to understand its contents.
 #   After you have done so, mark this _TODO_ as DONE
 #   and continue to the next _TODO_.
-#
 ###############################################################################
-
-
 import rosegraphics as rg
 
 
@@ -40,7 +37,7 @@ def run_example():
     """ An example of CALLING functions defined below. """
     jump_and_move_turtle(100, 50, 200, -100)
 
-    turtle = rg.SimpleTurtle('square')
+    turtle = rg.SimpleTurtle("square")
     turtle.speed = 30
     draw_many_squares(turtle, 3, 75, 15)
 
@@ -53,13 +50,13 @@ def jump_and_move_turtle(x1, y1, x2, y2):
     """
     # -------------------------------------------------------------------------
     # Students:
-    #   Do NOT touch this function - it has no TO-DO in it.
+    #   Do NOT touch this function - it has no _TODO_ in it.
     #   Do NOT copy code from this function.
     #
     # Instead, ** CALL ** this function as needed in the other problems.
     # -------------------------------------------------------------------------
     jumper = rg.SimpleTurtle()
-    jumper.pen = rg.Pen('magenta', 20)
+    jumper.pen = rg.Pen("magenta", 20)
     jumper.speed = 3
 
     jumper.pen_up()
@@ -72,9 +69,9 @@ def jump_and_move_turtle(x1, y1, x2, y2):
 def draw_many_squares(my_turtle, number_of_squares, size, twist):
     """
     Makes the given   SimpleTurtle   object draw:
-      -- many squares (how many? answer: NUMBER_OF_SQUARES)
+      -- many squares (how many? answer: the parameter NUMBER_OF_SQUARES)
     where each square:
-      -- has the same size (what size? answer: SIZE)
+      -- has the same size (what size? answer: the parameter SIZE)
     and each square is:
       -- "twisted" a bit from the previous one (how much? TWIST degrees)
 
@@ -88,7 +85,7 @@ def draw_many_squares(my_turtle, number_of_squares, size, twist):
     """
     # -------------------------------------------------------------------------
     # Students:
-    #   Do NOT touch this function - it has no TO-DO in it.
+    #   Do NOT touch this function - it has no _TODO_ in it.
     #   Do NOT copy code from this function.
     #
     # Instead, ** CALL ** this function as needed in the other problems.
@@ -104,31 +101,30 @@ def draw_many_squares(my_turtle, number_of_squares, size, twist):
 #     run_example
 #     jump_and_move_turtle
 #     draw_many_squares
-#
+#  _
 #   1. RUN this program.
 #   2. TRACE the code, identifying what code causes what to be drawn.
-#   3. READ the specifications for the following functions:
+#   3. READ the specifications for the following functions DEFINED ABOVE:
 #        jump_and_move_turtle
 #        draw_many_squares
-#
+#  _
 #   IMPORTANT: Keep those two functions (and what they do) in mind,
 #   since you will use them in the:
 #     try_functions
 #     try_methods_and_functions
 #   exercises below.
-#
+#  _
 #   Once you believe that you completely understand what the functions:
 #        jump_and_move_turtle
 #        draw_many_squares
 #   do, mark this _TODO_ as DONE and continue to the next _TODO_.
-#
 ###############################################################################
 
 
 def try_methods():
     """
     Constructs a SimpleTurtle and sets its   pen   to a new rg.Pen
-    that is 'brown' with thickness 5.
+    that is "brown" with thickness 5.
     Then makes the SimpleTurtle move as follows (in the order listed):
       -- forward   150 units
       -- left       90 degrees
@@ -154,7 +150,7 @@ def try_functions():
     ###########################################################################
     # TODO: 5. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
-    #
+    #  +
     #    NOTE: This function requires
     #      ** exactly 3 lines **
     #    If you think it needs more, ** ASK FOR HELP. **
@@ -168,7 +164,7 @@ def try_functions():
 def try_methods_and_functions():
     """
     Constructs a SimpleTurtle and sets its   pen  to a new rg.Pen
-    that is 'blue' with thickness 5.
+    that is "blue" with thickness 5.
 
     Then makes the SimpleTurtle do the following (in the order listed):
 
@@ -179,7 +175,7 @@ def try_methods_and_functions():
          each "twisted" from the previous by 30 degrees.
 
       3. Change its speed to 5 (faster).
-         Change its Pen's color to 'red'.
+         Change its Pen's color to "red".
          Draw 10 squares whose size (width and height) are 50,
          each "twisted" from the previous by 15 degrees.
 
@@ -188,7 +184,7 @@ def try_methods_and_functions():
          Draw 8 squares whose size (width and height) are 300,
          each "twisted" from the previous by 60 degrees.
 
-      5. Change its Pen to be a NEW Pen whose color is 'black'
+      5. Change its Pen to be a NEW Pen whose color is "black"
          and whose thickness is 3.
 
       6. Go backward  200 units.
@@ -200,7 +196,7 @@ def try_methods_and_functions():
     ###########################################################################
     # TODO: 6. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
-    #
+    #  _
     #   NOTE: This function should ** CALL ** the
     #     draw_many_squares
     #   function defined above.  If you don't see why, ** ASK FOR HELP. **

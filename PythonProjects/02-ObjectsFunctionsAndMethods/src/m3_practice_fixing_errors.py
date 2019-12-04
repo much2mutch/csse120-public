@@ -9,10 +9,10 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 # TODO: 2.
 #   Locate the syntax (notation) errors in this file
 #   by looking for red underlines.
-#
+#  _
 #   For each error, try to make sense of its message.
 #     -- Hover and/or expand as needed -- make sure you see the message!
-#
+#  _
 #   Then fix the errors, one by one.  IMPORTANT:
 #     -- Fixing one error may bring up additional errors
 #          (after a few seconds or when you run or save the module).
@@ -20,14 +20,13 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #     -- Often the SOURCE of the error may be on the line
 #          just BEFORE the line with a red underline.
 #     -- New errors may appear during the RUN of the module.
-#
+#  _
 #    Finish by RUNNING the corrected program
 #    and making sure that it RUNS CORRECTLY.
 #      That is, make sure that (per the doc-strings) the program
 #      prints two calculated values and makes a SimpleTurtle do some things.
-#
+#  _
 #   When finished, COMMIT-and-PUSH your work, as always.
-#
 ###############################################################################
 
 import rosegraphics as rg

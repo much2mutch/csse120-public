@@ -32,7 +32,7 @@ def main():
 # TODO: 2.
 #   First, RUN this program.  You will see that it draws concentric circles
 #   whose radii vary by 15.
-#
+#  _
 #   Next, READ:
 #     -- main.
 #          Note that it  constructs a TurtleWindow and then calls the function
@@ -41,13 +41,10 @@ def main():
 #          and another Point the second time.
 #     -- The function  draw_circles  is defined immediately below this _TODO_.
 #            Be sure that you understand its code!  Ask questions as needed!
-#
+#  _
 #   After you have done the above, change the above _TODO_ to DONE
 #   and continue to the next _TODO_ below.
-#
 ###############################################################################
-
-
 def draw_circles(point):
     """
     Constructs a SimpleTurtle, then uses the SimpleTurtle to draw 10 circles
@@ -94,19 +91,21 @@ def draw_circles(point):
 #   defined below this _TODO_ starts out exactly the same as the code for
 #       draw_circles
 #   that you read above.
-#
+#  _
 #   Your job is to make
 #       better_draw_circles
 #   "better" than   draw_circles   by adding a PARAMETER for the amount
 #   by which the radii of the concentric circles increase, as described below.
-#
+#  _
 #   The new   better_draw_circles   function can do the same  thing as
 #   the   draw_circles  function, but additionally allows for the radii to
 #   vary by ANY desired amount.  Hence, the new version will be MORE POWERFUL.
-#
+#  _
 #   So, modify the   better_draw_circles   function defined BELOW so that
-#   it has a single PARAMETER that is the amount by which the radii of the
-#   circles increase.  For example, if that parameter is given the value 15,
+#   it has TWO parameters:
+#     -- the same Point parameter that it already has, and
+#     -- a single ADDITIONAL parameter that is the amount by which the radii of
+#   the circles increase.  For example, if that parameter is given the value 15,
 #   then the circles should have radii:  15  30  45  60  75 ..., respectively,
 #   just as in   draw_circles.  But if that parameter is given the value 3,
 #   then the circles should have radii:  3  6  9  12  15  18 ..., respectively.
@@ -116,14 +115,11 @@ def draw_circles(point):
 #   to  draw_circles  and add at least two calls to the improved
 #   better_draw_circles  function, to TEST that your modified code is correct
 #   and does indeed allow for different amounts by which the radii can vary.
-#
 ###############################################################################
-
-
 def better_draw_circles(point):
     """
     Starts out the same as the   draw_circles   function defined ABOVE.
-    You Will make it an IMPROVED, MORE POWERFUL function per the above _TODO_.
+    You will make it an IMPROVED, MORE POWERFUL function per the above _TODO_.
     """
     turtle = rg.SimpleTurtle()
     turtle.pen_up()
@@ -146,9 +142,9 @@ def better_draw_circles(point):
 ###############################################################################
 # TODO: 4a.
 #   In the previous _TODO_, you made a MORE POWERFUL version
-#   of   draw_circles   by introducing a PARAMETER for the amount
-#   by which the radii of the concentric circles increase.
-#
+#   of   draw_circles   by introducing an additional PARAMETER
+#   for the amount by which the radii of the concentric circles increase.
+#  _
 #   In this _TODO_, you will implement a function called
 #      even_better_draw_circles
 #   that has FIVE parameters, for:
@@ -157,11 +153,11 @@ def better_draw_circles(point):
 #     -- The number of concentric circles drawn
 #     -- The pen color of each of the concentric circles
 #     -- The pen thickness of each of the concentric circles
-#
+#  _
 #   Hence, this   even_better_draw_circles   function will be
 #   even more POWERFUL than the previous functions,
 #   in that it can draw LOTS of different kinds of circles.
-#
+#  _
 #   Start by copy-and-pasting the code from   better_draw_circles  above
 #   to the body of the   even_better_draw_circles   function defined below.
 #   Then add parameters and modify the code to make them work!
@@ -171,9 +167,7 @@ def better_draw_circles(point):
 #   to  better_draw_circles  and add at least two calls to the improved
 #   even_better_draw_circles  function, to TEST that your modified code is
 #   correct and does indeed use its parameters per their descriptions above.
-#
 ###############################################################################
-
 def even_better_draw_circles(point):
     """ An improved version of draw_circles, per the _TODO_ above. """
     # READ the above _TODO_ and then copy-paste code from better_circles here:
@@ -181,9 +175,8 @@ def even_better_draw_circles(point):
 
 ###############################################################################
 # TODO: 5.
-#
-# Finally, comment-out the existing calls to  even_better_draw_circles  and
-# add code in   main  to draw various circles that form a BEAUTIFUL picture!
+#   Finally, comment-out the existing calls to  even_better_draw_circles  and
+#   add code in   main  to draw various circles that form a BEAUTIFUL picture!
 ###############################################################################
 
 
