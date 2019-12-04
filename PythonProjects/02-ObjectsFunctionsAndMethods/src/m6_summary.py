@@ -17,7 +17,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #          - Constructs a TurtleWindow.
 #          - Calls the function that YOU define (see next bullet, below) TWICE
 #              (with different arguments each time) to TEST your function.
-#          - Asks the TurtleWindow to wait for a mouse click.
+#          - Asks the TurtleWindow to wait for a mouse click, then close.
 #     c.  Defines another function that takes three parameters:
 #             a SimpleTurtle, a string that represents a color,
 #             and an integer for the distance to move (in pixels),
