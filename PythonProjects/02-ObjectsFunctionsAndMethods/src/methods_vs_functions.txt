@@ -22,10 +22,11 @@ a###############################################################################
 #   2. The notation for calling a FUNCTION is:
 #        function_name(argument1, argument2, ...)
 #      e.g.
-#        foo(3, 'green')
+#        foo(3, "green")
 #
 #      The notation for calling a METHOD is:
 #         object.method_name(argument1, argument2, ...)
+#
 #      where the object that precedes the DOT must be
 #      an instance of the class with which the method is associated, e.g.
 #        boris.forward(100)
