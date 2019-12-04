@@ -11,7 +11,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #   by looking for red underlines.
 #  _
 #   For each error, try to make sense of its message.
-#     -- Hover and/or expand as needed -- make sure you see the message!
+#     -- HOVER and/or expand as needed -- ** make SURE you see the message! **
 #  _
 #   Then fix the errors, one by one.  IMPORTANT:
 #     -- Fixing one error may bring up additional errors
@@ -21,12 +21,10 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #          just BEFORE the line with a red underline.
 #     -- New errors may appear during the RUN of the module.
 #  _
-#    Finish by RUNNING the corrected program
+#    Finish this _TODO_ by RUNNING the corrected program
 #    and making sure that it RUNS CORRECTLY.
-#      That is, make sure that (per the doc-strings) the program
+#      That is, make sure that (per the green doc-strings) the program
 #      prints two calculated values and makes a SimpleTurtle do some things.
-#  _
-#   When finished, COMMIT-and-PUSH your work, as always.
 ###############################################################################
 
 import rosegraphics as rg
@@ -67,6 +65,18 @@ alan.pen = rg.Pen('blue', 30)
     forward(200)
 
     window.close_on_mouse_click()
+
+###############################################################################
+# TODO: 3.
+#  All professional code must meet the STANDARDS of the organization (company).
+#  For us, we will use the widely-used PEP 8 standard.
+#  AFTER you have corrected the errors in the above,
+#  do     Code ~ Reformat Code
+#  It will try to correct any remaining PEP 8 style violations.
+#  (Note: It generally corrects some PEP 8 errors but not all.)
+#  _
+#   When finished, COMMIT-and-PUSH your work, as always.
+###############################################################################
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
