@@ -150,7 +150,7 @@ def try_functions():
     ###########################################################################
     # TODO: 5. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
-    #  +
+    #  _
     #    NOTE: This function requires
     #      ** exactly 3 lines **
     #    If you think it needs more, ** ASK FOR HELP. **
