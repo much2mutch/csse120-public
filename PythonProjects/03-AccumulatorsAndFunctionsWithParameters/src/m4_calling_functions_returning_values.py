@@ -58,15 +58,15 @@ def run_test_sum_of_digits():
     #    See the example below.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_of_digits   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_of_digits   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 16
     answer = sum_of_digits(826)
-    print('Test 1 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", answer)
 
     # -------------------------------------------------------------------------
     # TODO: 2 (continued).
@@ -77,7 +77,7 @@ def run_test_sum_of_digits():
 def sum_of_digits(number):
     """
     What comes in:  An integer.
-    What goes out:  The sum of the digits in the given integer.
+    What goes out:  Returns the sum of the digits in the given integer.
     Side effects:   None.
     Example:
       If the integer is 83135,
@@ -134,15 +134,15 @@ def run_test_digits_in_cube():
     #  Include at least **   3   ** tests.
     # -------------------------------------------------------------------------
     print()
-    print('-----------------------------------------------------')
-    print('Testing the   digits_in_cube   function:')
-    print('-----------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   digits_in_cube   function:")
+    print("--------------------------------------------------")
 
 
 def digits_in_cube(n):
     """
     What comes in:  A positive integer.
-    What goes out:  The sum of the digits in the CUBE of the integer.
+    What goes out:  Returns the sum of the digits in the CUBE of the integer.
     Side effects:   None.
     Example:
       If the integer (n) is 5    (so n cubed is 125),
@@ -172,9 +172,9 @@ def run_test_digits_in_power():
     #   Use the same 4-step process as in implementing previous TEST functions.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   digits_in_power   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   digits_in_power   function:")
+    print("--------------------------------------------------")
 
 
 def digits_in_power(n, k):
@@ -212,9 +212,9 @@ def run_test_fancy_sums_of_digits():
     #   TEST functions.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   fancy_sums_of_digits   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   fancy_sums_of_digits   function:")
+    print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
     # HINT:  For your 1st test, consider  n=10.  Figure out BY HAND
@@ -265,5 +265,5 @@ def fancy_sums_of_digits(n):
 # Calls  main  to start the ball rolling.
 # This unusual form is necessary for the special testing we provided.
 # -----------------------------------------------------------------------------
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

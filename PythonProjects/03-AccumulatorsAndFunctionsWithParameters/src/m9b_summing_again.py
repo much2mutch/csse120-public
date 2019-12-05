@@ -36,16 +36,16 @@ def run_test_sum_powers():
     #  TEST functions, including the same way to print expected/actual.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_powers   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_powers   function:")
+    print("--------------------------------------------------")
 
 
 def sum_powers(n, p):
     """
     What comes in:  A non-negative integer n
                     and a number p.
-    What goes out:  The sum   1**p + 2**p + 3**p + ... + n**p
+    What goes out:  Returns the sum   1**p + 2**p + 3**p + ... + n**p
        for the given numbers n and p.  The latter may be any number
        (possibly a floating point number, and possibly negative).
     Side effects:   None.
@@ -72,21 +72,21 @@ def run_test_sum_powers_in_range():
     # TODO: 5. Implement this function.
     #   It TESTS the  sum_powers_in_range  function defined below.
     #   Include at least **   3   ** tests.
-    #
-    # Use the same 4-step process as in implementing previous
-    # TEST functions, including the same way to print expected/actual.
+    #  ___
+    #  Use the same 4-step process as in implementing previous
+    #  TEST functions, including the same way to print expected/actual.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_powers_in_range   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_powers_in_range   function:")
+    print("--------------------------------------------------")
 
 
 def sum_powers_in_range(m, n, p):
     """
     What comes in:  Non-negative integers m and n, with n >= m,
                     and a number p.
-    What goes out:  the sum
+    What goes out:  Returns the sum
            m**p + (m+1)**p + (m+2)**p + ... + n**p
        for the given numbers m, n and p.  The latter may be any number
        (possibly a floating point number, and possibly negative).

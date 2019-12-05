@@ -20,33 +20,33 @@ def main():
 def run_test_sum_squares():
     """ Tests the   sum_squares   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_squares   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_squares   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 55
     answer = sum_squares(5)
-    print('Test 1 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", answer)
 
     # Test 2:
     expected = 91
     answer = sum_squares(6)
-    print('Test 2 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 2 expected:", expected)
+    print("       actual:  ", answer)
 
     # Test 3:
     expected = 333833500
     answer = sum_squares(1000)
-    print('Test 3 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 3 expected:", expected)
+    print("       actual:  ", answer)
 
 
 def sum_squares(n):
     """
     What comes in:  A positive integer n.
-    What goes out:  The sum of the squares of the integers
+    What goes out:  Returns the sum of the squares of the integers
        1, 2, 3, ... n, inclusive, for the given n.
     Side effects:   None.
     Example:

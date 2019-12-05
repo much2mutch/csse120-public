@@ -36,15 +36,15 @@ def run_test_sum_cosines():
     #  TEST functions, including the same way to print expected/actual.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_cosines   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_cosines   function:")
+    print("--------------------------------------------------")
 
 
 def sum_cosines(n):
     """
     What comes in:  A non-negative integer n.
-    What goes out:  The sum of the cosines of the integers
+    What goes out:  Returns the sum of the cosines of the integers
        0, 1, 2, 3, ... n, inclusive, for the given n.
     Side effects:   None.
     Example:
@@ -75,15 +75,15 @@ def run_test_sum_square_roots():
     #  TEST functions, including the same way to print expected/actual.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_square_roots   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_square_roots   function:")
+    print("--------------------------------------------------")
 
 
 def sum_square_roots(n):
     """
     What comes in:  A non-negative integer n.
-    What goes out:  The sum of the square roots of the integers
+    What goes out:  Returns the sum of the square roots of the integers
        2, 4, 6, 8, ... 2n    inclusive, for the given n.
            So if n is 7, the last term of the sum is
            the square root of 14 (not 7).

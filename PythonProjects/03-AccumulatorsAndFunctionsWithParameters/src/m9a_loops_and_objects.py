@@ -46,7 +46,7 @@ def print_sequence1():
     # -------------------------------------------------------------------------
     print()
     print('--------------------------------------------------')
-    print('Running print_sequence1:')
+    print("Running print_sequence1:")
     print('--------------------------------------------------')
 
 
@@ -66,9 +66,9 @@ def draw_circles1():
     #   HINT: Module  m2r_using_rosegraphics  has helpful examples for this.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Running draw_circles1:  See graphics window')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Running draw_circles1:  See graphics window")
+    print("--------------------------------------------------")
 
 
 def print_sequence2():
@@ -88,9 +88,9 @@ def print_sequence2():
     #   REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Running print_sequence2:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Running print_sequence2:")
+    print("--------------------------------------------------")
 
 
 def draw_circles2():
@@ -111,9 +111,9 @@ def draw_circles2():
     #   HINT: Module  m2r_using_rosegraphics  has helpful examples for this.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
     print('Running draw_circles2:  See graphics window')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
 
 
 def print_sequence3():
@@ -132,9 +132,9 @@ def print_sequence3():
     #   REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Running print_sequence3:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Running print_sequence3:")
+    print("--------------------------------------------------")
 
 
 def draw_circles3():
@@ -152,9 +152,9 @@ def draw_circles3():
     #   REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
     print('Running draw_circles3:  See graphics window')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
 
 
 def print_cosines():
@@ -177,10 +177,10 @@ def print_cosines():
     """
     # -------------------------------------------------------------------------
     # TODO: 8. Implement this function, per its doc-string above.
-    # Put a statement in  main  to test this function.
-    # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
-    #
-    # HINT: You need to   import math   at the top of this file
+    #   Put a statement in  main  to test this function.
+    #   REQUIREMENT: You must use a   RANGE  statement to solve this problem.
+    #  _
+    #   HINT: You need to   import math   at the top of this file
     #       to use math functions like the ones for cosine and sine.
     #       Once you have that import in place, typing
     #            math.
@@ -188,9 +188,9 @@ def print_cosines():
     #       it plain what the notation for the cosine function is.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Running print_cosines:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Running print_cosines:")
+    print("--------------------------------------------------")
 
 
 def draw_cosines_and_sines():
@@ -210,13 +210,13 @@ def draw_cosines_and_sines():
     """
     # -------------------------------------------------------------------------
     # TODO: 9. Implement this function, per its doc-string above.
-    # Put a statement in  main  to test this function.
-    # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
+    #   Put a statement in  main  to test this function.
+    #   REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Running draw_cosines_and_sines:  See graphics window')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Running draw_cosines_and_sines:  See graphics window")
+    print("--------------------------------------------------")
 
 
 # -----------------------------------------------------------------------------
