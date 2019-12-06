@@ -8,109 +8,107 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
          Derek Whitley, their colleagues, and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
-##############################################################################
+###############################################################################
 # TODO: 2. Read the following, then change its _TODO_ to DONE.
 #   Throughout these exercises, you must use  RANGE  statements.
 #   At this point of the course, you are restricted to the SINGLE-ARGUMENT
 #   form of RANGE statements, like this:
-#      range(blah):
+#         range(blah):
 #   There is a MULTIPLE-ARGUMENT form of RANGE statements (e.g. range(a, b))
 #   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet, for
 #   pedagogical reasons.  Change the above _TODO_ to DONE after reading this.
 ###############################################################################
 
 ###############################################################################
-#
 # TODO: 3.
 #   RUN this program, then READ its code.
 #     Then answer the following, GETTING HELP AS NEED!  (Ask questions!!!)
 #     Write your answers in any reasonable way (your choice).
-#     ___
+#     _
 #     For the first several questions, some students find the following
 #     picture helpful.  (Your instructor may explain it in whole-group.)
-#     ___
+#     _
 #         0  1  2  3  4  ...  r-1  r  r+1  r+2  r+3  ...  s
 #         |..... r numbers .....|
 #         |................ s+1 numbers ..................|
 #  Hence:                          |... (s+1)-r numbers ...|
-#     ___
+#     _
 #     a. If you want a loop that runs   r   times,
 #          which of the following three choices would you use?
-#  ___
+#     _
 #            for k in range(r - 1):
 #            for k in range(r):
 #            for k in range(r + 1):
-#     ___
+#     _
 #     b. If you want a loop that runs from 0 to s, inclusive,
 #          what expression would you use in the _____ below?
-#  ___
+#     _
 #            for k in range(_____):
-#     ___
+#     _
 #     c. If you want a loop that runs from r to s, inclusive, assuming s >= r,
 #          what expression would you use in the _____ below?
-#  ___
+#     _
 #            for k in range(_____):
-#     ___
+#     _
 #     d. If you want a loop that runs from (r + 4) to (s - 10),
 #          including the (r + 4) but not including the (s - 10),
 #          what expression would you use in the _____ below?
-#  ___
+#     _ 
 #            for k in range(_____):
-#     ___
+#     _
 #     e. The following code snippet attempts to return the number
 #          of integers from r to s, inclusive, whose cosines are positive.
 #          It has at least 5 distinct errors (one per line).
 #          Correct the errors.
-#  ___
+#     _
 #              for k in range(r - s):
 #                  count = 0
 #                  if math.cos(r) > 0:
 #                      count = 1
 #                  return count
-#     ___
+#     _
 #     f. The code in the "graphics accumulation" example below includes:
-#            for _ in range(n):
+#              for _ in range(n):
 #        What does the   _   (underscore) mean?
-#     ___
+#     _
 #     g. The code in the "graphics accumulation" example below includes:
-#  ___
+#     _
 #              x = starting_point.x
 #              for _ in range(n):
 #                  center = rg.Point(x, y)
 #                  circle = rg.Circle(point, radius)
 #                  circle.attach_to(window)
 #                  x = x + diameter
-#  ___
+#     _
 #        If you want the row-of-circles that the above creates,
 #        one of the following two attempts is a CORRECT attempt
 #        (i.e., is equivalent in its functionality to the above)
 #        and one is WRONG.  Which is the WRONG one?
-#  ___
+#     _
 #              x = starting_point.x
 #              for k in range(n):
 #                  center = rg.Point(x + (k * diameter), y)
 #                  circle = rg.Circle(point, radius)
 #                  circle.attach_to(window)
-#  ___
+#     _
 #              x = starting_point.x
 #              for k in range(n):
 #                  center = rg.Point(x + (k * diameter), y)
 #                  circle = rg.Circle(point, radius)
 #                  circle.attach_to(window)
 #                  x = x + (2 * radius)
-#  ___
+#  _
 #  ############################################################################
 #   *** MAKE SURE YOU UNDERSTAND THE 3   ACCUMULATOR   PATTERNS    ***
 #   *** shown in this module:  SUMMING, COUNTING, and IN GRAPHICS  ***
 #  ############################################################################
-#  ___
+#   _
 #   When you are confident that you understand the 3 accumulator patterns
 #   and have correct answers to the above questions (ASK QUESTIONS AS NEEDED!),
 #   check your work by asking a student assistant to look at your answers.
-#  ___
+#   _
 #   After checking your work (making corrections as needed),
 #   change the above _TODO_ to DONE.
-#
 ###############################################################################
 
 import rosegraphics as rg
@@ -127,27 +125,27 @@ def main():
 def run_test_summing_example():
     """ Tests the   summing_example   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   summing_example   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   summing_example   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 100
     answer = summing_example(4)
-    print('Test 1 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", answer)
 
     # Test 2:
     expected = 44100
     answer = summing_example(20)
-    print('Test 2 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 2 expected:", expected)
+    print("       actual:  ", answer)
 
     # Test 3:
     expected = 0
     answer = summing_example(0)
-    print('Test 3 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 3 expected:", expected)
+    print("       actual:  ", answer)
 
 
 def summing_example(n):
@@ -174,27 +172,27 @@ def summing_example(n):
 def run_test_counting_example():
     """ Tests the   counting_example   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   counting_example   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   counting_example   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 2
     answer = counting_example(2)
-    print('Test 1 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", answer)
 
     # Test 2:
     expected = 12
     answer = counting_example(20)
-    print('Test 2 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 2 expected:", expected)
+    print("       actual:  ", answer)
 
     # Test 3:
     expected = 1
     answer = counting_example(0)
-    print('Test 3 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 3 expected:", expected)
+    print("       actual:  ", answer)
 
 
 def counting_example(n):
@@ -230,36 +228,36 @@ def counting_example(n):
 def run_test_draw_row_of_circles():
     """ Tests the   draw_row_of_circles   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the  draw_row_of_circles  function:')
-    print('  See the graphics windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the  draw_row_of_circles  function:")
+    print("  See the graphics windows that pop up.")
+    print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
     # TWO tests on ONE window.
     # -------------------------------------------------------------------------
-    title = 'Tests 1 and 2 of DRAW_ROW_OF_CIRCLES:'
-    title = title + ' 7 GREEN circles, 4 BLUE circles!'
+    title = "Tests 1 and 2 of DRAW_ROW_OF_CIRCLES:"
+    title = title + " 7 GREEN circles, 4 BLUE circles!"
     window1 = rg.RoseWindow(500, 250, title)
 
     # Test 1:
     center = rg.Point(50, 50)
-    draw_row_of_circles(7, center, 'green', window1)
+    draw_row_of_circles(7, center, "green", window1)
 
     # Test 2:
     center = rg.Point(100, 150)
-    draw_row_of_circles(4, center, 'blue', window1)
+    draw_row_of_circles(4, center, "blue", window1)
     window1.close_on_mouse_click()
 
     # -------------------------------------------------------------------------
     # A third test on ANOTHER window.
     # -------------------------------------------------------------------------
-    title = 'Test 3 of DRAW_ROW_OF_CIRCLES:  Row of 12 RED circles!'
+    title = "Test 3 of DRAW_ROW_OF_CIRCLES:  Row of 12 RED circles!"
     window2 = rg.RoseWindow(600, 150, title)
 
     # Test 3:
     center = rg.Point(50, 50)
-    draw_row_of_circles(12, center, 'red', window2)
+    draw_row_of_circles(12, center, "red", window2)
 
     window2.close_on_mouse_click()
 
@@ -269,7 +267,7 @@ def draw_row_of_circles(n, starting_point, color, window):
     What comes in:  The four arguments are:
       -- A positive integer n.
       -- An rg.Point.
-      -- A color appropriate for rosegraphics (e.g. 'red')
+      -- A color appropriate for rosegraphics (e.g. "red")
       -- An rg.RoseWindow.
     What goes out:  Nothing (i.e., None).
     Side effects:

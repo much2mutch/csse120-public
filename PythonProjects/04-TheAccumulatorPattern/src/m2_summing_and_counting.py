@@ -27,7 +27,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #   Throughout these exercises, you must use  RANGE  statements.
 #   At this point of the course, you are restricted to the SINGLE-ARGUMENT
 #   form of RANGE statements, like this:
-#      range(blah):
+#         range(blah):
 #   There is a MULTIPLE-ARGUMENT form of RANGE statements (e.g. range(a, b))
 #   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet, for
 #   pedagogical reasons.  Change the above _TODO_ to DONE after reading this.
@@ -47,36 +47,36 @@ def run_test_sum_more_cosines():
     # TODO: 3. Implement this TEST function.
     #   It TESTS the  sum_more_cosines  function defined below.
     #   Include at least **   3   ** tests (we wrote one for you).
-    #   ___
+    #   _
     #   To implement this TEST function, use the same 4 steps as before:
-    #   ___
+    #   _
     #   Step 1: Read the doc-string of  sum_more_cosines  below.
     #     Understand what that function SHOULD return.
-    #   ___
+    #   _
     #   Step 2:  Pick a test case:  numbers that you could send as
     #     actual arguments to the  sum_more_cosines  function.
-    #   ___
+    #   _
     #   Step 3: Figure out (by hand/calculator, or by trusting
     #     a test case that your instructor provided in the doc-string)
     #     the CORRECT (EXPECTED) answer for your test case.
-    #   ___
+    #   _
     #   Step 4: Write code that prints both the EXPECTED answer
     #     and the ACTUAL answer returned when you call the function.
     #     Follow the same form as in the test case we provided below.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_more_cosines   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_more_cosines   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 0.13416  # This is APPROXIMATELY the correct answer.
     answer = sum_more_cosines(0, 3)
-    print('Test 1 expected:', expected, '(approximately)')
+    print("Test 1 expected:", expected, "(approximately)")
     if answer is not None:
-        print('       actual:  ', round(answer, 5))
+        print("       actual:  ", round(answer, 5))
     else:
-        print('       actual:  ', answer)
+        print("       actual:  ", answer)
 
     # -------------------------------------------------------------------------
     # TODO: 3 (continued).
@@ -106,7 +106,7 @@ def sum_more_cosines(m, n):
     # TODO: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-FIRST DEVELOPMENT (TFD).
-    #  ___
+    #  _
     #  IMPORTANT: In this and all other problems in this session,
     #    you must NOT use the 2 or 3-parameter versions
     #    of the RANGE expression, if you happen to know them.
@@ -127,15 +127,15 @@ def run_test_count_sines_from():
     #   Use the same 4-step process as for previous TEST functions.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   count_sines_from   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   count_sines_from   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 5
     answer = count_sines_from(3, 9)
-    print('Test 1 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", answer)
 
     # -------------------------------------------------------------------------
     # TODO: 5 (continued).
@@ -169,7 +169,7 @@ def count_sines_from(m, n):
     # -------------------------------------------------------------------------
     # TODO: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
-    #  ___
+    #  _
     #  IMPORTANT: As in previous problems in this session,
     #    you must NOT use the 2 or 3-parameter versions
     #    of the RANGE expression, if you happen to know them.
@@ -187,15 +187,15 @@ def run_test_count_sines_vs_cosines():
     #   Use the same 4-step process as for previous TEST functions.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   count_sines_vs_cosines   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   count_sines_vs_cosines   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 100
     answer = count_sines_vs_cosines(101)
-    print('Test 1 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", answer)
 
     # -------------------------------------------------------------------------
     # TODO: 7 (continued).
@@ -234,7 +234,7 @@ def count_sines_vs_cosines(m):
     # -------------------------------------------------------------------------
     # TODO: 8. Implement and test this function.
     #   Note that you should write its TEST function first (above).
-    #  ___
+    #  _
     #  IMPORTANT: As in previous problems in this session,
     #    you must NOT use the 2 or 3-parameter versions
     #    of the RANGE expression, if you happen to know them.

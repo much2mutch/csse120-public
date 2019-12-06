@@ -30,7 +30,7 @@ import rosegraphics as rg
 #   Throughout these exercises, you must use  RANGE  statements.
 #   At this point of the course, you are restricted to the SINGLE-ARGUMENT
 #   form of RANGE statements, like this:
-#      range(blah):
+#         range(blah):
 #   There is a MULTIPLE-ARGUMENT form of RANGE statements (e.g. range(a, b))
 #   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet, for
 #   pedagogical reasons.  Change the above _TODO_ to DONE after reading this.
@@ -47,21 +47,21 @@ def main():
 def run_test_draw_squares_from_circle():
     """ Tests the   draw_squares_from_circle  function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the  draw_squares_from_circle  function:')
-    print('  See the graphics windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the  draw_squares_from_circle  function:")
+    print("  See the graphics windows that pop up.")
+    print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
     # TWO tests on ONE window.
     # -------------------------------------------------------------------------
-    title = 'Tests 1 and 2 of DRAW_SQUARES_FROM_CIRCLE: '
-    title = title + ' 7 little squares from green circle, 4 big squares'
+    title = "Tests 1 and 2 of DRAW_SQUARES_FROM_CIRCLE: "
+    title = title + " 7 little squares from green circle, 4 big squares"
     window1 = rg.RoseWindow(650, 350, title)
 
     # Test 1:
     circle = rg.Circle(rg.Point(100, 100), 20)
-    circle.fill_color = 'green'
+    circle.fill_color = "green"
     draw_squares_from_circle(7, circle, window1)
 
     # Test 2:
@@ -72,13 +72,13 @@ def run_test_draw_squares_from_circle():
     # -------------------------------------------------------------------------
     # A third test on ANOTHER window.
     # -------------------------------------------------------------------------
-    title = 'Test 3 of DRAW_SQUARES_FROM_CIRCLE: '
-    title += ' 20 teeny squares from blue circle!'
+    title = "Test 3 of DRAW_SQUARES_FROM_CIRCLE: "
+    title += " 20 teeny squares from blue circle!"
     window2 = rg.RoseWindow(525, 300, title)
 
     # Test 3:
     circle = rg.Circle(rg.Point(50, 50), 10)
-    circle.fill_color = 'blue'
+    circle.fill_color = "blue"
     draw_squares_from_circle(20, circle, window2)
 
     window2.close_on_mouse_click()
@@ -112,7 +112,7 @@ def draw_squares_from_circle(n, circle, window):
     # -------------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
-    #  ___
+    #  _
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
     #      as in   draw_row_of_circles   in m1e,
     #      instead of directly using the loop variable.
@@ -127,10 +127,10 @@ def draw_squares_from_circle(n, circle, window):
 def run_test_draw_circles_from_rectangle():
     """ Tests the   draw_circles_from_rectangle  function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the  draw_circles_from_rectangle  function:')
-    print('  See the graphics windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the  draw_circles_from_rectangle  function:")
+    print("  See the graphics windows that pop up.")
+    print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
     # TODO: 4. Implement this TEST function.
@@ -188,7 +188,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     # -------------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #          Tests have been written for you (above).
-    #  ___
+    #  _
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
     #      as in   draw_row_of_circles   in m1e,
     #      instead of directly using the loop variable.
@@ -203,37 +203,37 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
 def run_test_draw_lines_from_rectangles():
     """ Tests the   draw_lines_from_rectangles  function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the  draw_lines_from_rectangles  function:')
-    print('  See the graphics windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the  draw_lines_from_rectangles  function:")
+    print("  See the graphics windows that pop up.")
+    print("--------------------------------------------------")
 
     # TWO tests on ONE window.
-    title = 'Tests 1 & 2 of DRAW_LINES_FROM_RECTANGLES:'
-    title += '  5 lines, 8 lines!'
+    title = "Tests 1 & 2 of DRAW_LINES_FROM_RECTANGLES:"
+    title += "  5 lines, 8 lines!"
     window1 = rg.RoseWindow(900, 400, title)
 
     rectangle1 = rg.Rectangle(rg.Point(100, 25), rg.Point(150, 125))
     rectangle2 = rg.Rectangle(rg.Point(300, 150), rg.Point(400, 175))
-    rectangle1.outline_color = 'red'
-    rectangle2.outline_color = 'blue'
+    rectangle1.outline_color = "red"
+    rectangle2.outline_color = "blue"
     draw_lines_from_rectangles(rectangle1, rectangle2, 5, window1)
 
     rectangle1 = rg.Rectangle(rg.Point(870, 30), rg.Point(750, 100))
     rectangle2 = rg.Rectangle(rg.Point(700, 90), rg.Point(650, 60))
-    rectangle2.outline_color = 'green'
+    rectangle2.outline_color = "green"
     draw_lines_from_rectangles(rectangle1, rectangle2, 8, window1)
 
     window1.close_on_mouse_click()
 
     # A third test on ANOTHER window.
-    title = 'Test 3 of DRAW_LINES_FROM_RECTANGLES:  11 lines!'
+    title = "Test 3 of DRAW_LINES_FROM_RECTANGLES:  11 lines!"
     window2 = rg.RoseWindow(700, 700, title)
 
     rectangle1 = rg.Rectangle(rg.Point(550, 200), rg.Point(650, 100))
     rectangle2 = rg.Rectangle(rg.Point(600, 50), rg.Point(650, 75))
-    rectangle1.outline_color = 'brown'
-    rectangle2.outline_color = 'cyan'
+    rectangle1.outline_color = "brown"
+    rectangle2.outline_color = "cyan"
     rectangle2.outline_thickness = 10
     draw_lines_from_rectangles(rectangle1, rectangle2, 11, window2)
 
@@ -279,7 +279,7 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     # -------------------------------------------------------------------------
     # TODO: 6. Implement and test this function.
     #          Tests have been written for you (above).
-    #  ___
+    #  _
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
     #      as in   draw_row_of_circles   in m1e,
     #      instead of directly using the loop variable.

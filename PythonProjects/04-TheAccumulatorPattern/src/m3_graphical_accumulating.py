@@ -30,7 +30,7 @@ import rosegraphics as rg
 #   Throughout these exercises, you must use  RANGE  statements.
 #   At this point of the course, you are restricted to the SINGLE-ARGUMENT
 #   form of RANGE statements, like this:
-#      range(blah):
+#         range(blah):
 #   There is a MULTIPLE-ARGUMENT form of RANGE statements (e.g. range(a, b))
 #   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet, for
 #   pedagogical reasons.  Change the above _TODO_ to DONE after reading this.
@@ -46,16 +46,16 @@ def main():
 def run_test_draw_parallel_lines():
     """ Tests the   draw_parallel_lines  function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the  draw_parallel_lines  function:')
-    print('  See the graphics windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the  draw_parallel_lines  function:")
+    print("  See the graphics windows that pop up.")
+    print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
     # TWO tests on ONE window.
     # -------------------------------------------------------------------------
-    title = 'Tests 1 and 2 of DRAW_PARALLEL_LINES:'
-    title = title + '  4 long lines, 7 short lines'
+    title = "Tests 1 and 2 of DRAW_PARALLEL_LINES:"
+    title = title + "  4 long lines, 7 short lines"
     window1 = rg.RoseWindow(600, 350, title)
 
     # Test 1:
@@ -70,7 +70,7 @@ def run_test_draw_parallel_lines():
     # -------------------------------------------------------------------------
     # A third test on ANOTHER window.
     # -------------------------------------------------------------------------
-    title = 'Test 3 of DRAW_PARALLEL_LINES:  12 very long lines!'
+    title = "Test 3 of DRAW_PARALLEL_LINES:  12 very long lines!"
     window2 = rg.RoseWindow(500, 400, title)
 
     # Test 3:
@@ -111,7 +111,7 @@ def draw_parallel_lines(n, point, length, window):
     # -------------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
-    #  ___
+    #  _
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
     #      as in   draw_row_of_circles   in m1e,
     #      instead of directly using the loop variable.
@@ -126,13 +126,13 @@ def draw_parallel_lines(n, point, length, window):
 def run_test_draw_lines():
     """ Tests the   draw_lines  function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the  draw_lines  function:')
-    print('  See the graphics windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the  draw_lines  function:")
+    print("  See the graphics windows that pop up.")
+    print("--------------------------------------------------")
 
     # TWO tests on ONE window.
-    title = 'Tests 1 & 2 of DRAW_LINES:  4 lines, 12 lines!'
+    title = "Tests 1 & 2 of DRAW_LINES:  4 lines, 12 lines!"
     window1 = rg.RoseWindow(350, 400, title)
 
     draw_lines(4, rg.Point(20, 120), window1)
@@ -140,7 +140,7 @@ def run_test_draw_lines():
     window1.close_on_mouse_click()
 
     # A third test on ANOTHER window.
-    window2 = rg.RoseWindow(350, 300, 'Test 3 of DRAW_LINES:  7 lines!')
+    window2 = rg.RoseWindow(350, 300, "Test 3 of DRAW_LINES:  7 lines!")
     draw_lines(7, rg.Point(50, 120), window2)
     window2.close_on_mouse_click()
 
@@ -176,7 +176,7 @@ def draw_lines(n, point, window):
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
-    #  ___
+    #  _
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
     #      as in   draw_row_of_circles   in m1e,
     #      instead of directly using the loop variable.

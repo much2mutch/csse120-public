@@ -55,9 +55,9 @@ def main():
 def run_test_sum_from():
     """ Tests the   sum_from   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_from   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_from   function:")
+    print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
     # These first two tests use an ORACLE for testing,
@@ -69,14 +69,14 @@ def run_test_sum_from():
     # Test 1:
     answer_from_oracle = builtins.sum(range(6, 10))
     answer_from_my_code = sum_from(6, 9)
-    print('Test 1 expected (from oracle):', answer_from_oracle)
-    print('       actual (from my code): ', answer_from_my_code)
+    print("Test 1 expected (from oracle):", answer_from_oracle)
+    print("       actual (from my code): ", answer_from_my_code)
 
     # Test 2:
     answer_from_oracle = builtins.sum(range(100, 10001))
     answer_from_my_code = sum_from(100, 10000)
-    print('Test 2 expected (from oracle):', answer_from_oracle)
-    print('       actual (from my code): ', answer_from_my_code)
+    print("Test 2 expected (from oracle):", answer_from_oracle)
+    print("       actual (from my code): ", answer_from_my_code)
 
     # -------------------------------------------------------------------------
     # The next test uses a KNOWN answer (usually computed by hand).
@@ -86,8 +86,8 @@ def run_test_sum_from():
     # Test 3:
     answer_from_by_hand = 6
     answer_from_my_code = sum_from(0, 3)
-    print('Test 3 expected (from by-hand):', answer_from_by_hand)
-    print('       actual (from my code):  ', answer_from_my_code)
+    print("Test 3 expected (from by-hand):", answer_from_by_hand)
+    print("       actual (from my code):  ", answer_from_my_code)
 
     # -------------------------------------------------------------------------
     # The next test uses a FORMULA answer (which is one kind of ORACLE answer)
@@ -98,8 +98,8 @@ def run_test_sum_from():
     # Test 4:
     answer_from_formula = (53 + 4999) * (4999 - 53 + 1) // 2
     answer_from_my_code = sum_from(53, 4999)
-    print('Test 4 expected (from formula):', answer_from_formula)
-    print('       actual (from my code):  ', answer_from_my_code)
+    print("Test 4 expected (from formula):", answer_from_formula)
+    print("       actual (from my code):  ", answer_from_my_code)
 
 # -----------------------------------------------------------------------------
 # TODO: 3.
@@ -132,10 +132,10 @@ def sum_from(m, n):
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
-    #  ___
+    #  _
     #  IMPORTANT:  Your solution MUST
     #    use an explicit    for ... in range(...):     statement
-    #  ___
+    #  _
     #  IMPORTANT: As in previous problems in this session,
     #    you must NOT use the 2 or 3-parameter versions
     #    of the RANGE expression, if you happen to know them.
@@ -155,21 +155,21 @@ def run_test_factorial():
     #  ########################################################################
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   factorial   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   factorial   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     answer_from_oracle = math.factorial(0)
     answer_from_my_code = factorial(0)
-    print('Test 1 expected (from oracle):', answer_from_oracle)
-    print('       actual (from my code): ', answer_from_my_code)
+    print("Test 1 expected (from oracle):", answer_from_oracle)
+    print("       actual (from my code): ", answer_from_my_code)
 
     # Test 2:
     answer_from_oracle = math.factorial(21)
     answer_from_my_code = factorial(21)
-    print('Test 2 expected (from oracle):', answer_from_oracle)
-    print('       actual (from my code): ', answer_from_my_code)
+    print("Test 2 expected (from oracle):", answer_from_oracle)
+    print("       actual (from my code): ", answer_from_my_code)
 
     # -------------------------------------------------------------------------
     # TODO: 5 (continued).
@@ -193,7 +193,7 @@ def factorial(n):
     # -------------------------------------------------------------------------
     # TODO: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
-    #  ___
+    #  _
     #  IMPORTANT:  Your solution MUST
     #    use an explicit    for ... in range(...):     statement.
     # -------------------------------------------------------------------------
@@ -226,19 +226,19 @@ def run_test_count_cosines_from():
     #     Follow the same form as in the test case we provided below.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   count_cosines_from   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   count_cosines_from   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 2
     answer = count_cosines_from(3, 9, 0.29)
-    print('Test 1 expected:', expected)
-    print('       actual:  ', answer)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", answer)
 
     # -------------------------------------------------------------------------
     # TODO: 7 (continued).
-    # Below this comment, add 5 more test cases of your own choosing.
+    #   Below this comment, add 5 more test cases of your own choosing.
     # -------------------------------------------------------------------------
 
 
@@ -269,7 +269,7 @@ def count_cosines_from(m, n, x):
     # -------------------------------------------------------------------------
     # TODO: 8. Implement and test this function.
     #   Note that you should write its TEST function first (above).
-    #  ___
+    #  _
     #  IMPORTANT: As in previous problems in this session,
     #    you must NOT use the 2 or 3-parameter versions
     #    of the RANGE expression, if you happen to know them.
@@ -285,15 +285,15 @@ def run_test_sum_unit_fractions_from():
     #   Use the same 4-step process as for previous TEST functions.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_unit_fractions_from   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_unit_fractions_from   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 0.545635  # This is APPROXIMATELY the correct answer.
     answer = sum_unit_fractions_from(6, 9)
-    print('Test 1 expected:', expected, '(approximately)')
-    print('       actual:  ', answer)
+    print("Test 1 expected:", expected, "(approximately)")
+    print("       actual:  ", answer)
 
     # -------------------------------------------------------------------------
     # TODO: 9 (continued).
@@ -320,7 +320,7 @@ def sum_unit_fractions_from(m, n):
     # -------------------------------------------------------------------------
     # TODO: 10. Implement and test this function.
     #   Note that you should write its TEST function first (above).
-    #  ___
+    #  _
     #  IMPORTANT: As in previous problems in this session,
     #    you must NOT use the 2 or 3-parameter versions
     #    of the RANGE expression, if you happen to know them.
