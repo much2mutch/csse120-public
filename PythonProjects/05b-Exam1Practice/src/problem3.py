@@ -41,9 +41,8 @@ def run_test_problem3a():
     # TODO: 2. Implement this TEST function.
     #   It TESTS the  problem3a  function defined below.
     #   Include at least **   5   ** tests (we wrote four for you).
-    # -------------------------------------------------------------------------
-    # -------------------------------------------------------------------------
-    # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
+    #  ------------------------------------------------------------------------
+    #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      4
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
@@ -99,9 +98,9 @@ def run_test_problem3a():
     window3.close_on_mouse_click()
 
     # -------------------------------------------------------------------------
-    # TO DO: 2 (continued).
-    # Below this comment (or integrated with one of the above tests,
-    # your choice), add 1 more test case of your own choosing.
+    # TODO: 2 (continued).
+    #   Below this comment (or integrated with one of the above tests,
+    #   your choice), add 1 more test case of your own choosing.
     # -------------------------------------------------------------------------
 
 
@@ -140,9 +139,8 @@ def problem3a(window, point, n):
     # -------------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
-    # -------------------------------------------------------------------------
-    # -------------------------------------------------------------------------
-    # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
+    #  ------------------------------------------------------------------------
+    #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7 or 8
     #    TIME ESTIMATE:   20 to 35 minutes.
     # -------------------------------------------------------------------------
@@ -204,17 +202,16 @@ def problem3b(m, point1):
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
-    #
-    ###########################################################################
-    # IMPORTANT:
+    #  ########################################################################
+    #  IMPORTANT:
     #    **  For full credit you must appropriately use (call)
     #    **  the   problem3a   function that you implemented above.
-    ###########################################################################
-    # -------------------------------------------------------------------------
-    # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
+    #  ------------------------------------------------------------------------
+    #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      8 or 9
     #    TIME ESTIMATE:   20 to 30 minutes.
     # -------------------------------------------------------------------------
+
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

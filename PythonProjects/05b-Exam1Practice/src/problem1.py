@@ -39,12 +39,12 @@ def main():
 
 ###############################################################################
 # TODO: 2.  READ the green doc-string for the:
-#   - is_prime
-#   - sum_of_digits
-# functions defined below.  You do NOT need to understand their
-# implementations, just their specification (per the doc-string).
-# You should  ** CALL **  those functions as needed in implementing the
-# other functions.  After you have READ this, change its _TODO_ to DONE.
+#     - is_prime
+#     - sum_of_digits
+#   functions defined below.  You do NOT need to understand their
+#   implementations, just their specification (per the doc-string).
+#   You should  ** CALL **  those functions as needed in implementing the
+#   other functions.  After you have READ this, change its _TODO_ to DONE.
 ###############################################################################
 
 def is_prime(n):
@@ -109,9 +109,8 @@ def run_test_problem1a():
     # TODO: 3. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
-    # -------------------------------------------------------------------------
-    # -------------------------------------------------------------------------
-    # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
+    #  ------------------------------------------------------------------------
+    #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      3
     #    TIME ESTIMATE:   10 minutes.
     # -------------------------------------------------------------------------
@@ -170,9 +169,8 @@ def problem1a(m, n):
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
-    # -------------------------------------------------------------------------
-    # -------------------------------------------------------------------------
-    # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
+    #  ------------------------------------------------------------------------
+    #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # -------------------------------------------------------------------------
@@ -184,13 +182,13 @@ def run_test_problem1b():
     # TODO: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
-    #
+    #  _
     #   expected = XXX
     #   actual = problem1b(YYY, YYY)
     #   print('Test 1 expected:', expected)
     #   print('       actual:  ', actual)
-    # -------------------------------------------------------------------------
-    # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
+    #  ------------------------------------------------------------------------
+    #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      3
     #    TIME ESTIMATE:   15 minutes.
     # -------------------------------------------------------------------------
@@ -219,14 +217,12 @@ def problem1b(m, f):
     # -------------------------------------------------------------------------
     # TODO: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
-    #
-    ###########################################################################
-    # IMPORTANT:
+    #  ########################################################################
+    #  IMPORTANT:
     #    **  For full credit you must appropriately
     #    **  use (call) the   is_prime   function that is DEFINED ABOVE.
-    ###########################################################################
-    # -------------------------------------------------------------------------
-    # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
+    #  ------------------------------------------------------------------------
+    #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
@@ -316,15 +312,13 @@ def problem1c(n):
     # -------------------------------------------------------------------------
     # TODO: 7. Implement and test this function.
     #          Tests have been written for you (above).
-    #
-    ###########################################################################
-    # IMPORTANT:
+    #  ########################################################################
+    #  IMPORTANT:
     #    **  For full credit you must appropriately
     #    **  use (call) the   is_prime   and   sum_of_digits
     #    **  functions that are DEFINED ABOVE.
-    ###########################################################################
-    # -------------------------------------------------------------------------
-    # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
+    #  ------------------------------------------------------------------------
+    #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # -------------------------------------------------------------------------

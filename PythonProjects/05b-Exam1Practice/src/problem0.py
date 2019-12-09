@@ -26,12 +26,12 @@ def main():
 
 ###############################################################################
 # TODO: 2.  READ the green doc-string for the:
-#   - is_prime
-#   - sum_of_digits
-# functions defined below.  You do NOT need to understand their
-# implementations, just their specification (per the doc-string).
-# You should  ** CALL **  those functions as needed in implementing the
-# other functions.  After you have READ this, change its _TODO_ to DONE.
+#     - is_prime
+#     - sum_of_digits
+#   functions defined below.  You do NOT need to understand their
+#   implementations, just their specification (per the doc-string).
+#   You should  ** CALL **  those functions as needed in implementing the
+#   other functions.  After you have READ this, change its _TODO_ to DONE.
 ###############################################################################
 
 def is_prime(n):
@@ -191,15 +191,12 @@ def problem0a(n):
     # -------------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
-    #
-    ###########################################################################
-    # IMPORTANT:
+    #  ########################################################################
+    #   IMPORTANT:
     #    **  For full credit you must appropriately
     #    **  use (call) the   sum_of_digits   function
     #    **  that is DEFINED ABOVE.
-    ###########################################################################
-    #
-    # HINT:  To test whether a number  m   is even or odd,
+    #   HINT:  To test whether a number  m   is even or odd,
     #        compute m % 2, i.e., the REMAINDER from m // 2.
     #        If that remainder is 0, the number is even.
     #        If that remainder is 1, the number is odd.
@@ -264,12 +261,10 @@ def problem0b(n):
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
-    #
-    ###########################################################################
-    # IMPORTANT:
+    #  ########################################################################
+    #   IMPORTANT:
     #    **  For full credit you must appropriately
     #    **  use (call) the   is_prime   function that is DEFINED ABOVE.
-    ###########################################################################
     # ------------------------------------------------------------------
 
 
@@ -332,11 +327,9 @@ def problem0c(circle, n, window):
     # -------------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #          Tests have been written for you (above).
-    #
-    ###########################################################################
-    # HINT:   render(0.5)
-    #   renders with a half-second pause after rendering.
-    ###########################################################################
+    #  ########################################################################
+    #   HINT:   render(0.5)
+    #     renders with a half-second pause after rendering.
     # -------------------------------------------------------------------------
 
 
