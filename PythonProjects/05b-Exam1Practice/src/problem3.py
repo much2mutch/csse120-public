@@ -39,7 +39,7 @@ def run_test_problem3a():
     """ Tests the   problem3a   function. """
     # -------------------------------------------------------------------------
     # TODO: 2. Implement this TEST function.
-    #   It TESTS the  problem1a  function defined below.
+    #   It TESTS the  problem3a  function defined below.
     #   Include at least **   5   ** tests (we wrote four for you).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
