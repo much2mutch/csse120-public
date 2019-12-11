@@ -330,9 +330,10 @@ def problem1c(n):
 ###############################################################################
 
 def print_expected_result_of_test(arguments, expected,
-                                  test_results, format_string):
+                                  test_results, format_string, suffix=''):
     testing_helper.print_expected_result_of_test(arguments, expected,
-                                                 test_results, format_string)
+                                                 test_results, format_string,
+                                                 suffix)
 
 
 def print_actual_result_of_test(expected, actual, test_results,
