@@ -321,6 +321,7 @@ def broken_7(n, point, length, distance_between_lines, window):
       -- A positive integer n.
       -- An rg.Point.
       -- A positive integer length.
+      -- A positive integer for the distance between lines.
       -- An rg.RoseWindow.
     What goes out:  Nothing (i.e., None).
     Side effects:
