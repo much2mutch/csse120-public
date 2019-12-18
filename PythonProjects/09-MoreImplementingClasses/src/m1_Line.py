@@ -39,27 +39,27 @@ def main():
     a  TEST   function will not be called until you begin work
     on the code that it is testing.
     """
-    if m1t.is_implemented('__init__'):
+    if m1t.is_implemented("__init__"):
         run_test_init()
-    if m1t.is_implemented('clone'):
+    if m1t.is_implemented("clone"):
         run_test_clone()
-    if m1t.is_implemented('reverse'):
+    if m1t.is_implemented("reverse"):
         run_test_reverse()
-    if m1t.is_implemented('slope'):
+    if m1t.is_implemented("slope"):
         run_test_slope()
-    if m1t.is_implemented('length'):
+    if m1t.is_implemented("length"):
         run_test_length()
-    if m1t.is_implemented('get_number_of_clones'):
+    if m1t.is_implemented("get_number_of_clones"):
         run_test_get_number_of_clones()
-    if m1t.is_implemented('line_plus'):
+    if m1t.is_implemented("line_plus"):
         run_test_line_plus()
-    if m1t.is_implemented('line_minus'):
+    if m1t.is_implemented("line_minus"):
         run_test_line_minus()
-    if m1t.is_implemented('midpoint'):
+    if m1t.is_implemented("midpoint"):
         run_test_midpoint()
-    if m1t.is_implemented('is_parallel'):
+    if m1t.is_implemented("is_parallel"):
         run_test_is_parallel()
-    if m1t.is_implemented('reset'):
+    if m1t.is_implemented("reset"):
         run_test_reset()
 
 
@@ -105,14 +105,14 @@ class Point(object):
         for coordinate in (self.x, self.y):
             if abs(coordinate - round(coordinate)) < (10 ** -decimal_places):
                 # Treat it as an integer:
-                formats.append('{}')
+                formats.append("{}")
                 numbers.append(round(coordinate))
             else:
                 # Treat it as a float to decimal_places decimal places:
-                formats.append('{:.' + str(decimal_places) + 'f}')
+                formats.append("{:." + str(decimal_places) + "f}")
                 numbers.append(round(coordinate, decimal_places))
 
-        format_string = 'Point(' + formats[0] + ', ' + formats[1] + ')'
+        format_string = "Point(" + formats[0] + ", " + formats[1] + ")"
         return format_string.format(numbers[0], numbers[1])
 
     def __eq__(self, p2):
@@ -252,9 +252,9 @@ class Line(object):
         # We have already implemented this  __repr__  function for you.
         # Do NOT modify it.
         # ---------------------------------------------------------------------
-        start = repr(self.start).replace('Point', '')
-        end = repr(self.end).replace('Point', '')
-        return 'Line[{}, {}]'.format(start, end)
+        start = repr(self.start).replace("Point", "")
+        end = repr(self.end).replace("Point", "")
+        return "Line[{}, {}]".format(start, end)
 
     def __eq__(self, line2):
         """
@@ -386,8 +386,8 @@ class Line(object):
             line2 = Line(Point(10, 10), Point(10, 5))
             print(line2.slope())    # Should print:  inf
 
-            # math.inf is NOT the STRING 'inf', so:
-            print(line2.slope() == 'inf')   # Should print False
+            # math.inf is NOT the STRING "inf", so:
+            print(line2.slope() == "inf")   # Should print False
 
         Type hints:
           :rtype: float
@@ -693,11 +693,11 @@ def run_test_init():
     print(line.start == p1)  # Should print True
     print(line.start is p1)  # Should print False
 
-    print('The above should print:')
-    print('  Point(30, 17)')
-    print('  Point(50, 80)')
-    print('  True')
-    print('  False')
+    print("The above should print:")
+    print("  Point(30, 17)")
+    print("  Point(50, 80)")
+    print("  True")
+    print("  False")
 
 
 def run_test_clone():
@@ -723,16 +723,16 @@ def run_test_clone():
     print(line2)  # Should print: Line[(30, 17), (50, 80)]
     print(line1 == line2)  # Should now print: False
 
-    print('The above should print:')
-    print('  Line[(30, 17), (50, 80)]')
-    print('  Line[(30, 17), (50, 80)]')
-    print('  True')
-    print('  False')
-    print('  False')
-    print('  False')
-    print('  Line[(11, 12), (50, 80)]')
-    print('  Line[(30, 17), (50, 80)')
-    print('  False')
+    print("The above should print:")
+    print("  Line[(30, 17), (50, 80)]")
+    print("  Line[(30, 17), (50, 80)]")
+    print("  True")
+    print("  False")
+    print("  False")
+    print("  False")
+    print("  Line[(11, 12), (50, 80)]")
+    print("  Line[(30, 17), (50, 80)")
+    print("  False")
 
 
 def run_test_reverse():
@@ -755,11 +755,11 @@ def run_test_reverse():
     line1.reverse()
     print(line1 == line2)  # Should now print: True
 
-    print('The above should print:')
-    print('  Line[(30, 17), (50, 80)]')
-    print('  Line[(50, 80), (30, 17)')
-    print('  False')
-    print('  True')
+    print("The above should print:")
+    print("  Line[(30, 17), (50, 80)]")
+    print("  Line[(50, 80), (30, 17)")
+    print("  False")
+    print("  True")
 
 
 def run_test_slope():
@@ -778,13 +778,13 @@ def run_test_slope():
     line2 = Line(Point(10, 10), Point(10, 5))
     print(line2.slope())  # Should print:  inf
 
-    # math.inf is NOT the STRING 'inf', so:
-    print(line2.slope() == 'inf')  # Should print False
+    # math.inf is NOT the STRING "inf", so:
+    print(line2.slope() == "inf")  # Should print False
 
-    print('The above should print:')
-    print('  0.25 (approximately)')
-    print('  inf')
-    print('  False')
+    print("The above should print:")
+    print("  0.25 (approximately)")
+    print("  inf")
+    print("  False")
 
 
 def run_test_length():
@@ -805,9 +805,9 @@ def run_test_length():
     line2 = Line(p3, p4)
     print(line2.length())  # Should print about 5.0
 
-    print('The above should print:')
-    print('  66.0')
-    print('  5.0 (approximately)')
+    print("The above should print:")
+    print("  66.0")
+    print("  5.0 (approximately)")
 
 
 def run_test_get_number_of_clones():
@@ -826,7 +826,7 @@ def run_test_get_number_of_clones():
     print(line3.get_number_of_clones())
     print(line4.get_number_of_clones())
     print(line5.get_number_of_clones())
-    print('The above should print 3, then 0, then 1, then 0, then 0.')
+    print("The above should print 3, then 0, then 1, then 0, then 0.")
 
 
 def run_test_line_plus():
@@ -839,7 +839,7 @@ def run_test_line_plus():
     line2 = Line(Point(100, 13), Point(400, 8))
     line3 = line1.line_plus(line2)
     print(line3)
-    print('The above should print:  Line[(600, 33), (500, 16)]')
+    print("The above should print:  Line[(600, 33), (500, 16)]")
 
 
 def run_test_line_minus():
@@ -852,7 +852,7 @@ def run_test_line_minus():
     line2 = Line(Point(100, 13), Point(400, 8))
     line3 = line1.line_minus(line2)
     print(line3)
-    print('The above should print:  Line[(400, 7), (-300, 0)]')
+    print("The above should print:  Line[(400, 7), (-300, 0)]")
 
 
 def run_test_midpoint():
@@ -867,7 +867,7 @@ def run_test_midpoint():
 
     print(line1.midpoint())  # Should print: Point(6, 15)
 
-    print('The above should print:  Point(6, 15)')
+    print("The above should print:  Point(6, 15)")
 
 
 def run_test_is_parallel():
@@ -888,8 +888,8 @@ def run_test_is_parallel():
     print(line1.is_parallel(line1))  # Should print: True
     print(line4.is_parallel(line4))  # Should print: True
 
-    print('The above should print:')
-    print('  True,  True,  False,  False,  True,  True')
+    print("The above should print:")
+    print("  True,  True,  False,  False,  True,  True")
 
 
 def run_test_reset():
@@ -917,17 +917,17 @@ def run_test_reset():
     print(line1)  # Should print: Line[(-3, -4), (3, 4)]
     print(line2)  # Should print: Line[(0, 1), (10, 20)]
 
-    print('The above should print:')
-    print('  Line[(3, 4), (100, 300)]')
-    print('  Line[(0, 1), (99, 4)]')
-    print('  Line[(-3, -4), (3, 4)]')
-    print('  Line[(0, 1), (10, 20)]')
+    print("The above should print:")
+    print("  Line[(3, 4), (100, 300)]")
+    print("  Line[(0, 1), (99, 4)]")
+    print("  Line[(-3, -4), (3, 4)]")
+    print("  Line[(0, 1), (10, 20)]")
 
 
 # -----------------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
-# imported by another module), then call the 'main' function.
+# imported by another module), then call the "main" function.
 # It is necessary here to enable the automatic testing in m1t_test_Line.py.
 # -----------------------------------------------------------------------------
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

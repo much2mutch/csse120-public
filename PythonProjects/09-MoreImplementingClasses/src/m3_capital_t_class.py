@@ -30,8 +30,8 @@ def main():
     # -------------------------------------------------------------------------
     #   Uncomment only 1 test at a time as you develop your code.
     # -------------------------------------------------------------------------
-    print('Un-comment the calls in MAIN one by one')
-    print(' to run the testing code as you complete the TODOs.')
+    print("Un-comment the calls in MAIN one by one")
+    print(" to run the testing code as you complete the TODOs.")
 
     # run_test_simple_t()
     # run_test_set_colors()
@@ -46,10 +46,10 @@ def run_test_simple_t():
     See   03b-simple_t.pdf  for the expected output.
     """
     print()
-    print('--------------------------------------------------')
-    print('Testing    __init__    and    attach_to ')
-    print('--------------------------------------------------')
-    window = rg.RoseWindow(600, 400, 'Test 1 - Simple Ts')
+    print("--------------------------------------------------")
+    print("Testing    __init__    and    attach_to ")
+    print("--------------------------------------------------")
+    window = rg.RoseWindow(600, 400, "Test 1 - Simple Ts")
     t1 = CapitalT(rg.Point(300, 50), 100, 200, 20)
     print("Expected: Point(250.0, 40.0) Point(350.0, 60.0)")
     print("Actual:  ", t1.h_rect.get_upper_left_corner(),
@@ -68,9 +68,9 @@ def run_test_simple_t():
 
     if len(vars(t1).keys()) > 2:
         print()
-        print('ERROR: You appear to have used extra instance variables.')
-        print('See the   IMPORTANT RESTRICTION   in the specification.')
-        print('You must do this problem with ONLY  h_rect  and   v_rect.')
+        print("ERROR: You appear to have used extra instance variables.")
+        print("See the   IMPORTANT RESTRICTION   in the specification.")
+        print("You must do this problem with ONLY  h_rect  and   v_rect.")
 
 
 def run_test_set_colors():
@@ -78,15 +78,15 @@ def run_test_set_colors():
     Tests for the   set_colors   method.
     See the  03c-set_colors.pdf   for the expected output.
     """
-    window = rg.RoseWindow(600, 400, 'Test 2 - Colorful Ts')
+    window = rg.RoseWindow(600, 400, "Test 2 - Colorful Ts")
     t1 = CapitalT(rg.Point(300, 50), 100, 200, 20)
-    t1.set_colors('red', 'magenta')
+    t1.set_colors("red", "magenta")
     t1.attach_to(window)
     t2 = CapitalT(rg.Point(150, 150), 100, 150, 40)
-    t2.set_colors('green', 'purple')
+    t2.set_colors("green", "purple")
     t2.attach_to(window)
     t3 = CapitalT(rg.Point(450, 150), 10, 15, 4)
-    t3.set_colors('blue', 'gray')
+    t3.set_colors("blue", "gray")
     t3.attach_to(window)
     window.render()
     window.close_on_mouse_click()
@@ -97,9 +97,9 @@ def run_test_move_by():
     Tests for the   move_by   method.
     See the   03d-move_by.pdf   for the expected output.
     """
-    window = rg.RoseWindow(600, 400, 'Test 3 - Moving T')
+    window = rg.RoseWindow(600, 400, "Test 3 - Moving T")
     little_red_t = CapitalT(rg.Point(300, 50), 60, 80, 5)
-    little_red_t.set_colors('red', 'gray')
+    little_red_t.set_colors("red", "gray")
     little_red_t.attach_to(window)
     window.render(0.5)
     little_red_t.move_by(0, 100)
@@ -117,13 +117,13 @@ def run_test_clone():
     Tests for the   clone   method.
     See the   03e-clone.pdf   for the expected output.
     """
-    window = rg.RoseWindow(650, 400, 'Test 4 - Cloning Ts')
+    window = rg.RoseWindow(650, 400, "Test 4 - Cloning Ts")
     first_t = CapitalT(rg.Point(75, 50), 80, 80, 40)
-    first_t.set_colors('blue', 'cyan')
+    first_t.set_colors("blue", "cyan")
     for k in range(6):
         t = first_t.clone()
         if k < 2:
-            t.set_colors('white', 'black')
+            t.set_colors("white", "black")
         t.move_by(100 * k, 20 * k)
         t.attach_to(window)
     first_t.move_by(0, 200)
@@ -245,7 +245,7 @@ class CapitalT(object):
         Example:
             window = rg.RoseWindow()
             t1 = CapitalT(rg.Point(300, 50), 100, 200, 20)
-            t1.set_color('red', 'blue')
+            t1.set_color("red", "blue")
 
         Type hints:
           :type fill_color:    str
@@ -313,7 +313,7 @@ class CapitalT(object):
         Example:
             window = rg.RoseWindow()
             t1 = CapitalT(rg.Point(300, 50), 100, 200, 20)
-            t1.set_color('red', 'blue')
+            t1.set_color("red", "blue")
             t2 = t1.clone() # t2 is at the same location WITH THE SAME COLORS
 
         Type hints:

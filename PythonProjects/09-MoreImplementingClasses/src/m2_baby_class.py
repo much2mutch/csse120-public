@@ -29,11 +29,11 @@ def main():
         Baby McKinley is CRYING uncontrollably!  Feed the Baby!
         Baby McKinley is CRYING uncontrollably!  Feed the Baby!
     """
-    mckinley = Baby('McKinley')
-    keegan = Baby('Keegan')
+    mckinley = Baby("McKinley")
+    keegan = Baby("Keegan")
 
     for k in range(2):
-        print('- - - - -')
+        print("- - - - -")
         keegan.hour_passes()
         mckinley.feed_baby()
 
@@ -62,9 +62,9 @@ def main():
 #     What goes out:  Nothing (i.e., None).
 #     Side effects:
 #        -- Sets instance variables as needed [YOU FIGURE OUT WHAT IS NEEDED!]
-#        -- Prints 'Hello baby <your baby's name>!'
+#        -- Prints "Hello baby <your baby's name>!"
 #     Example:
-#         b = Baby('McKinley')   causes the following to be printed:
+#         b = Baby("McKinley")   causes the following to be printed:
 #               Hello baby McKinley!
 #  ___
 #  feed_baby
@@ -72,10 +72,10 @@ def main():
 #        -- self
 #     What goes out:  Nothing (i.e., None).
 #     Side effects:
-#        -- Prints 'Thank you for feeding baby <your baby's name>.'
+#        -- Prints "Thank you for feeding baby <your baby's name>."
 #        -- Modifies instance variables as needed.
 #     Example:
-#         b = Baby('Joshua')
+#         b = Baby("Joshua")
 #         b.feed_baby()         causes the following to be printed:
 #               Hello baby Joshua!
 #               Thank you for feeding baby Joshua.
@@ -87,13 +87,13 @@ def main():
 #     Side effects:
 #      -- If this is the FIRST time this method has been called
 #         since this Baby was created or last fed, then this method prints:
-# 	             'Baby <your baby's name> is sleeping.'
+# 	             "Baby <your baby's name> is sleeping."
 #      -- If this is the SECOND time this method has been called
 #         since baby was created or last fed, then this method prints:
-# 	             'Baby <your baby's name> is awake.  Time for food.'
+# 	             "Baby <your baby's name> is awake.  Time for food."
 #      -- If this is the THIRD (OR MORE) time this method has been called
 #           since baby was created or last fed, then this method prints:
-#         'Baby <your baby's name> is CRYING uncontrollably!  Feed the Baby!'
+#         "Baby <your baby's name> is CRYING uncontrollably!  Feed the Baby!"
 #      -- Modifies instance variables as needed.
 #     Example:
 #       Read the code in main (above).
