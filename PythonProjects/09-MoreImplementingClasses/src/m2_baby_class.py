@@ -43,19 +43,19 @@ def main():
 
 ###############################################################################
 # TODO: 2.
-#
+#  _
 #  Step 2a:  Implement a class called   Baby   that has a constructor method
 #            (__init__) and two other methods, as described below.
-#
+#  _
 #  Step 2b:  Test your finished   Baby   class by running this module.
 #            Your code passes the test if it displays (prints)
 #            EXACTLY the output shown in the doc_string for main.
-#
-# -----------------------------------------------------------------------------
-# Here (below) are the methods that you must implement in your Baby class:
-# -----------------------------------------------------------------------------
-#
-# Constructor method (__init__)
+#  _
+#  ----------------------------------------------------------------------------
+#  Here (below) are the methods that you must implement in your Baby class:
+#  ----------------------------------------------------------------------------
+#  ___
+#  Constructor method (__init__)
 #     What comes in:
 #        -- self
 #        -- a string for the name of the baby
@@ -66,8 +66,8 @@ def main():
 #     Example:
 #         b = Baby('McKinley')   causes the following to be printed:
 #               Hello baby McKinley!
-#
-# feed_baby
+#  ___
+#  feed_baby
 #     What comes in:
 #        -- self
 #     What goes out:  Nothing (i.e., None).
@@ -79,8 +79,8 @@ def main():
 #         b.feed_baby()         causes the following to be printed:
 #               Hello baby Joshua!
 #               Thank you for feeding baby Joshua.
-#
-# hour_passes
+#  ___
+#  hour_passes
 #     What comes in:
 #        -- self
 #     What goes out:  Nothing (i.e., None).
@@ -88,11 +88,9 @@ def main():
 #      -- If this is the FIRST time this method has been called
 #         since this Baby was created or last fed, then this method prints:
 # 	             'Baby <your baby's name> is sleeping.'
-#
 #      -- If this is the SECOND time this method has been called
 #         since baby was created or last fed, then this method prints:
 # 	             'Baby <your baby's name> is awake.  Time for food.'
-#
 #      -- If this is the THIRD (OR MORE) time this method has been called
 #           since baby was created or last fed, then this method prints:
 #         'Baby <your baby's name> is CRYING uncontrollably!  Feed the Baby!'

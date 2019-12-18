@@ -328,10 +328,9 @@ class CapitalT(object):
         #     c. Compare the graphics window to the pictures in
         #           03e-clone.pdf   pictures.
         #        Your window should look exactly like the pictures in the PDF.
-        # ---------------------------------------------------------------------
-        #######################################################################
-        # IMPORTANT RESTRICTION: You are NOT permitted to add any instance
-        # variables beyond  h_rect  and  v_rect, at any point of this exercise.
+        #  ####################################################################
+        #  IMPORTANT RESTRICTION: You are NOT permitted to add any instance
+        #  variables beyond  h_rect  and  v_rect, at any point of this exercise.
         #######################################################################
 
 

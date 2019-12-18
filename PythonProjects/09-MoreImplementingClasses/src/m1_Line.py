@@ -20,19 +20,18 @@ import m1t_test_Line as m1t
 # TODO: 2.  Right-click on the  src  folder and
 #               Mark Directory as ... Sources Root,
 #           if you have not already done so.
-#
+#    _
 #     Then, with your instructor, READ THE INSTRUCTIONS in file
 #         m0_INSTRUCTIONS.txt
 #     asking questions as needed.  Once you understand the instructions,
 #     mark this _TODO_ as DONE.
 # -----------------------------------------------------------------------------
 
+
 ###############################################################################
 # NOTE: For ALL of the methods that you implement, the method is allowed
 # to have additional side effects as needed by it and/or other methods.
 ###############################################################################
-
-
 def main():
     """
     Calls the   TEST   functions in this module, but ONLY if the method
@@ -81,8 +80,6 @@ def main():
 ###############################################################################
 # The   Point   class (and its methods) begins here.
 ###############################################################################
-
-
 class Point(object):
     """ Represents a point in 2-dimensional space. """
 
@@ -608,33 +605,29 @@ class Line(object):
         #   b. Implement and test this method.
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
-        # ---------------------------------------------------------------------
-        #######################################################################
-        #
-        # IMPORTANT: When you test whether two FLOATING POINT numbers
-        #   are "equal", you must deal with the imprecision
-        #   of floating-point arithmetic.  For example, in REAL arithmetic,
-        #         1 / (24 * math.pi - 20 * math.pi)
-        #   and
-        #         3 / (72 * math.pi - 60 * math.pi)
-        #   are equal.  But in FLOATING point arithmetic, they are:
-        #         0.07957747154594767
-        #   and
-        #         0.07957747154594765
-        #   respectively (hence NOT equal).
-        #   Try it out if you don't believe me!
-        #
-        #######################################################################
-        # IMPORTANT BOTTOM-LINE:  When you want to test whether two
-        # FLOATING POINT numbers  a  and  b  are the same, as in this method,
-        #   DON'T use:               a == b
-        #   INSTEAD use:  round(a, 12) == round(b, 12)
-        ########################################################################
-        #
-        # The latter compares the numbers rounded to 12 decimal places.
-        # In the context of this exercise, doing so is adequate to ignore
-        # floating-point errors while distinguishing numbers that really
-        # are different from each other.
+        #   ###################################################################
+        #   IMPORTANT: When you test whether two FLOATING POINT numbers
+        #     are "equal", you must deal with the imprecision
+        #     of floating-point arithmetic.  For example, in REAL arithmetic,
+        #           1 / (24 * math.pi - 20 * math.pi)
+        #     and
+        #           3 / (72 * math.pi - 60 * math.pi)
+        #     are equal.  But in FLOATING point arithmetic, they are:
+        #           0.07957747154594767
+        #     and
+        #           0.07957747154594765
+        #     respectively (hence NOT equal).
+        #     Try it out if you don't believe me!
+        #  _
+        #   IMPORTANT BOTTOM-LINE:  When you want to test whether two
+        #     FLOATING POINT numbers  a  and  b  are the same,
+        #     as in this method, DON'T use:  a == b
+        #     INSTEAD use:                   round(a, 12) == round(b, 12)
+        #  _
+        #   The latter compares the numbers rounded to 12 decimal places.
+        #   In the context of this exercise, doing so is adequate to ignore
+        #   floating-point errors while distinguishing numbers that really
+        #   are different from each other.
         #######################################################################
 
     def reset(self):
@@ -685,8 +678,6 @@ class Line(object):
 #   -- One more test (or set of tests) that came directly from the Example
 #        in the specification.
 ###############################################################################
-
-
 def run_test_init():
     """ Tests the   __init__   method of the Line class. """
     m1t.run_test_init()  # This runs OUR tests.
