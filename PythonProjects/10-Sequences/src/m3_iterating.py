@@ -43,44 +43,44 @@ def run_test_count_negatives():
     #     Follow the same form as in the test case we provided below.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   count_negatives   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   count_negatives   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 1
     actual = count_negatives([8, 13, 7, -5])
     print()
-    print('Test 1 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", actual)
 
     # Test 2:
     expected = 0
     actual = count_negatives([])
     print()
-    print('Test 2 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 2 expected:", expected)
+    print("       actual:  ", actual)
 
     # Test 3:
     expected = 0
     actual = count_negatives([3, 2.5, 3])
     print()
-    print('Test 3 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 3 expected:", expected)
+    print("       actual:  ", actual)
 
     # Test 4:
     expected = 4
     actual = count_negatives([-500, -500, -500, -0.0000001])
     print()
-    print('Test 4 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 4 expected:", expected)
+    print("       actual:  ", actual)
 
     # Test 5:
     expected = 1
     actual = count_negatives((8, 13, 7, -5))
     print()
-    print('Test 5 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 5 expected:", expected)
+    print("       actual:  ", actual)
 
     # -------------------------------------------------------------------------
     # TODO: 2 (continued):  Add your 2 ADDITIONAL tests here:
@@ -118,9 +118,9 @@ def run_test_count_short_ones():
     #  Use the same 4-step process as for previous TEST functions.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   count_short_ones   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   count_short_ones   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = 5
@@ -133,56 +133,56 @@ def run_test_count_short_ones():
            [5, 6]]
     actual = count_short_ones(seq)
     print()
-    print('Test 1 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", actual)
 
     # Test 2:
     expected = 3
-    seq = ['all', 'we', 'need', 'is', 'peace', '', 'short', '123']
+    seq = ["all", "we", "need", "is", "peace", "", "short", "123"]
     actual = count_short_ones(seq)
     print()
-    print('Test 2 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 2 expected:", expected)
+    print("       actual:  ", actual)
 
     # Test 3:
     expected = 6
-    seq = ['abc', 'a', '', 'foo', 'de', 'dd', 'x', 'foo', 'argh', 'a']
+    seq = ["abc", "a", "", "foo", "de", "dd", "x", "foo", "argh", "a"]
     actual = count_short_ones(seq)
     print()
-    print('Test 3 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 3 expected:", expected)
+    print("       actual:  ", actual)
 
     # Test 4:
     expected = 0
     seq = []
     actual = count_short_ones(seq)
     print()
-    print('Test 4 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 4 expected:", expected)
+    print("       actual:  ", actual)
 
     # Test 5:
     expected = 1
     seq = [[]]
     actual = count_short_ones(seq)
     print()
-    print('Test 5 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 5 expected:", expected)
+    print("       actual:  ", actual)
 
     # Test 6:
     expected = 4
     seq = [[], [], [], []]
     actual = count_short_ones(seq)
     print()
-    print('Test 6 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 6 expected:", expected)
+    print("       actual:  ", actual)
 
     # Test 7:
     expected = 0
     seq = [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]]
     actual = count_short_ones(seq)
     print()
-    print('Test 7 expected:', expected)
-    print('       actual:  ', actual)
+    print("Test 7 expected:", expected)
+    print("       actual:  ", actual)
 
     # -------------------------------------------------------------------------
     # TODO: 4 (continued):  Add your 2 ADDITIONAL test(s) here:
@@ -202,9 +202,9 @@ def count_short_ones(seq_of_lists):
       above sequence have length less than 3.
 
       If the argument is:
-          ['all', 'we', 'need', 'is', 'peace', '', 'short', '123'],
+          ["all", "we", "need", "is", "peace", "", "short", "123"],
       then this function returns 3,
-      since  'we'  and  'is'  and  ''  all have length less than 3.
+      since  "we"  and  "is"  and  ""  all have length less than 3.
 
     Type hints:
       :type seq_of_lists: (list | tuple) of (list | tuple | str)
@@ -223,12 +223,12 @@ def run_test_draw_circles():
     # supply more tests if you choose.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   draw_circles   function:')
-    print('See the window that pops up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   draw_circles   function:")
+    print("See the window that pops up.")
+    print("--------------------------------------------------")
 
-    window = rg.RoseWindow(450, 350, 'Points to Circles')
+    window = rg.RoseWindow(450, 350, "Points to Circles")
 
     points1 = [rg.Point(200, 100),
                rg.Point(100, 130),
@@ -241,28 +241,28 @@ def run_test_draw_circles():
     for k in range(40):
         points3.append(rg.Point((10 * k) + 10, 10))
 
-    draw_circles(window, points1, 15, 'red')  # Test 1: 3 red circles
-    message = 'You should see 3 SMALL RED circles.\n'
-    message += 'Click to continue'
+    draw_circles(window, points1, 15, "red")  # Test 1: 3 red circles
+    message = "You should see 3 SMALL RED circles.\n"
+    message += "Click to continue"
     window.continue_on_mouse_click(message)
 
-    draw_circles(window, points2, 40, 'blue')  # Test 2: 2 blue circles
-    message = 'Now you should see 3 small red circles\n'
-    message += '** AND **  2 BIG BLUE ones.  Click to continue.'
+    draw_circles(window, points2, 40, "blue")  # Test 2: 2 blue circles
+    message = "Now you should see 3 small red circles\n"
+    message += "** AND **  2 BIG BLUE ones.  Click to continue."
     window.continue_on_mouse_click(message)
 
-    draw_circles(window, points3, 4, 'purple')  # Test 3: 99 purple dots
-    message = 'Now you should see 3 small red and 2 big blue\n'
-    message += '** AND **  40 TEENY PURPLE circles.  Click to exit.'
+    draw_circles(window, points3, 4, "purple")  # Test 3: 99 purple dots
+    message = "Now you should see 3 small red and 2 big blue\n"
+    message += "** AND **  40 TEENY PURPLE circles.  Click to exit."
     window.continue_on_mouse_click(message, close_it=True)
 
     # Test 4 on another window:
-    window = rg.RoseWindow(250, 150, 'More Points to Circles')
+    window = rg.RoseWindow(250, 150, "More Points to Circles")
 
     points4 = [rg.Point(30, 50),
                rg.Point(80, 75),
                rg.Point(130, 25)]
-    draw_circles(window, points4, 25, 'yellow')
+    draw_circles(window, points4, 25, "yellow")
     window.close_on_mouse_click()
 
 

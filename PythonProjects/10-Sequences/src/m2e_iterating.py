@@ -108,7 +108,7 @@ def fill_from_colors(window, graphics_object, colors):
 
     for k in range(len(colors)):
         graphics_object.fill_color = colors[k]
-        window.render(0.5)
+        window.render(0.25)
 
 
 def print_letters(string):
@@ -128,58 +128,58 @@ def print_letters(string):
 def run_test_sum_abs_of_all():
     """ Tests the   sum_abs_of_all   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_abs_of_all   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_abs_of_all   function:")
+    print("--------------------------------------------------")
 
     total1 = sum_abs_of_all([8, 13, 7, 5])
-    print('Returned, expected:', total1, 33)
+    print("Returned, expected:", total1, 33)
 
     total2 = sum_abs_of_all([10, -30, -20])
-    print('Returned, expected:', total2, 60)
+    print("Returned, expected:", total2, 60)
 
     total3 = sum_abs_of_all([])
-    print('Returned, expected:', total3, 0)
+    print("Returned, expected:", total3, 0)
 
 
 def run_test_sum_abs_of_all_without_range():
     """ Tests the   sum_abs_of_all_without_range   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_abs_of_all_without_range   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_abs_of_all_without_range   function:")
+    print("--------------------------------------------------")
 
     total1 = sum_abs_of_all_without_range([8, 13, 7, 5])
-    print('Returned, expected:', total1, 33)
+    print("Returned, expected:", total1, 33)
 
     total2 = sum_abs_of_all_without_range([10, -30, -20])
-    print('Returned, expected:', total2, 60)
+    print("Returned, expected:", total2, 60)
 
     total3 = sum_abs_of_all_without_range([])
-    print('Returned, expected:', total3, 0)
+    print("Returned, expected:", total3, 0)
 
 
 def run_test_fill_from_colors():
     """ Tests the   fill_from_colors   function. """
-    print('--------------------------------------------------')
-    print('Testing the   fill_from_colors   function:')
-    print('See the two graphics windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   fill_from_colors   function:")
+    print("See the two graphics windows that pop up.")
+    print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
     # Test 1: Flashes red, white, blue -- 5 times.
     # -------------------------------------------------------------------------
-    title = 'Red, white and blue, repeated 5 times!'
-    window = rg.RoseWindow(400, 180, title, canvas_color='dark gray')
+    title = "Red, white and blue, repeated 5 times!"
+    window = rg.RoseWindow(400, 180, title, canvas_color="dark gray")
 
     circle = rg.Circle(rg.Point(150, 100), 40)
     circle.attach_to(window.initial_canvas)
 
     number_of_cycles = 5
-    window.continue_on_mouse_click('Click anywhere in here to start')
+    window.continue_on_mouse_click("Click anywhere in here to start")
 
     for _ in range(number_of_cycles):
-        fill_from_colors(window, circle, ['red', 'white', 'blue'])
+        fill_from_colors(window, circle, ["red", "white", "blue"])
 
     window.close_on_mouse_click()
 
@@ -187,12 +187,12 @@ def run_test_fill_from_colors():
     # Test 2: Flashes through a bunch of colors, looping through the
     # list forwards in a rectangle, then backwards in an ellipse.
     # -------------------------------------------------------------------------
-    colors = ['red', 'white', 'blue', 'chartreuse', 'chocolate',
-              'DodgerBlue', 'LightPink', 'maroon', 'yellow', 'green',
-              'SteelBlue', 'black']
+    colors = ["red", "white", "blue", "chartreuse", "chocolate",
+              "DodgerBlue", "LightPink", "maroon", "yellow", "green",
+              "SteelBlue", "black"]
 
-    title = 'Loop through 12 colors, forwards then backwards!'
-    window = rg.RoseWindow(450, 250, title, canvas_color='yellow')
+    title = "Loop through 12 colors, forwards then backwards!"
+    window = rg.RoseWindow(450, 250, title, canvas_color="yellow")
 
     rect_width = 100
     rect_height = 40
@@ -213,7 +213,7 @@ def run_test_fill_from_colors():
     rectangle.attach_to(window)
     ellipse.attach_to(window)
     window.render()
-    window.continue_on_mouse_click('Click anywhere in here to start')
+    window.continue_on_mouse_click("Click anywhere in here to start")
 
     # This function call iterates through the colors,
     # filling the rectangle with those colors:
@@ -235,17 +235,17 @@ def run_test_fill_from_colors():
 def run_test_print_letters():
     """ Tests the   print_letters   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   print_letters   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   print_letters   function:")
+    print("--------------------------------------------------")
 
     print()
-    print('Test 1: Print the letters in "Eric Clapton"')
-    print_letters('Eric Clapton')
+    print("Test 1: Print the letters in 'Eric Clapton'")
+    print_letters("Eric Clapton")
 
     print()
-    print('Test 2: Print the letters in "Layla"')
-    print_letters('Layla')
+    print("Test 2: Print the letters in 'Layla'")
+    print_letters("Layla")
 
 
 # -----------------------------------------------------------------------------

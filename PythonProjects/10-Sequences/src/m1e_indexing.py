@@ -37,9 +37,9 @@ def main():
     #         and are otherwise just like lists except that lists
     #         are mutable and tuples are immutable (more on this later)
     # -------------------------------------------------------------------------
-    my_list = ['dog', 49, 30.5, 50000000, rg.Point(90, 25)]  # List
-    my_string = 'Yo! Whazup?'  # String
-    my_tuple = ('This', 'is a', 55, 1004, 'tuple')  # Tuple
+    my_list = ["dog", 49, 30.5, 50000000, rg.Point(90, 25)]  # List
+    my_string = "Yo! Whazup?"  # String
+    my_tuple = ("This", "is a", 55, 1004, "tuple")  # Tuple
 
     # -------------------------------------------------------------------------
     # Each of the following three function calls
@@ -61,7 +61,7 @@ def examples_of_indexing(sequence):
     # -------------------------------------------------------------------------
     length = len(sequence)
     print()
-    print('Length is', length)
+    print("Length is", length)
 
     # -------------------------------------------------------------------------
     # Refer to specific items in the sequence
@@ -70,7 +70,7 @@ def examples_of_indexing(sequence):
     # The numbering for indices starts at ZERO (not at one).
     # -------------------------------------------------------------------------
     print()
-    print('At indices 0, 1 and 4:')
+    print("At indices 0, 1 and 4:")
     print(sequence[0])
     print(sequence[1])
     print(sequence[4])
@@ -80,16 +80,16 @@ def examples_of_indexing(sequence):
     # the entire sequence.  Note how the index variable  k  is used.
     # -------------------------------------------------------------------------
     print()
-    print('List them all:')
+    print("List them all:")
     for k in range(len(sequence)):
-        print(sequence[k], end=' ')  # end=' ' for SPACE after print
+        print(sequence[k], end=" ")  # end=" " for SPACE after print
     print()
 
     # -------------------------------------------------------------------------
     # This language allows negative indices.  Most languages do NOT.
     # -------------------------------------------------------------------------
     print()
-    print('Cool stuff:')
+    print("Cool stuff:")
     print(sequence[-1])  # Cool! Look up 'slicing' for even cooler stuff
 
     # -------------------------------------------------------------------------
@@ -98,7 +98,7 @@ def examples_of_indexing(sequence):
     # of a sequence results in a run-time error 'index out of range'.
     # -------------------------------------------------------------------------
     print()
-    print('Last item, then one past the last item (causes an error):')
+    print("Last item, then one past the last item (causes an error):")
     length = len(sequence)
     print(sequence[length - 1])  # Last item in the sequence.
 

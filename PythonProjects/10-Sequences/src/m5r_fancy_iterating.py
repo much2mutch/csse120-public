@@ -60,17 +60,17 @@ def sum_string_lengths(sequence, m, n):
     Side effects:   None.
     Examples:
       Suppose that  sequence  is:
-        ['five', 'OK', 'songs', 'roxanne', 'the police', '', 'three']
+        ["five", "OK", "songs", "roxanne", "the police", "", "three"]
       Then:
         -- sum_string_lengths(sequence, 1, 3)
-             returns the length of 'roxanne'
-             plus the length of 'songs' plus the length of 'OK',
+             returns the length of "roxanne"
+             plus the length of "songs" plus the length of "OK",
              which is 7 + 5 + 2, which is 14.
 
         -- sum_string_lengths(sequence, 2, 6)
-             returns the length of 'three'
-             plus the length of '' plus the length of 'the police'
-             plus the length of 'roxanne' plus the length of 'songs,
+             returns the length of "three"
+             plus the length of "" plus the length of "the police"
+             plus the length of "roxanne" plus the length of "songs,
              which is 5 + 0 + 10 + 7 + 5, which is 27.
     Type hints:
       :type sequence: list or tuple (of strings)
@@ -111,7 +111,7 @@ def sum_even_integers(sequence):
       sum_even_integers([3, 9, 10, 99, 101, 5, 6, 5, 5, 10])
         still returns 10 + 6 + 10, which is 26
 
-      sum_even_integers(['hello', 3, 10, 6, 'bye', 5, 7.33, 5, 10])
+      sum_even_integers(["hello", 3, 10, 6, "bye", 5, 7.33, 5, 10])
         still returns 10 + 6 + 10, which is 26
 
     Type hints:
@@ -192,46 +192,46 @@ def sum_items_at_even_indices(sequence):
 def run_test_sum_string_lengths():
     """ Tests the   sum_string_lengths   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_string_lengths   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_string_lengths   function:")
+    print("--------------------------------------------------")
 
-    seq = ['five', 'OK', 'songs', 'roxanne', 'the police', '', 'three']
+    seq = ["five", "OK", "songs", "roxanne", "the police", "", "three"]
     total1 = sum_string_lengths(seq, 1, 3)
     total2 = sum_string_lengths(seq, 2, 6)
 
-    print('Returned, expected:', total1, 14)
-    print('Returned, expected:', total2, 27)
+    print("Returned, expected:", total1, 14)
+    print("Returned, expected:", total2, 27)
 
 
 def run_test_sum_even_integers():
     """ Tests the   sum_even_integers   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_even_integers   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_even_integers   function:")
+    print("--------------------------------------------------")
 
     total1 = sum_even_integers([3, 10, 6, 5, 5, 10])
-    total2 = sum_even_integers(['hello', 3, 10, 6, 'bye', 5, 7.33, 5, 10])
+    total2 = sum_even_integers(["hello", 3, 10, 6, "bye", 5, 7.33, 5, 10])
     total3 = sum_even_integers([3, 9, 10, 99, 101, 5, 6, 5, 5, 10])
 
-    print('Returned, expected:', total1, 26)
-    print('Returned, expected:', total2, 26)
-    print('Returned, expected:', total3, 26)
+    print("Returned, expected:", total1, 26)
+    print("Returned, expected:", total2, 26)
+    print("Returned, expected:", total3, 26)
 
 
 def run_test_sum_items_at_even_indices():
     """ Tests the   sum_items_at_even_indices   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_items_at_even_indices   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_items_at_even_indices   function:")
+    print("--------------------------------------------------")
 
     total1 = sum_items_at_even_indices([3, 10, 6, 5, 5, 10])
     total2 = sum_items_at_even_indices([5.5, 10, 3, 2, 10, 0, 1])
 
-    print('Returned, expected:', total1, 14)
-    print('Returned, expected:', total2, 19.5)
+    print("Returned, expected:", total1, 14)
+    print("Returned, expected:", total2, 19.5)
 
 
 # -----------------------------------------------------------------------------
