@@ -23,6 +23,7 @@ def main():
     run_test_count_last_n_odds()
     run_test_index_of_first_negative()
     run_test_contains_an_a()
+    run_test_number_of_stutters()
 
 
 ###############################################################################
@@ -237,7 +238,7 @@ def count_last_n_odds(integers, n):
 # Some problems iterate (loop) through PART of the sequence,
 # stopping when the loop FINDS something of interest
 # (or continuing to the end if it does NOT find the thing of interest),
-# as in the following problems:
+# as in the  index_of_first_negative   and   contains_an_a   problems below.
 ###############################################################################
 def run_test_index_of_first_negative():
     """ Tests the   index_of_first_negative   function. """
@@ -413,6 +414,119 @@ def contains_an_a(s):
     #  IMPORTANT:
     #   -- True  and  False  are built-in constants.
     #      Do NOT return the STRING "True" or the STRING "False".
+    # -------------------------------------------------------------------------
+
+
+###############################################################################
+# Some problems iterate (loop) through the sequence accessing TWO
+# (or more) places in the sequence AT THE SAME ITERATION,
+# as in the  number_of_stutters  problem below.
+###############################################################################
+def run_test_number_of_stutters():
+    """ Tests the   number_of_stutters   function. """
+    print()
+    print('--------------------------------------------------')
+    print('Testing the   number_of_stutters   function:')
+    print('--------------------------------------------------')
+
+    format_string = '    number_of_stutters( {} )'
+    test_results = [0, 0]  # Number of tests passed, failed.
+
+    # Test 1:
+    string = "xhhbrrs"
+    expected = 2
+    print_expected_result_of_test([string], expected, test_results,
+                                  format_string)
+    actual = number_of_stutters(string)
+    print_actual_result_of_test(expected, actual, test_results)
+
+    # Test 2:
+    string = "xxxx"
+    expected = 3
+    print_expected_result_of_test([string], expected, test_results,
+                                  format_string)
+    actual = number_of_stutters(string)
+    print_actual_result_of_test(expected, actual, test_results)
+
+    # Test 3:
+    string = "xaxaxa"
+    expected = 0
+    print_expected_result_of_test([string], expected, test_results,
+                                  format_string)
+    actual = number_of_stutters(string)
+    print_actual_result_of_test(expected, actual, test_results)
+
+    # Test 4:
+    string = "xxx yyy xxxx"
+    expected = 7
+    print_expected_result_of_test([string], expected, test_results,
+                                  format_string)
+    actual = number_of_stutters(string)
+    print_actual_result_of_test(expected, actual, test_results)
+
+    # Test 5:
+    string = "xxxyyyxxxx"
+    expected = 7
+    print_expected_result_of_test([string], expected, test_results,
+                                  format_string)
+    actual = number_of_stutters(string)
+    print_actual_result_of_test(expected, actual, test_results)
+
+    # Test 6:
+    string = "4404040412345"
+    expected = 1
+    print_expected_result_of_test([string], expected, test_results,
+                                  format_string)
+    actual = number_of_stutters(string)
+    print_actual_result_of_test(expected, actual, test_results)
+
+    # Test 7:
+    string = "4040404123455"
+    expected = 1
+    print_expected_result_of_test([string], expected, test_results,
+                                  format_string)
+    actual = number_of_stutters(string)
+    print_actual_result_of_test(expected, actual, test_results)
+
+    # Test 8:
+    string = "4040400412345"
+    expected = 1
+    print_expected_result_of_test([string], expected, test_results,
+                                  format_string)
+    actual = number_of_stutters(string)
+    print_actual_result_of_test(expected, actual, test_results)
+
+    # Test 9:
+    string = "404040412345"
+    expected = 0
+    print_expected_result_of_test([string], expected, test_results,
+                                  format_string)
+    actual = number_of_stutters(string)
+    print_actual_result_of_test(expected, actual, test_results)
+
+    print_summary_of_test_results(test_results)
+
+
+def number_of_stutters(s):
+    """
+    What comes in:
+      -- a string s
+    What goes out: Returns the number of times a letter is repeated
+      twice-in-a-row in the given string s.
+    Side effects: None.
+    Examples:
+      -- number_of_stutters('xhhbrrs')  returns 2
+      -- number_of_stutters('xxxx')     returns 3
+      -- number_of_stutters('xaxaxa')   returns 0
+      -- number_of_stutters('xxx yyy xxxx')  returns 7
+      -- number_of_stutters('xxxyyyxxxx')    returns 7
+      -- number_of_stutters('')  returns 0
+    Type hints:
+       :type s: str
+    """
+    # -------------------------------------------------------------------------
+    # TODO: 6. Implement and test this function.
+    #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
 
