@@ -16,6 +16,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #   and you feel that you understand,
 #   for each of LISTS, STRINGS and TUPLES:
 #      -- HOW to BUILD UP them, using the ACCUMULATOR pattern.
+#      -- when the   str   function is needed, and why,
 #   then:
 #      change the above _TODO_ to DONE.
 # -----------------------------------------------------------------------------
@@ -26,21 +27,21 @@ def main():
     Demonstrates building sequences by using the Accumulator pattern.
     """
     print()
-    print('-----------------------------------------------------------')
-    print('Build and then print a LIST:')
-    print('-----------------------------------------------------------')
+    print("-----------------------------------------------------------")
+    print("Build and then print a LIST:")
+    print("-----------------------------------------------------------")
     build_list()
 
     print()
-    print('-----------------------------------------------------------')
-    print('Build and then print a TUPLE:')
-    print('-----------------------------------------------------------')
+    print("-----------------------------------------------------------")
+    print("Build and then print a TUPLE:")
+    print("-----------------------------------------------------------")
     build_tuple()
 
     print()
-    print('-----------------------------------------------------------')
-    print('Build and then print a STRING:')
-    print('-----------------------------------------------------------')
+    print("-----------------------------------------------------------")
+    print("Build and then print a STRING:")
+    print("-----------------------------------------------------------")
     build_string()
 
 
@@ -115,8 +116,8 @@ def build_string():
     # The Accumulator pattern for building up STRINGs
     # is the same as for LISTs except:
     #   -- Initialize the list variable (the "accumulator")
-    #         to the empty STRING '' instead of the empty LIST [].
-    #   -- Concatenate the one (or more) element STRING:   'blah'
+    #         to the empty STRING "" instead of the empty LIST [].
+    #   -- Concatenate the one (or more) element STRING:   "blah"
     #         instead of the one-element LIST:  [blah]
     #
     # The built-in   str   function returns a string version
@@ -124,9 +125,9 @@ def build_string():
     # -------------------------------------------------------------------------
     """ This example builds (and then prints) the STRING
         0 1 4 9 16 25 36 49 64 81 """
-    sequence = ''
+    sequence = ""
     for k in range(10):
-        sequence = sequence + str(k ** 2) + ' '
+        sequence = sequence + str(k ** 2) + " "
 
     print(sequence)
 

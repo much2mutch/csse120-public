@@ -29,15 +29,15 @@ def main():
     # Fifth example: contrasts concatenation with addition.
     # -------------------------------------------------------------------------
     print()
-    print('-----------------------------------------------------------')
-    print('Addition, then various forms of concatenation:')
-    print('-----------------------------------------------------------')
+    print("-----------------------------------------------------------")
+    print("Addition, then various forms of concatenation:")
+    print("-----------------------------------------------------------")
 
     print(5 + 33)
     print([4, 3] + [1, 7, 2, 4])
     print((4, 1, 7) + (444,) + (3, 3))
-    print('hello' + 'Dave' + '55' + '83')
-    print(5 + 33, '5' + '33')
+    print("hello" + "Dave" + "55" + "83")
+    print(5 + 33, "5" + "33")
 
     # -------------------------------------------------------------------------
     # The  str  function and the concatenation form of the  +  operator
@@ -48,9 +48,9 @@ def main():
     z = 40
 
     print()
-    print('-----------------------------------------------------------')
-    print('With and (using string concatenation) without spaces:')
-    print('-----------------------------------------------------------')
+    print("-----------------------------------------------------------")
+    print("With and (using string concatenation) without spaces:")
+    print("-----------------------------------------------------------")
 
     # -------------------------------------------------------------------------
     # Printing multiple items puts spaces between the items.
@@ -66,18 +66,18 @@ def main():
     print(s)
 
     print()
-    print('-----------------------------------------------------------')
-    print('More examples using string concatenation:')
-    print('-----------------------------------------------------------')
+    print("-----------------------------------------------------------")
+    print("More examples using string concatenation:")
+    print("-----------------------------------------------------------")
 
     # -------------------------------------------------------------------------
     # Another example: prints  548x77 = 42196  then prints  (548, 77).
     # -------------------------------------------------------------------------
     a = 548
     b = 77
-    print(str(a) + 'x' + str(b) + ' = ' + str(a * b))
+    print(str(a) + "x" + str(b) + " = " + str(a * b))
 
-    s = '(' + str(a) + ', ' + str(b) + ')'
+    s = "(" + str(a) + ", " + str(b) + ")"
     print(s)
 
     # -------------------------------------------------------------------------
@@ -86,12 +86,12 @@ def main():
     # here is a simple example using the   format   method.
     # -------------------------------------------------------------------------
     print()
-    print('-----------------------------------------------------------')
-    print('Examples using the   format   method:')
-    print('-----------------------------------------------------------')
+    print("-----------------------------------------------------------")
+    print("Examples using the   format   method:")
+    print("-----------------------------------------------------------")
 
-    format_string1 = 'Multiplication: {:3} x {:3} = {:6}'
-    format_string2 = 'Division: {:5.1f} / {:5.1f} = {:6.3f}'
+    format_string1 = "Multiplication: {:3} x {:3} = {:6}"
+    format_string2 = "Division: {:5.1f} / {:5.1f} = {:6.3f}"
     print(format_string1.format(311, 80, 311 * 80))
     print(format_string1.format(50, 222, 50 * 222))
     print(format_string2.format(311, 80, 311 / 80))

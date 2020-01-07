@@ -29,9 +29,9 @@ def main():
 def run_test_sum_radii():
     """ Tests the   sum_radii   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_radii   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_radii   function:")
+    print("--------------------------------------------------")
 
     # Test 1 is ALREADY DONE (here).
     print()
@@ -42,8 +42,8 @@ def run_test_sum_radii():
     expected = 85
     seq = (circle1, circle2, circle3)
     actual = sum_radii(seq)
-    print('Expected:', expected)
-    print('Actual:  ', actual)
+    print("Expected:", expected)
+    print("Actual:  ", actual)
 
     # Test 2 is ALREADY DONE (here).
     print()
@@ -55,8 +55,8 @@ def run_test_sum_radii():
     expected = 170
     seq = (circle1, circle2, circle3, circle4)
     actual = sum_radii(seq)
-    print('Expected:', expected)
-    print('Actual:  ', actual)
+    print("Expected:", expected)
+    print("Actual:  ", actual)
 
 
 def sum_radii(circles):
@@ -97,9 +97,9 @@ def sum_radii(circles):
 def run_test_count_last_n_odds():
     """ Tests the   count_last_n_odds   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   count_last_n_odds   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   count_last_n_odds   function:")
+    print("--------------------------------------------------")
 
     # Six tests - ALREADY DONE (here).
     seq = [1, 5, 88, 44, 33, 77, 10, 12, 9]
@@ -111,9 +111,9 @@ def run_test_count_last_n_odds():
     answer6 = count_last_n_odds(seq, 9)
 
     print()
-    print('Test set #1 of count_last_n_odds:',
+    print("Test set #1 of count_last_n_odds:",
           answer1, answer2, answer3, answer4, answer5, answer6)
-    print('The above should be:              0 1 3 3 4 5')
+    print("The above should be:              0 1 3 3 4 5")
 
     # Six more tests - ALREADY DONE (here).
     seq = [17, 88, -5, -10, 0]
@@ -125,9 +125,9 @@ def run_test_count_last_n_odds():
     answer6 = count_last_n_odds(seq, 5)
 
     print()
-    print('Test set #2 of count_last_n_odds:',
+    print("Test set #2 of count_last_n_odds:",
           answer1, answer2, answer3, answer4, answer5, answer6)
-    print('The above should be:              0 0 0 1 1 2')
+    print("The above should be:              0 0 0 1 1 2")
 
 
 def count_last_n_odds(integers, n):
@@ -166,41 +166,41 @@ def count_last_n_odds(integers, n):
 def run_test_index_of_first_negative():
     """ Tests the   index_of_first_negative   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   index_of_first_negative   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   index_of_first_negative   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     print()
     expected = 3
     actual = index_of_first_negative([90, 0, 20, -5, 30, -10, 15])
-    print('Expected:', expected)
-    print('Actual:  ', actual)
+    print("Expected:", expected)
+    print("Actual:  ", actual)
 
     # Test 2:
     print()
     expected = 0
     actual = index_of_first_negative([-5, 30, -10, 15])
-    print('Expected:', expected)
-    print('Actual:  ', actual)
+    print("Expected:", expected)
+    print("Actual:  ", actual)
 
     # Test 3:
     print()
     expected = 4
     actual = index_of_first_negative([5, 30, 10, 15, -1])
-    print('Expected:', expected)
-    print('Actual:  ', actual)
+    print("Expected:", expected)
+    print("Actual:  ", actual)
 
     # Test 4:
     print()
     expected = -1
     actual = index_of_first_negative([5, 30, 10, 15, 1, 6])
-    print('Expected:', expected)
-    print('Actual:  ', actual)
-    if actual == '-1':
-        print('  Your answer is WRONG.')
-        print('  You returned the STRING \'-1\'')
-        print('  when you should have returned just -1')
+    print("Expected:", expected)
+    print("Actual:  ", actual)
+    if actual == "-1":
+        print("  Your answer is WRONG.")
+        print("  You returned the STRING \"-1\"")
+        print("  when you should have returned just -1")
 
 
 def index_of_first_negative(numbers):
@@ -235,20 +235,20 @@ def index_of_first_negative(numbers):
 def run_test_contains_an_a():
     """ Tests the   contains_an_a   function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   contains_an_a   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   contains_an_a   function:")
+    print("--------------------------------------------------")
 
     # Tests:
-    actual1 = contains_an_a('nope')
-    actual2 = contains_an_a('yes a is here')
-    actual3 = contains_an_a('many aaaaas aaa aaa')
-    actual4 = contains_an_a('not until the very end is a')
-    actual5 = contains_an_a('a @ the beginning')
-    actual6 = contains_an_a('')
-    actual7 = contains_an_a('BLAH BLAH BLAH')
-    actual8 = contains_an_a('BLAH BLAH BLAH \t MORE BLAH')
-    actual9 = contains_an_a('BLAH BLAH BLAH \t MORE BLaH')
+    actual1 = contains_an_a("nope")
+    actual2 = contains_an_a("yes a is here")
+    actual3 = contains_an_a("many aaaaas aaa aaa")
+    actual4 = contains_an_a("not until the very end is a")
+    actual5 = contains_an_a("a @ the beginning")
+    actual6 = contains_an_a("")
+    actual7 = contains_an_a("BLAH BLAH BLAH")
+    actual8 = contains_an_a("BLAH BLAH BLAH \t MORE BLAH")
+    actual9 = contains_an_a("BLAH BLAH BLAH \t MORE BLaH")
 
     actuals = (actual1, actual2, actual3, actual4, actual5, actual6,
                actual7, actual8, actual9)
@@ -257,14 +257,14 @@ def run_test_contains_an_a():
 
     for k in range(len(actuals)):
         print()
-        print('Expected:', expecteds[k])
-        print('Actual:  ', actuals[k])
+        print("Expected:", expecteds[k])
+        print("Actual:  ", actuals[k])
         if type(actuals[k]) is str and str(expecteds[k]) == actuals[k]:
-            print('Your code FAILED this test for   contains_an_a.')
-            print('  You appear to have returned the STRING:')
-            print('      "' + actuals[k] + '"')
-            print('  instead of the built-in constant:')
-            print('       ' + str(expecteds[k]))
+            print("Your code FAILED this test for   contains_an_a.")
+            print("  You appear to have returned the STRING:")
+            print("      \"" + actuals[k] + "\"")
+            print("  instead of the built-in constant:")
+            print("       " + str(expecteds[k]))
 
 
 def contains_an_a(s):
@@ -272,14 +272,14 @@ def contains_an_a(s):
     What comes in:
       -- a string
     What goes out: Returns  True  if the given string contains
-      the character 'a'.  Returns  False  if the given string
-      does not contain the character 'a'.
+      the character "a".  Returns  False  if the given string
+      does not contain the character "a".
     Side effects: None.
     Examples:
-      -- contains_an_a('blah blah blah')  returns True
-      -- contains_an_a('BLAH BLAH BLAH')  returns False
-      -- contains_an_a('abc')             returns True
-      -- contains_an_a('')                returns False
+      -- contains_an_a("blah blah blah")  returns True
+      -- contains_an_a("BLAH BLAH BLAH")  returns False
+      -- contains_an_a("abc")             returns True
+      -- contains_an_a("")                returns False
     Type hints:
       :type s: str
       :rtype: bool
@@ -294,7 +294,7 @@ def contains_an_a(s):
     ###########################################################################
     # IMPORTANT:
     #   -- True  and  False  are built-in constants.
-    #      Do NOT return the STRINGs 'True' and 'False'.
+    #      Do NOT return the STRING "True" or the STRING "False".
     ###########################################################################
 
 

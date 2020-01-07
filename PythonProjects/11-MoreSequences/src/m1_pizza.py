@@ -50,9 +50,9 @@ def run_test_generate_points_on_circle():
     #   Your professor may do this exercise with you as "live coding".
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   generate_points_on_circle   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   generate_points_on_circle   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     expected = [rg.Point(125.0, 50.0),  # All numbers are approximate.
@@ -64,8 +64,8 @@ def run_test_generate_points_on_circle():
     circle = rg.Circle(rg.Point(100, 50), 25)
     answer = generate_points_on_circle(circle, 6)
 
-    print('Expected:', expected)
-    print('Actual:  ', answer)
+    print("Expected:", expected)
+    print("Actual:  ", answer)
 
     # -------------------------------------------------------------------------
     # TODO: 2 (continued)
@@ -87,7 +87,7 @@ def generate_points_on_circle(circle_for_points, number_of_points_to_generate):
             starting at the rightmost point on the rg.Circle.
     Side effects:   None.
     Examples:
-      See the   'draw_points_on_circle'   pictures  in the   pizza.pdf
+      See the   "draw_points_on_circle"   pictures  in the   pizza.pdf
       file attached, with the points shown on those pictures.
     Type hints:
       :type circle_for_points:  rg.Circle
@@ -152,28 +152,28 @@ def run_test_draw_points_on_circle():
     #   Your professor may do this exercise with you as "live coding".
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   draw_points_on_circle   function:')
-    print('See the windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   draw_points_on_circle   function:")
+    print("See the windows that pop up.")
+    print("--------------------------------------------------")
 
     # Test 1:
-    title = 'DRAW_POINTS_ON_CIRCLE, test 1:  7 yellow dots.'
+    title = "DRAW_POINTS_ON_CIRCLE, test 1:  7 yellow dots."
     window = rg.RoseWindow(400, 400, title)
     circle = rg.Circle(rg.Point(200, 200), 150)
-    draw_points_on_circle(window, circle, 7, 'yellow')
+    draw_points_on_circle(window, circle, 7, "yellow")
     window.close_on_mouse_click()
 
     # Tests 2 and 3 (on the same window):
-    title = 'Tests 2 and 3:  6 blue on deep pink;  10 green1 on unfilled.'
+    title = "Tests 2 and 3:  6 blue on deep pink;  10 green1 on unfilled."
     window = rg.RoseWindow(440, 400, title)
     circle = rg.Circle(rg.Point(135, 135), 50)
-    circle.fill_color = 'deep pink'
-    draw_points_on_circle(window, circle, 6, 'blue')
+    circle.fill_color = "deep pink"
+    draw_points_on_circle(window, circle, 6, "blue")
     window.continue_on_mouse_click()
 
     circle = rg.Circle(rg.Point(210, 210), 100)
-    draw_points_on_circle(window, circle, 10, 'green1')
+    draw_points_on_circle(window, circle, 10, "green1")
     window.close_on_mouse_click()
 
     # -------------------------------------------------------------------------
@@ -192,7 +192,7 @@ def draw_points_on_circle(window, circle, number_of_points, color):
       -- a string that can be used as a RoseGraphics color
     What goes out: Nothing (i.e., None).
     Side effects:
-      See the 'draw_points_on_circle' pictures in   pizza.pdf   in this
+      See the "draw_points_on_circle" pictures in   pizza.pdf   in this
       project; they may help you better understand the following:
 
       1. Attaches the given rg.Circle to the given rg.RoseWindow.
@@ -209,7 +209,7 @@ def draw_points_on_circle(window, circle, number_of_points, color):
       attached AFTER its corresponding rg.Circle object, hence on TOP
       of its corresponding rg.Circle object.
 
-    Examples:  See the   'draw_points_on_circle'   pictures
+    Examples:  See the   "draw_points_on_circle"   pictures
       in the   pizza.pdf   file in this project.
     Type hints:
       :type window:           rg.RoseWindow
@@ -240,32 +240,32 @@ def run_test_pizza():
     #   and compute the latter BY HAND (not by running your program).
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   pizza   function:')
-    print('See the windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   pizza   function:")
+    print("See the windows that pop up.")
+    print("--------------------------------------------------")
 
     # Test 1:
-    title = 'PIZZA test 1:  5 slices, thin (thickness=3) blue lines.'
+    title = "PIZZA test 1:  5 slices, thin (thickness=3) blue lines."
     window = rg.RoseWindow(400, 400, title)
     circle = rg.Circle(rg.Point(200, 200), 150)
     circle.outline_thickness = 3
-    pizza(window, circle, 5, 'blue', 3)
+    pizza(window, circle, 5, "blue", 3)
     window.close_on_mouse_click()
 
     # Tests 2 and 3 (on the same window):
-    title = ('PIZZA tests 2 and 3:  8 white slices on purple circle;'
-             + ' 20 green slices on blue circle.')
+    title = ("PIZZA tests 2 and 3:  8 white slices on purple circle;"
+             + " 20 green slices on blue circle.")
     window = rg.RoseWindow(520, 400, title)
 
     circle = rg.Circle(rg.Point(125, 125), 50)
-    circle.fill_color = 'purple'
-    pizza(window, circle, 8, 'white', 5)
+    circle.fill_color = "purple"
+    pizza(window, circle, 8, "white", 5)
     window.continue_on_mouse_click()
 
     circle = rg.Circle(rg.Point(350, 200), 125)
-    circle.fill_color = 'blue'
-    pizza(window, circle, 20, 'green1', 3)
+    circle.fill_color = "blue"
+    pizza(window, circle, 20, "green1", 3)
 
     window.close_on_mouse_click()
 
@@ -289,15 +289,15 @@ def pizza(window, circle, number_of_slices, color, thickness):
            for each rg.Line
     What goes out: Nothing (i.e., None).
     Side effects:
-      See the   'pizza'   pictures in the   pizza.pdf   file in this
+      See the   "pizza"   pictures in the   pizza.pdf   file in this
       project; they may help you better understand the following:
 
       1. Draws the given rg.Circle in the given rg.RoseWindow.
       2. Constructs and draws  rg.Line  objects to make the picture look
-           like a 'pizza pie' cut into the given number of 'slices'.
+           like a "pizza pie" cut into the given number of "slices".
          Each rg.Line has the given color and thickness (width).
 
-    Examples:  See the   'pizza'   pictures in the   pizza.pdf   file
+    Examples:  See the   "pizza"   pictures in the   pizza.pdf   file
       in this project.
     Type hints:
       :type window:           rg.RoseWindow
@@ -328,24 +328,24 @@ def run_test_polygon():
     #   and compute the latter BY HAND (not by running your program).
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   polygon   function:')
-    print('See the windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   polygon   function:")
+    print("See the windows that pop up.")
+    print("--------------------------------------------------")
 
     # Tests 1 and 2 (on the same window):
-    title = ('POLYGON tests 1 and 2:  3 segments with thick blue lines;'
-             + ' 6 with medium red lines.')
+    title = ("POLYGON tests 1 and 2:  3 segments with thick blue lines;"
+             + " 6 with medium red lines.")
     window = rg.RoseWindow(550, 400, title)
 
     circle = rg.Circle(rg.Point(100, 100), 80)
     circle.outline_thickness = 3
-    polygon(window, circle, 3, 'blue', 10)
+    polygon(window, circle, 3, "blue", 10)
     window.continue_on_mouse_click()
 
     circle = rg.Circle(rg.Point(350, 200), 150)
     circle.outline_thickness = 3
-    polygon(window, circle, 6, 'red', 5)
+    polygon(window, circle, 6, "red", 5)
 
     window.close_on_mouse_click()
 
@@ -367,7 +367,7 @@ def polygon(window, circle, number_of_segments, color, thickness):
            for each rg.Line
     What goes out: Nothing (i.e., None).
     Side effects:
-      See the   'polygon'   pictures in the   pizza.pdf   file in this
+      See the   "polygon"   pictures in the   pizza.pdf   file in this
       project; they may help you better understand the following:
 
       1. Draws the given rg.Circle in the given rg.RoseWindow.
@@ -376,7 +376,7 @@ def polygon(window, circle, number_of_segments, color, thickness):
            inscribed in the given rg.Circle.
          Each rg.Line has the given color and thickness (width).
 
-    Examples:  See the   'polygon'   pictures in the   pizza.pdf   file
+    Examples:  See the   "polygon"   pictures in the   pizza.pdf   file
       in this project.
     Type hints:
       :type window:             rg.RoseWindow
@@ -407,33 +407,33 @@ def run_test_fancy_polygon():
     #   and compute the latter BY HAND (not by running your program).
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   fancy_polygon   function:')
-    print('See the windows that pop up.')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   fancy_polygon   function:")
+    print("See the windows that pop up.")
+    print("--------------------------------------------------")
 
     # Tests 1 and 2 (on the same window):
-    title = ('FANCY POLYGON tests 1 and 2:  7 blue lines, hops = 2;'
-             + ' 5 red lines, hops = 3.')
+    title = ("FANCY POLYGON tests 1 and 2:  7 blue lines, hops = 2;"
+             + " 5 red lines, hops = 3.")
     window = rg.RoseWindow(520, 400, title)
 
     circle = rg.Circle(rg.Point(100, 100), 80)
-    fancy_polygon(window, circle, 7, 2, 'blue', 3)
+    fancy_polygon(window, circle, 7, 2, "blue", 3)
     window.continue_on_mouse_click()
 
     circle = rg.Circle(rg.Point(330, 200), 150)
-    fancy_polygon(window, circle, 5, 3, 'red', 3)
+    fancy_polygon(window, circle, 5, 3, "red", 3)
 
     window.close_on_mouse_click()
 
     # Test 3 (on another window):
-    title = ('FANCY POLYGON test 3:  20 lime green lines on blue circle,'
-             + ' hops = 7.')
+    title = ("FANCY POLYGON test 3:  20 lime green lines on blue circle,"
+             + " hops = 7.")
     window = rg.RoseWindow(480, 350, title)
 
     circle = rg.Circle(rg.Point(240, 165), 150)
-    circle.fill_color = 'blue'
-    fancy_polygon(window, circle, 20, 7, 'lime green', 5)
+    circle.fill_color = "blue"
+    fancy_polygon(window, circle, 20, 7, "lime green", 5)
     window.close_on_mouse_click()
 
     # -------------------------------------------------------------------------
@@ -464,7 +464,7 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color,
            for each rg.Line
     What goes out: Nothing (i.e., None).
     Side effects:
-      See the   'fancy_polygon'   pictures in the   pizza.pdf   file in
+      See the   "fancy_polygon"   pictures in the   pizza.pdf   file in
       this project; they may help you better understand the following:
 
       1. Draws the given rg.Circle in the given rg.RoseWindow.
@@ -472,11 +472,11 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color,
            look like an inscribed regular polygon with the given number
            of segments, but with each rg.Line going from one point
            on the given rg.Circle to the point on the given rg.Circle
-           that is the given number of 'hops' away (wrapping as needed).
+           that is the given number of "hops" away (wrapping as needed).
          Each rg.Line has the given color and thickness.
          Each rg.Line should be drawn as an arrow,
            by setting the rg.Line's   arrow   instance variable
-           to the string   'last'.
+           to the string   "last".
 
          For example, if  hops_to_next_point   is 1,
             then the picture is a regular polygon.
@@ -493,11 +493,11 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color,
            and  number_of_segments   is 5, then the lines go:
            -- from point 0 to point 3
            -- from point 1 to point 4
-           -- from point 2 to point 0 (note the 'wrap' effect)
+           -- from point 2 to point 0 (note the "wrap" effect)
            -- from point 3 to point 1
            -- from point 4 to point 2
 
-    Examples:  See the   'fancy_polygon'   pictures in the   pizza.pdf
+    Examples:  See the   "fancy_polygon"   pictures in the   pizza.pdf
       file in this project.
     Type hints:
       :type window:          rg.RoseWindow
@@ -515,11 +515,11 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color,
     #    You MUST USE (call) the   generate_points_on_circle
     #    (defined above) to generate the relevant points,
     #    and then draw lines that are based in part on those points.
-    #
-    ###########################################################################
-    # IMPORTANT: One way to do "wrapping" is to use the  %  operator
+    #  ___
+    #  ########################################################################
+    #  IMPORTANT: One way to do "wrapping" is to use the  %  operator
     #       appropriately.  ASK YOUR INSTRUCTOR FOR AN EXAMPLE.
-    ###########################################################################
+    #  ########################################################################
     # -------------------------------------------------------------------------
 
 
