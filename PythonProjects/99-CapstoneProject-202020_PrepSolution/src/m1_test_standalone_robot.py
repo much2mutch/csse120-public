@@ -6,7 +6,7 @@ This module is for testing STAND-ALONE code running on the ROBOT
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAME_HERE.
-Fall term, 2019-2020.
+Winter term, 2019-2020.
 """
 # TODO: 1.  Put your name in the above.
 

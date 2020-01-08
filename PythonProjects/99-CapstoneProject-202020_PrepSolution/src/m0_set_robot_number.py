@@ -1,6 +1,6 @@
 """
 Capstone Team Project.  Sets the ROBOT NUMBER for YOUR team's robot.
-Fall term, 2019-2020.
+Winter term, 2019-2020.
 """
 
 

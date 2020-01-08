@@ -5,7 +5,7 @@ This code defines the DriveSystem class, for making the robot move.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
-Fall term, 2019-2020.
+Winter term, 2019-2020.
 """
 # TODO: Put the name of EACH team member who contributes
 #   to this module in the above.

@@ -25,8 +25,8 @@ to reduce the likelihood of GIT conflicts).  Your professor will explain
 how this fits into your own code when talking about this framework and MQTT.
 
 Authors:  Your professors (for the framework)
-    and PUT_YOUR_NAMES_HERE.
-Fall term, 2019-2020.
+    and Dave Fisher testing.
+Winter term, 2019-2020.
 """
 # TODO: 1.  Put the name of EACH team member in the above.
 
@@ -55,7 +55,7 @@ def main():
     # The root TK object for the GUI:
     # -------------------------------------------------------------------------
     root = tkinter.Tk()
-    root.title("Team XX: XX, XX and XX")
+    root.title("Team 27: Dave Fisher testing")
     # TODO: 2.  Fill in the XX's above appropriately for your team.
 
     # -------------------------------------------------------------------------

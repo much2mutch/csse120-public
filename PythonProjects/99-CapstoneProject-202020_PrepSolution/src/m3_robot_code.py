@@ -16,7 +16,7 @@ Your professor will explain further when talking about MQTT and this code.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAME_HERE.
-Fall term, 2019-2020.
+Winter term, 2019-2020.
 """
 # TODO: 1. Put your name in the above.
 

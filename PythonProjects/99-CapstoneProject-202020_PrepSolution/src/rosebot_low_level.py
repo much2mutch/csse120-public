@@ -5,7 +5,7 @@ This code contains lower-level code that interacts with the EV3 robot library.
 
 STUDENTS:  *** Do NOT change ANYTHING in this module. ***
 
-Fall term, 2019-2020.
+Winter term, 2019-2020.
 """
 
 import ev3dev.ev3 as ev3

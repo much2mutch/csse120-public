@@ -21,7 +21,7 @@ Your professor will explain further when talking about MQTT and this code.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAME_HERE.
-Fall term, 2019-2020.
+Winter term, 2019-2020.
 """
 # TODO: 1. Put your name in the above.
 
@@ -46,7 +46,7 @@ def get_my_frame(main_frame, mqtt_sender, delegate):
     # Construct your frame:
     # -------------------------------------------------------------------------
     frame = ttk.Frame(main_frame, padding=10, borderwidth=5, relief="ridge")
-    frame_label = ttk.Label(frame, text="PUT_YOUR_NAME_HERE")
+    frame_label = ttk.Label(frame, text="David Fisher")
     frame_label.grid()
     # TODO: 2.  Put your name in the above.
     #    Adjust your frame's characteristics as desired.
