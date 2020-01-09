@@ -200,7 +200,7 @@ class MqttClient(object):
         self.client.message_callback_add(self.subscription_topic_name, self._on_message)
 
         if lego_robot_number is None:
-            print("The lego robot number (in m0_set_robot_number.py) is None.")
+            print("The lego robot number (in set_robot_number.py) is None.")
             print("  WARNING: I will NOT connect to the broker!!!")
             print("  Is this what you want?! (If not, set the robot number.)")
             return

@@ -1,8 +1,9 @@
 """
 Capstone Team Project.  Code to run on the EV3 robot (NOT on a laptop).
 
-This code defines the TouchSensor class, for the robot's touch sensor
-that detects when the arm and claw are in the fully-up position.
+This code defines the ColorSensor class, for the robot's downward-facing
+sensor that repeated shines right, green and blue light and measures the
+intensity of the reflections.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
@@ -11,22 +12,20 @@ Winter term, 2019-2020.
 # TODO: Put the name of EACH team member who contributes
 #   to this module in the above.
 
-import rosebot_low_level
-import time
-
 
 ###############################################################################
-#    TouchSensor
+#    ColorSensor
 ###############################################################################
-class TouchSensor(object):
+class ColorSensor(object):
     """
-    Methods for the TouchSensor on the robot, including:
-      get_reading    is_pressed    wait_until_pressed
+    Methods for the downward-facing ColorSensor on the robot, including:
+      get_reading    get_detected_color_name     wait_until_color
     """
+
     def __init__(self, port):
         """
-        Constructs the underlying low-level version of this sensor.
-          :type port: int  (Must be 1, 2, 3 or 4)
+        Constructs the underlying low-level ColorSensor.
+          :type port: int
         """
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
@@ -34,26 +33,41 @@ class TouchSensor(object):
 
     def get_reading(self):
         """
-        Returns a reading from the underlying low-level version of this sensor.
-          :rtype: int
+        Returns the color detected by the sensor, as best the sensor can judge
+        from shining red, then green, then blue light and measuring the
+        intensities returned.  The returned value is an integer between
+        0 and 7, where the meanings of the integers are:
+          - 0: No color
+                  (that is, cannot classify the color as one of the following)
+          - 1: Black
+          - 2: Blue
+          - 3: Green
+          - 4: Yellow
+          - 5: Red
+          - 6: White
+          - 7: Brown
+        :rtype: int
         """
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
 
-    def is_pressed(self):
+    def get_detected_color_name(self):
         """
-        Returns True if this TouchSensor is pressed, else returns False.
-          :rtype: bool
+        Returns the detected color, as a string ('Black', 'Red', etc.)
+        :rtype:  str
         """
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
 
-    def wait_until_pressed(self):
+    def wait_for_color(self, color):
         """
         Sits in a loop, sleeping 0.05 seconds each time through the loop,
-        waiting for the touch sensor to be pressed.
+        waiting for the given color (as an string) to be detected.
+        The string can be in any case (lower, upper or mixed), e.g. BLaCk.
+        Bonus: Allow the color to be an integer (representing a color) as well.
+          :type color: str | int
         """
         # ---------------------------------------------------------------------
         # TODO: Implement this method.

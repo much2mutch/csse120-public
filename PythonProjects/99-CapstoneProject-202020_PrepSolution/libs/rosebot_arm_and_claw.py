@@ -10,9 +10,6 @@ Winter term, 2019-2020.
 # TODO: Put the name of EACH team member who contributes
 #   to this module in the above.
 
-import rosebot_low_level
-import time
-
 
 ###############################################################################
 #    ArmAndClaw

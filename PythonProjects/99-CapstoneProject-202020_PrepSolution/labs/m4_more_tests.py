@@ -10,9 +10,6 @@ Winter term, 2019-2020.
 """
 # TODO: 1.  Put your name in the above.
 
-import rosebot
-import time
-
 
 def main():
     """ Calls the desired TEST functions. """
