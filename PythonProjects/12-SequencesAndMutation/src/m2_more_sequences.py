@@ -19,7 +19,7 @@ def main():
     """ Calls the   TEST   functions in this module. """
     run_test_shortest_string()
     run_test_index_of_largest_number()
-    run_test_number_of_stutters()
+    run_test_has_stutters()
     run_test_is_palindrome()
     run_test_count_same()
 
@@ -190,48 +190,48 @@ def index_of_largest_number(numbers, n):
 # Some problems iterate (loop) through the sequence accessing TWO
 # (or more) places in the sequence AT THE SAME ITERATION, like these:
 # -----------------------------------------------------------------------------
-def run_test_number_of_stutters():
-    """ Tests the   number_of_stutters   function. """
+def run_test_has_stutters():
+    """ Tests the   has_stutters   function. """
     print()
     print('--------------------------------------------------')
-    print('Testing the   number_of_stutters   function:')
+    print('Testing the   has_stutters   function:')
     print('--------------------------------------------------')
 
-    expected = 2
-    answer = number_of_stutters('xhhbrrs')
+    expected = True
+    answer = has_stutters('xhhbrrs')
     print('Expected and actual are:', expected, answer)
 
-    expected = 3
-    answer = number_of_stutters('xxxx')
+    expected = True
+    answer = has_stutters('xxxx')
     print('Expected and actual are:', expected, answer)
 
-    expected = 0
-    answer = number_of_stutters('xaxaxa')
+    expected = False
+    answer = has_stutters('xaxaxa')
     print('Expected and actual are:', expected, answer)
 
-    expected = 7
-    answer = number_of_stutters('xxx yyy xxxx')
+    expected = True
+    answer = has_stutters('xxx yyy xxxx')
     print('Expected and actual are:', expected, answer)
 
-    expected = 7
-    answer = number_of_stutters('xxxyyyxxxx')
+    expected = True
+    answer = has_stutters('xxxyyyxxxx')
     print('Expected and actual are:', expected, answer)
 
 
-def number_of_stutters(s):
+def has_stutters(s):
     """
     What comes in:
       -- a string s
-    What goes out: Returns the number of times a letter is repeated
-      twice-in-a-row in the given string s.
+    What goes out: Returns True if a letter is repeated
+      twice-in-a-row in the given string s, else returns False.
     Side effects: None.
     Examples:
-      -- number_of_stutters('xhhbrrs')  returns 2
-      -- number_of_stutters('xxxx')     returns 3
-      -- number_of_stutters('xaxaxa')   returns 0
-      -- number_of_stutters('xxx yyy xxxx')  returns 7
-      -- number_of_stutters('xxxyyyxxxx')    returns 7
-      -- number_of_stutters('')  returns 0
+      -- has_stutters('xhhbrrs')  returns True
+      -- has_stutters('xxxx')     returns True
+      -- has_stutters('xaxaxa')   returns False
+      -- has_stutters('xxx yyy xxxx')  returns True
+      -- has_stutters('xxxyyyxxxx')    returns True
+      -- has_stutters('')  returns False
     Type hints:
        :type s: str
     """
