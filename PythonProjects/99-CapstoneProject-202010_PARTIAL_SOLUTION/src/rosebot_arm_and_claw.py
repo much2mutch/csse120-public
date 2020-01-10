@@ -10,7 +10,7 @@ Fall term, 2019-2020.
 # TODO: Put the name of EACH team member who contributes
 #   to this module in the above.
 
-import rosebot_low_level
+import rosebot_ev3dev_api
 import time
 
 
@@ -39,7 +39,7 @@ class ArmAndClaw(object):
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
         self.touch_sensor = touch_sensor
-        self.motor = rosebot_low_level.Motor(port, motor_type='medium')
+        self.motor = rosebot_ev3dev_api.Motor(port, motor_type='medium')
         self.is_calibrated = False
 
     def raise_arm(self):

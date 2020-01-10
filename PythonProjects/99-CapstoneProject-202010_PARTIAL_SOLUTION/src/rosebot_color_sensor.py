@@ -12,7 +12,7 @@ Fall term, 2019-2020.
 # TODO: Put the name of EACH team member who contributes
 #   to this module in the above.
 
-import rosebot_low_level
+import rosebot_ev3dev_api
 import time
 
 
@@ -33,7 +33,7 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.low_level_color_sensor = rosebot_low_level.ColorSensor(port)
+        self.low_level_color_sensor = rosebot_ev3dev_api.ColorSensor(port)
         self.color_names = self.low_level_color_sensor.color_names
 
     def get_reading(self):

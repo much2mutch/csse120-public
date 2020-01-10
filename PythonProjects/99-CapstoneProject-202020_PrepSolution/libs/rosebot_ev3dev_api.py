@@ -2,6 +2,18 @@
 Capstone Team Project.  Code to run on the EV3 robot (NOT on a laptop).
 
 This code contains lower-level code that interacts with the EV3 robot library.
+The goal is a provide a wrapper layer between your code and the ev3dev api.
+
+The ev3dev2 api is a good one, but it is a bit different from code you've seen
+before, so we added these wrapper classes to try to make your life easier.
+
+Just so you are aware the ev3dev2 api can be found here:
+https://python-ev3dev.readthedocs.io/en/stable/
+
+but the goal of this module is to wrap all the functionality that we'd like for
+you to use.  Some things we've hidden on purpose, other things we've made
+easy to use. :)  Look at the doc strings of the Classes and methods below to
+learn what API call you are allowed to use.
 
 STUDENTS:  *** Do NOT change ANYTHING in this module. ***
 
@@ -10,6 +22,29 @@ Winter term, 2019-2020.
 
 import ev3dev.ev3 as ev3
 
+# Coming soon with ev3dev2...
+# From: https://python-ev3dev.readthedocs.io/en/ev3dev-stretch/index.html
+# import ev3dev2
+
+# ts = ev3dev2.sensor.lego.TouchSensor()
+# leds = ev3dev2.led.Leds()
+
+# while True:
+#     if ts.is_pressed:
+#         leds.set_color("LEFT", "GREEN")
+#         leds.set_color("RIGHT", "GREEN")
+#     else:
+#         leds.set_color("LEFT", "RED")
+#         leds.set_color("RIGHT", "RED")
+
+
+# m = ev3dev2.motor.LargeMotor(ev3dev2.motor.OUTPUT_A)
+# m.on_for_rotations(ev3dev2.motor.SpeedPercent(75), 5)
+
+# ev3dev2.sensor.INPUT_1
+# ev3dev2.sensor.lego.TouchSensor
+
+# pixy = ev3dev2.sensor.Sensor(ev3dev2.sensor.INPUT_2, driver_name="pixy-lego")
 
 ###############################################################################
 # STUDENTS:  *** Do NOT change ANYTHING in this module. ***

@@ -10,7 +10,7 @@ Fall term, 2019-2020.
 # TODO: Put the name of EACH team member who contributes
 #   to this module in the above.
 
-import rosebot_low_level
+import rosebot_ev3dev_api
 import time
 import math
 
@@ -54,8 +54,8 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.left_motor = rosebot_low_level.Motor(left_motor_port)
-        self.right_motor = rosebot_low_level.Motor(right_motor_port)
+        self.left_motor = rosebot_ev3dev_api.Motor(left_motor_port)
+        self.right_motor = rosebot_ev3dev_api.Motor(right_motor_port)
 
         self.wheel_circumference = 1.3 * math.pi
 

@@ -11,6 +11,10 @@ Winter term, 2019-2020.
 #   to this module in the above.
 
 
+import rosebot_ev3dev_api as robo
+import time
+
+
 ###############################################################################
 #    DriveSystem
 ###############################################################################
@@ -50,6 +54,8 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        self.left_motor = robo.Motor("B")
+        self.right_motor = robo.Motor("C")
 
     def go(self, left_wheel_speed, right_wheel_speed):
         """
@@ -61,14 +67,18 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        self.left_motor.turn_on(left_wheel_speed)
+        self.right_motor.turn_on(right_wheel_speed)
 
     def stop(self):
         """ Stops the left and right wheel motors. """
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        self.left_motor.turn_off()
+        self.right_motor.turn_off()
 
-    def go_straight_for_seconds(self, seconds, speed):
+    def go_straight_for_seconds(self, seconds, speed=50):
         """
         Makes the robot go straight (forward if speed > 0, else backward)
         for the given number of seconds at the given speed.
@@ -78,8 +88,11 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        self.go(speed, speed)
+        time.sleep(seconds)
+        self.stop()
 
-    def go_straight_for_inches(self, inches, speed):
+    def go_straight_for_inches(self, inches, speed=50):
         """
         Makes the robot go straight (forward if speed > 0, else backward)
         for the given number of inches at the given speed, using the
@@ -90,8 +103,16 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        self.go(speed, speed)
+        target_degrees = self.left_motor.get_position() + inches * 80  # Roughly 1" = 90 degrees
+        while True:
+            time.sleep(0.1)
+            # print("Target {}, current {}".format(target_degrees, self.left_motor.get_position()))
+            if self.left_motor.get_position() >= target_degrees:
+                break
+        self.stop()
 
-    def spin_in_place_for_seconds(self, seconds, speed):
+    def spin_in_place_for_seconds(self, seconds, speed=50):
         """
         Makes the robot spin in place for the given number of seconds
         at the given speed.
@@ -101,8 +122,11 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        self.go(speed, -speed)
+        time.sleep(seconds)
+        self.stop()
 
-    def spin_in_place_for_degrees(self, degrees, speed):
+    def spin_in_place_for_degrees(self, degrees, speed=50):
         """
         Makes the robot spin in place the given number of degrees
         at the given speed.
@@ -112,17 +136,33 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        self.go(speed, -speed)
+        target_degrees = self.left_motor.get_position() + degrees * 5  # Ballpark
+        # TODO: Check for non-matching signs in the degrees and speed combos
+        #  (i.e. go backwards, but wait for a forward value of degrees will go forever)
+        while True:
+            time.sleep(0.1)
+            # print("Target {}, current {}".format(target_degrees, self.left_motor.get_position()))
+            if self.left_motor.get_position() >= target_degrees:
+                break
+        self.stop()
 
     def turn_for_seconds(self, seconds, speed):
         """
         Makes the robot turn for the given number of seconds
-        at the given speed.
+        at the given speed.  The
           :type seconds: float
           :type speed:   int
         """
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        if speed > 0:
+            self.go(speed, 0)
+        else:
+            self.go(0, speed)
+        time.sleep(seconds)
+        self.stop()
 
     def turn_for_degrees(self, degrees, speed):
         """
@@ -134,3 +174,15 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        target_degrees = self.left_motor.get_position() + degrees * 10  # TOTALLY UNTESTED!!!
+        if speed > 0:
+            self.go(speed, 0)
+        else:
+            self.go(0, speed)
+            target_degrees = -target_degrees
+        while True:
+            time.sleep(0.1)
+            # print("Target {}, current {}".format(target_degrees, self.left_motor.get_position()))
+            if self.left_motor.get_position() >= target_degrees:
+                break
+        self.stop()
