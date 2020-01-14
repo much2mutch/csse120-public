@@ -168,6 +168,9 @@ class ColorSensor(object):
         # Not yet implemented
 
 
+###############################################################################
+#    IR Distance Sensor
+###############################################################################
 class InfraredProximitySensor(object):
     """
     The infrared sensor when it is in the mode in which it emits infrared light
@@ -204,6 +207,9 @@ class InfraredProximitySensor(object):
         return distance
 
 
+###############################################################################
+#    IR Beacon Sensor
+###############################################################################
 class InfraredBeaconSensor(object):
     """
     The infrared sensor when it is in the mode in which it measures the
@@ -358,6 +364,7 @@ class Blob(object):
                 or self.is_against_top_edge()
                 or self.is_against_bottom_edge())
 
+
 ###############################################################################
 #    Beeper
 ###############################################################################
@@ -479,57 +486,55 @@ class SongMaker(object):
 ###############################################################################
 #    LEDs
 ###############################################################################
-class LED(object):
+class Led(object):
     """
-    Each LED has a RED and a GREEN component.
+    Each Led has a RED and a GREEN component.
     """
-
     def __init__(self, left_or_right):  # Must be "left" or "right"
-        self.which_led = left_or_right
-
-        if self.which_led == "left":
-            self.which_led_code = ev3.Leds.LEFT
-        elif self.which_led == "right":
-            self.which_led_code = ev3.Leds.RIGHT
-
-        # Some common colors for an LED.  The two-tuple specifies the
-        # brightness of the RED and GREEN components of the LED, respectively.
-        self.BLACK = (0, 0)
-        self.RED = (1, 0)
-        self.GREEN = (0, 1)
-        self.AMBER = (1, 1)
-        self.ORANGE = (1, 0.5)
-        self.YELLOW = (0.1, 1)
+        if left_or_right == "left":
+            self.led_location = ev3.Leds.LEFT
+        elif left_or_right == "right":
+            self.led_location = ev3.Leds.RIGHT
+        else:
+            print("INVALID Led LOCATION!")
 
     def turn_on(self):
         """
-        Sets this LED to 100% of its RED and GREEN, which results in AMBER.
+        Sets this Led to 100% of its RED and GREEN, which results in AMBER.
         """
-        self.set_color_by_name(self.AMBER)
+        self.set_color_by_name("amber")
 
     def turn_off(self):
-        """ Turns this LED off. """
-        self.set_color_by_name(self.BLACK)
+        """ Turns this Led off. """
+        self.set_color_by_name("off")
 
     def set_color_by_name(self, color_name):
         """
-        Sets this LED to the given color (as a name or tuple).  For example:
-          left_led = LED("left")
-          left_led.set_color_by_name(self.GREEN)
-          left_led.set_color_by_name((0.5, 0.33))
+        Sets this Led to the given color (as a name or tuple).  For example:
+          left_led = Led("left")
+          left_led.set_color_by_name("green")
         """
-        ev3.Leds.set_color(self.which_led_code, color_name)
+        if color_name == "red":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.RED)
+        elif color_name == "green":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.GREEN)
+        elif color_name == "amber":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.AMBER)
+        elif color_name == "off":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.BLACK)
+        else:
+            print("INVALID LED COLOR STRING")
 
     def set_color_by_fractions(self, fraction_red, fraction_green):
         """
-        Sets the brightness of this LED to the specified amount of
+        Sets the brightness of this Led to the specified amount of
         RED and GREEN, respectively, where each argument is a number
         between 0 (none) and 1 (full brightness).
         Example:
-          left_led = LED()
+          left_led = Led()
           left_led.set_color(0.5, 0.33)
         """
-        self.set_color_by_name((fraction_red, fraction_green))
+        self.set_color(self.led_location, (fraction_red, fraction_green))
 
 
 class RemoteControlButtons(object):

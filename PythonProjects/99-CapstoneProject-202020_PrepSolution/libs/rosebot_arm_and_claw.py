@@ -20,10 +20,6 @@ import time
 class ArmAndClaw(object):
     """ Controls the robot's arm and claw (which operate together). """
 
-    # Use this constant with the syntax ArmAndClaw.SPEED
-    SPEED = 100
-    # Whenever using the arm motor always use a 100% duty cycle for the speed.
-
     # -------------------------------------------------------------------------
     # NOTE:
     #   A POSITIVE speed for the ArmAndClaw's motor moves the arm UP.
@@ -39,6 +35,8 @@ class ArmAndClaw(object):
           :type  port:  str   (must be 'A', 'B', 'C' or 'D')
           :type  touch_sensor:  rosebot_touch_sensor.TouchSensor
         """
+        # Whenever using the arm motor always use a 100% duty cycle for the speed.
+        self.SPEED = 100
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
@@ -60,7 +58,7 @@ class ArmAndClaw(object):
         # ---------------------------------------------------------------------
         self.raise_arm()
         self.arm_motor.reset_position()
-        self.arm_motor.turn_on(-ArmAndClaw.SPEED)
+        self.arm_motor.turn_on(-self.SPEED)
         while True:
             time.sleep(0.1)
             if self.arm_motor.get_position() <= -14 * 360.0:
@@ -74,7 +72,7 @@ class ArmAndClaw(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.arm_motor.turn_on(ArmAndClaw.SPEED)
+        self.arm_motor.turn_on(self.SPEED)
         while True:
             if self.touch_sensor.is_pressed():
                 break
@@ -92,13 +90,13 @@ class ArmAndClaw(object):
         if not self.has_been_calibrated:
             self.calibrate_arm()
         if desired_arm_position > self.arm_motor.get_position():
-            self.arm_motor.turn_on(ArmAndClaw.SPEED)
+            self.arm_motor.turn_on(self.SPEED)
             while True:
                 time.sleep(0.1)
                 if self.arm_motor.get_position() >= desired_arm_position:
                     break
         else:
-            self.arm_motor.turn_on(-ArmAndClaw.SPEED)
+            self.arm_motor.turn_on(-self.SPEED)
             while True:
                 time.sleep(0.1)
                 if self.arm_motor.get_position() <= desired_arm_position:

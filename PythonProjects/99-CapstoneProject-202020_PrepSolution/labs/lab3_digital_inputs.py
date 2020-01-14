@@ -11,7 +11,7 @@ Winter term, 2019-2020.
 # TODO: 1.  Put your name in the above.
 
 import rosebot
-
+import time
 
 def main():
     """ Calls the desired TEST functions. """
@@ -43,95 +43,88 @@ def test_digital_io():
     #        RE-commenting out the previous test to reduce the testing.
     # -------------------------------------------------------------------------
 
-    run_test_leds(robot)
-    # run_test_brick_buttons(robot)
+    # run_test_leds_on_off(robot)
+    # run_test_leds_colors(robot)
+    run_test_brick_buttons(robot)
     # run_test_remote_control_with_leds(robot)
     # run_test_remote_control_with_motors(robot)
 
 
-def run_test_leds(robot):
+def run_test_leds_on_off(robot):
     """
-    Tests the  calibrate    methods of the ArmAndClaw class.
-    """
-    print('--------------------------------------------------')
-    print('Testing the  calibrate   methods of the robot')
-    print('--------------------------------------------------')
-    while True:
-        print("Arm speed should be an integer between 1 and 100.")
-        arm_speed = int(input("Enter an integer for arm speed: "))
-        if arm_speed == 0:
-            break
-        print()
-        input("Press the ENTER key when ready for the robot to start moving.")
-
-        # -------------------------------------------------------------------------
-        # TODO: 3. Call the  calibrate_arm  method of the   arm_and_claw   of the robot,
-        #   sending it the arm_speed.
-        # -------------------------------------------------------------------------
-
-        # Solution to be removed
-        robot.arm_and_claw.calibrate_arm(arm_speed)
-        print("Position: ", robot.arm_and_claw.arm_motor.get_position()) # Optional print statement to check value
-
-
-def run_test_raise_and_lower(robot):
-    """
-    Tests the  raise   and  lower    methods of the ArmAndClaw class.
+    Tests the  turn_on  turn_off    methods of the Leds class.
     """
     print('--------------------------------------------------')
-    print('Testing the  raise   and  lower   methods of the robot')
+    print('Testing the  turn_on  turn_off    methods of the robot')
     print('--------------------------------------------------')
     while True:
-        print("Arm speed should be an integer between 1 and 100.")
-        arm_speed = int(input("Enter an integer for arm speed: "))
-        if arm_speed == 0:
-            break
-        print()
-        input("Press the ENTER key when ready for the robot to start moving up.")
-
         # -------------------------------------------------------------------------
-        # TODO: 3. Call the  raise_arm  method of the   arm_and_claw   of the robot,
-        #   using the input arm_speed.
+        # TODO: 3. Call the  turn_on  and  turn_off method of the   leds   of the robot,
+        #  so that both LEDs are on for 1 second, then off for 1 second (repeating forever)
+        #  In addition to the LEDs print to the console "LEDs On" or "LEDs Off"
+        #  just before the LED change line of code (so you can see it and read it)
         # -------------------------------------------------------------------------
 
         # Solution to be removed
-        robot.arm_and_claw.raise_arm(arm_speed)
+        print("Both LEDs On")
+        robot.leds.turn_on()
+        time.sleep(1.0)
 
-        input("Press the ENTER key when ready for the robot to start moving back down.")
-
-        # -------------------------------------------------------------------------
-        # TODO: 3. Call the  lower_arm  method of the   arm_and_claw   of the robot,
-        #   using the input arm_speed.
-        # -------------------------------------------------------------------------
-
-        # Solution to be removed
-        robot.arm_and_claw.lower_arm(arm_speed)
+        print("Both LEDs Off")
+        robot.leds.turn_off()
+        time.sleep(1.0)
 
 
-def run_test_move_arm_to_position(robot):
+def run_test_leds_colors(robot):
     """
-    Tests the  move_arm_to_position    methods of the ArmAndClaw class.
+    Tests the  set_color_by_name    methods of the ArmAndClaw class.
     """
     print('--------------------------------------------------')
-    print('Testing the  move_arm_to_position  method of the robot')
+    print('Testing the  set_color_by_name   methods of the robot')
     print('--------------------------------------------------')
     while True:
-        print("Arm speed should be an integer between 1 and 100.")
-        arm_speed = int(input("Enter an integer for arm speed: "))
-        if arm_speed == 0:
-            break
-        print("Enter an integer for the position to which")
-        desired_position = int(input("to move the arm (0 to about 5100: "))
-        print()
-        input("Press the ENTER key when ready for the robot to start moving up.")
-
         # -------------------------------------------------------------------------
-        # TODO: 3. Call the  raise_arm  method of the   arm_and_claw   of the robot,
-        #   using the input arm_speed.
+        # TODO: 3. Call the  set_color_by_name  method of the   leds   of the robot,
+        #  so that the color changes through each valid named color.  Instead of using
+        #  a 1 second delay between colors, have the user hit the enter key to change
+        #  to the next color.  "red", "green", "amber", "off", repeat.
+        #
+        #
         # -------------------------------------------------------------------------
+        colors = ["red", "green", "amber", "off"]
+        color_index = 0
 
-        # Solution to be removed
-        robot.arm_and_claw.move_arm_to_position(desired_position)
+        while True:
+            robot.leds.set_color_by_name(colors[color_index % len(colors)])
+            input("Press the ENTER key to change to the next color.")
+            color_index += 1
+
+
+def run_test_brick_buttons(robot):
+    """
+    Tests the  set_color_by_name    methods of the ArmAndClaw class.
+    """
+    print('--------------------------------------------------')
+    print('Testing the  set_color_by_name   methods of the robot')
+    print('--------------------------------------------------')
+    while True:
+        # -------------------------------------------------------------------------
+        # TODO: 3. Call the  set_color_by_name  method of the   leds   of the robot,
+        #  so that the color changes through each valid named color.  Instead of using
+        #  a 1 second delay between colors, have the user hit the enter key to change
+        #  to the next color.  "red", "green", "amber", "off", repeat.
+        #
+        #
+        # -------------------------------------------------------------------------
+        colors = ["red", "green", "amber", "off"]
+        color_index = 0
+
+        while True:
+            robot.leds.set_color_by_name(colors[color_index % len(colors)])
+            input("Press the ENTER key to change to the next color.")
+            color_index += 1
+
+
 
 
 
