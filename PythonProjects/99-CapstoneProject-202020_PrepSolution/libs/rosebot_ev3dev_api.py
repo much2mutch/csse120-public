@@ -82,7 +82,10 @@ class Motor(object):
 ###############################################################################
 class TouchSensor(object):
     def __init__(self, port):  # port must be 1, 2, 3 or 4
-        self._touch_sensor = ev3.TouchSensor('in' + str(port))
+        if port is not None:
+            self._touch_sensor = ev3.TouchSensor('in' + str(port))
+        else:
+            self._touch_sensor = ev3.TouchSensor()  # automatically determine the port
 
     def is_pressed(self):
         """ Returns True if this TouchSensor is pressed, else returns False """
@@ -355,7 +358,9 @@ class Blob(object):
                 or self.is_against_top_edge()
                 or self.is_against_bottom_edge())
 
-
+###############################################################################
+#    Beeper
+###############################################################################
 class Beeper(object):
     # Future enhancements: Add volume to all the SoundSystem classes.
     def __init__(self):
@@ -376,6 +381,9 @@ class Beeper(object):
         return self._beeper.beep()
 
 
+###############################################################################
+#    ToneMaker
+###############################################################################
 class ToneMaker(object):
     def __init__(self):
         self._tone_maker = ev3.Sound
@@ -435,6 +443,9 @@ class ToneMaker(object):
         return self._tone_maker.tone(tones)
 
 
+###############################################################################
+#    SpeechMaker
+###############################################################################
 class SpeechMaker(object):
     def __init__(self):
         self._speech_maker = ev3.Sound
@@ -458,10 +469,16 @@ class SpeechMaker(object):
         return self._speech_maker.speak(phrase)
 
 
+###############################################################################
+#    SongMaker
+###############################################################################
 class SongMaker(object):
     pass
 
 
+###############################################################################
+#    LEDs
+###############################################################################
 class LED(object):
     """
     Each LED has a RED and a GREEN component.
@@ -515,9 +532,15 @@ class LED(object):
         self.set_color_by_name((fraction_red, fraction_green))
 
 
-class BeaconButton(object):
+class RemoteControlButtons(object):
     pass
 
 
-class BrickButton(object):
+    # There are 16 possible callback functions (an 2D list of callbacks, that we manage, channel )
+
+
+
+
+
+class BrickButtons(object):
     pass

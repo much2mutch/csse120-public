@@ -34,8 +34,7 @@ class RoseBot(object):
         self.touch_sensor = rosebot_touch_sensor.TouchSensor(1)
         self.color_sensor = rosebot_color_sensor.ColorSensor(3)
         self.drive_system = rosebot_drive_system.DriveSystem('B', 'C')
-        self.arm_and_claw = rosebot_arm_and_claw.ArmAndClaw('A',
-                                                            self.touch_sensor)
+        self.arm_and_claw = rosebot_arm_and_claw.ArmAndClaw('A', self.touch_sensor)
         self.camera = rosebot_ev3dev_api.Camera()
         self.infrared_proximity_sensor = rosebot_ev3dev_api.InfraredProximitySensor(4)
 
