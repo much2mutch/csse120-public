@@ -71,9 +71,6 @@ class TouchSensor(object):
         """
         Returns True if this TouchSensor is pressed, else returns False
         ":rtype bool"""
-        print("Actual Touch Sensor value = ", self._touch_sensor.is_pressed)
-        print("TODO: Determine if it is a boolean or a 1")
-        print("Then delete this message")
         return self._touch_sensor.is_pressed == 1
 
 
@@ -490,7 +487,7 @@ class Led(object):
 
     def turn_off(self):
         """ Turns this Led off. """
-        self.set_color_by_name("off")
+        self.set_color("off")
 
     def set_color(self, color_name):
         """
@@ -598,10 +595,6 @@ class BrickButtons(object):
         :rtype bool
         """
         return self._buttons.backspace
-
-
-
-
 
 # Coming soon with ev3dev2...
 # From: https://python-ev3dev.readthedocs.io/en/ev3dev-stretch/index.html

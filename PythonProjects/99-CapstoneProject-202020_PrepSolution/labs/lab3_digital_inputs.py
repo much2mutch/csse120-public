@@ -91,6 +91,7 @@ def run_test_leds_colors(robot):
     #  the enter key to change to the next colors.
     #
     # After the final value in the list, the program should turn off both LEDs and end.
+    # Notice that this _TODO_ is not within a while True loop (unlike other parts)
     # -------------------------------------------------------------------------
 
     # Solution to be removed
@@ -109,21 +110,23 @@ def run_test_brick_buttons(robot):
     print('--------------------------------------------------')
     print('Testing the  brick_buttons   methods of the robot')
     print('--------------------------------------------------')
-    # -------------------------------------------------------------------------
-    # TODO: 5. Create a small program that will light the appropriate LEDs
-    #   when buttons on the EV3 Brick are pressed:
-    #    When up is pressed light both LEDs green
-    #    When down is pressed light both LEDs red
-    #    When left is pressed light the left LED amber
-    #    When right is pressed light the right LED amber
-    #    When backspace is pressed break from the loop and end the program
-    #    When no button is pressed turn the LEDs off
-    #
-    #  Note, only 1 button will be pressed at a time.
-    # -------------------------------------------------------------------------
-
-    # Solution to be removed
     while True:
+        time.sleep(0.05)
+
+        # -------------------------------------------------------------------------
+        # TODO: 5. Create a small program that will light the appropriate LEDs
+        #   when buttons on the EV3 Brick are pressed:
+        #    When up is pressed light both LEDs green
+        #    When down is pressed light both LEDs red
+        #    When left is pressed light the left LED amber
+        #    When right is pressed light the right LED amber
+        #    When backspace is pressed break from the loop and end the program
+        #    When no button is pressed turn the LEDs off
+        #
+        #  Note, only 1 button will be pressed at a time.
+        # -------------------------------------------------------------------------
+
+        # Solution to be removed
         if robot.brick_buttons.is_up_pressed():
             robot.leds.set_color("both", "green")
         elif robot.brick_buttons.is_down_pressed():
@@ -133,6 +136,7 @@ def run_test_brick_buttons(robot):
         elif robot.brick_buttons.is_right_pressed():
             robot.leds.set_color("right", "amber")
         elif robot.brick_buttons.is_backspace_pressed():
+            print("Goodbye")
             break
         else:
             robot.leds.turn_off()
@@ -147,25 +151,27 @@ def run_test_remote_control(robot):
     print('--------------------------------------------------')
 
     speed = 50
-    # -------------------------------------------------------------------------
-    # TODO: 6. Create a small program that will move the motors of the robot as follows
-    #   when buttons on the remote control are pressed:
-    #    When channel 1 red up is pressed drive the left motor forward at speed
-    #    When channel 1 red down is pressed drive the left motor backwards at -speed
-    #         If neither channel 1 red up or red down is pressed the left motor should stop
-    #    When channel 1 blue up is pressed drive the right motor forward at speed
-    #    When channel 1 blue down is pressed drive the right motor backwards at -speed
-    #         If neither channel 1 blue up or blue down is pressed the right motor should stop
-    #    When channel 2 red up is pressed raise the arm
-    #    When channel 2 red down is pressed lower the arm (note, a calibration is needed first)
-    #    When channel 2 blue up is pressed calibrate the arm
-    #    When backspace is pressed on the EV3 break from the loop and end the program
-    #
-    # Note, MULTIPLE buttons may be pressed at the same time in the program.
-    # -------------------------------------------------------------------------
-
-    # Solution to be removed
     while True:
+        time.sleep(0.05)
+
+        # -------------------------------------------------------------------------
+        # TODO: 6. Create a small program that will move the motors of the robot as follows
+        #   when buttons on the remote control are pressed:
+        #    When channel 1 red up is pressed drive the left motor forward at speed
+        #    When channel 1 red down is pressed drive the left motor backwards at -speed
+        #         If neither channel 1 red up or red down is pressed the left motor should stop
+        #    When channel 1 blue up is pressed drive the right motor forward at speed
+        #    When channel 1 blue down is pressed drive the right motor backwards at -speed
+        #         If neither channel 1 blue up or blue down is pressed the right motor should stop
+        #    When channel 2 red up is pressed raise the arm
+        #    When channel 2 red down is pressed lower the arm (note, a calibration is needed first)
+        #    When channel 2 blue up is pressed calibrate the arm
+        #    When backspace is pressed on the EV3 break from the loop and end the program
+        #
+        # Note, MULTIPLE buttons may be pressed at the same time in the program.
+        # -------------------------------------------------------------------------
+
+        # Solution to be removed
         if robot.remote_control.is_pressed(1, "red_up"):
             robot.drive_system.left_motor.turn_on(speed)
         elif robot.remote_control.is_pressed(1, "red_down"):
@@ -188,6 +194,7 @@ def run_test_remote_control(robot):
             robot.arm_and_claw.calibrate_arm()
 
         if robot.brick_buttons.is_backspace_pressed():
+            print("Goodbye")
             break
 
 

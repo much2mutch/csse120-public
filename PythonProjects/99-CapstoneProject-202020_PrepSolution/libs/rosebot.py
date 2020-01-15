@@ -42,5 +42,5 @@ class RoseBot(object):
         self.brick_buttons = rosebot_brick_buttons.BrickButtons()
         self.remote_control = rosebot_remote_control.RemoteControl()
         self.color_sensor = rosebot_color_sensor.ColorSensor(3)
-        self.camera = rosebot_ev3dev_api.Camera()
+        # self.camera = rosebot_ev3dev_api.Camera()
         self.infrared_proximity_sensor = rosebot_ev3dev_api.InfraredProximitySensor(4)

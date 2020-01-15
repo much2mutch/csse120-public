@@ -55,12 +55,13 @@ class RemoteControl(object):
             return remote_control.red_up()
         elif button_name == "red_down":
             return remote_control.red_down()
-        elif button_name == "red_up":
-            return remote_control.red_up()
-        elif button_name == "red_down":
-            return remote_control.red_down()
+        elif button_name == "blue_up":
+            return remote_control.blue_up()
+        elif button_name == "blue_down":
+            return remote_control.blue_down()
         else:
-            print("INVALID BUTTON NAME")
+            print("INVALID REMOTE CONTROL BUTTON NAME")
+            return False
 
     def wait_until_pressed(self, channel, button):
         """

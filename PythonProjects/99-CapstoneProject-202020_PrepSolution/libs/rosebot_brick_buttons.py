@@ -39,7 +39,7 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.brick_buttons.up()
+        return self.brick_buttons.up()
 
     def is_down_pressed(self):
         """
@@ -49,7 +49,7 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.brick_buttons.down()
+        return self.brick_buttons.down()
 
     def is_left_pressed(self):
         """
@@ -59,7 +59,7 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.brick_buttons.left()
+        return self.brick_buttons.left()
 
     def is_right_pressed(self):
         """
@@ -69,7 +69,7 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.brick_buttons.right()
+        return self.brick_buttons.right()
 
     def is_backspace_pressed(self):
         """
@@ -79,4 +79,4 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.brick_buttons.backspace()
+        return self.brick_buttons.backspace()
