@@ -20,41 +20,63 @@ import rosebot_ev3dev_api as rose_ev3
 ###############################################################################
 class BrickButtons(object):
     """
-    Methods for the BrickButtons on the robot, including:
-      get_reading    is_pressed    wait_until_pressed
+    Methods for the BrickButtons on the robot.
     """
-    def __init__(self, port):
+    def __init__(self):
         """
-        Constructs the underlying low-level version of this sensor.
-          :type port: int  (Must be 1, 2, 3 or 4)
-        """
-        # ---------------------------------------------------------------------
-        # TODO: With your instructor, implement this method.
-        # ---------------------------------------------------------------------
-
-    def get_reading(self):
-        """
-        Returns a reading from the underlying low-level version of this sensor.
-          :rtype: int
+        Constructs the underlying low-level version of this brick buttons.
         """
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        self.brick_buttons = rose_ev3.BrickButtons()
 
-    def is_pressed(self):
+    def is_up_pressed(self):
         """
-        Returns True if this TouchSensor is pressed, else returns False.
+        Returns True if this Up button on the EV3 is pressed, else returns False.
           :rtype: bool
         """
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        self.brick_buttons.up()
 
-    def wait_until_pressed(self):
+    def is_down_pressed(self):
         """
-        Sits in a loop, sleeping 0.05 seconds each time through the loop,
-        waiting for the touch sensor to be pressed.
+        Returns True if this Down button on the EV3 is pressed, else returns False.
+          :rtype: bool
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method.
+        # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        self.brick_buttons.down()
+
+    def is_left_pressed(self):
+        """
+        Returns True if this Left button on the EV3 is pressed, else returns False.
+          :rtype: bool
+        """
+        # ---------------------------------------------------------------------
+        # TODO: With your instructor, implement this method.
+        # ---------------------------------------------------------------------
+        self.brick_buttons.left()
+
+    def is_right_pressed(self):
+        """
+        Returns True if this Right button on the EV3 is pressed, else returns False.
+          :rtype: bool
+        """
+        # ---------------------------------------------------------------------
+        # TODO: With your instructor, implement this method.
+        # ---------------------------------------------------------------------
+        self.brick_buttons.right()
+
+    def is_backspace_pressed(self):
+        """
+        Returns True if this Backspace button on the EV3 is pressed, else returns False.
+          :rtype: bool
+        """
+        # ---------------------------------------------------------------------
+        # TODO: With your instructor, implement this method.
+        # ---------------------------------------------------------------------
+        self.brick_buttons.backspace()

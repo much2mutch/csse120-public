@@ -13,7 +13,7 @@ Winter term, 2019-2020.
 
 
 import rosebot_ev3dev_api as rose_ev3
-
+import time
 
 ###############################################################################
 #    RemoteControl
@@ -23,38 +23,54 @@ class RemoteControl(object):
     Methods for the RemoteControl on the robot, including:
       get_reading    is_pressed    wait_until_pressed
     """
-    def __init__(self, port):
+    def __init__(self):
         """
-        Constructs the underlying low-level version of this sensor.
-          :type port: int  (Must be 1, 2, 3 or 4)
-        """
-        # ---------------------------------------------------------------------
-        # TODO: With your instructor, implement this method.
-        # ---------------------------------------------------------------------
-
-    def get_reading(self):
-        """
-        Returns a reading from the underlying low-level version of this sensor.
-          :rtype: int
+        Constructs the underlying low-level versions of this RemoteControl.
+        Creates a single instance variables named:
+           remote_controls
+        which is a list, in order, of the four possible remote control objects.
         """
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        remote_control_1 = rose_ev3.RemoteControlChannel(1)
+        remote_control_2 = rose_ev3.RemoteControlChannel(2)
+        remote_control_3 = rose_ev3.RemoteControlChannel(3)
+        remote_control_4 = rose_ev3.RemoteControlChannel(4)
+        self.remote_controls = [remote_control_1, remote_control_2,
+                                remote_control_3, remote_control_4]
 
-    def is_pressed(self):
+    def is_pressed(self, channel, button_name):
         """
-        Returns True if this TouchSensor is pressed, else returns False.
+        Returns True if the requested button is pressed.
+        Valid button_names:
+          "red_up", "red_down", "blue_up", "blue_down"
           :rtype: bool
         """
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        remote_control = self.remote_controls[channel - 1]
+        if button_name == "red_up":
+            return remote_control.red_up()
+        elif button_name == "red_down":
+            return remote_control.red_down()
+        elif button_name == "red_up":
+            return remote_control.red_up()
+        elif button_name == "red_down":
+            return remote_control.red_down()
+        else:
+            print("INVALID BUTTON NAME")
 
-    def wait_until_pressed(self):
+    def wait_until_pressed(self, channel, button):
         """
         Sits in a loop, sleeping 0.05 seconds each time through the loop,
-        waiting for the touch sensor to be pressed.
+        waiting for the requested button to be pressed
         """
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        while True:
+            time.sleep(0.05)
+            if self.is_pressed(channel, button):
+                break

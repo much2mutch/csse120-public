@@ -45,29 +45,28 @@ def test_digital_io():
 
     # run_test_leds_on_off(robot)
     # run_test_leds_colors(robot)
-    run_test_brick_buttons(robot)
-    # run_test_remote_control_with_leds(robot)
-    # run_test_remote_control_with_motors(robot)
+    # run_test_brick_buttons(robot)
+    run_test_remote_control(robot)
 
 
 def run_test_leds_on_off(robot):
     """
-    Tests the  turn_on  turn_off    methods of the Leds class.
+    Tests the  set_color and  turn_off    methods of the Leds class.
     """
     print('--------------------------------------------------')
     print('Testing the  turn_on  turn_off    methods of the robot')
     print('--------------------------------------------------')
     while True:
         # -------------------------------------------------------------------------
-        # TODO: 3. Call the  turn_on  and  turn_off method of the   leds   of the robot,
-        #  so that both LEDs are on for 1 second, then off for 1 second (repeating forever)
-        #  In addition to the LEDs print to the console "LEDs On" or "LEDs Off"
-        #  just before the LED change line of code (so you can see it and read it)
+        # TODO: 3. Call the  set_color  and  turn_off methods on the   leds   of the robot,
+        #  so that "both" LEDs are on "red" for 1 second, then off for 1 second (repeating forever)
+        #  In addition to the LEDs print to the console "Both LEDs On as Red" or "LEDs Off"
+        #  just before the LED change line of code (so you can see it and read it).
         # -------------------------------------------------------------------------
 
         # Solution to be removed
-        print("Both LEDs On")
-        robot.leds.turn_on()
+        print("Both LEDs On as Red")
+        robot.leds.set_color("both", "red")
         time.sleep(1.0)
 
         print("Both LEDs Off")
@@ -80,52 +79,116 @@ def run_test_leds_colors(robot):
     Tests the  set_color_by_name    methods of the ArmAndClaw class.
     """
     print('--------------------------------------------------')
-    print('Testing the  set_color_by_name   methods of the robot')
+    print('Testing the  set_color   methods of the robot')
     print('--------------------------------------------------')
-    while True:
-        # -------------------------------------------------------------------------
-        # TODO: 3. Call the  set_color_by_name  method of the   leds   of the robot,
-        #  so that the color changes through each valid named color.  Instead of using
-        #  a 1 second delay between colors, have the user hit the enter key to change
-        #  to the next color.  "red", "green", "amber", "off", repeat.
-        #
-        #
-        # -------------------------------------------------------------------------
-        colors = ["red", "green", "amber", "off"]
-        color_index = 0
+    left_colors = ["red", "green", "amber", "off", "red", "off", "green", "off", "amber", "off"]
+    right_colors = ["red", "green", "amber", "off", "off", "red", "off", "green", "off", "amber"]
 
-        while True:
-            robot.leds.set_color_by_name(colors[color_index % len(colors)])
-            input("Press the ENTER key to change to the next color.")
-            color_index += 1
+    # -------------------------------------------------------------------------
+    # TODO: 4. Call the  set_color  method of the   leds   of the robot,
+    #  so that the color changes through each value in the lists above.
+    #  Instead of using a 1 second delay between colors, have the user hit
+    #  the enter key to change to the next colors.
+    #
+    # After the final value in the list, the program should turn off both LEDs and end.
+    # -------------------------------------------------------------------------
+
+    # Solution to be removed
+    for k in range(len(left_colors)):
+        robot.leds.set_color("left", left_colors[k])
+        robot.leds.set_color("right", right_colors[k])
+        input("Press the ENTER key to change to the next color.")
+
+    robot.leds.turn_off()
 
 
 def run_test_brick_buttons(robot):
     """
-    Tests the  set_color_by_name    methods of the ArmAndClaw class.
+    Tests the  brick_buttons    methods of the BrickButton class.
     """
     print('--------------------------------------------------')
-    print('Testing the  set_color_by_name   methods of the robot')
+    print('Testing the  brick_buttons   methods of the robot')
     print('--------------------------------------------------')
+    # -------------------------------------------------------------------------
+    # TODO: 5. Create a small program that will light the appropriate LEDs
+    #   when buttons on the EV3 Brick are pressed:
+    #    When up is pressed light both LEDs green
+    #    When down is pressed light both LEDs red
+    #    When left is pressed light the left LED amber
+    #    When right is pressed light the right LED amber
+    #    When backspace is pressed break from the loop and end the program
+    #    When no button is pressed turn the LEDs off
+    #
+    #  Note, only 1 button will be pressed at a time.
+    # -------------------------------------------------------------------------
+
+    # Solution to be removed
     while True:
-        # -------------------------------------------------------------------------
-        # TODO: 3. Call the  set_color_by_name  method of the   leds   of the robot,
-        #  so that the color changes through each valid named color.  Instead of using
-        #  a 1 second delay between colors, have the user hit the enter key to change
-        #  to the next color.  "red", "green", "amber", "off", repeat.
-        #
-        #
-        # -------------------------------------------------------------------------
-        colors = ["red", "green", "amber", "off"]
-        color_index = 0
-
-        while True:
-            robot.leds.set_color_by_name(colors[color_index % len(colors)])
-            input("Press the ENTER key to change to the next color.")
-            color_index += 1
+        if robot.brick_buttons.is_up_pressed():
+            robot.leds.set_color("both", "green")
+        elif robot.brick_buttons.is_down_pressed():
+            robot.leds.set_color("both", "red")
+        elif robot.brick_buttons.is_left_pressed():
+            robot.leds.set_color("left", "amber")
+        elif robot.brick_buttons.is_right_pressed():
+            robot.leds.set_color("right", "amber")
+        elif robot.brick_buttons.is_backspace_pressed():
+            break
+        else:
+            robot.leds.turn_off()
 
 
+def run_test_remote_control(robot):
+    """
+    Tests the  remote_control    methods of the RemoteControl class.
+    """
+    print('--------------------------------------------------')
+    print('Testing the  remote_control   methods of the robot')
+    print('--------------------------------------------------')
 
+    speed = 50
+    # -------------------------------------------------------------------------
+    # TODO: 6. Create a small program that will move the motors of the robot as follows
+    #   when buttons on the remote control are pressed:
+    #    When channel 1 red up is pressed drive the left motor forward at speed
+    #    When channel 1 red down is pressed drive the left motor backwards at -speed
+    #         If neither channel 1 red up or red down is pressed the left motor should stop
+    #    When channel 1 blue up is pressed drive the right motor forward at speed
+    #    When channel 1 blue down is pressed drive the right motor backwards at -speed
+    #         If neither channel 1 blue up or blue down is pressed the right motor should stop
+    #    When channel 2 red up is pressed raise the arm
+    #    When channel 2 red down is pressed lower the arm (note, a calibration is needed first)
+    #    When channel 2 blue up is pressed calibrate the arm
+    #    When backspace is pressed on the EV3 break from the loop and end the program
+    #
+    # Note, MULTIPLE buttons may be pressed at the same time in the program.
+    # -------------------------------------------------------------------------
+
+    # Solution to be removed
+    while True:
+        if robot.remote_control.is_pressed(1, "red_up"):
+            robot.drive_system.left_motor.turn_on(speed)
+        elif robot.remote_control.is_pressed(1, "red_down"):
+            robot.drive_system.left_motor.turn_on(-speed)
+        else:
+            robot.drive_system.left_motor.turn_off()
+
+        if robot.remote_control.is_pressed(1, "blue_up"):
+            robot.drive_system.right_motor.turn_on(speed)
+        elif robot.remote_control.is_pressed(1, "blue_down"):
+            robot.drive_system.right_motor.turn_on(-speed)
+        else:
+            robot.drive_system.right_motor.turn_off()
+
+        if robot.remote_control.is_pressed(2, "red_up"):
+            robot.arm_and_claw.raise_arm()
+        if robot.remote_control.is_pressed(2, "red_down"):
+            robot.arm_and_claw.lower_arm()
+        if robot.remote_control.is_pressed(2, "blue_up"):
+            robot.arm_and_claw.calibrate_arm()
+
+        if robot.brick_buttons.is_backspace_pressed():
+            break
 
 
 main()

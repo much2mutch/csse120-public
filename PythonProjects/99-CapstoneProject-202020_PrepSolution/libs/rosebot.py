@@ -11,9 +11,11 @@ Winter term, 2019-2020.
 #   to this module in the above.
 
 import rosebot_arm_and_claw
+import rosebot_brick_buttons
 import rosebot_color_sensor
 import rosebot_drive_system
 import rosebot_leds
+import rosebot_remote_control
 import rosebot_touch_sensor
 
 import rosebot_ev3dev_api
@@ -37,6 +39,8 @@ class RoseBot(object):
         self.touch_sensor = rosebot_touch_sensor.TouchSensor(1)
         self.arm_and_claw = rosebot_arm_and_claw.ArmAndClaw('A', self.touch_sensor)
         self.leds = rosebot_leds.Leds()
+        self.brick_buttons = rosebot_brick_buttons.BrickButtons()
+        self.remote_control = rosebot_remote_control.RemoteControl()
         self.color_sensor = rosebot_color_sensor.ColorSensor(3)
         self.camera = rosebot_ev3dev_api.Camera()
         self.infrared_proximity_sensor = rosebot_ev3dev_api.InfraredProximitySensor(4)

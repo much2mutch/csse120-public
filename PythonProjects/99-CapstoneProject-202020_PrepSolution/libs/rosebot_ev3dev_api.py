@@ -22,30 +22,6 @@ Winter term, 2019-2020.
 
 import ev3dev.ev3 as ev3
 
-# Coming soon with ev3dev2...
-# From: https://python-ev3dev.readthedocs.io/en/ev3dev-stretch/index.html
-# import ev3dev2
-
-# ts = ev3dev2.sensor.lego.TouchSensor()
-# leds = ev3dev2.led.Leds()
-
-# while True:
-#     if ts.is_pressed:
-#         leds.set_color("LEFT", "GREEN")
-#         leds.set_color("RIGHT", "GREEN")
-#     else:
-#         leds.set_color("LEFT", "RED")
-#         leds.set_color("RIGHT", "RED")
-
-
-# m = ev3dev2.motor.LargeMotor(ev3dev2.motor.OUTPUT_A)
-# m.on_for_rotations(ev3dev2.motor.SpeedPercent(75), 5)
-
-# ev3dev2.sensor.INPUT_1
-# ev3dev2.sensor.lego.TouchSensor
-
-# pixy = ev3dev2.sensor.Sensor(ev3dev2.sensor.INPUT_2, driver_name="pixy-lego")
-
 ###############################################################################
 # STUDENTS:  *** Do NOT change ANYTHING in this module. ***
 ###############################################################################
@@ -81,14 +57,23 @@ class Motor(object):
 #    TouchSensor
 ###############################################################################
 class TouchSensor(object):
-    def __init__(self, port):  # port must be 1, 2, 3 or 4
+    def __init__(self, port):  # port must be 1, 2, 3, 4, or None (for autodetect)
+        """
+        Creates a TouchSensor.
+        :type port: int
+        """
         if port is not None:
             self._touch_sensor = ev3.TouchSensor('in' + str(port))
         else:
             self._touch_sensor = ev3.TouchSensor()  # automatically determine the port
 
     def is_pressed(self):
-        """ Returns True if this TouchSensor is pressed, else returns False """
+        """
+        Returns True if this TouchSensor is pressed, else returns False
+        ":rtype bool"""
+        print("Actual Touch Sensor value = ", self._touch_sensor.is_pressed)
+        print("TODO: Determine if it is a boolean or a 1")
+        print("Then delete this message")
         return self._touch_sensor.is_pressed == 1
 
 
@@ -490,7 +475,12 @@ class Led(object):
     """
     Each Led has a RED and a GREEN component.
     """
-    def __init__(self, left_or_right):  # Must be "left" or "right"
+    def __init__(self, left_or_right):
+        """
+          Constructs a single LED object. Valid left_or_right values:
+            "left" or "right"
+          :type left_or_right: str
+        """
         if left_or_right == "left":
             self.led_location = ev3.Leds.LEFT
         elif left_or_right == "right":
@@ -498,21 +488,15 @@ class Led(object):
         else:
             print("INVALID Led LOCATION!")
 
-    def turn_on(self):
-        """
-        Sets this Led to 100% of its RED and GREEN, which results in AMBER.
-        """
-        self.set_color_by_name("amber")
-
     def turn_off(self):
         """ Turns this Led off. """
         self.set_color_by_name("off")
 
-    def set_color_by_name(self, color_name):
+    def set_color(self, color_name):
         """
-        Sets this Led to the given color (as a name or tuple).  For example:
-          left_led = Led("left")
-          left_led.set_color_by_name("green")
+        Sets this Led to the given color. Valid colors include:
+          "red", "green", "amber", "off"
+          :type color_name: str
         """
         if color_name == "red":
             ev3.Leds.set_color(self.led_location, ev3.Leds.RED)
@@ -525,27 +509,120 @@ class Led(object):
         else:
             print("INVALID LED COLOR STRING")
 
-    def set_color_by_fractions(self, fraction_red, fraction_green):
+
+###############################################################################
+#    Remote Control
+###############################################################################
+class RemoteControlChannel(object):
+    """ Class to know if a button is pressed on the remote control. """
+    def __init__(self, channel_value):
         """
-        Sets the brightness of this Led to the specified amount of
-        RED and GREEN, respectively, where each argument is a number
-        between 0 (none) and 1 (full brightness).
-        Example:
-          left_led = Led()
-          left_led.set_color(0.5, 0.33)
+        Creates an object that can be used to check if a button is being
+        pressed on the remote control.  You might need as many as four of
+        these classes if you used all the channels of the remote.
+        Valid channels: 1, 2, 3, or 4
+        :type channel: int
         """
-        self.set_color(self.led_location, (fraction_red, fraction_green))
+        self._remote_control = ev3.RemoteControl(channel=channel_value)
+
+    def red_up(self):
+        """
+        Returns True if the remote control red up button is pressed
+        :rtype bool
+        """
+        return self._remote_control.red_up
+
+    def red_down(self):
+        """
+        Returns True if the remote control red down button is pressed
+        :rtype bool
+        """
+        return self._remote_control.red_down
+
+    def blue_up(self):
+        """
+        Returns True if the remote control blue up button is pressed
+        :rtype bool
+        """
+        return self._remote_control.blue_up
+
+    def blue_down(self):
+        """
+        Returns True if the remote control blue down button is pressed
+        :rtype bool
+        """
+        return self._remote_control.blue_down
 
 
-class RemoteControlButtons(object):
-    pass
-
-
-    # There are 16 possible callback functions (an 2D list of callbacks, that we manage, channel )
-
-
-
-
-
+###############################################################################
+#    EV3 Brick Buttons
+###############################################################################
 class BrickButtons(object):
-    pass
+    def __init__(self):
+        """
+        Creates the one and only brick button object.
+        """
+        self._buttons = ev3.Button()
+
+    def up(self):
+        """
+        Returns True if the EV3 brick up button is pressed
+        :rtype bool
+        """
+        return self._buttons.up
+
+    def down(self):
+        """
+        Returns True if the EV3 brick down button is pressed
+        :rtype bool
+        """
+        return self._buttons.down
+
+    def left(self):
+        """
+        Returns True if the EV3 brick left button is pressed
+        :rtype bool
+        """
+        return self._buttons.left
+
+    def right(self):
+        """
+        Returns True if the EV3 brick right button is pressed
+        :rtype bool
+        """
+        return self._buttons.right
+
+    def backspace(self):
+        """
+        Returns True if the EV3 brick backspace button is pressed
+        :rtype bool
+        """
+        return self._buttons.backspace
+
+
+
+
+
+# Coming soon with ev3dev2...
+# From: https://python-ev3dev.readthedocs.io/en/ev3dev-stretch/index.html
+# import ev3dev2
+
+# ts = ev3dev2.sensor.lego.TouchSensor()
+# leds = ev3dev2.led.Leds()
+
+# while True:
+#     if ts.is_pressed:
+#         leds.set_color("LEFT", "GREEN")
+#         leds.set_color("RIGHT", "GREEN")
+#     else:
+#         leds.set_color("LEFT", "RED")
+#         leds.set_color("RIGHT", "RED")
+
+
+# m = ev3dev2.motor.LargeMotor(ev3dev2.motor.OUTPUT_A)
+# m.on_for_rotations(ev3dev2.motor.SpeedPercent(75), 5)
+
+# ev3dev2.sensor.INPUT_1
+# ev3dev2.sensor.lego.TouchSensor
+
+# pixy = ev3dev2.sensor.Sensor(ev3dev2.sensor.INPUT_2, driver_name="pixy-lego")

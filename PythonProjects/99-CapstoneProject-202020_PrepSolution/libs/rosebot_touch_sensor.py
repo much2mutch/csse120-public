@@ -33,19 +33,6 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         self.touch_sensor = rose_ev3.TouchSensor(port)
 
-    def get_reading(self):
-        """
-        Returns a reading from the underlying low-level version of this sensor.
-          :rtype: int
-        """
-        # ---------------------------------------------------------------------
-        # TODO: With your instructor, implement this method.
-        # ---------------------------------------------------------------------
-        if self.touch_sensor.is_pressed():
-            return 1
-        else:
-            return 0
-
     def is_pressed(self):
         """
         Returns True if this TouchSensor is pressed, else returns False.
