@@ -22,30 +22,6 @@ Winter term, 2019-2020.
 
 import ev3dev.ev3 as ev3
 
-# Coming soon with ev3dev2...
-# From: https://python-ev3dev.readthedocs.io/en/ev3dev-stretch/index.html
-# import ev3dev2
-
-# ts = ev3dev2.sensor.lego.TouchSensor()
-# leds = ev3dev2.led.Leds()
-
-# while True:
-#     if ts.is_pressed:
-#         leds.set_color("LEFT", "GREEN")
-#         leds.set_color("RIGHT", "GREEN")
-#     else:
-#         leds.set_color("LEFT", "RED")
-#         leds.set_color("RIGHT", "RED")
-
-
-# m = ev3dev2.motor.LargeMotor(ev3dev2.motor.OUTPUT_A)
-# m.on_for_rotations(ev3dev2.motor.SpeedPercent(75), 5)
-
-# ev3dev2.sensor.INPUT_1
-# ev3dev2.sensor.lego.TouchSensor
-
-# pixy = ev3dev2.sensor.Sensor(ev3dev2.sensor.INPUT_2, driver_name="pixy-lego")
-
 ###############################################################################
 # STUDENTS:  *** Do NOT change ANYTHING in this module. ***
 ###############################################################################
@@ -81,11 +57,20 @@ class Motor(object):
 #    TouchSensor
 ###############################################################################
 class TouchSensor(object):
-    def __init__(self, port):  # port must be 1, 2, 3 or 4
-        self._touch_sensor = ev3.TouchSensor('in' + str(port))
+    def __init__(self, port):  # port must be 1, 2, 3, 4, or None (for autodetect)
+        """
+        Creates a TouchSensor.
+        :type port: int
+        """
+        if port is not None:
+            self._touch_sensor = ev3.TouchSensor('in' + str(port))
+        else:
+            self._touch_sensor = ev3.TouchSensor()  # automatically determine the port
 
     def is_pressed(self):
-        """ Returns True if this TouchSensor is pressed, else returns False """
+        """
+        Returns True if this TouchSensor is pressed, else returns False
+        ":rtype bool"""
         return self._touch_sensor.is_pressed == 1
 
 
@@ -165,6 +150,9 @@ class ColorSensor(object):
         # Not yet implemented
 
 
+###############################################################################
+#    IR Distance Sensor
+###############################################################################
 class InfraredProximitySensor(object):
     """
     The infrared sensor when it is in the mode in which it emits infrared light
@@ -201,6 +189,9 @@ class InfraredProximitySensor(object):
         return distance
 
 
+###############################################################################
+#    IR Beacon Sensor
+###############################################################################
 class InfraredBeaconSensor(object):
     """
     The infrared sensor when it is in the mode in which it measures the
@@ -356,6 +347,9 @@ class Blob(object):
                 or self.is_against_bottom_edge())
 
 
+###############################################################################
+#    Beeper
+###############################################################################
 class Beeper(object):
     # Future enhancements: Add volume to all the SoundSystem classes.
     def __init__(self):
@@ -376,6 +370,9 @@ class Beeper(object):
         return self._beeper.beep()
 
 
+###############################################################################
+#    ToneMaker
+###############################################################################
 class ToneMaker(object):
     def __init__(self):
         self._tone_maker = ev3.Sound
@@ -435,6 +432,9 @@ class ToneMaker(object):
         return self._tone_maker.tone(tones)
 
 
+###############################################################################
+#    SpeechMaker
+###############################################################################
 class SpeechMaker(object):
     def __init__(self):
         self._speech_maker = ev3.Sound
@@ -458,66 +458,164 @@ class SpeechMaker(object):
         return self._speech_maker.speak(phrase)
 
 
+###############################################################################
+#    SongMaker
+###############################################################################
 class SongMaker(object):
     pass
 
 
-class LED(object):
+###############################################################################
+#    LEDs
+###############################################################################
+class Led(object):
     """
-    Each LED has a RED and a GREEN component.
+    Each Led has a RED and a GREEN component.
     """
-
-    def __init__(self, left_or_right):  # Must be "left" or "right"
-        self.which_led = left_or_right
-
-        if self.which_led == "left":
-            self.which_led_code = ev3.Leds.LEFT
-        elif self.which_led == "right":
-            self.which_led_code = ev3.Leds.RIGHT
-
-        # Some common colors for an LED.  The two-tuple specifies the
-        # brightness of the RED and GREEN components of the LED, respectively.
-        self.BLACK = (0, 0)
-        self.RED = (1, 0)
-        self.GREEN = (0, 1)
-        self.AMBER = (1, 1)
-        self.ORANGE = (1, 0.5)
-        self.YELLOW = (0.1, 1)
-
-    def turn_on(self):
+    def __init__(self, left_or_right):
         """
-        Sets this LED to 100% of its RED and GREEN, which results in AMBER.
+          Constructs a single LED object. Valid left_or_right values:
+            "left" or "right"
+          :type left_or_right: str
         """
-        self.set_color_by_name(self.AMBER)
+        if left_or_right == "left":
+            self.led_location = ev3.Leds.LEFT
+        elif left_or_right == "right":
+            self.led_location = ev3.Leds.RIGHT
+        else:
+            print("INVALID Led LOCATION!")
 
     def turn_off(self):
-        """ Turns this LED off. """
-        self.set_color_by_name(self.BLACK)
+        """ Turns this Led off. """
+        self.set_color("off")
 
-    def set_color_by_name(self, color_name):
+    def set_color(self, color_name):
         """
-        Sets this LED to the given color (as a name or tuple).  For example:
-          left_led = LED("left")
-          left_led.set_color_by_name(self.GREEN)
-          left_led.set_color_by_name((0.5, 0.33))
+        Sets this Led to the given color. Valid colors include:
+          "red", "green", "amber", "off"
+          :type color_name: str
         """
-        ev3.Leds.set_color(self.which_led_code, color_name)
+        if color_name == "red":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.RED)
+        elif color_name == "green":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.GREEN)
+        elif color_name == "amber":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.AMBER)
+        elif color_name == "off":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.BLACK)
+        else:
+            print("INVALID LED COLOR STRING")
 
-    def set_color_by_fractions(self, fraction_red, fraction_green):
+
+###############################################################################
+#    Remote Control
+###############################################################################
+class RemoteControlChannel(object):
+    """ Class to know if a button is pressed on the remote control. """
+    def __init__(self, channel_value):
         """
-        Sets the brightness of this LED to the specified amount of
-        RED and GREEN, respectively, where each argument is a number
-        between 0 (none) and 1 (full brightness).
-        Example:
-          left_led = LED()
-          left_led.set_color(0.5, 0.33)
+        Creates an object that can be used to check if a button is being
+        pressed on the remote control.  You might need as many as four of
+        these classes if you used all the channels of the remote.
+        Valid channels: 1, 2, 3, or 4
+        :type channel: int
         """
-        self.set_color_by_name((fraction_red, fraction_green))
+        self._remote_control = ev3.RemoteControl(channel=channel_value)
+
+    def red_up(self):
+        """
+        Returns True if the remote control red up button is pressed
+        :rtype bool
+        """
+        return self._remote_control.red_up
+
+    def red_down(self):
+        """
+        Returns True if the remote control red down button is pressed
+        :rtype bool
+        """
+        return self._remote_control.red_down
+
+    def blue_up(self):
+        """
+        Returns True if the remote control blue up button is pressed
+        :rtype bool
+        """
+        return self._remote_control.blue_up
+
+    def blue_down(self):
+        """
+        Returns True if the remote control blue down button is pressed
+        :rtype bool
+        """
+        return self._remote_control.blue_down
 
 
-class BeaconButton(object):
-    pass
+###############################################################################
+#    EV3 Brick Buttons
+###############################################################################
+class BrickButtons(object):
+    def __init__(self):
+        """
+        Creates the one and only brick button object.
+        """
+        self._buttons = ev3.Button()
+
+    def up(self):
+        """
+        Returns True if the EV3 brick up button is pressed
+        :rtype bool
+        """
+        return self._buttons.up
+
+    def down(self):
+        """
+        Returns True if the EV3 brick down button is pressed
+        :rtype bool
+        """
+        return self._buttons.down
+
+    def left(self):
+        """
+        Returns True if the EV3 brick left button is pressed
+        :rtype bool
+        """
+        return self._buttons.left
+
+    def right(self):
+        """
+        Returns True if the EV3 brick right button is pressed
+        :rtype bool
+        """
+        return self._buttons.right
+
+    def backspace(self):
+        """
+        Returns True if the EV3 brick backspace button is pressed
+        :rtype bool
+        """
+        return self._buttons.backspace
+
+# Coming soon with ev3dev2...
+# From: https://python-ev3dev.readthedocs.io/en/ev3dev-stretch/index.html
+# import ev3dev2
+
+# ts = ev3dev2.sensor.lego.TouchSensor()
+# leds = ev3dev2.led.Leds()
+
+# while True:
+#     if ts.is_pressed:
+#         leds.set_color("LEFT", "GREEN")
+#         leds.set_color("RIGHT", "GREEN")
+#     else:
+#         leds.set_color("LEFT", "RED")
+#         leds.set_color("RIGHT", "RED")
 
 
-class BrickButton(object):
-    pass
+# m = ev3dev2.motor.LargeMotor(ev3dev2.motor.OUTPUT_A)
+# m.on_for_rotations(ev3dev2.motor.SpeedPercent(75), 5)
+
+# ev3dev2.sensor.INPUT_1
+# ev3dev2.sensor.lego.TouchSensor
+
+# pixy = ev3dev2.sensor.Sensor(ev3dev2.sensor.INPUT_2, driver_name="pixy-lego")

@@ -12,6 +12,9 @@ Winter term, 2019-2020.
 #   to this module in the above.
 
 
+import rosebot_ev3dev_api as rose_ev3
+import time
+
 ###############################################################################
 #    TouchSensor
 ###############################################################################
@@ -28,15 +31,7 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-
-    def get_reading(self):
-        """
-        Returns a reading from the underlying low-level version of this sensor.
-          :rtype: int
-        """
-        # ---------------------------------------------------------------------
-        # TODO: With your instructor, implement this method.
-        # ---------------------------------------------------------------------
+        self.touch_sensor = rose_ev3.TouchSensor(port)
 
     def is_pressed(self):
         """
@@ -46,6 +41,7 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        return self.touch_sensor.is_pressed()
 
     def wait_until_pressed(self):
         """
@@ -55,3 +51,7 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        while True:
+            time.sleep(0.05)
+            if self.is_pressed():
+                break

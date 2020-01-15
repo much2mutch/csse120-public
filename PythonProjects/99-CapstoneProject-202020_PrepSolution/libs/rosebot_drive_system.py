@@ -11,7 +11,7 @@ Winter term, 2019-2020.
 #   to this module in the above.
 
 
-import rosebot_ev3dev_api as robo
+import rosebot_ev3dev_api as rose_ev3
 import time
 
 
@@ -54,8 +54,8 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.left_motor = robo.Motor("B")
-        self.right_motor = robo.Motor("C")
+        self.left_motor = rose_ev3.Motor("B")
+        self.right_motor = rose_ev3.Motor("C")
 
     def go(self, left_wheel_speed, right_wheel_speed):
         """
@@ -174,7 +174,7 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
-        target_degrees = self.left_motor.get_position() + degrees * 10  # TOTALLY UNTESTED!!!
+        target_degrees = self.left_motor.get_position() + degrees * 10  # Roughly
         if speed > 0:
             self.go(speed, 0)
         else:

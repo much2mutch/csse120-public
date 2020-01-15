@@ -10,6 +10,9 @@ Winter term, 2019-2020.
 """
 # TODO: 1.  Put your name in the above.
 
+import rosebot
+import time
+
 
 def main():
     """ Calls the desired TEST functions. """
@@ -17,88 +20,144 @@ def main():
 
 
 def test_arm_and_claw():
-    """ Test a robot's ARM and CLAW. """
+    """ Test a robot's ARM AND CLAW. """
     print()
     print('--------------------------------------------------')
-    print('Testing the  ARM_AND_CLAW  of a robot:')
+    print('Testing the  ARM AND CLAW  of a robot')
     print('--------------------------------------------------')
-
-    # -------------------------------------------------------------------------
-    # Get the arm speed for this set of tests.
-    # -------------------------------------------------------------------------
-    print("Arm speed should be an integer between 1 and 100.")
-    arm_speed = int(input("Enter an integer for arm speed: "))
 
     # -------------------------------------------------------------------------
     # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object.
     # -------------------------------------------------------------------------
+    robot = rosebot.RoseBot()
 
     # -------------------------------------------------------------------------
-    # Test the  RAISE_ARM  method of the  arm_and_claw  of the robot:
-    # -------------------------------------------------------------------------
-    print()
-    print("Testing the  RAISE_ARM  method")
-    print(" of the  ARM_AND_CLAW  of the robot.")
-    input("Press the ENTER key when ready for the arm to start moving.")
-
-    # -------------------------------------------------------------------------
-    # TODO: 3. Call the  raise_arm  method of the   arm_and_claw   of the robot,
-    #   using the input arm_speed.
-    # -------------------------------------------------------------------------
-
-    # -------------------------------------------------------------------------
-    # Test the  CALIBRATE_ARM  method of the  arm_and_claw  of the robot:
-    # -------------------------------------------------------------------------
-    print()
-    print("Testing the  CALIBRATE_ARM  method")
-    print(" of the  ARM_AND_CLAW  of the robot.")
-    input("Press the ENTER key when ready for the arm to start moving.")
-
-    # -------------------------------------------------------------------------
-    # TODO: 4. Call the  calibrate_arm  method of the   arm_and_claw
-    #  of the robot, first using the input arm_speed,
-    #  then (after a short pause) using the default arm speed.
+    # STUDENTS: Do the work in this module as follows.
+    #   Otherwise, you will be overwhelmed by the number of tests happening.
+    #
+    #   For each function that you implement:
+    #     1. Locate the statements just below this comment that call TEST functions.
+    #     2. UN-comment only one test at a time.
+    #     3. Implement that function per its _TODO_.
+    #     4. Implement as needed the appropriate class methods
+    #     5. When satisfied with your work, move onto the next test,
+    #        RE-commenting out the previous test to reduce the testing.
     # -------------------------------------------------------------------------
 
-    # -------------------------------------------------------------------------
-    # Test the  MOVE_ARM_TO_POSITION  method of the  arm_and_claw  of the robot:
-    # -------------------------------------------------------------------------
-    print()
-    print("Testing the  MOVE_ARM_TO_POSITION  method")
-    print(" of the  ARM_AND_CLAW  of the robot.")
+    # run_test_touch_sensor(robot)
+    # run_test_calibrate(robot)
+    # run_test_raise_and_lower(robot)
+    run_test_move_arm_to_position(robot)
 
-    print("Enter an integer for the position to which")
-    desired_position = int(input("to move the arm (0 to about 5100: "))
-    input("Press the ENTER key when ready for the arm to start moving.")
+
+def run_test_touch_sensor(robot):
+    """
+    Tests the  touch_sensor_is_pressed    methods of the ArmAndClaw class.
+    """
+    print('--------------------------------------------------')
+    print('Testing the  touch_sensor.is_pressed   methods of the robot')
+    print('--------------------------------------------------')
+
+    while True:
+        time.sleep(0.5)
+        # -------------------------------------------------------------------------
+        # TODO: 3. Call the  touch_sensor.is_pressed  method of the   arm_and_claw   of the robot.
+        # If the Touch sensor is pressed, print "Pressing Touch Sensor!"
+        # If the Touch sensor is not pressed, print "Touch sensor - NOT - pressed"
+        # -------------------------------------------------------------------------
+
+        # Solution to be removed
+        if robot.arm_and_claw.touch_sensor.is_pressed():
+            print("Pressing Touch Sensor!")
+        else:
+            print("Touch sensor - NOT - pressed")
+
+
+def run_test_calibrate(robot):
+    """
+    Tests the  calibrate    methods of the ArmAndClaw class.
+    """
+    print('--------------------------------------------------')
+    print('Testing the  calibrate   methods of the robot')
+    print('--------------------------------------------------')
+    while True:
+        input("Press the ENTER key when ready for the robot to start moving.")
+
+        # -------------------------------------------------------------------------
+        # TODO: 4. Call the  calibrate_arm  method of the   arm_and_claw   of the robot,
+        #   sending it the arm_speed.
+        # -------------------------------------------------------------------------
+
+        # Solution to be removed
+        robot.arm_and_claw.calibrate_arm()
+
+
+def run_test_raise_and_lower(robot):
+    """
+    Tests the  raise   and  lower    methods of the ArmAndClaw class.
+    """
+    print('--------------------------------------------------')
+    print('Testing the  raise   and  lower   methods of the robot')
+    print('--------------------------------------------------')
+    input("Press the ENTER key when ready for the robot to calibrate the arm.")
 
     # -------------------------------------------------------------------------
-    # TODO: 5. Call the  move_arm_to_position  method of the   arm_and_claw
-    #  of the robot, using the input position and input speed.
-    #  Then (after a short pause) call it again, moving to position 0
-    #  this time, at the default speed.  Then (after a short pause) call it
-    #  once more, this time to position 5000.
-    #  Finally, after another short pause, reset to False the instance variable
-    #  that indicates whether or not the arm has been calibrated, then call
-    #  move_arm_to_position(2000), confirming that it FIRST does a calibration.
+    # TODO: 5. Before you can use the lower_arm method you have to calibrate the arm.
+    #  So call the  calibrate_arm  method of the   arm_and_claw   of the robot once.
     # -------------------------------------------------------------------------
 
-    # -------------------------------------------------------------------------
-    # Test the  LOWER_ARM  method of the  arm_and_claw  of the robot:
-    # -------------------------------------------------------------------------
-    print()
-    print("Testing the  LOWER_ARM  method")
-    print(" of the  ARM_AND_CLAW  of the robot.")
-    input("Press the ENTER key when ready for the arm to start moving.")
+    # Solution to be removed
+    robot.arm_and_claw.calibrate_arm()
 
-    # -------------------------------------------------------------------------
-    # TODO: 6. Call the  lower_arm  method of the   arm_and_claw
-    #  of the robot, using the default arm speed.
-    # -------------------------------------------------------------------------
+    while True:
+        input("Press the ENTER key when ready for the robot to start moving up.")
 
-    # -------------------------------------------------------------------------
-    # TODO: 7. Add additional tests as needed to ensure that the arm_and_claw
-    #  methods are working correctly.
-    # -------------------------------------------------------------------------
+        # -------------------------------------------------------------------------
+        # TODO: 6. Call the  raise_arm  method of the   arm_and_claw   of the robot,
+        #   using the input arm_speed.
+        # -------------------------------------------------------------------------
+
+        # Solution to be removed
+        robot.arm_and_claw.raise_arm()
+
+        input("Press the ENTER key when ready for the robot to start moving back down.")
+
+        # -------------------------------------------------------------------------
+        # TODO: 7. Call the  lower_arm  method of the   arm_and_claw   of the robot,
+        #   using the input arm_speed.
+        # -------------------------------------------------------------------------
+
+        # Solution to be removed
+        robot.arm_and_claw.lower_arm()
+
+
+def run_test_move_arm_to_position(robot):
+    """
+    Tests the  move_arm_to_position    methods of the ArmAndClaw class.
+    """
+    print('--------------------------------------------------')
+    print('Testing the  move_arm_to_position  method of the robot')
+    print('--------------------------------------------------')
+
+    while True:
+        print("Enter an integer for the position to which")
+        desired_position = int(input("to move the arm (0 to about 5100): "))
+        if desired_position < 0 or desired_position > 5100:
+            print("Goodbye")
+            break
+        print()
+        input("Press the ENTER key when ready for the robot to start moving.")
+
+        # -------------------------------------------------------------------------
+        # TODO: 8. Call the  move_arm_to_position   of the robot
+        # NOTICE: Your move_arm_to_position should notice that the arm has NOT
+        # been calibrated and do a calibration.  You don't need to call calibrate
+        # from here, your library method should notice the lack of calibration and
+        # just do it before the move!
+        # -------------------------------------------------------------------------
+
+        # Solution to be removed
+        robot.arm_and_claw.move_arm_to_position(desired_position)
 
 
 main()

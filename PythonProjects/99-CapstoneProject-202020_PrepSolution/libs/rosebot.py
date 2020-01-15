@@ -10,11 +10,15 @@ Winter term, 2019-2020.
 # TODO: Put the name of EACH team member who contributes
 #   to this module in the above.
 
-import rosebot_drive_system
 import rosebot_arm_and_claw
+import rosebot_brick_buttons
 import rosebot_color_sensor
-import rosebot_ev3dev_api
+import rosebot_drive_system
+import rosebot_leds
+import rosebot_remote_control
 import rosebot_touch_sensor
+
+import rosebot_ev3dev_api
 
 ###############################################################################
 #    RoseBot class.
@@ -31,11 +35,12 @@ import rosebot_touch_sensor
 class RoseBot(object):
     def __init__(self):
         # TODO: Implement this class with your instructor.
-        self.touch_sensor = rosebot_touch_sensor.TouchSensor(1)
-        self.color_sensor = rosebot_color_sensor.ColorSensor(3)
         self.drive_system = rosebot_drive_system.DriveSystem('B', 'C')
-        self.arm_and_claw = rosebot_arm_and_claw.ArmAndClaw('A',
-                                                            self.touch_sensor)
-        self.camera = rosebot_ev3dev_api.Camera()
+        self.touch_sensor = rosebot_touch_sensor.TouchSensor(1)
+        self.arm_and_claw = rosebot_arm_and_claw.ArmAndClaw('A', self.touch_sensor)
+        self.leds = rosebot_leds.Leds()
+        self.brick_buttons = rosebot_brick_buttons.BrickButtons()
+        self.remote_control = rosebot_remote_control.RemoteControl()
+        self.color_sensor = rosebot_color_sensor.ColorSensor(3)
+        # self.camera = rosebot_ev3dev_api.Camera()
         self.infrared_proximity_sensor = rosebot_ev3dev_api.InfraredProximitySensor(4)
-
