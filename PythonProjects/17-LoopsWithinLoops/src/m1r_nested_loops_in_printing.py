@@ -41,14 +41,14 @@ def example_1(n, m):
     #    on the current value of the outer-loop variable.
     # -------------------------------------------------------------------------
     print()
-    print('-----------------------------')
-    print('Classic example 1:')
-    print('-----------------------------')
+    print("-----------------------------")
+    print("Classic example 1:")
+    print("-----------------------------")
 
     for k in range(n):
         for j in range(m):
             print(k, j)
-        print('Completed the inner loop {} times'.format(k + 1))
+        print("Completed the inner loop {} times".format(k + 1))
 
 
 def example_2(n):
@@ -59,14 +59,14 @@ def example_2(n):
     #    on the current value of the outer-loop variable.
     # -------------------------------------------------------------------------
     print()
-    print('-----------------------------')
-    print('Classic example 2:')
-    print('-----------------------------')
+    print("-----------------------------")
+    print("Classic example 2:")
+    print("-----------------------------")
 
     for k in range(n):  # The ONLY difference from the previous
         for j in range(k + 1):  # example is   k+1   on this line.
             print(k, j)
-        print('Completed the inner loop {} times'.format(k + 1))
+        print("Completed the inner loop {} times".format(k + 1))
 
 
 def example_3(n, m):
@@ -76,15 +76,15 @@ def example_3(n, m):
     # statements cause output on the SAME line, and then go to the NEXT line.
     # -------------------------------------------------------------------------
     print()
-    print('-----------------------------')
-    print('Classic example 3:')
-    print('-----------------------------')
+    print("-----------------------------")
+    print("Classic example 3:")
+    print("-----------------------------")
 
     for k in range(n):
-        print(k, end=':  ')  # Note the   end=':  '  which replaces newline.
+        print(k, end=":  ")  # Note the   end=":  "  which replaces newline.
         for j in range(m):
-            print(' ', j, end='')  # Note   end=''   which causes no newline.
-        print('Completed the inner loop {} times'.format(k + 1))
+            print(" ", j, end="")  # Note   end=""   which causes no newline.
+        print("Completed the inner loop {} times".format(k + 1))
 
 
 # -----------------------------------------------------------------------------

@@ -21,20 +21,20 @@ def main():
 def run_test_alternating_brackets():
     """ Tests the    alternating_brackets    function. """
     print()
-    print('----------------------------------------------------------')
-    print('Testing the   ALTERNATING_BRACKETS   function:')
-    print('----------------------------------------------------------')
+    print("----------------------------------------------------------")
+    print("Testing the   ALTERNATING_BRACKETS   function:")
+    print("----------------------------------------------------------")
 
-    print('Test 1 of alternating_brackets: (5, 2)')
+    print("Test 1 of alternating_brackets: (5, 2)")
     alternating_brackets(5, 2)
 
-    print('Test 2 of alternating_brackets: (3, 1)')
+    print("Test 2 of alternating_brackets: (3, 1)")
     alternating_brackets(3, 1)
 
-    print('Test 3 of alternating_brackets: (4, 4)')
+    print("Test 3 of alternating_brackets: (4, 4)")
     alternating_brackets(4, 4)
 
-    print('Test 4 of alternating_brackets: (8, 6)')
+    print("Test 4 of alternating_brackets: (8, 6)")
     alternating_brackets(8, 6)
 
 
@@ -59,20 +59,20 @@ def alternating_brackets(m, n):
 def run_test_triangle_same_number_in_each_row():
     """ Tests the    triangle_same_number_in_each_row    function. """
     print()
-    print('----------------------------------------------------------')
-    print('Testing the   TRIANGLE_SAME_NUMBER_IN_EACH_ROW   function:')
-    print('----------------------------------------------------------')
+    print("----------------------------------------------------------")
+    print("Testing the   TRIANGLE_SAME_NUMBER_IN_EACH_ROW   function:")
+    print("----------------------------------------------------------")
 
-    print('Test 1 of triangle_same_number_in_each_row: (5)')
+    print("Test 1 of triangle_same_number_in_each_row: (5)")
     triangle_same_number_in_each_row(5)
 
-    print('Test 2 of triangle_same_number_in_each_row: (1)')
+    print("Test 2 of triangle_same_number_in_each_row: (1)")
     triangle_same_number_in_each_row(1)
 
-    print('Test 3 of triangle_same_number_in_each_row: (3)')
+    print("Test 3 of triangle_same_number_in_each_row: (3)")
     triangle_same_number_in_each_row(3)
 
-    print('Test 4 of triangle_same_number_in_each_row: (6)')
+    print("Test 4 of triangle_same_number_in_each_row: (6)")
     triangle_same_number_in_each_row(6)
 
 
@@ -98,20 +98,20 @@ def triangle_same_number_in_each_row(r):
 def run_test_triangle_all_numbers_in_each_row():
     """ Tests the    triangle_all_numbers_in_each_row    function. """
     print()
-    print('----------------------------------------------------------')
-    print('Testing the   TRIANGLE_ALL_NUMBERS_IN_EACH_ROW   function:')
-    print('----------------------------------------------------------')
+    print("----------------------------------------------------------")
+    print("Testing the   TRIANGLE_ALL_NUMBERS_IN_EACH_ROW   function:")
+    print("----------------------------------------------------------")
 
-    print('Test 1 of triangle_all_numbers_in_each_row: (5)')
+    print("Test 1 of triangle_all_numbers_in_each_row: (5)")
     triangle_all_numbers_in_each_row(5)
 
-    print('Test 2 of triangle_all_numbers_in_each_row: (1)')
+    print("Test 2 of triangle_all_numbers_in_each_row: (1)")
     triangle_all_numbers_in_each_row(1)
 
-    print('Test 3 of triangle_all_numbers_in_each_row: (3)')
+    print("Test 3 of triangle_all_numbers_in_each_row: (3)")
     triangle_all_numbers_in_each_row(3)
 
-    print('Test 4 of triangle_all_numbers_in_each_row: (6)')
+    print("Test 4 of triangle_all_numbers_in_each_row: (6)")
     triangle_all_numbers_in_each_row(6)
 
 

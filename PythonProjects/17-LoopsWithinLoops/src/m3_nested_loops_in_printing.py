@@ -21,17 +21,17 @@ def main():
 def run_test_rectangle_of_stars():
     """ Tests the    rectangle_of_stars    function. """
     print()
-    print('--------------------------------------------')
-    print('Testing the   RECTANGLE_OF_STARS   function:')
-    print('--------------------------------------------')
+    print("--------------------------------------------")
+    print("Testing the   RECTANGLE_OF_STARS   function:")
+    print("--------------------------------------------")
 
-    print('Test 1 of rectangle_of_stars: (3, 5)')
+    print("Test 1 of rectangle_of_stars: (3, 5)")
     rectangle_of_stars(3, 5)
 
-    print('Test 2 of rectangle_of_stars: (4, 11)')
+    print("Test 2 of rectangle_of_stars: (4, 11)")
     rectangle_of_stars(4, 11)
 
-    print('Test 3 of rectangle_of_stars: (6, 2)')
+    print("Test 3 of rectangle_of_stars: (6, 2)")
     rectangle_of_stars(6, 2)
 
 
@@ -67,20 +67,20 @@ def rectangle_of_stars(r, c):
 def run_test_triangle_of_stars():
     """ Tests the    triangle_of_stars    function. """
     print()
-    print('-------------------------------------------')
-    print('Testing the   TRIANGLE_OF_STARS   function:')
-    print('-------------------------------------------')
+    print("-------------------------------------------")
+    print("Testing the   TRIANGLE_OF_STARS   function:")
+    print("-------------------------------------------")
 
-    print('Test 1 of triangle_of_stars: (5)')
+    print("Test 1 of triangle_of_stars: (5)")
     triangle_of_stars(5)
 
-    print('Test 2 of triangle_of_stars: (1)')
+    print("Test 2 of triangle_of_stars: (1)")
     triangle_of_stars(1)
 
-    print('Test 3 of triangle_of_stars: (3)')
+    print("Test 3 of triangle_of_stars: (3)")
     triangle_of_stars(3)
 
-    print('Test 4 of triangle_of_stars: (6)')
+    print("Test 4 of triangle_of_stars: (6)")
     triangle_of_stars(6)
 
 
@@ -118,20 +118,20 @@ def triangle_of_stars(r):
 def run_test_decreasing_exclamation_marks():
     """ Tests the    decreasing_exclamation_marks    function. """
     print()
-    print('----------------------------------------------------------')
-    print('Testing the   DECREASING_EXCLAMATION_MARKS   function:')
-    print('----------------------------------------------------------')
+    print("----------------------------------------------------------")
+    print("Testing the   DECREASING_EXCLAMATION_MARKS   function:")
+    print("----------------------------------------------------------")
 
-    print('Test 1 of decreasing_exclamation_marks: (5, 2)')
+    print("Test 1 of decreasing_exclamation_marks: (5, 2)")
     decreasing_exclamation_marks(5, 2)
 
-    print('Test 2 of decreasing_exclamation_marks: (3, 1)')
+    print("Test 2 of decreasing_exclamation_marks: (3, 1)")
     decreasing_exclamation_marks(3, 1)
 
-    print('Test 3 of decreasing_exclamation_marks: (4, 4)')
+    print("Test 3 of decreasing_exclamation_marks: (4, 4)")
     decreasing_exclamation_marks(4, 4)
 
-    print('Test 4 of decreasing_exclamation_marks: (8, 6)')
+    print("Test 4 of decreasing_exclamation_marks: (8, 6)")
     decreasing_exclamation_marks(8, 6)
 
 

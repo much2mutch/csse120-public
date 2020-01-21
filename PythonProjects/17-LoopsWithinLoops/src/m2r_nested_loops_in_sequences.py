@@ -39,11 +39,11 @@ def main():
 
     tuple_of_lists = ([10, 5],
                       [5, 10, 5, 8, 20],
-                      ['a', 'b', 'c', 8],
-                      ['the', 'rain', 'in spain', 5, 'falls'],
-                      ['mainly on the plain.'])
+                      ["a", "b", "c", 8],
+                      ["the", "rain", "in spain", 5, "falls"],
+                      ["mainly on the plain."])
 
-    list_of_strings = ['hello', 'how', 'are', 'you?']
+    list_of_strings = ["hello", "how", "are", "you?"]
 
     # -------------------------------------------------------------------------
     # Calls  classic_example_1   to PRINT all the sub-items.
@@ -63,31 +63,31 @@ def main():
     # Calls  classic_example_3   to show mutating a sequence of lists.
     # The final example shows that attempting to mutate a STRING fails.
     # -------------------------------------------------------------------------
-    count = classic_example_3(list_of_lists, 100, 'oops')
-    print('Number of occurrences of {} is {}.'.format(100, count))
-    print('The mutated list of lists is:')
+    count = classic_example_3(list_of_lists, 100, "oops")
+    print("Number of occurrences of {} is {}.".format(100, count))
+    print("The mutated list of lists is:")
     print(list_of_lists)
 
-    count = classic_example_3(tuple_of_lists, 5, 'five')
-    print('Number of occurrences of {} is {}.'.format(5, count))
-    print('The mutated tuple of lists is:')
+    count = classic_example_3(tuple_of_lists, 5, "five")
+    print("Number of occurrences of {} is {}.".format(5, count))
+    print("The mutated tuple of lists is:")
     print(tuple_of_lists)
 
     # The next example will throw a TypeError (and crash) with this message:
     #   TypeError: 'str' object does not support item assignment
-    count = classic_example_3(list_of_strings, 'o', 'x')
-    print('Number of occurrences of {} is {}.'.format('o', count))
-    print('The mutated list of STRINGS is:')
+    count = classic_example_3(list_of_strings, "o", "x")
+    print("Number of occurrences of {} is {}.".format("o", count))
+    print("The mutated list of STRINGS is:")
     print(list_of_strings)
 
 
 def classic_example_1(sequence_of_sequences):
     """ Prints the items in the sequence of sequences. """
     print()
-    print('------------------------------------------------')
-    print('Classic example 1 on this sequence of sequences:')
+    print("------------------------------------------------")
+    print("Classic example 1 on this sequence of sequences:")
     print(sequence_of_sequences)
-    print('------------------------------------------------')
+    print("------------------------------------------------")
 
     for k in range(len(sequence_of_sequences)):
         sequence = sequence_of_sequences[k]
@@ -100,10 +100,10 @@ def classic_example_1(sequence_of_sequences):
 def classic_example_2(sequence_of_sequences):
     """ Same as preceding example but using [][] notation. """
     print()
-    print('------------------------------------------------')
-    print('Classic example 2 on this sequence of sequences:')
+    print("------------------------------------------------")
+    print("Classic example 2 on this sequence of sequences:")
     print(sequence_of_sequences)
-    print('------------------------------------------------')
+    print("------------------------------------------------")
 
     for k in range(len(sequence_of_sequences)):
         print("  Beginning inner sequence at outer index", k)
@@ -116,14 +116,14 @@ def classic_example_3(sequence_of_sequences,
                       what_to_count, what_to_mutate_into):
     """
     Shows counting and mutating in a sequence of LISTS.
-      -- Counts and returns the number of 'what_to_count' occurrences.
-      -- Mutates those occurrences into the 'what_to_mutate_into'.
+      -- Counts and returns the number of "what_to_count" occurrences.
+      -- Mutates those occurrences into the "what_to_mutate_into".
     """
     print()
-    print('------------------------------------------------')
-    print('Classic example 3 on this sequence of LISTS:')
+    print("------------------------------------------------")
+    print("Classic example 3 on this sequence of LISTS:")
     print(sequence_of_sequences)
-    print('------------------------------------------------')
+    print("------------------------------------------------")
 
     count = 0
     for k in range(len(sequence_of_sequences)):
@@ -154,8 +154,8 @@ else:
 try:
     main()
 except Exception:
-    print('ERROR - While running this test,', color='red')
-    print('your code raised the following exception:', color='red')
+    print("ERROR - While running this test,", color="red")
+    print("your code raised the following exception:", color="red")
     print()
     time.sleep(1)
     raise

@@ -39,10 +39,10 @@ def nested_loops_in_graphics_example():
     """
     width = 800
     height = 600
-    title = 'Rectangles and Triangles of Circles'
+    title = "Rectangles and Triangles of Circles"
     window = rg.RoseWindow(width, height, title)
 
-    window.continue_on_mouse_click('Click to run Example 1.')
+    window.continue_on_mouse_click("Click to run Example 1.")
 
     # -------------------------------------------------------------------------
     starting_point = rg.Point(50, 50)
@@ -55,7 +55,7 @@ def nested_loops_in_graphics_example():
     starting_circle = rg.Circle(starting_point, radius)
 
     rectangle_of_circles(window, starting_circle.clone(), 4, 12)
-    window.continue_on_mouse_click('Click to run Example 2.')
+    window.continue_on_mouse_click("Click to run Example 2.")
 
     # -------------------------------------------------------------------------
     # Second set of circles
@@ -63,7 +63,7 @@ def nested_loops_in_graphics_example():
     starting_circle.move_by(180, 400)
 
     rectangle_of_circles(window, starting_circle.clone(), 14, 2)
-    window.continue_on_mouse_click('Click to run Example 3.')
+    window.continue_on_mouse_click("Click to run Example 3.")
 
     # -------------------------------------------------------------------------
     # Third and last set of circles
