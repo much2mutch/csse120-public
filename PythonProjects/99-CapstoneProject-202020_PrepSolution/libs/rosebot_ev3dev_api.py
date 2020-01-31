@@ -26,30 +26,74 @@ import ev3dev.ev3 as ev3
 # STUDENTS:  *** Do NOT change ANYTHING in this module. ***
 ###############################################################################
 
+
 ###############################################################################
 #    Motor
 ###############################################################################
 class Motor(object):
-    # Future enhancements: Add additional methods from the many things
-    # an ev3.Motor can do.
+    """
+    Controls a single EV3 Motor.  Our robot has 2 "large" motors for the wheels
+    and a "medium" motor to control the arm/claw.
+    """
 
     def __init__(self, port, motor_type='large'):
-        # port must be 'A', 'B', 'C', or 'D'.
+        """
+        Constructs a Motor based on the input parameters.  Valid ports:
+          'A', 'B', 'C', or 'D'
+          Our "large" motors are in ports "B" and "C"
+          Our "medium" motor is in port "A"
+        Valid motor_types: "medium" or "large"
+        ---
+        :param port: Letter on EV3 brick where motor connects
+        :type port: str
+        :param motor_type: Motor types are either "medium" or "large"
+        :type motor_type: str
+        """
         if motor_type == 'large':
             self._motor = ev3.LargeMotor('out' + port)
         else:
             self._motor = ev3.MediumMotor('out' + port)
 
-    def turn_on(self, speed):  # speed must be -100 to 100
+    def turn_on(self, speed):
+        """
+        Turns on the motor at the requested speed. Valid speeds:
+          -100 up to 100
+        For example:
+          -100 full speed in reverse
+          -50 slow reverse
+          0 coast to a stop
+          30 slow forwards
+          60 pretty fast forwards
+          100 max speed forwards
+        ---
+        :param speed: Duty cycle percentage for motor
+        :type speed: int
+        """
         self._motor.run_direct(duty_cycle_sp=speed)
 
     def turn_off(self):
+        """
+        Stops the motor.
+        Note: turn_off is similar to turn_on(0), but turn_off
+              tries to stop the motion a bit faster using the
+              brake option.
+        """
         self._motor.stop(stop_action="brake")
 
-    def get_position(self):  # Units are degrees (that the motor has rotated).
+    def get_position(self):
+        """
+        Returns the position of the motor since the last reset.
+        Units are in degrees
+        :return: Position of the motor in degrees
+        :rtype: int
+        """
         return self._motor.position
 
     def reset_position(self):
+        """
+
+        :return:
+        """
         self._motor.position = 0
 
 
