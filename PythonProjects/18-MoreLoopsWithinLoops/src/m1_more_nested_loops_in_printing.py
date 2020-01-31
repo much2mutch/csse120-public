@@ -24,20 +24,20 @@ def main():
 def run_test_triangle_right_justified():
     """ Tests the    triangle_right_justified    function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   TRIANGLE_RIGHT_JUSTIFIED   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   TRIANGLE_RIGHT_JUSTIFIED   function:")
+    print("--------------------------------------------------")
 
-    print('Test 1 of triangle_right_justified: (5)')
+    print("Test 1 of triangle_right_justified: (5)")
     triangle_right_justified(5)
 
-    print('Test 2 of triangle_right_justified: (1)')
+    print("Test 2 of triangle_right_justified: (1)")
     triangle_right_justified(1)
 
-    print('Test 3 of triangle_right_justified: (3)')
+    print("Test 3 of triangle_right_justified: (3)")
     triangle_right_justified(3)
 
-    print('Test 4 of triangle_right_justified: (6)')
+    print("Test 4 of triangle_right_justified: (6)")
     triangle_right_justified(6)
 
 
@@ -82,20 +82,20 @@ def triangle_right_justified(r):
 def run_test_triangle_upside_down():
     """ Tests the    triangle_upside_down    function. """
     print()
-    print('----------------------------------------------')
-    print('Testing the   TRIANGLE_UPSIDE_DOWN   function:')
-    print('----------------------------------------------')
+    print("----------------------------------------------")
+    print("Testing the   TRIANGLE_UPSIDE_DOWN   function:")
+    print("----------------------------------------------")
 
-    print('Test 1 of triangle_upside_down: (5)')
+    print("Test 1 of triangle_upside_down: (5)")
     triangle_upside_down(5)
 
-    print('Test 2 of triangle_upside_down: (1)')
+    print("Test 2 of triangle_upside_down: (1)")
     triangle_upside_down(1)
 
-    print('Test 3 of triangle_upside_down: (3)')
+    print("Test 3 of triangle_upside_down: (3)")
     triangle_upside_down(3)
 
-    print('Test 4 of triangle_upside_down: (6)')
+    print("Test 4 of triangle_upside_down: (6)")
     triangle_upside_down(6)
 
 
@@ -122,20 +122,20 @@ def triangle_upside_down(r):
 def run_test_vee():
     """ Tests the    vee    function. """
     print()
-    print('----------------------------------------------')
-    print('Testing the   VEE   function:')
-    print('----------------------------------------------')
+    print("----------------------------------------------")
+    print("Testing the   VEE   function:")
+    print("----------------------------------------------")
 
-    print('Test 1 of vee: (5)')
+    print("Test 1 of vee: (5)")
     vee(5)
 
-    print('Test 2 of vee: (1)')
+    print("Test 2 of vee: (1)")
     vee(1)
 
-    print('Test 3 of vee: (3)')
+    print("Test 3 of vee: (3)")
     vee(3)
 
-    print('Test 4 of vee: (6)')
+    print("Test 4 of vee: (6)")
     vee(6)
 
 
@@ -149,7 +149,7 @@ def vee(r):
            12-21
             1-1
 
-    Note the single dash ('-') in each row.
+    Note the single dash ("-") in each row.
 
     Here is another example, when r = 3:
          123-321
@@ -169,20 +169,20 @@ def vee(r):
 def run_test_numbers_constant_forward():
     """ Tests the    numbers_constant_forward    function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   NUMBERS_CONSTANT_FORWARD   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   NUMBERS_CONSTANT_FORWARD   function:")
+    print("--------------------------------------------------")
 
-    print('Test 1 of numbers_constant_forward: (4, 7, 3)')
+    print("Test 1 of numbers_constant_forward: (4, 7, 3)")
     numbers_constant_forward(4, 7, 3)
 
-    print('Test 2 of numbers_constant_forward: (3, 5, 8)')
+    print("Test 2 of numbers_constant_forward: (3, 5, 8)")
     numbers_constant_forward(3, 5, 8)
 
-    print('Test 3 of numbers_constant_forward: (1, 5, 4)')
+    print("Test 3 of numbers_constant_forward: (1, 5, 4)")
     numbers_constant_forward(1, 5, 4)
 
-    print('Test 4 of numbers_constant_forward: (7, 3, 4)')
+    print("Test 4 of numbers_constant_forward: (7, 3, 4)")
     numbers_constant_forward(7, 3, 4)
 
 
@@ -224,20 +224,20 @@ def numbers_constant_forward(r, maxnum, n):
 def run_test_numbers_constant_backwards():
     """ Tests the    numbers_constant_backwards    function. """
     print()
-    print('----------------------------------------------------')
-    print('Testing the   NUMBERS_CONSTANT_BACKWARDS   function:')
-    print('----------------------------------------------------')
+    print("----------------------------------------------------")
+    print("Testing the   NUMBERS_CONSTANT_BACKWARDS   function:")
+    print("----------------------------------------------------")
 
-    print('Test 1 of numbers_constant_backwards: (4, 7, 3)')
+    print("Test 1 of numbers_constant_backwards: (4, 7, 3)")
     numbers_constant_backwards(4, 7, 3)
 
-    print('Test 2 of numbers_constant_backwards: (3, 5, 8)')
+    print("Test 2 of numbers_constant_backwards: (3, 5, 8)")
     numbers_constant_backwards(3, 5, 8)
 
-    print('Test 3 of numbers_constant_backwards: (1, 5, 4)')
+    print("Test 3 of numbers_constant_backwards: (1, 5, 4)")
     numbers_constant_backwards(1, 5, 4)
 
-    print('Test 4 of numbers_constant_backwards: (7, 3, 4)')
+    print("Test 4 of numbers_constant_backwards: (7, 3, 4)")
     numbers_constant_backwards(7, 3, 4)
 
 
@@ -265,23 +265,23 @@ def numbers_constant_backwards(r, maxnum, n):
 def run_test_numbers_increasing_forward():
     """ Tests the    numbers_increasing_forward    function. """
     print()
-    print('----------------------------------------------------')
-    print('Testing the   NUMBERS_INCREASING_FORWARD   function:')
-    print('----------------------------------------------------')
+    print("----------------------------------------------------")
+    print("Testing the   NUMBERS_INCREASING_FORWARD   function:")
+    print("----------------------------------------------------")
 
-    print('Test 1 of numbers_increasing_forward: (4, 3)')
+    print("Test 1 of numbers_increasing_forward: (4, 3)")
     numbers_increasing_forward(4, 3)
 
-    print('Test 2 of numbers_increasing_forward: (2, 7)')
+    print("Test 2 of numbers_increasing_forward: (2, 7)")
     numbers_increasing_forward(2, 7)
 
-    print('Test 3 of numbers_increasing_forward: (5, 6)')
+    print("Test 3 of numbers_increasing_forward: (5, 6)")
     numbers_increasing_forward(5, 6)
 
-    print('Test 4 of numbers_increasing_forward: (1, 7)')
+    print("Test 4 of numbers_increasing_forward: (1, 7)")
     numbers_increasing_forward(1, 7)
 
-    print('Test 5 of numbers_increasing_forward: (2, 1)')
+    print("Test 5 of numbers_increasing_forward: (2, 1)")
     numbers_increasing_forward(2, 1)
 
 

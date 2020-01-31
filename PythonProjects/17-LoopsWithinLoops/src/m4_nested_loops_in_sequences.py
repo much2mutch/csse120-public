@@ -28,11 +28,11 @@ def run_test_sum_numbers():
     #   Include at least **   4   ** tests (we wrote 3 for you).
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_numbers   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_numbers   function:")
+    print("--------------------------------------------------")
 
-    format_string = '    sum_numbers( {} )'
+    format_string = "    sum_numbers( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # Test 1:
@@ -89,7 +89,7 @@ def sum_numbers(seq_seq):
     #  NOTE: This is a classic SEQUENCE of SEQUENCES problem:
     #        -- Each loop is simply the pattern you have seen many times.
     #        -- But INSIDE the OUTER loop and BEFORE the INNER loop,
-    #             you can 'extract' the current (OUTER loop) SUB-list
+    #             you can "extract" the current (OUTER loop) SUB-list
     #             to loop through it in the INNER loop.
     #        -- See   m2r_nested_loops_in_sequences   as needed.
     # -------------------------------------------------------------------------
@@ -102,11 +102,11 @@ def run_test_multiply_by_c():
     # although you are welcome to supply more tests if you choose.
     # -------------------------------------------------------------------------
     print()
-    print('------------------------------------------------------')
-    print('Testing the   multiply_by_c   function:')
-    print('------------------------------------------------------')
+    print("------------------------------------------------------")
+    print("Testing the   multiply_by_c   function:")
+    print("------------------------------------------------------")
 
-    format_string = '    multiply_by_c( {}, {} )'
+    format_string = "    multiply_by_c( {}, {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # -------------------------------------------------------------------------
@@ -120,15 +120,15 @@ def run_test_multiply_by_c():
     actual = multiply_by_c(c,
                            seq_of_lists)
     print_actual_result_of_test(expected, seq_of_lists, test_results)
-    print('The above is for  seq_of_lists  (whose lists should be MUTATED.')
+    print("The above is for  seq_of_lists  (whose lists should be MUTATED.")
 
     # Test 2: (a continuation of Test 1)
     #   Tests whether the function does not RETURN a value (i.e., returns None)
     print_expected_result_of_test([c, seq_of_lists], None,
                                   test_results, format_string)
     print_actual_result_of_test(None, actual, test_results)
-    print('The above is for the RETURNED VALUE, which should be')
-    print('the constant None, NOT the STRING "None".')
+    print("The above is for the RETURNED VALUE, which should be")
+    print("the constant None, NOT the STRING \"None\".")
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
@@ -142,15 +142,15 @@ def run_test_multiply_by_c():
     actual = multiply_by_c(c,
                            seq_of_lists)
     print_actual_result_of_test(expected, seq_of_lists, test_results)
-    print('The above is for  seq_of_lists  (whose lists should be MUTATED.')
+    print("The above is for  seq_of_lists  (whose lists should be MUTATED.")
 
     # Test 4: (a continuation of Test 3)
     #   Tests whether the function does not RETURN a value (i.e., returns None)
     print_expected_result_of_test([c, seq_of_lists], None,
                                   test_results, format_string)
     print_actual_result_of_test(None, actual, test_results)
-    print('The above is for the RETURNED VALUE, which should be')
-    print('the constant None, NOT the STRING "None".')
+    print("The above is for the RETURNED VALUE, which should be")
+    print("the constant None, NOT the STRING \"None\".")
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
@@ -166,15 +166,15 @@ def run_test_multiply_by_c():
     actual = multiply_by_c(c,
                            seq_of_lists)
     print_actual_result_of_test(expected, seq_of_lists, test_results)
-    print('The above is for  seq_of_lists  (whose lists should be MUTATED.')
+    print("The above is for  seq_of_lists  (whose lists should be MUTATED.")
 
     # Test 6: (a continuation of Test 5)
     #   Tests whether the function does not RETURN a value (i.e., returns None)
     print_expected_result_of_test([c, seq_of_lists], None,
                                   test_results, format_string)
     print_actual_result_of_test(None, actual, test_results)
-    print('The above is for the RETURNED VALUE, which should be')
-    print('the constant None, NOT the STRING "None".')
+    print("The above is for the RETURNED VALUE, which should be")
+    print("the constant None, NOT the STRING \"None\".")
     # -------------------------------------------------------------------------
 
     # SUMMARY of test results:
@@ -214,7 +214,7 @@ def multiply_by_c(c, sequence_of_lists):
 ###############################################################################
 
 def print_expected_result_of_test(arguments, expected,
-                                  test_results, format_string, suffix=''):
+                                  test_results, format_string, suffix=""):
     testing_helper.print_expected_result_of_test(arguments, expected,
                                                  test_results, format_string,
                                                  suffix)
@@ -249,8 +249,8 @@ else:
 try:
     main()
 except Exception:
-    print('ERROR - While running this test,', color='red')
-    print('your code raised the following exception:', color='red')
+    print("ERROR - While running this test,", color="red")
+    print("your code raised the following exception:", color="red")
     print()
     time.sleep(1)
     raise

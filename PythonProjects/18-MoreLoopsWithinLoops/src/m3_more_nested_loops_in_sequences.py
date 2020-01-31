@@ -29,11 +29,11 @@ def run_test_largest_number():
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     # -------------------------------------------------------------------------
     print()
-    print('----------------------------------------')
-    print('Testing the   largest_number   function:')
-    print('----------------------------------------')
+    print("----------------------------------------")
+    print("Testing the   largest_number   function:")
+    print("----------------------------------------")
 
-    format_string = '    largest_number( {} )'
+    format_string = "    largest_number( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # Test 1:
@@ -169,11 +169,11 @@ def run_test_largest_negative_number():
     #  problem is indeed correct.  Add more tests if you think you need more.
     # -------------------------------------------------------------------------
     print()
-    print('-------------------------------------------------')
-    print('Testing the   largest_negative_number   function:')
-    print('-------------------------------------------------')
+    print("-------------------------------------------------")
+    print("Testing the   largest_negative_number   function:")
+    print("-------------------------------------------------")
 
-    format_string = '    largest_negative_number( {} )'
+    format_string = "    largest_negative_number( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # Test 1:
@@ -360,11 +360,11 @@ def run_test_first_is_elsewhere_too():
     # although you are welcome to supply more tests if you choose.
     # -------------------------------------------------------------------------
     print()
-    print('------------------------------------------------')
-    print('Testing the   first_is_elsewhere_too   function:')
-    print('------------------------------------------------')
+    print("------------------------------------------------")
+    print("Testing the   first_is_elsewhere_too   function:")
+    print("------------------------------------------------")
 
-    format_string = '    first_is_elsewhere_too( {} )'
+    format_string = "    first_is_elsewhere_too( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # Test 1:
@@ -398,33 +398,33 @@ def run_test_first_is_elsewhere_too():
 
     # Test 4:
     expected = True
-    print_expected_result_of_test([(('a', 9),
-                                    (13, 10, 11, 7, 'a'),
+    print_expected_result_of_test([(("a", 9),
+                                    (13, 10, 11, 7, "a"),
                                     (),
                                     (11, 12, 3, 10))],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too((('a', 9),
-                                     (13, 10, 11, 7, 'a'),
+    actual = first_is_elsewhere_too((("a", 9),
+                                     (13, 10, 11, 7, "a"),
                                      (),
                                      (11, 12, 3, 10)))
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 5:
     expected = False
-    print_expected_result_of_test([(('a', 9),
-                                    (13, 10, 11, 7, 'aa'),
+    print_expected_result_of_test([(("a", 9),
+                                    (13, 10, 11, 7, "aa"),
                                     [11, 12, 3, 10])],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too((('a', 9),
-                                     (13, 10, 11, 7, '999'),
+    actual = first_is_elsewhere_too((("a", 9),
+                                     (13, 10, 11, 7, "999"),
                                      [11, 12, 3, 10]))
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 6:
     expected = False
-    print_expected_result_of_test([[('a', 'a', 'b', 'b', 'a', 'b')]],
+    print_expected_result_of_test([[("a", "a", "b", "b", "a", "b")]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too([('a', 'a', 'b', 'b', 'a', 'b')])
+    actual = first_is_elsewhere_too([("a", "a", "b", "b", "a", "b")])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 7:
@@ -436,16 +436,16 @@ def run_test_first_is_elsewhere_too():
 
     # Test 8:
     expected = True
-    print_expected_result_of_test([[('a',), (), (), (), ('a',), ()]],
+    print_expected_result_of_test([[("a",), (), (), (), ("a",), ()]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too([('a',), (), (), (), ('a',), ()])
+    actual = first_is_elsewhere_too([("a",), (), (), (), ("a",), ()])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 9:
     expected = False
-    print_expected_result_of_test([('a',), (), (), (), ('b',), ()],
+    print_expected_result_of_test([("a",), (), (), (), ("b",), ()],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too((('a',), (), (), (), ('b',), ()))
+    actual = first_is_elsewhere_too((("a",), (), (), (), ("b",), ()))
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 10:
@@ -457,207 +457,207 @@ def run_test_first_is_elsewhere_too():
 
     # Test 11:
     expected = True
-    print_expected_result_of_test([['hello', 'goodbye']],
+    print_expected_result_of_test([["hello", "goodbye"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too(['hello', 'goodbye'])
+    actual = first_is_elsewhere_too(["hello", "goodbye"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 12:
     expected = False
-    print_expected_result_of_test([['hello', 'xxxxxxxxxxx']],
+    print_expected_result_of_test([["hello", "xxxxxxxxxxx"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too(['hello', 'xxxxxxxxxxx'])
+    actual = first_is_elsewhere_too(["hello", "xxxxxxxxxxx"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 13:
     expected = True
-    print_expected_result_of_test([['hello',
-                                    'xxxxxxxx',
-                                    'this',
-                                    'is',
-                                    'a',
-                                    'test',
-                                    'o']],
+    print_expected_result_of_test([["hello",
+                                    "xxxxxxxx",
+                                    "this",
+                                    "is",
+                                    "a",
+                                    "test",
+                                    "o"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too(['hello',
-                                     'xxxxxxxx',
-                                     'this',
-                                     'is',
-                                     'a',
-                                     'test',
-                                     'o'])
+    actual = first_is_elsewhere_too(["hello",
+                                     "xxxxxxxx",
+                                     "this",
+                                     "is",
+                                     "a",
+                                     "test",
+                                     "o"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 14:
     expected = True
-    print_expected_result_of_test([['hello',
-                                    'xxxxxxxx',
-                                    'this',
-                                    'is',
-                                    'aoaoaoaoaoaoa',
-                                    'test',
-                                    'z']],
+    print_expected_result_of_test([["hello",
+                                    "xxxxxxxx",
+                                    "this",
+                                    "is",
+                                    "aoaoaoaoaoaoa",
+                                    "test",
+                                    "z"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too(['hello',
-                                     'xxxxxxxx',
-                                     'this',
-                                     'is',
-                                     'aoaoaoaoaoaoa',
-                                     'test',
-                                     'z'])
+    actual = first_is_elsewhere_too(["hello",
+                                     "xxxxxxxx",
+                                     "this",
+                                     "is",
+                                     "aoaoaoaoaoaoa",
+                                     "test",
+                                     "z"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 15:
     expected = True
-    print_expected_result_of_test([['hello',
-                                    'xxxxxxxx',
-                                    'this',
-                                    'is',
-                                    'aaaaaaaaaaaaaa e aaaaaaaaa',
-                                    'tEst',
-                                    'z']],
+    print_expected_result_of_test([["hello",
+                                    "xxxxxxxx",
+                                    "this",
+                                    "is",
+                                    "aaaaaaaaaaaaaa e aaaaaaaaa",
+                                    "tEst",
+                                    "z"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too(['hello',
-                                     'xxxxxxxx',
-                                     'this',
-                                     'is',
-                                     'aaaaaaaaaaaaaa e aaaaaaaaa',
-                                     'tEst',
-                                     'z'])
+    actual = first_is_elsewhere_too(["hello",
+                                     "xxxxxxxx",
+                                     "this",
+                                     "is",
+                                     "aaaaaaaaaaaaaa e aaaaaaaaa",
+                                     "tEst",
+                                     "z"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 16:
     expected = True
-    print_expected_result_of_test([['hello',
-                                    'xxxxxxxx',
-                                    'this',
-                                    'is',
-                                    'aaaaaaaaaaaaaa e aaaaaaaaa',
-                                    'tEst',
-                                    'z']],
+    print_expected_result_of_test([["hello",
+                                    "xxxxxxxx",
+                                    "this",
+                                    "is",
+                                    "aaaaaaaaaaaaaa e aaaaaaaaa",
+                                    "tEst",
+                                    "z"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too(['hello',
-                                     'xxxxxxxx',
-                                     'this',
-                                     'is',
-                                     'aaaaaaaaaaaaaa e aaaaaaaaa',
-                                     'tEst',
-                                     'z'])
+    actual = first_is_elsewhere_too(["hello",
+                                     "xxxxxxxx",
+                                     "this",
+                                     "is",
+                                     "aaaaaaaaaaaaaa e aaaaaaaaa",
+                                     "tEst",
+                                     "z"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 17:
     expected = False
-    print_expected_result_of_test([['1234567890',
-                                    'one two three',
-                                    'i am free',
-                                    'four five six',
-                                    'get my sticks',
-                                    'seven eight nine',
-                                    'i am fine']],
+    print_expected_result_of_test([["1234567890",
+                                    "one two three",
+                                    "i am free",
+                                    "four five six",
+                                    "get my sticks",
+                                    "seven eight nine",
+                                    "i am fine"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too(['1234567890',
-                                     'one two three',
-                                     'i am free',
-                                     'four five six',
-                                     'get my sticks',
-                                     'seven eight nine',
-                                     'i am fine'])
+    actual = first_is_elsewhere_too(["1234567890",
+                                     "one two three",
+                                     "i am free",
+                                     "four five six",
+                                     "get my sticks",
+                                     "seven eight nine",
+                                     "i am fine"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 18:
     expected = True
-    print_expected_result_of_test([[(1000 * 'a') + 'b' + (500 * 'a'),
-                                    (800 * 'c') + 'd' + 1200 * 'c',
-                                    'b']],
+    print_expected_result_of_test([[(1000 * "a") + "b" + (500 * "a"),
+                                    (800 * "c") + "d" + 1200 * "c",
+                                    "b"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too([(1000 * 'a') + 'b' + (500 * 'a'),
-                                     (800 * 'c') + 'd' + 1200 * 'c',
-                                     'b'])
+    actual = first_is_elsewhere_too([(1000 * "a") + "b" + (500 * "a"),
+                                     (800 * "c") + "d" + 1200 * "c",
+                                     "b"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 19:
     expected = True
-    print_expected_result_of_test([[(1000 * 'a') + 'b' + (500 * 'a'),
-                                    (800 * 'c') + 'd' + 1200 * 'c',
-                                    (700 * 'eee') + 'b' + (90 * 'd'),
-                                    (800 * 'c') + 'd' + 1200 * 'c']],
+    print_expected_result_of_test([[(1000 * "a") + "b" + (500 * "a"),
+                                    (800 * "c") + "d" + 1200 * "c",
+                                    (700 * "eee") + "b" + (90 * "d"),
+                                    (800 * "c") + "d" + 1200 * "c"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too([(1000 * 'a') + 'b' + (500 * 'a'),
-                                     (800 * 'c') + 'd' + 1200 * 'c',
-                                     (700 * 'eee') + 'b' + (90 * 'd'),
-                                     (800 * 'c') + 'd' + 1200 * 'c'])
+    actual = first_is_elsewhere_too([(1000 * "a") + "b" + (500 * "a"),
+                                     (800 * "c") + "d" + 1200 * "c",
+                                     (700 * "eee") + "b" + (90 * "d"),
+                                     (800 * "c") + "d" + 1200 * "c"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 20:
     expected = True
-    print_expected_result_of_test([[(1000 * 'b') + 'acd' + (500 * 'f'),
-                                    (800 * '1') + '234a',
-                                    'eeee']],
+    print_expected_result_of_test([[(1000 * "b") + "acd" + (500 * "f"),
+                                    (800 * "1") + "234a",
+                                    "eeee"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too([(1000 * 'b') + 'acd' + (500 * 'f'),
-                                     (800 * '1') + '234a',
-                                     'eeee'])
+    actual = first_is_elsewhere_too([(1000 * "b") + "acd" + (500 * "f"),
+                                     (800 * "1") + "234a",
+                                     "eeee"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 21:
     expected = False
-    print_expected_result_of_test([[(1000 * 'b') + 'cd' + (500 * 'f'),
-                                    (800 * '1') + '234a',
-                                    'eeee',
-                                    'hello',
-                                    'none',
-                                    'oopsie']],
+    print_expected_result_of_test([[(1000 * "b") + "cd" + (500 * "f"),
+                                    (800 * "1") + "234a",
+                                    "eeee",
+                                    "hello",
+                                    "none",
+                                    "oopsie"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too([(1000 * 'b') + 'cd' + (500 * 'f'),
-                                     (800 * '1') + '234a',
-                                     'eeee',
-                                     'hello',
-                                     'none',
-                                     'oopsie'])
+    actual = first_is_elsewhere_too([(1000 * "b") + "cd" + (500 * "f"),
+                                     (800 * "1") + "234a",
+                                     "eeee",
+                                     "hello",
+                                     "none",
+                                     "oopsie"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 22:
     expected = False
-    print_expected_result_of_test([[[(1000 * 'b') + 'cda' + (500 * 'f')],
-                                    (800 * 'b') + '234a',
-                                    'eeee',
-                                    'hello',
-                                    'none',
-                                    'oopsie']],
+    print_expected_result_of_test([[[(1000 * "b") + "cda" + (500 * "f")],
+                                    (800 * "b") + "234a",
+                                    "eeee",
+                                    "hello",
+                                    "none",
+                                    "oopsie"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too([[(1000 * 'b') + 'cda' + (500 * 'f')],
-                                     (800 * 'b') + '234a',
-                                     'eeee',
-                                     'hello',
-                                     'none',
-                                     'oopsie'])
+    actual = first_is_elsewhere_too([[(1000 * "b") + "cda" + (500 * "f")],
+                                     (800 * "b") + "234a",
+                                     "eeee",
+                                     "hello",
+                                     "none",
+                                     "oopsie"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 23:
     expected = True
-    print_expected_result_of_test([[(1000 * 'b') + 'acd' + (500 * 'f'),
-                                    'a' + (800 * '1') + '234',
-                                    '123']],
+    print_expected_result_of_test([[(1000 * "b") + "acd" + (500 * "f"),
+                                    "a" + (800 * "1") + "234",
+                                    "123"]],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too([(1000 * 'b') + 'acd' + (500 * 'f'),
-                                     'a' + (800 * '1') + '234',
-                                     '123'])
+    actual = first_is_elsewhere_too([(1000 * "b") + "acd" + (500 * "f"),
+                                     "a" + (800 * "1") + "234",
+                                     "123"])
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 24:
     expected = True
-    test1 = [(1000 * 'b') + 'acd' + (500 * 'f'),
-             (800 * '1') + '234',
-             '123']
+    test1 = [(1000 * "b") + "acd" + (500 * "f"),
+             (800 * "1") + "234",
+             "123"]
     for k in range(95):
         test1.append(k * chr(k))
     test2 = []
     for k in range(30):
         test2.append(k * chr(k))
 
-    print_expected_result_of_test([test1 + ['a'] + test2],
+    print_expected_result_of_test([test1 + ["a"] + test2],
                                   expected, test_results, format_string)
-    actual = first_is_elsewhere_too(test1 + ['a'] + test2)
+    actual = first_is_elsewhere_too(test1 + ["a"] + test2)
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 25 (continues the previous test):
@@ -668,7 +668,7 @@ def run_test_first_is_elsewhere_too():
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 26 (continues the previous test):
-    a_inside = (100 * 'b') + 'a' + (100 * 'b')
+    a_inside = (100 * "b") + "a" + (100 * "b")
     expected = True
     print_expected_result_of_test([test1 + [a_inside] + test2],
                                   expected, test_results, format_string)
@@ -739,7 +739,7 @@ def first_is_elsewhere_too(seq_seq):
 ###############################################################################
 
 def print_expected_result_of_test(arguments, expected,
-                                  test_results, format_string, suffix=''):
+                                  test_results, format_string, suffix=""):
     testing_helper.print_expected_result_of_test(arguments, expected,
                                                  test_results, format_string,
                                                  suffix)
@@ -774,8 +774,8 @@ else:
 try:
     main()
 except Exception:
-    print('ERROR - While running this test,', color='red')
-    print('your code raised the following exception:', color='red')
+    print("ERROR - While running this test,", color="red")
+    print("your code raised the following exception:", color="red")
     print()
     time.sleep(1)
     raise

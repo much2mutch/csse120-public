@@ -28,11 +28,11 @@ def run_test_multiply_numbers():
     # although you are welcome to supply more tests if you choose.
     # -------------------------------------------------------------------------
     print()
-    print('------------------------------------------------------')
-    print('Testing the   multiply_numbers   function:')
-    print('------------------------------------------------------')
+    print("------------------------------------------------------")
+    print("Testing the   multiply_numbers   function:")
+    print("------------------------------------------------------")
 
-    format_string = '    multiply_numbers( {} )'
+    format_string = "    multiply_numbers( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # -------------------------------------------------------------------------
@@ -54,15 +54,15 @@ def run_test_multiply_numbers():
     actual = multiply_numbers(seq_of_lists)
     print_actual_result_of_test(seq_of_lists_after_multiply, seq_of_lists,
                                 test_results)
-    print('The above is for  seq_of_lists  (whose lists should be MUTATED.')
+    print("The above is for  seq_of_lists  (whose lists should be MUTATED.")
 
     # Test 2: (a continuation of Test 1)
     #   Tests whether the function does not RETURN a value (i.e., returns None)
     print_expected_result_of_test([seq_of_lists], None,
                                   test_results, format_string)
     print_actual_result_of_test(None, actual, test_results)
-    print('The above is for the RETURNED VALUE, which should be')
-    print('the constant None, NOT the STRING "None".')
+    print("The above is for the RETURNED VALUE, which should be")
+    print("the constant None, NOT the STRING \"None\".")
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
@@ -80,75 +80,75 @@ def run_test_multiply_numbers():
     actual = multiply_numbers(seq_of_lists)
     print_actual_result_of_test(seq_of_lists_after_multiply, seq_of_lists,
                                 test_results)
-    print('The above is for  seq_of_lists  (whose lists should be MUTATED.')
+    print("The above is for  seq_of_lists  (whose lists should be MUTATED.")
 
     # Test 4: (a continuation of Test 3)
     #   Tests whether the function does not RETURN a value (i.e., returns None)
     print_expected_result_of_test([seq_of_lists], None,
                                   test_results, format_string)
     print_actual_result_of_test(None, actual, test_results)
-    print('The above is for the RETURNED VALUE, which should be')
-    print('the constant None, NOT the STRING "None".')
+    print("The above is for the RETURNED VALUE, which should be")
+    print("the constant None, NOT the STRING \"None\".")
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
     # Test 5: Tests whether the function MUTATES the sub-lists correctly.
-    seq_of_lists = (['the ', 'rain '],
-                    ['in spain ', 'falls ', 'mainly on the '],
-                    ['plain.'])
+    seq_of_lists = (["the ", "rain "],
+                    ["in spain ", "falls ", "mainly on the "],
+                    ["plain."])
     # After the function call, seq_of_lists should be as follows:
-    seq_of_lists_after_multiply = (['the ', 'rain '],
-                                   ['in spain in spain ',
-                                    'falls falls ',
-                                    'mainly on the mainly on the '],
-                                   ['plain.plain.plain.'])
+    seq_of_lists_after_multiply = (["the ", "rain "],
+                                   ["in spain in spain ",
+                                    "falls falls ",
+                                    "mainly on the mainly on the "],
+                                   ["plain.plain.plain."])
     print_expected_result_of_test([seq_of_lists],
                                   seq_of_lists_after_multiply,
                                   test_results, format_string)
     actual = multiply_numbers(seq_of_lists)
     print_actual_result_of_test(seq_of_lists_after_multiply, seq_of_lists,
                                 test_results)
-    print('The above is for  seq_of_lists  (whose lists should be MUTATED.')
+    print("The above is for  seq_of_lists  (whose lists should be MUTATED.")
 
     # Test 6: (a continuation of Test 5)
     #   Tests whether the function does not RETURN a value (i.e., returns None)
     print_expected_result_of_test([seq_of_lists], None,
                                   test_results, format_string)
     print_actual_result_of_test(None, actual, test_results)
-    print('The above is for the RETURNED VALUE, which should be')
-    print('the constant None, NOT the STRING "None".')
+    print("The above is for the RETURNED VALUE, which should be")
+    print("the constant None, NOT the STRING \"None\".")
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
     # Test 7: Tests whether the function MUTATES the sub-lists correctly.
     seq_of_lists = [[10, 5],
                     [10, 5, 5, 8, 20],
-                    ['a', 'b', 'c'],
-                    ['d'],
-                    ['e', 'f'],
-                    [100, 0, 'z']]
+                    ["a", "b", "c"],
+                    ["d"],
+                    ["e", "f"],
+                    [100, 0, "z"]]
     # After the function call, seq_of_lists should be as follows:
     seq_of_lists_after_multiply = [[10, 5],
                                    [20, 10, 10, 16, 40],
-                                   ['aaa', 'bbb', 'ccc'],
-                                   ['dddd'],
-                                   ['eeeee', 'fffff'],
-                                   [600, 0, 'zzzzzz']]
+                                   ["aaa", "bbb", "ccc"],
+                                   ["dddd"],
+                                   ["eeeee", "fffff"],
+                                   [600, 0, "zzzzzz"]]
     print_expected_result_of_test([seq_of_lists],
                                   seq_of_lists_after_multiply,
                                   test_results, format_string)
     actual = multiply_numbers(seq_of_lists)
     print_actual_result_of_test(seq_of_lists_after_multiply, seq_of_lists,
                                 test_results)
-    print('The above is for  seq_of_lists  (whose lists should be MUTATED.')
+    print("The above is for  seq_of_lists  (whose lists should be MUTATED.")
 
     # Test 8: (a continuation of Test 7)
     #   Tests whether the function does not RETURN a value (i.e., returns None)
     print_expected_result_of_test([seq_of_lists], None,
                                   test_results, format_string)
     print_actual_result_of_test(None, actual, test_results)
-    print('The above is for the RETURNED VALUE, which should be')
-    print('the constant None, NOT the STRING "None".')
+    print("The above is for the RETURNED VALUE, which should be")
+    print("the constant None, NOT the STRING \"None\".")
     # -------------------------------------------------------------------------
 
     # SUMMARY of test results:
@@ -184,7 +184,7 @@ def multiply_numbers(sequence_of_lists):
     Type hints:
        :type sequence_of_lists:  sequence of lists, with each item
        in the lists being something that can be multiplied by an integer
-       [FYI: The 'can be multiplied ...' is an example of DUCK TYPING.]
+       [FYI: The "can be multiplied ..." is an example of DUCK TYPING.]
     """
     # -------------------------------------------------------------------------
     # TODO: 2. Implement and test this function.
@@ -200,40 +200,40 @@ def run_test_print_characters():
     # although you are welcome to supply more tests if you choose.
     # -------------------------------------------------------------------------
     print()
-    print('------------------------------------------')
-    print('Testing the   PRINT_CHARACTERS   function:')
-    print('------------------------------------------')
+    print("------------------------------------------")
+    print("Testing the   PRINT_CHARACTERS   function:")
+    print("------------------------------------------")
 
     # Test 1:
     print()
-    print('The following should be:')
-    print('  h')
-    print('  i')
-    print('  b')
-    print('  y')
-    print('  e')
-    print('  a')
-    print('   ')
-    print('  t')
-    print('  i')
-    print('  e')
-    print('  !')
-    print('but without the leading spaces:')
-    print_characters(['hi', 'bye', 'a tie!'])
+    print("The following should be:")
+    print("  h")
+    print("  i")
+    print("  b")
+    print("  y")
+    print("  e")
+    print("  a")
+    print("   ")
+    print("  t")
+    print("  i")
+    print("  e")
+    print("  !")
+    print("but without the leading spaces:")
+    print_characters(["hi", "bye", "a tie!"])
 
     # Test 2:
     print()
-    print('The following should be:')
-    print('  9876abc67 89z')
-    print('but printed in a COLUMN, one character per line:')
-    print_characters(['9876', 'abc', '', '67 89', 'z'])
+    print("The following should be:")
+    print("  9876abc67 89z")
+    print("but printed in a COLUMN, one character per line:")
+    print_characters(["9876", "abc", "", "67 89", "z"])
 
 
 def print_characters(sequence_of_strings):
     """
     Prints all the characters in the sequence of strings,
     but each character on ITS OWN LINE.  For example,
-    if the given argument is ['hi', 'bye', 'a tie!'],
+    if the given argument is ["hi", "bye", "a tie!"],
     then this function prints:
        h
        i
@@ -262,52 +262,52 @@ def run_test_print_characters_slanted():
     # although you are welcome to supply more tests if you choose.
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   PRINT_CHARACTERS_SLANTED   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   PRINT_CHARACTERS_SLANTED   function:")
+    print("--------------------------------------------------")
 
     # Test 1:
     print()
-    print('The following should be:')
-    print('h')
-    print(' i')
-    print('b')
-    print(' y')
-    print('  e')
-    print('a')
-    print(' _')
-    print('  t')
-    print('   i')
-    print('    e')
-    print('     !')
-    print('Actual result:')
-    print_characters_slanted(['hi', 'bye', 'a_tie!'])
+    print("The following should be:")
+    print("h")
+    print(" i")
+    print("b")
+    print(" y")
+    print("  e")
+    print("a")
+    print(" _")
+    print("  t")
+    print("   i")
+    print("    e")
+    print("     !")
+    print("Actual result:")
+    print_characters_slanted(["hi", "bye", "a_tie!"])
 
     # Test 2:
     print()
-    print('The following should be:')
-    print('a')
-    print(' b')
-    print('  c')
-    print('   d')
-    print('    e')
-    print('x')
-    print('y')
-    print('z')
-    print(' z')
-    print('  z')
-    print('1')
-    print(' 2')
-    print('  3')
-    print('   4')
-    print('Actual result:')
-    print_characters_slanted(['abcde', 'x', 'y', 'zzz', '1234'])
+    print("The following should be:")
+    print("a")
+    print(" b")
+    print("  c")
+    print("   d")
+    print("    e")
+    print("x")
+    print("y")
+    print("z")
+    print(" z")
+    print("  z")
+    print("1")
+    print(" 2")
+    print("  3")
+    print("   4")
+    print("Actual result:")
+    print_characters_slanted(["abcde", "x", "y", "zzz", "1234"])
 
 
 def print_characters_slanted(sequence_of_strings):
     """
-    Same as the previous problem, but each string 'slants'.
-    For example, if the given argument is ['hi', 'bye', 'a_tie!'],
+    Same as the previous problem, but each string "slants".
+    For example, if the given argument is ["hi", "bye", "a_tie!"],
     then this function prints:
        h
         i
@@ -338,7 +338,7 @@ def print_characters_slanted(sequence_of_strings):
 ###############################################################################
 
 def print_expected_result_of_test(arguments, expected,
-                                  test_results, format_string, suffix=''):
+                                  test_results, format_string, suffix=""):
     testing_helper.print_expected_result_of_test(arguments, expected,
                                                  test_results, format_string,
                                                  suffix)
@@ -373,8 +373,8 @@ else:
 try:
     main()
 except Exception:
-    print('ERROR - While running this test,', color='red')
-    print('your code raised the following exception:', color='red')
+    print("ERROR - While running this test,", color="red")
+    print("your code raised the following exception:", color="red")
     print()
     time.sleep(1)
     raise
