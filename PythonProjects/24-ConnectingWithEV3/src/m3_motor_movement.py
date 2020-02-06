@@ -18,7 +18,6 @@ Authors: David Mutchler, Vibha Alangar, Dave Fisher, and PUT_YOUR_NAME_HERE.
 #  (The code below may help you understand these.)
 # -----------------------------------------------------------------------------
 import time
-import rosebot_ev3dev_api as rose_ev3
 
 
 def main():
