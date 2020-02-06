@@ -174,7 +174,7 @@ class ColorSensor(object):
         Same as  get_color  but returns the color as a STRING, in particular,
         as one of the strings listed in the doc-string for get_color.
         """
-        return self.COLORS[self.get_color()]
+        return self.color_names[self.get_color()]
 
     def get_color_number_from_color_name(self, color_name):
         """
