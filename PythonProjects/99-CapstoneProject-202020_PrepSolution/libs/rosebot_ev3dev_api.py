@@ -71,14 +71,13 @@ class Motor(object):
         """
         self._motor.run_direct(duty_cycle_sp=speed)
 
-    def turn_off(self):
+    def turn_off(self, stop_action="brake"):
         """
         Stops the motor.
         Note: turn_off is similar to turn_on(0), but turn_off
-              tries to stop the motion a bit faster using the
-              brake option.
+              tries to stop the motion a bit faster using the  brake  option.
         """
-        self._motor.stop(stop_action="brake")
+        self._motor.stop(stop_action=stop_action)
 
     def get_position(self):
         """
