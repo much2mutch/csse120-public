@@ -1,17 +1,18 @@
 """
-THROW-AWAY Capstone Project. If you mess up this THROW-AWAY project, no worries.
+THROW-AWAY Capstone Project. If you mess up this THROW-AWAY project,
+  ** no worries. **
 It lets you practice skills & concepts needed for the REAL Capstone Project.
 
 This module contains code to run on the EV3 robot (NOT on a laptop).
 It defines the   FakeDriveSystem   class.
-Use that class to make the robot move (but mostly in FAKE ways, so far).
+Use that class to make the robot move (via a partial implementation, so far).
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
 Winter term, 2019-2020.
 """
 # -----------------------------------------------------------------------------
-# NOTE to students:  do this exercise WITH YOUR INSTRUCTOR.
+# NOTE to students: Start this exercise WITH YOUR INSTRUCTOR.
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
@@ -50,13 +51,9 @@ import time
 ###############################################################################
 class FakeDriveSystem(object):
     """
-    Controls the robot's motion via methods that include:
-      go   and   stop
-      go_straight_for_seconds     and    go_straight_for_inches
-      spin_in_place_for_seconds   and    spin_in_place_for_degrees
-      turn_for_seconds            and    turn_for_degrees
+    Controls the robot's motion via methods that (so far) include:
+      go   stop    go_straight_for_seconds
     """
-
     # -------------------------------------------------------------------------
     # TODO: 4. Read and digest the following NOTE:
     #   To "go straight" means that both wheels move at the same speed.
@@ -143,6 +140,12 @@ class FakeDriveSystem(object):
           where positive means forward and negative means backward.
         Prints an error message (and goes nowhere)
           if seconds <= 0 or speed == 0.
+        Implemented using the pattern:
+          1. Start the wheel-motors moving at the specified speed
+               (using the   go   method).
+          2. "Sleep" (do nothing else) while the robot is moving, for the
+               specified number of seconds (using the  time.sleep   function).
+          3. Stop the wheel-motors (using the  stop   method).
         ---
         :param seconds: Seconds to move. Prints an error message if negative.
         :type  seconds: float
@@ -153,7 +156,8 @@ class FakeDriveSystem(object):
         :type  stop_action: str
         """
         # ---------------------------------------------------------------------
-        # TODO: 8. With your instructor, implement this method.
+        # TODO: 8. Implement this method
+        #          (with help from your instructor as needed).
         # ---------------------------------------------------------------------
         # SOLUTION, delete for final version:
         if seconds < 0:
