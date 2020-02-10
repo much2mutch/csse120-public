@@ -42,7 +42,7 @@ Winter term, 2019-2020.
 #  Make sure you understand WHY those imports are needed.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-from ..libs import rosebot_touch_sensor
+import libs.rosebot_touch_sensor as rosebot_touch_sensor
 import time
 
 

@@ -42,7 +42,7 @@ Winter term, 2019-2020.
 #  Make sure you understand WHY those imports are needed.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-from . import rosebot_ev3dev_api as rose_ev3
+import libs.rosebot_ev3dev_api as rose_ev3
 import time
 
 

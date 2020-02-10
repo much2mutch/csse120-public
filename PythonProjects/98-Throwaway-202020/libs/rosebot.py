@@ -46,9 +46,8 @@ Winter term, 2019-2020.
 #    in this THROW-AWAY project.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-from . import rosebot_drive_system as drive_system
-from . import rosebot_touch_sensor as touch_sensor
-from . import rosebot_arm_and_claw as arm_and_claw
+import libs.rosebot_drive_system as drive_system
+import libs.rosebot_touch_sensor as touch_sensor
 
 
 ###############################################################################
@@ -62,7 +61,6 @@ class RoseBot(object):
         relevant to this THROW-AWAY project and sets instance variables to them:
           self.drive_system   using ports "B" and "C"
           self.touch_sensor   using port 1
-          self.arm_and_claw   using port "A" and self.touch_sensor
         """
         # ---------------------------------------------------------------------
         # TODO: 4. With your instructor, implement this method.
@@ -70,4 +68,3 @@ class RoseBot(object):
         # SOLUTION, delete for final version:
         self.drive_system = drive_system.DriveSystem("B", "C")
         self.touch_sensor = touch_sensor.TouchSensor(1)
-        self.arm_and_claw = arm_and_claw.ArmAndClaw("A", self.touch_sensor)

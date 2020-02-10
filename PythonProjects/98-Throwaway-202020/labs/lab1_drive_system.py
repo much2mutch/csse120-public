@@ -37,13 +37,13 @@ Winter term, 2019-2020.
 
 # -----------------------------------------------------------------------------
 # TODO: 3. With your instructor, import the modules needed herein:
-#     from libs import rosebot
+#     libs.rosebot as rosebot
 #     time
 #  Make sure you understand WHY those imports are needed,
 #  and why you do NOT need to import the  rosebot_drive_system   module.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-from libs import rosebot
+import libs.rosebot as rosebot
 import time
 
 
@@ -79,6 +79,7 @@ def run_test_go_stop(robot):
     """
     Tests the   go    and   stop   methods of the DriveSystem class.
     """
+    print()
     print("--------------------------------------------------")
     print("Testing the  go   and  stop   methods")
     print("  of the   DriveSystem   class.")
@@ -87,19 +88,9 @@ def run_test_go_stop(robot):
     # -------------------------------------------------------------------------
     # Get the wheel speeds for this set of tests.
     # -------------------------------------------------------------------------
-    print()
-    print("Wheel speeds should be integers between -100 and 100.")
-    print("Enter  0  for BOTH wheel speeds to exit this test.")
+    speeds = [(100, 10), (-10, -100), (50, -50), (-50, 50)]
 
-    while True:
-        print()
-        left_wheel_speed = int(input("Enter an integer for left wheel speed: "))
-        right_wheel_speed = int(input(
-            "Enter an integer for right wheel speed: "))
-        if left_wheel_speed == 0 and right_wheel_speed == 0:
-            break
-        input("Press the ENTER key when ready for the robot to start moving.")
-
+    for k in range(len(speeds)):
         # ---------------------------------------------------------------------
         # TODO: 6.
         #  a. Call the  go  method of the   drive_system   of the robot,
@@ -108,9 +99,28 @@ def run_test_go_stop(robot):
         #  c. Call the  stop  method of the   drive_system   of the robot.
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete later.
+        left_wheel_speed = speeds[k][0]
+        right_wheel_speed = speeds[k][1]
+        print()
+        print("Testing wheel speeds:", left_wheel_speed, right_wheel_speed)
+        input("Press the ENTER key when ready for the robot to start moving.")
+
         robot.drive_system.go(left_wheel_speed, right_wheel_speed)
         time.sleep(3)
         robot.drive_system.stop()
+
+    # print()
+    # print("Wheel speeds should be integers between -100 and 100.")
+    # print("Enter  0  for BOTH wheel speeds to exit this test.")
+    #
+    # while True:
+        # print()
+        # left_wheel_speed = int(input("Enter an integer for left wheel speed: "))
+        # right_wheel_speed = int(input(
+        #     "Enter an integer for right wheel speed: "))
+        # if left_wheel_speed == 0 and right_wheel_speed == 0:
+        #     break
+        # input("Press the ENTER key when ready for the robot to start moving.")
 
 
 def run_test_go_straight_for_seconds(robot):
@@ -123,29 +133,41 @@ def run_test_go_straight_for_seconds(robot):
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
-    # Get the wheel speed and seconds-to-move for this set of tests.
+    # Get the seconds-to-move and wheel speeds for this set of tests.
     # -------------------------------------------------------------------------
-    print()
-    print("The  seconds-to-move  should be a non-negative number.")
-    print("Enter  0  for the seconds-to-move to exit this test.")
-    print("The  wheel speed  should be a non-negative integer")
-    print("between -100 and 100.")
+    seconds_speeds = [(3, 10), (1, 100), (5, -50), (3, 50)]
 
-    while True:
-        print()
-        seconds = float(input("Enter how many seconds to go (e.g., 2.3): "))
-        if abs(round(seconds, 12)) < 0:
-            break
-        print("Enter a non-zero integer between -100 and 100")
-        speed = int(input("for the speed of the wheels: "))
-        input("Press the ENTER key when ready for the robot to start moving.")
-
+    for k in range(len(seconds_speeds)):
         # -------------------------------------------------------------------------
         # TODO: 7. Call the  go_straight_for_seconds  method of the
-        #  drive_system of the robot, sending it the input  seconds  and  speed.
+        #  drive_system of the robot, sending it the  seconds  and  speed.
         # -------------------------------------------------------------------------
         # SOLUTION CODE: Delete later.
+        seconds = speeds[k][0]
+        speed = speeds[k][1]
+        print()
+        print("Testing seconds / speed:", seconds, speed)
+        input("Press the ENTER key when ready for the robot to start moving.")
+
         robot.drive_system.go_straight_for_seconds(seconds, speed)
+
+    # -------------------------------------------------------------------------
+    # Get the wheel speed and seconds-to-move for this set of tests.
+    # -------------------------------------------------------------------------
+    # print()
+    # print("The  seconds-to-move  should be a non-negative number.")
+    # print("Enter  0  for the seconds-to-move to exit this test.")
+    # print("The  wheel speed  should be a non-negative integer")
+    # print("between -100 and 100.")
+    #
+    # while True:
+    #     print()
+    #     seconds = float(input("Enter how many seconds to go (e.g., 2.3): "))
+    #     if abs(round(seconds, 12)) < 0:
+    #         break
+    #     print("Enter a non-zero integer between -100 and 100")
+    #     speed = int(input("for the speed of the wheels: "))
+    #     input("Press the ENTER key when ready for the robot to start moving.")
 
 
 main()
