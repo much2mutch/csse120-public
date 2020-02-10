@@ -29,7 +29,6 @@ def run_test_drive_system():
     # -------------------------------------------------------------------------
     # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object.
     # -------------------------------------------------------------------------
-    robot = rosebot.RoseBot()
 
     # -------------------------------------------------------------------------
     # STUDENTS: Do the work in this module as follows.
