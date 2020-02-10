@@ -79,7 +79,7 @@ class TouchSensor(object):
         :rtype: int
         """
         # ---------------------------------------------------------------------
-        # TODO: 4. With your instructor, implement this method.
+        # TODO: 5. With your instructor, implement this method.
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete later.
         return self.touch_sensor.get_reading()
@@ -92,18 +92,21 @@ class TouchSensor(object):
         :rtype: bool
         """
         # ---------------------------------------------------------------------
-        # TODO: With your instructor, implement this method.
+        # TODO: 6. With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete later.
         return self.touch_sensor.get_reading() == 1
 
     def wait_until_pressed(self):
         """
         Sits in a loop, sleeping 0.05 seconds each time through the loop,
-        waiting for the touch sensor to be pressed.
+        waiting for the physical Touch Sensor to be pressed.
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method.
+        # TODO: 7. Implement this method
+        #          (with help from your instructor as needed).
         # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete later.
         while True:
             time.sleep(0.05)
             if self.is_pressed():
@@ -112,11 +115,13 @@ class TouchSensor(object):
     def wait_until_released(self):
         """
         Sits in a loop, sleeping 0.05 seconds each time through the loop,
-        waiting for the touch sensor to be released.
+        waiting for the physical Touch Sensor to be released.
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method.
+        # TODO: 8. Implement this method
+        #          (with help from your instructor as needed).
         # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete later.
         while True:
             time.sleep(0.05)
             if not self.is_pressed():
