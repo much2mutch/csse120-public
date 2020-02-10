@@ -160,3 +160,6 @@ def run_test_wait_until_released(touch_sensor):
     # SOLUTION CODE: Delete later.
     touch_sensor.wait_until_released()
     print("The Touch Sensor was just released!")
+
+main()
+
