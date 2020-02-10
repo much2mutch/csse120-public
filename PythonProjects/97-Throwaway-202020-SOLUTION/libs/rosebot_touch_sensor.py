@@ -40,6 +40,9 @@ Winter term, 2019-2020.
 #    import time
 #  Make sure you understand WHY those imports are needed.
 # -----------------------------------------------------------------------------
+# SOLUTION CODE: Delete later.
+import libs.rosebot_ev3dev_api as rose_ev3
+import time
 
 
 ###############################################################################
@@ -65,6 +68,8 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         # TODO: 4. With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete later.
+        self._touch_sensor = rose_ev3.TouchSensor(port)
 
     def get_reading(self):
         """
@@ -76,6 +81,8 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         # TODO: 5. With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete later.
+        return self._touch_sensor.get_reading()
 
     def is_pressed(self):
         """
@@ -87,6 +94,8 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         # TODO: 6. With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete later.
+        return self.get_reading() == 1
 
     def wait_until_pressed(self):
         """
@@ -97,6 +106,11 @@ class TouchSensor(object):
         # TODO: 7. Implement this method
         #          (with help from your instructor as needed).
         # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete later.
+        while True:
+            time.sleep(0.05)
+            if self.is_pressed():
+                break
 
     def wait_until_released(self):
         """
@@ -107,4 +121,8 @@ class TouchSensor(object):
         # TODO: 8. Implement this method
         #          (with help from your instructor as needed).
         # ---------------------------------------------------------------------
-
+        # SOLUTION CODE: Delete later.
+        while True:
+            time.sleep(0.05)
+            if not self.is_pressed():
+                break

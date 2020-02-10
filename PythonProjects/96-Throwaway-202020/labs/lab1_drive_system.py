@@ -66,8 +66,8 @@ def run_test_drive_system():
     #  Re-comment it when you are finished using its tests,
     #  and then proceed to the next TEST function below.
     # -------------------------------------------------------------------------
-    # run_test_go_stop(robot)
-    # run_test_go_straight_for_seconds(robot)
+    run_test_go_stop(robot)
+    run_test_go_straight_for_seconds(robot)
 
 
 def run_test_go_stop(robot):

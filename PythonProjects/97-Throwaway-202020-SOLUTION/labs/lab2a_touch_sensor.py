@@ -41,6 +41,9 @@ Winter term, 2019-2020.
 #     time
 #  Make sure you understand WHY those imports are needed.
 # -----------------------------------------------------------------------------
+# SOLUTION CODE: Delete later.
+import libs.rosebot_touch_sensor as rosebot_touch_sensor
+import time
 
 
 def main():
@@ -49,6 +52,8 @@ def main():
     # TODO: 4. With your instructor, construct a TouchSensor, that is,
     #          a   rosebot_touch_sensor.TouchSensor(1)   object.
     # -------------------------------------------------------------------------
+    # SOLUTION CODE: Delete later.
+    touch_sensor = rosebot_touch_sensor.TouchSensor(1)
 
     # -------------------------------------------------------------------------
     # TODO: 5. Un-comment the first TEST function below.
@@ -80,7 +85,11 @@ def run_test_get_reading(touch_sensor):
         #   object and print the returned value.  Then sleep for 0.5 seconds
         #   so that we are not overwhelmed by the output.
         # -------------------------------------------------------------------------
-        pass
+        # SOLUTION CODE: Delete later.
+        reading = touch_sensor.get_reading()
+        print(reading)
+
+        time.sleep(0.5)
 
 
 def run_test_is_pressed(touch_sensor):
@@ -101,8 +110,12 @@ def run_test_is_pressed(touch_sensor):
         # TODO: 7. Call the   is_pressed   method on the given TouchSensor
         #   object and print the returned value.  Then sleep for 0.5 seconds
         #   so that we are not overwhelmed by the output.
-        # -------------------------------------------------------------------------]
-        pass
+        # -------------------------------------------------------------------------
+        # SOLUTION CODE: Delete later.
+        result = touch_sensor.is_pressed()
+        print(result)
+
+        time.sleep(0.5)
 
 
 def run_test_wait_until_pressed(touch_sensor):
@@ -122,6 +135,9 @@ def run_test_wait_until_pressed(touch_sensor):
     # TODO: 8. Call the  wait_until_pressed  method of the  TouchSensor  class.
     #   Print a relevant message when the function call returns.
     # -------------------------------------------------------------------------
+    # SOLUTION CODE: Delete later.
+    touch_sensor.wait_until_pressed()
+    print("The Touch Sensor was just pressed!")
 
 
 def run_test_wait_until_released(touch_sensor):
@@ -141,7 +157,9 @@ def run_test_wait_until_released(touch_sensor):
     # TODO: 9. Call the  wait_until_released  method of the  TouchSensor  class.
     #   Print a relevant message when the function call returns.
     # -------------------------------------------------------------------------
-
+    # SOLUTION CODE: Delete later.
+    touch_sensor.wait_until_released()
+    print("The Touch Sensor was just released!")
 
 main()
 

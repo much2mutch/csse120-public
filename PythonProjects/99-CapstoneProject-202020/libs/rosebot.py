@@ -10,13 +10,7 @@ Winter term, 2019-2020.
 # TODO: Put the name of EACH team member who contributes
 #   to this module in the above.
 
-# import rosebot_arm_and_claw
-# import rosebot_brick_buttons
-# import rosebot_color_sensor
 import rosebot_drive_system
-# import rosebot_leds
-# import rosebot_remote_control
-# import rosebot_touch_sensor
 
 
 ###############################################################################
