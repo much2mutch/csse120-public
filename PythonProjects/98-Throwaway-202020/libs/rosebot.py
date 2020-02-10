@@ -25,7 +25,7 @@ Winter term, 2019-2020.
 #  Throughout this module, ** use the process in HowToShareModules.pdf. **
 #  _
 #  In particular, *** only ONE team member should modify this file ***
-#  (but often pair-programming using the same computer).
+#    but TEAM-PROGRAMMING (with your ENTIRE TEAM) using the same computer.
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------

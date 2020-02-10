@@ -22,10 +22,10 @@ Winter term, 2019-2020.
 #    -- Otherwise, ** do NOT modify this module **
 #         and get help before continuing.
 #  _
-#  Throughout this module, ** use the process in  HowToShareModules.pdf. **
+#  Throughout this module, ** use the process in HowToShareModules.pdf. **
 #  _
 #  In particular, *** only ONE team member should modify this file ***
-#  but TEAM-PROGRAMMING (with your ENTIRE TEAM) using the same computer.
+#    but TEAM-PROGRAMMING (with your ENTIRE TEAM) using the same computer.
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
