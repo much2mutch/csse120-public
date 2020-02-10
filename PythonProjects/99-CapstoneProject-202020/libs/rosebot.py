@@ -34,4 +34,4 @@ import rosebot_touch_sensor
 class RoseBot(object):
     def __init__(self):
         # TODO: Implement this class with your instructor.
-        self.drive_system = rosebot_drive_system.DriveSystem('B', 'C')
+        pass
