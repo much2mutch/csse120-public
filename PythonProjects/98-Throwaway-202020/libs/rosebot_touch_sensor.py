@@ -3,9 +3,8 @@ THROW-AWAY Capstone Project. If you mess up this THROW-AWAY project,
   ** no worries. **
 It lets you practice skills & concepts needed for the REAL Capstone Project.
 
-This module contains the   FakeTouchSensor   class, which will become
-the   TouchSensor   class that you will implement later.
-These classes define methods relevant to a physical Touch Sensor.
+This module contains a   TouchSensor   class that contains methods
+relevant to a physical Touch Sensor plugged into a port.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
@@ -47,13 +46,13 @@ import time
 
 
 ###############################################################################
-#    FakeTouchSensor
+#    TouchSensor
 ###############################################################################
-class FakeTouchSensor(object):
+class TouchSensor(object):
     """
     Associated with a physical Touch Sensor that is plugged into a port
     (1, 2, 3, or 4).  Its methods include:
-      get_reading    is_pressed    wait_until_pressed   wait_until_released
+       get_reading    is_pressed    wait_until_pressed   wait_until_released
     """
     def __init__(self, port=None):
         """
@@ -67,13 +66,28 @@ class FakeTouchSensor(object):
         :type port: int | None
         """
         # ---------------------------------------------------------------------
-        # TODO: With your instructor, implement this method.
+        # TODO: 4. With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete later.
         self.touch_sensor = rose_ev3.TouchSensor(port)
+
+    def get_reading(self):
+        """
+        Returns the current reading (1 for pressed, 0 for not-pressed)
+        of the physical Touch Sensor associated with this TouchSensor.
+        ---
+        :rtype int
+        """
+        # ---------------------------------------------------------------------
+        # TODO: 4. With your instructor, implement this method.
+        # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete later.
+        return self.touch_sensor.get_reading()
 
     def is_pressed(self):
         """
-        Returns True if this TouchSensor is pressed, else returns False.
+        Returns True if the physical Touch Sensor associated with this
+        TouchSensor is pressed, else returns False.
         ---
         :rtype: bool
         """

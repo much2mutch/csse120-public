@@ -3,9 +3,9 @@ THROW-AWAY Capstone Project. If you mess up this THROW-AWAY project,
   ** no worries. **
 It lets you practice skills & concepts needed for the REAL Capstone Project.
 
-This module contains the   FakeDriveSystem   class, which is a simple version
-of the full   DriveSystem  class that you will implement later.
-These classes define methods for making a robot move.
+This module contains a   DriveSystem   class that is the same as the full
+DriveSystem class that you will implement later, but restricted to the methods
+that are relevant to this THROW-AWAY project.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
@@ -47,9 +47,9 @@ import time
 
 
 ###############################################################################
-#    FakeDriveSystem
+#    DriveSystem
 ###############################################################################
-class FakeDriveSystem(object):
+class DriveSystem(object):
     """
     Controls the robot's motion via methods that (so far) include:
        go   stop    go_straight_for_seconds

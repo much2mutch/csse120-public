@@ -3,10 +3,9 @@ THROW-AWAY Capstone Project. If you mess up this THROW-AWAY project,
   ** no worries. **
 It lets you practice skills & concepts needed for the REAL Capstone Project.
 
-This module contains the   FakeRoseBot   class, which is a simple version
-of the full   RoseBot  class that you will implement later.
-These classes define instance variables by which one can access ALL of the
-subsystems of a Snatch3r robot.
+This module contains a   RoseBot   class that is the same as the full RoseBot
+class that you will implement later, but restricted to the objects that
+are relevant to this THROW-AWAY project.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
@@ -47,15 +46,15 @@ Winter term, 2019-2020.
 #    in this THROW-AWAY project.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-import libs.rosebot_drive_system
-import libs.rosebot_arm_and_claw
-import libs.rosebot_touch_sensor
+import libs.rosebot_drive_system as drive_system
+import libs.rosebot_arm_and_claw as arm_and_claw
+import libs.rosebot_touch_sensor as touch_sensor
 
 
 ###############################################################################
-#    FakeRoseBot.
+#    RoseBot.
 ###############################################################################
-class FakeRoseBot(object):
+class RoseBot(object):
     """ The top-level class for making a robot do things. """
     def __init__(self):
         """
@@ -69,7 +68,6 @@ class FakeRoseBot(object):
         # TODO: 4. With your instructor, implement this method.
         # ---------------------------------------------------------------------
         # SOLUTION, delete for final version:
-        self.drive_system = rosebot_drive_system.DriveSystem("B", "C")
-        self.touch_sensor = rosebot_touch_sensor.TouchSensor(1)
-        self.arm_and_claw = rosebot_arm_and_claw.ArmAndClaw("A",
-                                                            self.touch_sensor)
+        self.drive_system = drive_system.DriveSystem("B", "C")
+        self.touch_sensor = touch_sensor.TouchSensor(1)
+        self.arm_and_claw = arm_and_claw.ArmAndClaw("A", self.touch_sensor)
