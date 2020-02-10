@@ -75,8 +75,7 @@ class Motor(object):
         """
         Stops the motor.
         Note: turn_off is similar to turn_on(0), but turn_off
-              tries to stop the motion a bit faster using the
-              brake option.
+              tries to stop the motion a bit faster using the  brake  option.
         """
         self._motor.stop(stop_action=stop_action)
 
@@ -101,21 +100,39 @@ class Motor(object):
 #    TouchSensor
 ###############################################################################
 class TouchSensor(object):
-    def __init__(self, port):  # port must be 1, 2, 3, 4, or None (for autodetect)
+    """
+    An object associated with a physical Touch Sensor that is plugged into
+    a port (1, 2, 3, or 4).  It can report whether or not the Touch Sensor
+    is pressed or not.
+    """
+    def __init__(self, port=None):
         """
-        Creates a TouchSensor.
-        :type port: int
+        The  port  must be 1, 2, 3, 4, or None, where  None  means to attempt
+        to autodetect a port into which a physical Touch Sensor is plugged.
+        ---
+        :param port:  The port (1, 2, 3, or 4) into which a Touch Sensor is
+                      plugged, or None to attempt to autodetect such a port.
+        :type port: int | None
         """
+        if port not in (1, 2, 3, 4, None):
+            message = "The port for a TouchSensor must be\n"
+            message += "1, 2, 3, or 4, or None to attempt\n"
+            message += "to autodetect a physical Touch Sensor."
+            raise ValueError(message)
+
         if port is not None:
             self._touch_sensor = ev3.TouchSensor('in' + str(port))
         else:
-            self._touch_sensor = ev3.TouchSensor()  # automatically determine the port
+            self._touch_sensor = ev3.TouchSensor()  # Attempt to autodetect
 
-    def is_pressed(self):
+    def get_reading(self):
         """
-        Returns True if this TouchSensor is pressed, else returns False
-        ":rtype bool"""
-        return self._touch_sensor.is_pressed == 1
+        Returns 1 if this the physical Touch Sensor associated with this
+        TouchSensor is pressed, else returns 0.
+        ---
+        :rtype int
+        """
+        return self._touch_sensor.is_pressed  # 1 (pressed) or 0 (not pressed)
 
 
 ###############################################################################
