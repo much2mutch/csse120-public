@@ -76,7 +76,7 @@ class TouchSensor(object):
         Returns the current reading (1 for pressed, 0 for not-pressed)
         of the physical Touch Sensor associated with this TouchSensor.
         ---
-        :rtype int
+        :rtype: int
         """
         # ---------------------------------------------------------------------
         # TODO: 4. With your instructor, implement this method.

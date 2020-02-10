@@ -114,6 +114,6 @@ class TouchSensor(object):
         Returns 1 if this the physical Touch Sensor associated with this
         TouchSensor is pressed, else returns 0.
         ---
-        :rtype int
+        :rtype: int
         """
         return self._touch_sensor.is_pressed  # 1 (pressed) or 0 (not pressed)
