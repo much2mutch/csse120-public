@@ -42,6 +42,9 @@ Winter term, 2019-2020.
 #  Make sure you understand WHY those imports are needed,
 #  and why you do NOT need to import the  rosebot_drive_system   module.
 # -----------------------------------------------------------------------------
+# SOLUTION CODE: Delete later.
+import libs.rosebot as rosebot
+import time
 
 
 def main():
@@ -60,6 +63,8 @@ def run_test_drive_system():
     # TODO: 4. With your instructor, construct a robot, that is,
     #          a   rosebot.Rosebot()   object.
     # -------------------------------------------------------------------------
+    # SOLUTION CODE: Delete later.
+    robot = rosebot.RoseBot()
 
     # -------------------------------------------------------------------------
     # TODO: 5. Un-comment the first TEST function below.
@@ -93,7 +98,16 @@ def run_test_go_stop(robot):
         #  b. Keep going (time.sleep) for 3 seconds.
         #  c. Call the  stop  method of the   drive_system   of the robot.
         # ---------------------------------------------------------------------
-        pass
+        # SOLUTION CODE: Delete later.
+        left_wheel_speed = speeds[k][0]
+        right_wheel_speed = speeds[k][1]
+        print()
+        print("Testing wheel speeds:", left_wheel_speed, right_wheel_speed)
+        input("Press the ENTER key when ready for the robot to start moving.")
+
+        robot.drive_system.go(left_wheel_speed, right_wheel_speed)
+        time.sleep(3)
+        robot.drive_system.stop()
 
     # print()
     # print("Wheel speeds should be integers between -100 and 100.")
@@ -128,7 +142,14 @@ def run_test_go_straight_for_seconds(robot):
         # TODO: 7. Call the  go_straight_for_seconds  method of the
         #  drive_system of the robot, sending it the  seconds  and  speed.
         # -------------------------------------------------------------------------
-        pass
+        # SOLUTION CODE: Delete later.
+        seconds = speeds[k][0]
+        speed = speeds[k][1]
+        print()
+        print("Testing seconds / speed:", seconds, speed)
+        input("Press the ENTER key when ready for the robot to start moving.")
+
+        robot.drive_system.go_straight_for_seconds(seconds, speed)
 
     # -------------------------------------------------------------------------
     # Get the wheel speed and seconds-to-move for this set of tests.

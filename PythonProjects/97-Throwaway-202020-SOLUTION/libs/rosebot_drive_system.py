@@ -41,6 +41,9 @@ Winter term, 2019-2020.
 #    import time
 #  Make sure you understand WHY those imports are needed.
 # -----------------------------------------------------------------------------
+# SOLUTION CODE: Delete later.
+import libs.rosebot_ev3dev_api as rose_ev3
+import time
 
 
 ###############################################################################
@@ -90,7 +93,9 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: 5. With your instructor, implement this method.
         # ---------------------------------------------------------------------
-
+        # SOLUTION, delete for final version:
+        self.left_motor = rose_ev3.Motor(left_motor_port)
+        self.right_motor = rose_ev3.Motor(right_motor_port)
 
     def go(self, left_wheel_speed, right_wheel_speed):
         """
@@ -110,7 +115,9 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: 6. With your instructor, implement this method.
         # ---------------------------------------------------------------------
-
+        # SOLUTION, delete for final version:
+        self.left_motor.turn_on(left_wheel_speed)
+        self.right_motor.turn_on(right_wheel_speed)
 
     def stop(self, stop_action="brake"):
         """
@@ -124,7 +131,9 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # TODO: 7. With your instructor, implement this method.
         # ---------------------------------------------------------------------
-
+        # SOLUTION, delete for final version:
+        self.left_motor.turn_off(stop_action)
+        self.right_motor.turn_off(stop_action)
 
     def go_straight_for_seconds(self, seconds, speed=50, stop_action="brake"):
         """
@@ -156,3 +165,16 @@ class DriveSystem(object):
         # TODO: 8. Implement this method
         #          (with help from your instructor as needed).
         # ---------------------------------------------------------------------
+        # SOLUTION, delete for final version:
+        if seconds <= 0:
+            print("The first argument (seconds to travel)")
+            print("must be positive. You supplied:", seconds)
+            print("No movement done!")
+        elif speed == 0:
+            print("The second argument (speed)")
+            print("must not be zero. You supplied:", speed)
+            print("No movement done!")
+        else:
+            self.go(speed, speed)
+            time.sleep(seconds)
+            self.stop(stop_action)

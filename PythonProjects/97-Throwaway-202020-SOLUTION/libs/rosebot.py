@@ -45,6 +45,9 @@ Winter term, 2019-2020.
 #    access to ALL the sub-systems of a Snatch3r robot needed
 #    in this THROW-AWAY project.
 # -----------------------------------------------------------------------------
+# SOLUTION CODE: Delete later.
+import libs.rosebot_drive_system as drive_system
+import libs.rosebot_touch_sensor as touch_sensor
 
 
 ###############################################################################
@@ -62,4 +65,6 @@ class RoseBot(object):
         # ---------------------------------------------------------------------
         # TODO: 4. With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        pass
+        # SOLUTION, delete for final version:
+        self.drive_system = drive_system.DriveSystem("B", "C")
+        self.touch_sensor = touch_sensor.TouchSensor(1)
