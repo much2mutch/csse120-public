@@ -36,12 +36,12 @@ Winter term, 2019-2020.
 
 # -----------------------------------------------------------------------------
 # TODO: 3. With your instructor, import the modules needed herein:
-#    libs.rosebot_ev3dev_api as rose_ev3
-#    time
+#    from . import rosebot_ev3dev_api as rose_ev3
+#    import time
 #  Make sure you understand WHY those imports are needed.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-import libs.rosebot_ev3dev_api as rose_ev3
+from . import rosebot_ev3dev_api as rose_ev3
 import time
 
 
@@ -69,7 +69,7 @@ class TouchSensor(object):
         # TODO: 4. With your instructor, implement this method.
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete later.
-        self.touch_sensor = rose_ev3.TouchSensor(port)
+        self._touch_sensor = rose_ev3.TouchSensor(port)
 
     def get_reading(self):
         """
@@ -82,7 +82,7 @@ class TouchSensor(object):
         # TODO: 5. With your instructor, implement this method.
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete later.
-        return self.touch_sensor.get_reading()
+        return self._touch_sensor.get_reading()
 
     def is_pressed(self):
         """
@@ -95,7 +95,7 @@ class TouchSensor(object):
         # TODO: 6. With your instructor, implement this method.
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete later.
-        return self.touch_sensor.get_reading() == 1
+        return self.get_reading() == 1
 
     def wait_until_pressed(self):
         """

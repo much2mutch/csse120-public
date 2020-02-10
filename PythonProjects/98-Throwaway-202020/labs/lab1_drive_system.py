@@ -25,7 +25,7 @@ Winter term, 2019-2020.
 #  Throughout this module, ** use the process in HowToShareModules.pdf. **
 #  _
 #  In particular, *** only ONE team member should modify this file ***
-#    but TEAM-PROGRAMMING (with your ENTIRE TEAM) using the same computer.
+#    (but often pair-programming using the same computer).
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
@@ -37,13 +37,13 @@ Winter term, 2019-2020.
 
 # -----------------------------------------------------------------------------
 # TODO: 3. With your instructor, import the modules needed herein:
-#     libs.rosebot
+#     from libs import rosebot
 #     time
 #  Make sure you understand WHY those imports are needed,
 #  and why you do NOT need to import the  rosebot_drive_system   module.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-import libs.rosebot as rosebot
+from libs import rosebot
 import time
 
 

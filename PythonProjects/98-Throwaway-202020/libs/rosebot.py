@@ -37,18 +37,18 @@ Winter term, 2019-2020.
 
 # -----------------------------------------------------------------------------
 # TODO: 3. With your instructor, import the modules needed herein:
-#     libs.rosebot_drive_system
-#     libs.rosebot_touch_sensor
-#     libs.rosebot_arm_and_claw
+#     from . import rosebot_drive_system as drive_system
+#     from . import rosebot_touch_sensor as touch_sensor
+#     from . import rosebot_arm_and_claw as arm_and_claw.
 #  Make sure you understand WHY those imports are needed.
-#  Make sure you understand that constructing a   FakeRoseBot   object provides
+#  Make sure you understand that constructing a   RoseBot   object provides
 #    access to ALL the sub-systems of a Snatch3r robot needed
 #    in this THROW-AWAY project.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-import libs.rosebot_drive_system as drive_system
-import libs.rosebot_arm_and_claw as arm_and_claw
-import libs.rosebot_touch_sensor as touch_sensor
+from . import rosebot_drive_system as drive_system
+from . import rosebot_touch_sensor as touch_sensor
+from . import rosebot_arm_and_claw as arm_and_claw
 
 
 ###############################################################################
@@ -60,9 +60,9 @@ class RoseBot(object):
         """
         Constructs instances of each of the sub-systems of a Snatch3r robot
         relevant to this THROW-AWAY project and sets instance variables to them:
-          self.drive_system
-          self.arm_and_claw
-          self.touch_sensor
+          self.drive_system   using ports "B" and "C"
+          self.touch_sensor   using port 1
+          self.arm_and_claw   using port "A" and self.touch_sensor
         """
         # ---------------------------------------------------------------------
         # TODO: 4. With your instructor, implement this method.

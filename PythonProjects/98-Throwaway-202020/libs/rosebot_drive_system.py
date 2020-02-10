@@ -37,12 +37,12 @@ Winter term, 2019-2020.
 
 # -----------------------------------------------------------------------------
 # TODO: 3. With your instructor, import the modules needed herein:
-#    libs.rosebot_ev3dev_api as rose_ev3
-#    time
+#    from . import rosebot_ev3dev_api as rose_ev3
+#    import time
 #  Make sure you understand WHY those imports are needed.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-import libs.rosebot_ev3dev_api as rose_ev3
+from . import rosebot_ev3dev_api as rose_ev3
 import time
 
 
