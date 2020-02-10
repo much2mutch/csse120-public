@@ -3,9 +3,9 @@ THROW-AWAY Capstone Project. If you mess up this THROW-AWAY project,
   ** no worries. **
 It lets you practice skills & concepts needed for the REAL Capstone Project.
 
-This module contains code to run on the EV3 robot (NOT on a laptop).
-It defines the   FakeDriveSystem   class.
-Use that class to make the robot move (via a partial implementation, so far).
+This module contains a   DriveSystem   class that is the same as the full
+DriveSystem class that you will implement later, but restricted to the methods
+that are relevant to this THROW-AWAY project.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
@@ -22,10 +22,10 @@ Winter term, 2019-2020.
 #    -- Otherwise, ** do NOT modify this module **
 #         and get help before continuing.
 #  _
-#  Throughout this module, ** use the process in  HowToShareModules.pdf. **
+#  Throughout this module, ** use the process in HowToShareModules.pdf. **
 #  _
 #  In particular, *** only ONE team member should modify this file ***
-#  (but possibly pair-programming using the same computer).
+#    (but often pair-programming using the same computer).
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
@@ -37,22 +37,22 @@ Winter term, 2019-2020.
 
 # -----------------------------------------------------------------------------
 # TODO: 3. With your instructor, import the modules needed herein:
-#    rosebot_ev3dev_api as rose_ev3
-#    time
+#    from . import rosebot_ev3dev_api as rose_ev3
+#    import time
 #  Make sure you understand WHY those imports are needed.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-import rosebot_ev3dev_api as rose_ev3
+import libs.rosebot_ev3dev_api as rose_ev3
 import time
 
 
 ###############################################################################
-#    FakeDriveSystem
+#    DriveSystem
 ###############################################################################
-class FakeDriveSystem(object):
+class DriveSystem(object):
     """
     Controls the robot's motion via methods that (so far) include:
-      go   stop    go_straight_for_seconds
+       go   stop    go_straight_for_seconds
     """
     # -------------------------------------------------------------------------
     # TODO: 4. Read and digest the following NOTE:
@@ -100,6 +100,9 @@ class FakeDriveSystem(object):
     def go(self, left_wheel_speed, right_wheel_speed):
         """
         Makes the left and right wheel motors spin at the given speeds.
+          (More accurately, at the given duty-cycle, which is a percent of
+          the maximum possible speed given the current battery level.)
+
         Speeds are expected to be integers between -100 and 100,
           where positive means forward, negative means backward, and
           zero (0) means to coast to a stop (also see the  stop  method below).
@@ -136,10 +139,13 @@ class FakeDriveSystem(object):
         """
         Makes the robot go straight for the given number of seconds at the
         given speed, stopping using the given stop_action.
+
         Speed must be a non-zero integer between -100 and 100,
           where positive means forward and negative means backward.
-        Prints an error message (and goes nowhere)
-          if seconds <= 0 or speed == 0.
+
+        Prints an error message (and goes nowhere) if seconds <= 0
+        or speed == 0.
+
         Implemented using the pattern:
           1. Start the wheel-motors moving at the specified speed
                (using the   go   method).
@@ -160,7 +166,7 @@ class FakeDriveSystem(object):
         #          (with help from your instructor as needed).
         # ---------------------------------------------------------------------
         # SOLUTION, delete for final version:
-        if seconds < 0:
+        if seconds <= 0:
             print("The first argument (seconds to travel)")
             print("must be positive. You supplied:", seconds)
             print("No movement done!")
