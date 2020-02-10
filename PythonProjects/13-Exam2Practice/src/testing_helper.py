@@ -90,18 +90,19 @@ def print_summary_of_test_results(test_results):
 
 
 # noinspection PyUnusedLocal
-def print_colored(*args, color='black', flush=True):
+def print_colored(*args, color='black', flush=True, **kwargs):
     text = ""
     for arg in args:
         text = text + " " + str(arg)
-    text = text.replace(" ", "", 1) + "\n"
+    text = text.replace(" ", "", 1)
     sys.stdout.write('\033[%sm%s\033[0m' % (COLOR_CODES[color], text))
+    print(**kwargs)
 
 
-def print_uncolored(*args, color=None, flush=True):
+def print_uncolored(*args, color=None, flush=True, **kwargs):
     if color == 'red':
         print(end='', flush=flush)
         time.sleep(1)
-        print(*args, file=sys.stderr, flush=flush)  # Stderr MIGHT be red
+        print(*args, file=sys.stderr, flush=flush, **kwargs)  # Stderr MIGHT be red
     else:
-        print(*args, flush=flush)
+        print(*args, flush=flush, **kwargs)
