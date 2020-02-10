@@ -1,29 +1,59 @@
 """
-Capstone Team Project.  Code to run on the EV3 robot (NOT on a laptop).
+THROW-AWAY Capstone Project. If you mess up this THROW-AWAY project,
+  ** no worries. **
+It lets you practice skills & concepts needed for the REAL Capstone Project.
 
-This code defines the TouchSensor class, for the robot's touch sensor
-that detects when the arm and claw are in the fully-up position.
+This module contains the   FakeTouchSensor   class, which will become
+the   TouchSensor   class that you will implement later.
+These classes define methods relevant to a physical Touch Sensor.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
 Winter term, 2019-2020.
 """
-# TODO: Put the name of EACH team member who contributes
-#   to this module in the above.
+# -----------------------------------------------------------------------------
+# NOTE to students: Start this exercise WITH YOUR INSTRUCTOR.
+# -----------------------------------------------------------------------------
 
+# -----------------------------------------------------------------------------
+# TODO: 1.  If you have not already done so, with your instructor,
+#  READ and UNDERSTAND the  HowToShareModules.pdf  document in this project.
+#    -- If you understand it, change this _TODO_ to DONE.
+#    -- Otherwise, ** do NOT modify this module **
+#         and get help before continuing.
+#  _
+#  Throughout this module, ** use the process in HowToShareModules.pdf. **
+#  _
+#  In particular, *** only ONE team member should modify this file ***
+#  (but often pair-programming using the same computer).
+# -----------------------------------------------------------------------------
 
-import rosebot_ev3dev_api as rose_ev3
+# -----------------------------------------------------------------------------
+# TODO: 2. Change the   PUT_YOUR_NAMES_HERE   above to the names of
+#  EACH team member who contributes (in any way) to this module.
+#  _
+#  REMINDER: Use ONLY ** ONE ** team member's computer to make changes herein.
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# TODO: 3. With your instructor, import the modules needed herein:
+#    libs.rosebot_ev3dev_api as rose_ev3
+#    time
+#  Make sure you understand WHY those imports are needed.
+# -----------------------------------------------------------------------------
+# SOLUTION CODE: Delete later.
+import libs.rosebot_ev3dev_api as rose_ev3
 import time
 
 
 ###############################################################################
-#    TouchSensor
+#    FakeTouchSensor
 ###############################################################################
-class TouchSensor(object):
+class FakeTouchSensor(object):
     """
-    An object associated with a physical Touch Sensor that is plugged into
-    a port (1, 2, 3, or 4).  It has methods:
-      get_reading    is_pressed    wait_until_pressed   wait_until_not_pressed
+    Associated with a physical Touch Sensor that is plugged into a port
+    (1, 2, 3, or 4).  Its methods include:
+      get_reading    is_pressed    wait_until_pressed   wait_until_released
     """
     def __init__(self, port=None):
         """
@@ -50,7 +80,7 @@ class TouchSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        return self.touch_sensor
+        return self.touch_sensor.get_reading() == 1
 
     def wait_until_pressed(self):
         """
@@ -65,15 +95,15 @@ class TouchSensor(object):
             if self.is_pressed():
                 break
 
-    def wait_until_pressed(self):
+    def wait_until_released(self):
         """
         Sits in a loop, sleeping 0.05 seconds each time through the loop,
-        waiting for the touch sensor to be pressed.
+        waiting for the touch sensor to be released.
         """
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
         while True:
             time.sleep(0.05)
-            if self.is_pressed():
+            if not self.is_pressed():
                 break

@@ -3,9 +3,9 @@ THROW-AWAY Capstone Project. If you mess up this THROW-AWAY project,
   ** no worries. **
 It lets you practice skills & concepts needed for the REAL Capstone Project.
 
-This module contains code to run on the EV3 robot (NOT on a laptop).
-It defines the   FakeDriveSystem   class.
-Use that class to make a robot move.
+This module contains the   FakeDriveSystem   class, which is a simple version
+of the full   DriveSystem  class that you will implement later.
+These classes define methods for making a robot move.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
@@ -37,12 +37,12 @@ Winter term, 2019-2020.
 
 # -----------------------------------------------------------------------------
 # TODO: 3. With your instructor, import the modules needed herein:
-#    rosebot_ev3dev_api as rose_ev3
+#    libs.rosebot_ev3dev_api as rose_ev3
 #    time
 #  Make sure you understand WHY those imports are needed.
 # -----------------------------------------------------------------------------
 # SOLUTION CODE: Delete later.
-import rosebot_ev3dev_api as rose_ev3
+import libs.rosebot_ev3dev_api as rose_ev3
 import time
 
 
@@ -52,7 +52,7 @@ import time
 class FakeDriveSystem(object):
     """
     Controls the robot's motion via methods that (so far) include:
-      go   stop    go_straight_for_seconds
+       go   stop    go_straight_for_seconds
     """
     # -------------------------------------------------------------------------
     # TODO: 4. Read and digest the following NOTE:
