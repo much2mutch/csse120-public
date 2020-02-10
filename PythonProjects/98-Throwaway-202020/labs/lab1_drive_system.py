@@ -5,7 +5,7 @@ It lets you practice skills & concepts needed for the REAL Capstone Project.
 
 This module contains code intended to run directly on the EV3 robot
 (NOT on a laptop, NOT via a GUI running on a laptop).
-It TESTS the   FakeDriveSystem   class that is in the  libs  folder.
+It TESTS the   DriveSystem   class that is in the  libs  folder.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
@@ -67,21 +67,9 @@ def run_test_drive_system():
     robot = rosebot.RoseBot()
 
     # -------------------------------------------------------------------------
-    # STUDENTS: Do the work in this module as follows.
-    #   Otherwise, you may be overwhelmed by the number of tests happening.
-    #
-    # For each TEST function below:
-    #   1. UN-comment the call to that TEST function in this  main  function.
-    #   2. Implement the TEST function per its _TODO_.
-    #        And, if you have not already done so, implement the methods in
-    #        the  libs/fake_rosebot_drive_system   module that you are testing.
-    #   3. When satisfied that you have adequately TESTED the methods that the
-    #        the TEST function tests, RE-comment the test function
-    #        (and move on to the next TEST function).
-    # -------------------------------------------------------------------------
-
-    # -------------------------------------------------------------------------
-    # TODO: 5. Un-comment the first TEST function below (and later the others).
+    # TODO: 5. Un-comment the first TEST function below.
+    #  Re-comment it when you are finished using its tests,
+    #  and then proceed to the next TEST function below.
     # -------------------------------------------------------------------------
     # run_test_go_stop(robot)
     # run_test_go_straight_for_seconds(robot)
@@ -93,7 +81,7 @@ def run_test_go_stop(robot):
     """
     print("--------------------------------------------------")
     print("Testing the  go   and  stop   methods")
-    print("  of a robot")
+    print("  of the   DriveSystem   class.")
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
@@ -131,7 +119,7 @@ def run_test_go_straight_for_seconds(robot):
     """
     print("--------------------------------------------------")
     print("Testing the  go_straight_for_seconds  method")
-    print("  of a robot")
+    print("  of the   DriveSystem   class.")
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
@@ -156,7 +144,6 @@ def run_test_go_straight_for_seconds(robot):
         # TODO: 7. Call the  go_straight_for_seconds  method of the
         #  drive_system of the robot, sending it the input  seconds  and  speed.
         # -------------------------------------------------------------------------
-
         # SOLUTION CODE: Delete later.
         robot.drive_system.go_straight_for_seconds(seconds, speed)
 
