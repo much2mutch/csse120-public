@@ -18,8 +18,6 @@ import rosebot_leds
 import rosebot_remote_control
 import rosebot_touch_sensor
 
-import rosebot_ev3dev_api
-
 
 ###############################################################################
 #    RoseBot class.
