@@ -29,6 +29,7 @@ Winter term, 2019-2020.
 # -----------------------------------------------------------------------------
 import libs.rosebot_drive_system as drive
 import libs.rosebot_touch_sensor as touch
+import libs.rosebot_arm_and_claw as arm
 
 
 ###############################################################################
@@ -47,3 +48,4 @@ class RoseBot(object):
         # ---------------------------------------------------------------------
         self.drive_system = drive.DriveSystem("B", "C")
         self.touch_sensor = touch.TouchSensor(1)
+        self.arm_and_claw = arm.ArmAndClaw(self.touch_sensor)

@@ -32,7 +32,7 @@ def main():
     # TODO: 3. The following constructs a RoseBot object, then sends it as an
     #  argument to the TEST functions. In those TEST functions, you will access
     #  the RoseBot object's   drive_system   instance variable to make the robot
-    #  move. Change this _TODO_ to DONE after you have seen how to do it.
+    #  move. Change this _TODO_ to DONE after you understand the following code.
     # -------------------------------------------------------------------------
     robot = rb.RoseBot()
 
@@ -73,7 +73,7 @@ def run_test_go_stop(robot):
     print("in the following tests.")
     print()
 
-    # Loop through the wheel-speed pairs:
+    # Loop through the speeds pairs:
     for k in range(len(speeds)):
         left_wheel_speed = speeds[k][0]
         right_wheel_speed = speeds[k][1]
@@ -119,7 +119,7 @@ def run_test_go_straight_for_seconds(robot):
     print("in the following tests.")
     print()
 
-    # Loop through the wheel-speed pairs:
+    # Loop through the seconds_speeds pairs:
     for k in range(len(seconds_speeds)):
         seconds_to_move = seconds_speeds[k][0]
         speed = seconds_speeds[k][1]

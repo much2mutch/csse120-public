@@ -1,6 +1,6 @@
 """
-THROW-AWAY Capstone Project.  Contains the lower-level code for (only)
-the devices used in this THROW-AWAY Capstone Project.
+Capstone Team Project.  Contains the lower-level code for (only)
+the devices used in this Capstone Team Project.
 
 Winter term, 2019-2020.
 """

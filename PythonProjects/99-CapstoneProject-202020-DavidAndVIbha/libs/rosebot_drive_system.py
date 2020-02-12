@@ -144,7 +144,7 @@ class DriveSystem(object):
         Speeds are expected to be integers between -100 and 100,
           where positive means forward and negative means backward.
 
-        Prints an error message (and goes nowhere) if seconds <= 0
+        Prints an error message (and goes nowhere) if inches <= 0
           or speed == 0.
 
         :type  inches: float | int
@@ -327,7 +327,7 @@ class DriveSystem(object):
 
         Speeds are expected to be integers between -100 and 100.
 
-        Prints an error message (and goes nowhere) if seconds <= 0
+        Prints an error message (and goes nowhere) if degrees <= 0
           or speed == 0.
 
         :type  degrees: float | int

@@ -136,11 +136,14 @@ def run_test_wait_until_pressed(touch_sensor):
     print()
     print("Press the ENTER key when ready to WAIT until the")
     print("Touch Sensor is pressed.  Then, when you are ready,")
-    input("press the Touch Sensor, which should stop this test.")
+    print("press the Touch Sensor, which should stop this test.")
+    print("  If pressing the Touch Sensor does NOT stop this test,")
+    input("  press Control-C to force this test to stop.")
     try:
         # ---------------------------------------------------------------------
-        # TODO: 6. Call the   wait_until_pressed   method on the given
-        #  TouchSensor object. Then print a simple message like "Pressed!"
+        # TODO: 6. Replace the  pass  statement below with a call to
+        #  the   wait_until_pressed   method on the given TouchSensor object.
+        #  Then print a simple message like "Pressed!"
         # ---------------------------------------------------------------------
         pass
 
@@ -166,9 +169,17 @@ def run_test_wait_until_released(touch_sensor):
     print("the Touch Sensor now, then press the ENTER key.")
     print("Then, when you are ready, RELEASE the Touch Sensor")
     input("which should stop this test.")
+    print("  If releasing the Touch Sensor does NOT stop this test,")
+    input("  press Control-C to force this test to stop.")
+    try:
+        # -------------------------------------------------------------------------
+        # TODO: 7. Replace the  pass  statement below with a call to
+        #  the   wait_until_released   method on the given TouchSensor object.
+        #  Then print a simple message like "Released!"
+        # -------------------------------------------------------------------------
+        pass
 
-    # -------------------------------------------------------------------------
-    # TODO: 7. Call the   wait_until_released   method on the given
-    #  TouchSensor object. Then print a simple message like "Released!"
-    # -------------------------------------------------------------------------
-
+    except KeyboardInterrupt:
+        print()
+        print("OK, you just did a keyboard interrupt (Control-C).")
+        print("No worries. The program will keep running from here.")

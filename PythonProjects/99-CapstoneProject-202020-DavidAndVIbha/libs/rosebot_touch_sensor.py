@@ -19,7 +19,6 @@ Winter term, 2019-2020.
 # -----------------------------------------------------------------------------
 import libs.rosebot_ev3dev_api as ev3dev
 import time
-import fancy_printing
 
 
 ###############################################################################
@@ -92,4 +91,3 @@ class TouchSensor(object):
         # TODO: 7. Implement this method, using code that includes a call
         #   to this TouchSensor object's   is_pressed   method (see above).
         # ---------------------------------------------------------------------
-
