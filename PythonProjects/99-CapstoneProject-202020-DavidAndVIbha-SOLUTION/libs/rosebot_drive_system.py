@@ -437,7 +437,7 @@ def has_bad_arguments(method_name, seconds, speed):
                    + "The actual value for the first argument was:\n"
                    + "   " + str(seconds)
                    + "No movement done!")
-        fancy_printing.print_colored(message, color="red")
+        print(message)
         return True
 
     if speed == 0:
@@ -445,7 +445,7 @@ def has_bad_arguments(method_name, seconds, speed):
                    + "the second argument is the speed at which to move.\n"
                    + "It must be a NON-ZERO number, but in fact was 0.\n"
                    + "No movement done!")
-        fancy_printing.print_colored(message, color="red")
+        print(message)
         return True
 
     return False

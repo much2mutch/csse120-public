@@ -109,7 +109,7 @@ def run_test_go_straight_for_seconds(robot):
     #  yield the listed movements, change this _TODO_ to DONE.
     # -------------------------------------------------------------------------
     seconds_speeds = [(3, 100),  # Straight FORWARD at FAST speed for 3 seconds
-                      (1.5, 10),  # Straight FORWARD SLOWLY for 1.5 seconds
+                      (3.5, 10),  # Straight FORWARD SLOWLY for 3.5 seconds
                       (5, -50),  # Straight BACKWARD at 50% POWER for 5 seconds
                       (2, 30)]  # Straight FORWARD at 30% POWER for 2 seconds
 
