@@ -8,6 +8,7 @@ ALWAYS run THIS module for robot code, NOT the ones in any of the SUB-FOLDERS.
 # -----------------------------------------------------------------------------
 
 import labs.lab1a_drive_system as lab1a
+import labs.lab1b_drive_system as lab1b
 import labs.lab2a_touch_sensor as lab2a
 import fancy_printing
 
@@ -17,7 +18,8 @@ def main():
     # -------------------------------------------------------------------------
     # Un-comment the appropriate line below for what YOU want to TEST.
     # -------------------------------------------------------------------------
-    # lab1a.main()
+    lab1a.main()
+    lab1b.main()
     lab2a.main()
 
 
