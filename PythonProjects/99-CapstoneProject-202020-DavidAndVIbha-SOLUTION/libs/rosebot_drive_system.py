@@ -309,11 +309,11 @@ class DriveSystem(object):
 
         If the speed is positive, then turning means that the left motor
         spins at the given speed and the right motor does NOT spin.
-        Hence the robot turns clockwise (to the right) in this case.
+        Hence the robot turns to the RIGHT (clockwise) in this case.
 
         If the speed is negative, then turning means that the left motor does
         NOT spin and the right motor spins at the negative of the given speed.
-        Hence the robot turns counter-clockwise (to the left) in this case.
+        Hence the robot turns to the LEFT (counter-clockwise) in this case.
 
         Speeds are expected to be integers between -100 and 100.
 
@@ -359,11 +359,11 @@ class DriveSystem(object):
 
         If the speed is positive, then turning means that the left motor
         spins at the given speed and the right motor does NOT spin.
-        Hence the robot turns clockwise (to the right) in this case.
+        Hence the robot turns to the RIGHT (clockwise) in this case.
 
         If the speed is negative, then turning means that the left motor does
         NOT spin and the right motor spins at the negative of the given speed.
-        Hence the robot turns counter-clockwise (to the left) in this case.
+        Hence the robot turns to the LEFT (counter-clockwise) in this case.
 
         Speeds are expected to be integers between -100 and 100.
 
