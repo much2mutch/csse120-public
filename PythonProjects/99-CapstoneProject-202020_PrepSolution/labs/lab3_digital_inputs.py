@@ -13,6 +13,7 @@ Winter term, 2019-2020.
 import rosebot
 import time
 
+
 def main():
     """ Calls the desired TEST functions. """
     test_digital_io()
