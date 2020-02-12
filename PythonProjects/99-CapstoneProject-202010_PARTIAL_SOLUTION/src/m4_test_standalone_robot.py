@@ -27,7 +27,7 @@ def test_something():
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------
-    # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object.
+    # TODO: 2. Construct a robot, that is, a rosebot.RoseBot() object.
     # -------------------------------------------------------------------------
     robot = rosebot.RoseBot()
 

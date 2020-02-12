@@ -13,6 +13,7 @@ Winter term, 2019-2020.
 import rosebot
 import time
 
+
 def main():
     """ Calls the desired TEST functions. """
     test_digital_io()
@@ -26,7 +27,7 @@ def test_digital_io():
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------
-    # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object.
+    # TODO: 2. Construct a robot, that is, a rosebot.RoseBot() object.
     # -------------------------------------------------------------------------
     robot = rosebot.RoseBot()
 

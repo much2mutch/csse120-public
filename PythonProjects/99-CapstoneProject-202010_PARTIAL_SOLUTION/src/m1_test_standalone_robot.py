@@ -34,7 +34,7 @@ def test_drive_system():
     right_wheel_speed = int(input("Enter an integer for right wheel speed: "))
 
     # -------------------------------------------------------------------------
-    # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object.
+    # TODO: 2. Construct a robot, that is, a rosebot.RoseBot() object.
     # -------------------------------------------------------------------------
     robot = rosebot.RoseBot()
 

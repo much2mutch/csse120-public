@@ -27,7 +27,7 @@ def test_arm_and_claw():
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------
-    # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object.
+    # TODO: 2. Construct a robot, that is, a rosebot.RoseBot() object.
     # -------------------------------------------------------------------------
     robot = rosebot.RoseBot()
 
@@ -113,8 +113,7 @@ def run_test_raise_and_lower(robot):
         input("Press the ENTER key when ready for the robot to start moving up.")
 
         # -------------------------------------------------------------------------
-        # TODO: 6. Call the  raise_arm  method of the   arm_and_claw   of the robot,
-        #   using the input arm_speed.
+        # TODO: 6. Call the  raise_arm  method of the   arm_and_claw   of the robot.
         # -------------------------------------------------------------------------
 
         # Solution to be removed
@@ -123,8 +122,7 @@ def run_test_raise_and_lower(robot):
         input("Press the ENTER key when ready for the robot to start moving back down.")
 
         # -------------------------------------------------------------------------
-        # TODO: 7. Call the  lower_arm  method of the   arm_and_claw   of the robot,
-        #   using the input arm_speed.
+        # TODO: 7. Call the  lower_arm  method of the   arm_and_claw   of the robot.
         # -------------------------------------------------------------------------
 
         # Solution to be removed
