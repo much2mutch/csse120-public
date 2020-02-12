@@ -60,7 +60,7 @@ def run_test_touch_sensor(robot):
     while True:
         time.sleep(0.5)
         # -------------------------------------------------------------------------
-        # TODO: 3. Call the  touch_sensor.is_pressed  method of the   arm_and_claw   of the robot.
+        # TODO: 3. Call the  touch_sensor.is_pressed  method of the   robot   .
         # If the Touch sensor is pressed, print "Pressing Touch Sensor!"
         # If the Touch sensor is not pressed, print "Touch sensor - NOT - pressed"
         # -------------------------------------------------------------------------
@@ -78,8 +78,7 @@ def run_test_calibrate(robot):
         input("Press the ENTER key when ready for the robot to start moving.")
 
         # -------------------------------------------------------------------------
-        # TODO: 4. Call the  calibrate_arm  method of the   arm_and_claw   of the robot,
-        #   sending it the arm_speed.
+        # TODO: 4. Call the  calibrate_arm  method of the arm_and_claw of the robot
         # -------------------------------------------------------------------------
 
 
@@ -105,8 +104,7 @@ def run_test_raise_and_lower(robot):
         input("Press the ENTER key when ready for the robot to start moving up.")
 
         # -------------------------------------------------------------------------
-        # TODO: 6. Call the  raise_arm  method of the   arm_and_claw   of the robot,
-        #   using the input arm_speed.
+        # TODO: 6. Call the  raise_arm  method of the   arm_and_claw   of the robot.
         # -------------------------------------------------------------------------
 
 
@@ -114,8 +112,7 @@ def run_test_raise_and_lower(robot):
         input("Press the ENTER key when ready for the robot to start moving back down.")
 
         # -------------------------------------------------------------------------
-        # TODO: 7. Call the  lower_arm  method of the   arm_and_claw   of the robot,
-        #   using the input arm_speed.
+        # TODO: 7. Call the  lower_arm  method of the   arm_and_claw   of the robot.
         # -------------------------------------------------------------------------
 
 

@@ -46,8 +46,7 @@ def test_arm_and_claw():
     input("Press the ENTER key when ready for the arm to start moving.")
 
     # -------------------------------------------------------------------------
-    # TODO: 3. Call the  raise_arm  method of the   arm_and_claw   of the robot,
-    #   using the input arm_speed.
+    # TODO: 3. Call the  raise_arm  method of the   arm_and_claw   of the robot.
     # -------------------------------------------------------------------------
     robot.arm_and_claw.raise_arm(arm_speed)
 
