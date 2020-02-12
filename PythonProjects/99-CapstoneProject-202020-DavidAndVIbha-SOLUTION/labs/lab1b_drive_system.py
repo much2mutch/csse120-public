@@ -66,6 +66,12 @@ def run_test_go_straight_for_inches(robot):
                      (6, -50),  # Straight BACKWARD at 50% POWER for 6 inches
                      (2, -30)]  # Straight BACKWARD at 30% POWER for 3 inches
 
+    print()
+    print("READ the tests to know what movement to expect")
+    print("in the following tests.")
+    print()
+
+    # Loop through the wheel-speed pairs:
     for k in range(len(inches_speeds)):
         inches_to_move = inches_speeds[k][0]
         speed = inches_speeds[k][1]
@@ -120,6 +126,12 @@ def run_test_spin_in_place_for_seconds(robot):
                       (5, -50),  # Spin COUNTER-CW at 50% POWER for 5 seconds
                       (2, 30)]  # Spin CLOCKWISE at 30% POWER for 2 seconds
 
+    print()
+    print("READ the tests to know what movement to expect")
+    print("in the following tests.")
+    print()
+
+    # Loop through the wheel-speed pairs:
     for k in range(len(seconds_speeds)):
         seconds_to_spin = seconds_speeds[k][0]
         speed = seconds_speeds[k][1]
@@ -168,7 +180,12 @@ def run_test_spin_in_place_for_degrees(robot):
                       (360, 50),  # Spin 360 degrees CW at 50% POWER
                       (180, -50),  # Spin 180 degrees CCW at 50% POWER
                       (30, 10)]  # Spin 30 degrees CW at SLOW speed
+    print()
+    print("READ the tests to know what movement to expect")
+    print("in the following tests.")
+    print()
 
+    # Loop through the wheel-speed pairs:
     for k in range(len(degrees_speeds)):
         degrees_robot_should_spin = degrees_speeds[k][0]
         speed = degrees_speeds[k][1]
@@ -224,7 +241,12 @@ def run_test_turn_for_seconds(robot):
                       (1.5, -10),  # Turn to the LEFT SLOWLY for 1.5 seconds
                       (5, 50),  # Turn to the RIGHT at 50% POWER for 5 seconds
                       (2, -30)]  # Turn to the LEFT at 30% POWER for 2 seconds
+    print()
+    print("READ the tests to know what movement to expect")
+    print("in the following tests.")
+    print()
 
+    # Loop through the wheel-speed pairs:
     for k in range(len(seconds_speeds)):
         seconds_to_turn = seconds_speeds[k][0]
         speed = seconds_speeds[k][1]
@@ -274,7 +296,12 @@ def run_test_turn_for_degrees(robot):
                       (360, 50),  # Turn 360 degrees CW at 50% POWER
                       (180, -50),  # Turn 180 degrees CCW at 50% POWER
                       (30, 10)]  # Turn 30 degrees CW at SLOW speed
+    print()
+    print("READ the tests to know what movement to expect")
+    print("in the following tests.")
+    print()
 
+    # Loop through the wheel-speed pairs:
     for k in range(len(degrees_speeds)):
         degrees_robot_should_turn = degrees_speeds[k][0]
         speed = degrees_speeds[k][1]

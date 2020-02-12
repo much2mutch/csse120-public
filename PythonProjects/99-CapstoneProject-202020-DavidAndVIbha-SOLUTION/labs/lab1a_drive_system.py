@@ -68,6 +68,11 @@ def run_test_go_stop(robot):
               (-50, -100)  # VEER BACKWARDS
               ]
 
+    print()
+    print("READ the tests to know what movement to expect")
+    print("in the following tests.")
+    print()
+
     # Loop through the wheel-speed pairs:
     for k in range(len(speeds)):
         left_wheel_speed = speeds[k][0]
@@ -113,6 +118,12 @@ def run_test_go_straight_for_seconds(robot):
                       (5, -50),  # Straight BACKWARD at 50% POWER for 5 seconds
                       (2, 30)]  # Straight FORWARD at 30% POWER for 2 seconds
 
+    print()
+    print("READ the tests to know what movement to expect")
+    print("in the following tests.")
+    print()
+
+    # Loop through the wheel-speed pairs:
     for k in range(len(seconds_speeds)):
         seconds_to_move = seconds_speeds[k][0]
         speed = seconds_speeds[k][1]
