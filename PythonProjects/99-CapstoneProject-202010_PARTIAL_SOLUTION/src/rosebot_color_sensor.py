@@ -33,10 +33,10 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.low_level_color_sensor = rosebot_ev3dev_api.ColorSensor(port)
+        self.sensor = rosebot_ev3dev_api.ColorSensor(port)
         self.color_names = self.low_level_color_sensor.color_names
 
-    def get_reading(self):
+    def get_color(self):
         """
         Returns the color detected by the sensor, as best the sensor can judge
         from shining red, then green, then blue light and measuring the

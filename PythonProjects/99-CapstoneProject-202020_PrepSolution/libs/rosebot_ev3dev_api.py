@@ -100,7 +100,7 @@ class Motor(object):
 #    TouchSensor
 ###############################################################################
 class TouchSensor(object):
-    def __init__(self, port):  # port must be 1, 2, 3, 4, or None (for autodetect)
+    def __init__(self, port=None):  # port must be 1, 2, 3, 4, or None (for autodetect)
         """
         Creates a TouchSensor.
         :type port: int
@@ -121,10 +121,20 @@ class TouchSensor(object):
 #    ColorSensor
 ###############################################################################
 class ColorSensor(object):
-    def __init__(self, port):  # port must be 1, 2, 3 or 4
-        self._color_sensor = ev3.ColorSensor('in' + str(port))
-        self.color_names = (
-            'NoColor',
+    """ Represents the downward facing light sensor of the robot. """
+
+    def __init__(self, port=None):  # port must be 1, 2, 3, 4, or None (for autodetect)
+        """
+                Creates a ColorSensor.
+                :type port: int
+        """
+        if port is not None:
+            self._sensor = ev3.ColorSensor('in' + str(port))
+        else:
+            self._sensor = ev3.ColorSensor()  # automatically determine the port
+
+        self.COLORS = (
+            'No Color',
             'Black',
             'Blue',
             'Green',
@@ -138,9 +148,8 @@ class ColorSensor(object):
         """
         Returns the color detected by the sensor, as best the sensor can judge
         from shining red, then green, then blue light and measuring the
-        intensities returned.  The returned value is an integer between
-        0 and 7, where the meanings of the integers are:
-          - 0: No color
+        intensities returned.  The returned value is a string:
+          - 0: No Color
                   (that is, cannot classify the color as one of the following)
           - 1: Black
           - 2: Blue
@@ -150,7 +159,7 @@ class ColorSensor(object):
           - 6: White
           - 7: Brown
         """
-        return self._color_sensor.color
+        return self.COLORS[self.get_color()]
 
     def get_reflected_light_intensity(self):
         """
@@ -159,42 +168,18 @@ class ColorSensor(object):
         but in practice more like 3 to 90+ in our classroom lighting with our
         downward-facing sensor that is about 0.25 inches from the ground.
         """
-        return self._color_sensor.reflected_light_intensity
+        return self._sensor.reflected_light_intensity
 
     def get_ambient_light_intensity(self):
         """
         Shines dimly lit blue light and returns the intensity
         of the ambient light.  The returned value is from 0 to 100.
         """
-        return self._color_sensor.ambient_light_intensity
-
-    def get_color_as_name(self):
-        """
-        Same as  get_color  but returns the color as a STRING, in particular,
-        as one of the strings listed in the doc-string for get_color.
-        """
-        return self.COLORS[self.get_color()]
-
-    def get_color_number_from_color_name(self, color_name):
-        """
-        Returns the color NUMBER associated with the given color NAME.
-        The color_name must be one of the 7 strings
-        listed in the doc-string for get_color.
-        """
-        return self.COLOR_NUMBERS[color_name]
-
-    def get_raw_color(self):
-        """
-        Shines red, then green, then blue light down.  Returns the reflected
-        intensities of each, with each in the range 0-1020.
-        Example usage:
-            red, green, blue = color_sensor.get_raw_color
-        """
-        # Not yet implemented
+        return self._sensor.ambient_light_intensity
 
 
 ###############################################################################
-#    IR Distance Sensor
+#    Infrared (IR) Proximity (Distance) Sensor
 ###############################################################################
 class InfraredProximitySensor(object):
     """
@@ -203,8 +188,23 @@ class InfraredProximitySensor(object):
     object in its field of vision.
     """
 
-    def __init__(self, port):  # port must be 1, 2, 3 or 4
-        self._ir_sensor = ev3.InfraredSensor('in' + str(port))
+    def __init__(self, port=None):  # port must be 1, 2, 3, 4, or None (for autodetect)
+        """
+                Creates a InfraredSensor.
+                :type port: int
+        """
+        if port is not None:
+            self._ir_sensor = ev3.InfraredSensor('in' + str(port))
+        else:
+            self._ir_sensor = ev3.InfraredSensor()  # automatically determine the port
+
+        # Note: The IR sensor can be used in 3 different modes!
+        # self._ir_sensor.mode = "IR-PROX"
+        # self._ir_sensor.mode = "IR-SEEK"
+        # self._ir_sensor.mode = "IR-REMOTE"
+
+        # The ev3dev library will try to switch it for you, but here it's done explicitly.
+        self._ir_sensor.mode = "IR-PROX"
 
     def get_distance(self):
         """
@@ -219,6 +219,7 @@ class InfraredProximitySensor(object):
                (more precisely, greater than 49 cm away)
            - 100 is the maximum distance for the sensor, namely, 100 cm.
         """
+        self._ir_sensor.mode = "IR-PROX"
         return self._ir_sensor.proximity
 
     def get_distance_in_inches(self):
@@ -242,23 +243,23 @@ class InfraredBeaconSensor(object):
     its signal continuously ("beacon mode") on one of its 4 channels (1 to 4).
     """
 
-    def __init__(self, port, channel=1):  # port must be 1, 2, 3 or 4
-        self.port = port
-        self.channel = channel
-        self._ir_sensor = ev3.BeaconSeeker('in' + str(self.port),
-                                           channel=channel)
-
-    def set_channel(self, channel):
+    def __init__(self, port=None, channel=1):  # port must be 1, 2, 3, 4, or None (for autodetect)
         """
-        Makes this sensor look for signals on the given channel. The physical
-        Beacon has a switch that can set the channel to 1, 2, 3 or 4.
+                Creates a InfraredSensor.
+                :type port: int
         """
-        self.channel = channel
-        self._ir_sensor = ev3.BeaconSeeker('in' + str(self.port),
-                                           channel=channel)
+        if port is not None:
+            self._ir_sensor = ev3.BeaconSeeker('in' + str(self.port), channel=channel)
+        else:
+            self._ir_sensor = ev3.BeaconSeeker(channel=channel)  # automatically determine the port
 
-    def get_channel(self):
-        return self.channel
+        # Note: The IR sensor can be used in 3 different modes!
+        # self._ir_sensor.mode = "IR-PROX"
+        # self._ir_sensor.mode = "IR-SEEK"
+        # self._ir_sensor.mode = "IR-REMOTE"
+
+        # The ev3dev library will try to switch it for you, but here it's done explicitly.
+        self._ir_sensor.mode = "IR-SEEK"
 
     def get_heading_and_distance_to_beacon(self):
         """
@@ -272,6 +273,7 @@ class InfraredBeaconSensor(object):
          - Distance is from 0 to 100, where 100 is about 70 cm
          - -128 means the Beacon is not detected.
         """
+        self._ir_sensor.mode = "IR-SEEK"
         return self._ir_sensor.heading_and_distance
 
     def get_heading_to_beacon(self):
@@ -279,6 +281,7 @@ class InfraredBeaconSensor(object):
         Returns the heading to the Beacon.
         Units are per the   get_heading_and_distance_to_beacon   method.
         """
+        self._ir_sensor.mode = "IR-SEEK"
         return self._ir_sensor.heading
 
     def get_distance_to_beacon(self):
@@ -286,6 +289,7 @@ class InfraredBeaconSensor(object):
         Returns the heading to the Beacon.
         Units are per the   get_heading_and_distance_to_beacon   method.
         """
+        self._ir_sensor.mode = "IR-SEEK"
         return self._ir_sensor.distance
 
 
@@ -564,6 +568,11 @@ class RemoteControlChannel(object):
         :type channel: int
         """
         self._remote_control = ev3.RemoteControl(channel=channel_value)
+
+        # Note: The IR sensor can be used in 3 different modes!
+        #   Proximity mode, Beacon seek mode, and remote control mode.
+        # The lower library tries to change it as needed automatically, so
+        #   here we just don't mess with it.
 
     def red_up(self):
         """
