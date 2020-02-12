@@ -33,7 +33,7 @@ def test_arm_and_claw():
     arm_speed = int(input("Enter an integer for arm speed: "))
 
     # -------------------------------------------------------------------------
-    # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object.
+    # TODO: 2. Construct a robot, that is, a rosebot.RoseBot() object.
     # -------------------------------------------------------------------------
     robot = rosebot.RoseBot()
 

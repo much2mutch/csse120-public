@@ -24,7 +24,7 @@ def test_color_sensor():
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------
-    # TODO: 2. Construct a robot, that is, a rosebot.Rosebot() object,
+    # TODO: 2. Construct a robot, that is, a rosebot.RoseBot() object,
     #  which itself constructs its   color_sensor   instance variable.
     # -------------------------------------------------------------------------
 

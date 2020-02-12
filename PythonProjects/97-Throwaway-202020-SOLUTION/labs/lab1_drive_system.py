@@ -61,7 +61,7 @@ def run_test_drive_system():
 
     # -------------------------------------------------------------------------
     # TODO: 4. With your instructor, construct a robot, that is,
-    #          a   rosebot.Rosebot()   object.
+    #          a   rosebot.RoseBot()   object.
     # -------------------------------------------------------------------------
     # SOLUTION CODE: Delete later.
     robot = rosebot.RoseBot()
