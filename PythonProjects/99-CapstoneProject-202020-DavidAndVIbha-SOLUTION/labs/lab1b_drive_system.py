@@ -174,7 +174,7 @@ def run_test_spin_in_place_for_degrees(robot):
     #  yield the listed movements, change this _TODO_ to DONE.
     # -------------------------------------------------------------------------
     degrees_speeds = [(90, 50),  # Spin 90 degrees CW at MEDIUM speed
-                      (-90, 100),  # Spin 90 degrees CCW at FAST speed
+                      (90, -100),  # Spin 90 degrees CCW at FAST speed
                       (45, 30),  # Spin 45 degrees CW at 30% POWER
                       (45, 100),  # Spin 45 degrees CW at FAST speed
                       (360, 50),  # Spin 360 degrees CW at 50% POWER

@@ -18,7 +18,6 @@ Winter term, 2019-2020.
 # -----------------------------------------------------------------------------
 import libs.rosebot_ev3dev_api as ev3dev
 import time
-import fancy_printing
 
 
 ###############################################################################
@@ -163,7 +162,7 @@ class DriveSystem(object):
         :type  stop_action: str
         """
         # Error handling:
-        if has_bad_arguments("go_straight_for_inches", seconds, speed):
+        if has_bad_arguments("go_straight_for_inches", inches, speed):
             return -1
 
         # ---------------------------------------------------------------------
