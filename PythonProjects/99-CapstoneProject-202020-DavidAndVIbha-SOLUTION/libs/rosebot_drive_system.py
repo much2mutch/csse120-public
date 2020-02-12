@@ -245,6 +245,8 @@ class DriveSystem(object):
         Makes the robot spin in place for the given number of degrees
         at the given speed, stopping using the given stop_action.
 
+        Note that DEGREES is the number of degrees that the ROBOT should spin.
+
         Uses the encoder (degrees_traveled sensor, "position")
         built into the motors to tell when to stop moving.
 
@@ -353,6 +355,8 @@ class DriveSystem(object):
         """
         Makes the robot turn for the given number of degrees
         at the given speed, stopping using the given stop_action.
+
+        Note that DEGREES is the number of degrees that the ROBOT should turn.
 
         Uses the encoder (degrees_traveled sensor, "position")
         built into the motors to tell when to stop moving.
