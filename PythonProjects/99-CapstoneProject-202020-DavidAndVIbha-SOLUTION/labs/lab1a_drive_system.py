@@ -73,7 +73,7 @@ def run_test_go_stop(robot):
     print("in the following tests.")
     print()
 
-    # Loop through the wheel-speed pairs:
+    # Loop through the speeds pairs:
     for k in range(len(speeds)):
         left_wheel_speed = speeds[k][0]
         right_wheel_speed = speeds[k][1]
@@ -123,7 +123,7 @@ def run_test_go_straight_for_seconds(robot):
     print("in the following tests.")
     print()
 
-    # Loop through the wheel-speed pairs:
+    # Loop through the seconds_speeds pairs:
     for k in range(len(seconds_speeds)):
         seconds_to_move = seconds_speeds[k][0]
         speed = seconds_speeds[k][1]
