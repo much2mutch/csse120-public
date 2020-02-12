@@ -30,7 +30,6 @@ class BrickButtons(object):
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
 
-
     def is_up_pressed(self):
         """
         Returns True if this Up button on the EV3 is pressed, else returns False.
@@ -40,7 +39,6 @@ class BrickButtons(object):
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
 
-
     def is_down_pressed(self):
         """
         Returns True if this Down button on the EV3 is pressed, else returns False.
@@ -49,7 +47,6 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
-        # return self.brick_buttons.down()
 
     def is_left_pressed(self):
         """
@@ -59,7 +56,6 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
-        # return self.brick_buttons.left()
 
     def is_right_pressed(self):
         """
@@ -69,7 +65,6 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
-        # return self.brick_buttons.right()
 
     def is_backspace_pressed(self):
         """
@@ -79,4 +74,3 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
-        # return self.brick_buttons.backspace()
