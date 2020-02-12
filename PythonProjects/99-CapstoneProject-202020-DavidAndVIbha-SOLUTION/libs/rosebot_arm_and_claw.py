@@ -11,8 +11,15 @@ Winter term, 2019-2020.
 # TODO: 1. In the above, put the names of EACH team member who contributes
 #  (in any way) to this module.
 
-import libs.rosebot_ev3dev_api as rose_ev3
+
+# -----------------------------------------------------------------------------
+# TODO: 2. Note that this module uses two libraries from LIBS:
+#     rosebot_touch_sensor
+#     rosebot_ev3dev_api  (for its Motor class)
+#  Change this _TODO_ to DONE after you have seen that.
+# -----------------------------------------------------------------------------
 import libs.rosebot_touch_sensor as touch
+import libs.rosebot_ev3dev_api as rose_ev3
 
 
 ###############################################################################
@@ -25,7 +32,7 @@ class ArmAndClaw(object):
       calibrate_arm   raise_arm   move_arm_to_position   lower_arm
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Read the following IMPORTANT and CRITICAL Note, ASKING QUESTIONS
+    # TODO: 3. Read the following IMPORTANT and CRITICAL Note, ASKING QUESTIONS
     #  AS NEEDED. Once you understand the note, change this _TODO_ to DONE.
     # -------------------------------------------------------------------------
     # NOTE:
@@ -50,7 +57,7 @@ class ArmAndClaw(object):
           The port must be "A", "B", "C", or "D" (defaults to "A").
         """
         # ---------------------------------------------------------------------
-        # TODO: 3. Read the following, ASKING QUESTIONS AS NEEDED.
+        # TODO: 4. Read the following, ASKING QUESTIONS AS NEEDED.
         #  Once you understand the code, change this _TODO_ to DONE.
         # ---------------------------------------------------------------------
 
@@ -85,7 +92,7 @@ class ArmAndClaw(object):
         to indicate that this ArmAndClaw is now calibrated.
         """
         # ---------------------------------------------------------------------
-        # TODO: 4. Implement this method, WITH YOUR INSTRUCTOR.
+        # TODO: 5. Implement this method, WITH YOUR INSTRUCTOR.
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete from the project given to students.
         self.arm_motor.turn_on(self.speed)
@@ -103,7 +110,7 @@ class ArmAndClaw(object):
     def raise_arm(self):
         """ Raises the Arm until its physical Touch Sensor is pressed. """
         # ---------------------------------------------------------------------
-        # TOD5: 4. Implement this method; it is a ONE-LINER!
+        # TODO: 6. Implement this method; it is a ONE-LINER!
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete from the project given to students.
         self.arm_touch_sensor.wait_until_pressed()
@@ -115,7 +122,7 @@ class ArmAndClaw(object):
         where 0 means all the way DOWN.
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method, WITH YOUR INSTRUCTOR.
+        # TODO: 7. Implement this method, WITH YOUR INSTRUCTOR.
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete from the project given to students.
         if not self.is_calibrated:
@@ -145,7 +152,7 @@ class ArmAndClaw(object):
         If the robot has not yet calibrated its ArmAndClaw, it does so first.
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method; it is a ONE-LINER!
+        # TODO: 8. Implement this method; it is a ONE-LINER!
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete from the project given to students.
         self.move_arm_to_position(0)
