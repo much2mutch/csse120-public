@@ -62,7 +62,7 @@ def run_test_go_straight_for_inches(robot):
     inches_speeds = [(12, 100),  # Straight FORWARD at FAST speed for 12 inches
                      (24, 100),  # Straight FORWARD at FAST speed for 24 inches
                      (6, 100),  # Straight FORWARD at FAST speed for 6 inches
-                     (3.5, 10),  # Straight FORWARD SLOWLY for 3.5 inches
+                     (3.5, 20),  # Straight FORWARD SLOWLY for 3.5 inches
                      (6, -50),  # Straight BACKWARD at 50% POWER for 6 inches
                      (2, -30)]  # Straight BACKWARD at 30% POWER for 3 inches
 
@@ -122,7 +122,7 @@ def run_test_spin_in_place_for_seconds(robot):
     #  yield the listed movements, change this _TODO_ to DONE.
     # -------------------------------------------------------------------------
     seconds_speeds = [(3, 100),  # Spin CLOCKWISE at FAST speed for 3 seconds
-                      (1.5, 10),  # Spin CLOCKWISE SLOWLY for 1.5 seconds
+                      (4.5, 20),  # Spin CLOCKWISE SLOWLY for 4.5 seconds
                       (5, -50),  # Spin COUNTER-CW at 50% POWER for 5 seconds
                       (2, 30)]  # Spin CLOCKWISE at 30% POWER for 2 seconds
 
@@ -179,7 +179,7 @@ def run_test_spin_in_place_for_degrees(robot):
                       (45, 100),  # Spin 45 degrees CW at FAST speed
                       (360, 50),  # Spin 360 degrees CW at 50% POWER
                       (180, -50),  # Spin 180 degrees CCW at 50% POWER
-                      (30, 10)]  # Spin 30 degrees CW at SLOW speed
+                      (30, 20)]  # Spin 30 degrees CW at SLOW speed
     print()
     print("READ the tests to know what movement to expect")
     print("in the following tests.")
@@ -238,7 +238,7 @@ def run_test_turn_for_seconds(robot):
     #  yield the listed movements, change this _TODO_ to DONE.
     # -------------------------------------------------------------------------
     seconds_speeds = [(3, 100),  # Turn to the RIGHT at FAST speed for 3 seconds
-                      (1.5, -10),  # Turn to the LEFT SLOWLY for 1.5 seconds
+                      (4.5, -20),  # Turn to the LEFT SLOWLY for 4.5 seconds
                       (5, 50),  # Turn to the RIGHT at 50% POWER for 5 seconds
                       (2, -30)]  # Turn to the LEFT at 30% POWER for 2 seconds
     print()
@@ -251,7 +251,7 @@ def run_test_turn_for_seconds(robot):
         seconds_to_turn = seconds_speeds[k][0]
         speed = seconds_speeds[k][1]
         print("Press ENTER when you are ready to do")
-        input("the next test of SPIN_IN_PLACE_FOR_SECONDS.")
+        input("the next test of TURN_FOR_SECONDS.")
 
         # ---------------------------------------------------------------------
         # TODO: 7. To make the movement happen, call the
@@ -290,12 +290,12 @@ def run_test_turn_for_degrees(robot):
     #  yield the listed movements, change this _TODO_ to DONE.
     # -------------------------------------------------------------------------
     degrees_speeds = [(90, 50),  # Turn 90 degrees CW at MEDIUM speed
-                      (-90, 100),  # Turn 90 degrees CCW at FAST speed
+                      (90, -100),  # Turn 90 degrees CCW at FAST speed
                       (45, 30),  # Turn 45 degrees CW at 30% POWER
                       (45, 100),  # Turn 45 degrees CW at FAST speed
                       (360, 50),  # Turn 360 degrees CW at 50% POWER
                       (180, -50),  # Turn 180 degrees CCW at 50% POWER
-                      (30, 10)]  # Turn 30 degrees CW at SLOW speed
+                      (30, 20)]  # Turn 30 degrees CW at SLOW speed
     print()
     print("READ the tests to know what movement to expect")
     print("in the following tests.")

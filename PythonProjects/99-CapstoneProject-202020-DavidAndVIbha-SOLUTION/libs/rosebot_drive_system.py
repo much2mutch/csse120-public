@@ -170,7 +170,7 @@ class DriveSystem(object):
         #   1. Compute the number of DEGREES that the motors should SPIN
         #        in order to go the given number of INCHES.
         #      Find this value by trial-and-error, starting with a conversion
-        #        value of 1 inch = 8 degrees to spin.
+        #        value of 1 inch = 80 degrees to spin.
         #   2. Set a variable to the current value of the "encoder" of a wheel.
         #        Either wheel is fine, using code that includes
         #        something like this:  self.left_motor.get_position()
@@ -189,7 +189,7 @@ class DriveSystem(object):
         #             hardware/software of the encoder.
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete from the project given to students.
-        degrees_motor_should_spin = inches * 8
+        degrees_motor_should_spin = inches * 80
         start_position = self.left_motor.get_position()
         self.go(speed, speed)
         while True:
@@ -235,7 +235,7 @@ class DriveSystem(object):
         #    3.  Stop the wheel-motors (using the  stop   method).
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete from the project given to students.
-        self.go(speed, speed)
+        self.go(speed, -speed)
         time.sleep(seconds)
         self.stop(stop_action)
 
@@ -272,7 +272,7 @@ class DriveSystem(object):
         #   1. Compute the number of DEGREES that the MOTORS should SPIN
         #        in order for the ROBOT to spin the given number of DEGREES.
         #      Find this value by trial-and-error, starting with a conversion
-        #        value of 1 robot degree = XXX degrees for the motor to spin.
+        #        value of 1 robot degree = 6 degrees for the motor to spin.
         #   2. Set a variable to the current value of the "encoder" of a wheel.
         #        Either wheel is fine, using code that includes
         #        something like this:  self.left_motor.get_position()
@@ -292,9 +292,9 @@ class DriveSystem(object):
         #             hardware/software of the encoder.
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete from the project given to students.
-        degrees_motor_should_spin = degrees * 3
+        degrees_motor_should_spin = degrees * 6
         start_position = self.left_motor.get_position()
-        self.go(speed, speed)
+        self.go(speed, -speed)
         while True:
             current_position = self.left_motor.get_position()
             if (abs(current_position - start_position)
@@ -386,7 +386,7 @@ class DriveSystem(object):
         #   1. Compute the number of DEGREES that the relevant MOTOR should SPIN
         #        in order for the ROBOT to turn the given number of DEGREES.
         #      Find this value by trial-and-error, starting with a conversion
-        #        value of 1 robot degree = XXX degrees for the motor to spin.
+        #        value of 1 robot degree = 6 degrees for the motor to spin.
         #   2. Set a variable to the current value of the "encoder" of
         #        the relevant wheel.
         #   3. Start both wheel-motors moving:
