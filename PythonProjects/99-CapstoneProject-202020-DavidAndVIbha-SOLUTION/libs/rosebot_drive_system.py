@@ -69,8 +69,8 @@ class DriveSystem(object):
         # TODO: 4. Read the following, ASKING QUESTIONS AS NEEDED.
         #  Once you understand the code, change this _TODO_ to DONE.
         # ---------------------------------------------------------------------
-        self.left_motor = ev3dev.Motor(port="B", motor_type="large")
-        self.right_motor = ev3dev.Motor(port="C", motor_type="large")
+        self.left_motor = ev3dev.Motor(left_motor_port, motor_type="large")
+        self.right_motor = ev3dev.Motor(right_motor_port, motor_type="large")
 
     def go(self, left_wheel_speed, right_wheel_speed):
         """
@@ -93,7 +93,7 @@ class DriveSystem(object):
         # ---------------------------------------------------------------------
         # SOLUTION CODE: Delete from the project given to students.
         self.left_motor.turn_on(left_wheel_speed)
-        self.right_motor.turn_on(speed)
+        self.right_motor.turn_on(right_wheel_speed)
 
     def stop(self, stop_action="brake"):
         """
@@ -115,8 +115,8 @@ class DriveSystem(object):
 
     def go_straight_for_seconds(self, seconds, speed=50, stop_action="brake"):
         """
-        Makes the robot go straight for the given number of seconds at the
-        given speed, stopping using the given stop_action.
+        Makes the robot go straight for the given number of seconds
+        at the given speed, stopping using the given stop_action.
 
         Speeds are expected to be integers between -100 and 100,
           where positive means forward and negative means backward.
@@ -124,39 +124,16 @@ class DriveSystem(object):
         Prints an error message (and goes nowhere) if seconds <= 0
           or speed == 0.
 
-        Implemented using the pattern:
-          1. Start the wheel-motors moving at the specified speed
-               (using the   go   method).
-          2. "Sleep" (do nothing else) while the robot is moving, for the
-               specified number of seconds (using the  time.sleep   function).
-          3. Stop the wheel-motors (using the  stop   method).
-
         :type  seconds: float | int
         :type  speed:   int
         :type  stop_action: str
         """
         # Error handling:
-        if seconds < 0:
-            message = ("ERROR: in calling 'go_straight_for_seconds',\n"
-                       + "the first argument is the seconds to move.\n"
-                       + "It must be a POSITIVE number.\n"
-                       + "The actual value for the first argument was:\n"
-                       + "   " + str(seconds)
-                       + "No movement done!")
-            fancy_printing.print_colored(message, color="red")
-            return -1
-
-        # Error handling:
-        if speed == 0:
-            message = ("ERROR: in calling 'go_straight_for_seconds',\n"
-                       + "the second argument is the speed at which to move.\n"
-                       + "It must be a NON-ZERO number, but in fact was 0.\n"
-                       + "No movement done!")
-            fancy_printing.print_colored(message, color="red")
+        if has_bad_arguments("go_straight_for_seconds", seconds, speed):
             return -1
 
         # ---------------------------------------------------------------------
-        # TODO: 6. Implement this method, using three lines of code like this:
+        # TODO: 7. Implement this method, using three lines of code like this:
         #    1. Start both wheel-motors moving at the specified speed
         #         (using the   go   method).
         #    2. "Sleep" (do nothing else) while the robot is moving,
@@ -168,3 +145,303 @@ class DriveSystem(object):
         self.go(speed, speed)
         time.sleep(seconds)
         self.stop(stop_action)
+
+    def go_straight_for_inches(self, inches, speed=50, stop_action="brake"):
+        """
+        Makes the robot go straight at the given speed for the given number
+        of inches.  Uses the encoder (degrees_traveled sensor, "position")
+        built into the motors to tell when to stop moving.
+
+        Speeds are expected to be integers between -100 and 100,
+          where positive means forward and negative means backward.
+
+        Prints an error message (and goes nowhere) if seconds <= 0
+          or speed == 0.
+
+        :type  inches: float | int
+        :type  speed:   int
+        :type  stop_action: str
+        """
+        # Error handling:
+        if has_bad_arguments("go_straight_for_inches", seconds, speed):
+            return -1
+
+        # ---------------------------------------------------------------------
+        # TODO: 8. Implement this method, using the following algorithm:
+        #   1. Compute the number of DEGREES that the motors should SPIN
+        #        in order to go the given number of INCHES.
+        #      Find this value by trial-and-error, starting with a conversion
+        #        value of 1 inch = 8 degrees to spin.
+        #   2. Set a variable to the current value of the "encoder" of a wheel.
+        #        Either wheel is fine, using code that includes
+        #        something like this:  self.left_motor.get_position()
+        #   3. Start both wheel-motors moving at the specified speed
+        #         (using the   go   method).
+        #   4. Repeatedly:
+        #        a. Set a variable to the current value of the "encoder"
+        #              of the wheel you used in Step 2.
+        #        b. Compute the absolute value of the difference between
+        #             the motor's position before you started the robot moving
+        #             and the motor's current position.
+        #           If that computed value is greater than or equal to
+        #             the computed number of degrees that the motor should spin,
+        #             STOP the motors and break out of the loop.
+        #        c. Sleep 0.05 seconds in order to avoid "flooding" the
+        #             hardware/software of the encoder.
+        # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete from the project given to students.
+        degrees_motor_should_spin = inches * 8
+        start_position = self.left_motor.get_position()
+        self.go(speed, speed)
+        while True:
+            current_position = self.left_motor.get_position()
+            if (abs(current_position - start_position)
+                    > degrees_motor_should_spin):
+                self.stop(stop_action)
+                break
+            time.sleep(0.05)
+
+    def spin_in_place_for_seconds(self, seconds, speed=50, stop_action="brake"):
+        """
+        Makes the robot spin in place for the given number of seconds
+        at the given speed, stopping using the given stop_action.
+
+        Spinning in place means that the left motor spins at the given speed
+        and the right motor spins at the negative of the given speed.
+        Hence a positive speed causes the robot to spin clockwise and
+        a negative speed causes the robot to spin counter-clockwise.
+
+        Speeds are expected to be integers between -100 and 100.
+
+        Prints an error message (and goes nowhere) if seconds <= 0
+          or speed == 0.
+
+        :type  seconds: float | int
+        :type  speed:   int
+        :type  stop_action: str
+        """
+        # Error handling:
+        if has_bad_arguments("spin_in_place_for_seconds", seconds, speed):
+            return -1
+
+        # ---------------------------------------------------------------------
+        # TODO: 9. Implement this method, using three lines of code like this:
+        #    1. Start both wheel-motors moving:
+        #         the left_motor at the given speed, and
+        #         the right_motor at the negative of the given speed
+        #           (using the   go   method).
+        #    2. "Sleep" (do nothing else) while the robot is moving,
+        #         for the specified number of seconds,
+        #         using the   time.sleep   function.
+        #    3.  Stop the wheel-motors (using the  stop   method).
+        # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete from the project given to students.
+        self.go(speed, speed)
+        time.sleep(seconds)
+        self.stop(stop_action)
+
+    def spin_in_place_for_degrees(self, degrees, speed=50, stop_action="brake"):
+        """
+        Makes the robot spin in place for the given number of degrees
+        at the given speed, stopping using the given stop_action.
+
+        Uses the encoder (degrees_traveled sensor, "position")
+        built into the motors to tell when to stop moving.
+
+        Spinning in place means that the left motor spins at the given speed
+        and the right motor spins at the negative of the given speed.
+        Hence a positive speed causes the robot to spin clockwise and
+        a negative speed causes the robot to spin counter-clockwise.
+
+        Speeds are expected to be integers between -100 and 100.
+
+        Prints an error message (and goes nowhere) if degrees <= 0
+          or speed == 0.
+
+        :type  degrees: float | int
+        :type  speed:   int
+        :type  stop_action: str
+        """
+        # Error handling:
+        if has_bad_arguments("spin_in_place_for_degrees", degrees, speed):
+            return -1
+
+        # ---------------------------------------------------------------------
+        # TODO: 10. Implement this method, using the following algorithm:
+        #   1. Compute the number of DEGREES that the MOTORS should SPIN
+        #        in order for the ROBOT to spin the given number of DEGREES.
+        #      Find this value by trial-and-error, starting with a conversion
+        #        value of 1 robot degree = XXX degrees for the motor to spin.
+        #   2. Set a variable to the current value of the "encoder" of a wheel.
+        #        Either wheel is fine, using code that includes
+        #        something like this:  self.left_motor.get_position()
+        #   3. Start the left motor spinning at the given speed and the right
+        #        motor spinning at the negative of the given speed
+        #         (using the   go   method).
+        #   4. Repeatedly:
+        #        a. Set a variable to the current value of the "encoder"
+        #              of the wheel you used in Step 2.
+        #        b. Compute the absolute value of the difference between
+        #             the motor's position before you started the robot moving
+        #             and the motor's current position.
+        #           If that computed value is greater than or equal to
+        #             the computed number of degrees that the MOTOR should spin,
+        #             STOP the motors and break out of the loop.
+        #        c. Sleep 0.05 seconds in order to avoid "flooding" the
+        #             hardware/software of the encoder.
+        # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete from the project given to students.
+        degrees_motor_should_spin = degrees * 3
+        start_position = self.left_motor.get_position()
+        self.go(speed, speed)
+        while True:
+            current_position = self.left_motor.get_position()
+            if (abs(current_position - start_position)
+                    > degrees_motor_should_spin):
+                self.stop(stop_action)
+                break
+            time.sleep(0.05)
+
+    def turn_for_seconds(self, seconds, speed=50, stop_action="brake"):
+        """
+        Makes the robot turn for the given number of seconds
+        at the given speed, stopping using the given stop_action.
+
+        If the speed is positive, then turning means that the left motor
+        spins at the given speed and the right motor does NOT spin.
+        Hence the robot turns clockwise (to the right) in this case.
+
+        If the speed is negative, then turning means that the left motor does
+        NOT spin and the right motor spins at the negative of the given speed.
+        Hence the robot turns counter-clockwise (to the left) in this case.
+
+        Speeds are expected to be integers between -100 and 100.
+
+        Prints an error message (and goes nowhere) if seconds <= 0
+          or speed == 0.
+
+        :type  seconds: float | int
+        :type  speed:   int
+        :type  stop_action: str
+        """
+        # Error handling:
+        if has_bad_arguments("turn_for_seconds", seconds, speed):
+            return -1
+
+        # ---------------------------------------------------------------------
+        # TODO: 11. Implement this method, using three lines of code like this:
+        #    1. Start both wheel-motors moving:
+        #         If the speed is positive, the left motor spins at the given
+        #           speed and the right motor spins at speed 0.
+        #         If the speed is negative, the left motor spins at speed 0 and
+        #           the right motor spins at the negative of the given speed.
+        #         In both cases, use the   go   method.
+        #    2. "Sleep" (do nothing else) while the robot is moving,
+        #         for the specified number of seconds,
+        #         using the   time.sleep   function.
+        #    3.  Stop the wheel-motors (using the  stop   method).
+        # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete from the project given to students.
+        if speed > 0:
+            self.go(speed, 0)
+        else:
+            self.go(0, -speed)
+        time.sleep(seconds)
+        self.stop(stop_action)
+
+    def turn_for_degrees(self, degrees, speed=50, stop_action="brake"):
+        """
+        Makes the robot turn for the given number of degrees
+        at the given speed, stopping using the given stop_action.
+
+        Uses the encoder (degrees_traveled sensor, "position")
+        built into the motors to tell when to stop moving.
+
+        If the speed is positive, then turning means that the left motor
+        spins at the given speed and the right motor does NOT spin.
+        Hence the robot turns clockwise (to the right) in this case.
+
+        If the speed is negative, then turning means that the left motor does
+        NOT spin and the right motor spins at the negative of the given speed.
+        Hence the robot turns counter-clockwise (to the left) in this case.
+
+        Speeds are expected to be integers between -100 and 100.
+
+        Prints an error message (and goes nowhere) if seconds <= 0
+          or speed == 0.
+
+        :type  degrees: float | int
+        :type  speed:   int
+        :type  stop_action: str
+        """
+        # Error handling:
+        if has_bad_arguments("turn_for_degrees", degrees, speed):
+            return -1
+
+        # ---------------------------------------------------------------------
+        # TODO: 12. Implement this method, using the following algorithm:
+        #   1. Compute the number of DEGREES that the relevant MOTOR should SPIN
+        #        in order for the ROBOT to turn the given number of DEGREES.
+        #      Find this value by trial-and-error, starting with a conversion
+        #        value of 1 robot degree = XXX degrees for the motor to spin.
+        #   2. Set a variable to the current value of the "encoder" of
+        #        the relevant wheel.
+        #   3. Start both wheel-motors moving:
+        #         If the speed is positive, the left motor spins at the given
+        #           speed and the right motor spins at speed 0.
+        #         If the speed is negative, the left motor spins at speed 0 and
+        #           the right motor spins at the negative of the given speed.
+        #         In both cases, use the   go   method.
+        #   4. Repeatedly:
+        #        a. Set a variable to the current value of the "encoder"
+        #              of the wheel you used in Step 2.
+        #        b. Compute the absolute value of the difference between
+        #             the motor's position before you started the robot moving
+        #             and the motor's current position.
+        #           If that computed value is greater than or equal to
+        #             the computed number of degrees that the MOTOR should spin,
+        #             STOP the motors and break out of the loop.
+        #        c. Sleep 0.05 seconds in order to avoid "flooding" the
+        #             hardware/software of the encoder.
+        # ---------------------------------------------------------------------
+        # SOLUTION CODE: Delete from the project given to students.
+        degrees_motor_should_spin = degrees * 6
+        if speed > 0:
+            motor = self.left_motor
+            start_position = motor.get_position()
+            self.go(speed, 0)
+        else:
+            motor = self.right_motor
+            start_position = motor.get_position()
+            self.go(0, speed)
+
+        while True:
+            current_position = motor.get_position()
+            if (abs(current_position - start_position)
+                    > degrees_motor_should_spin):
+                self.stop(stop_action)
+                break
+            time.sleep(0.05)
+
+
+def has_bad_arguments(method_name, seconds, speed):
+    # Error handling:
+    if seconds < 0:
+        message = ("ERROR: in calling \"" + method_name + "\",\n"
+                   + "the first argument is the seconds to move.\n"
+                   + "It must be a POSITIVE number.\n"
+                   + "The actual value for the first argument was:\n"
+                   + "   " + str(seconds)
+                   + "No movement done!")
+        fancy_printing.print_colored(message, color="red")
+        return True
+
+    if speed == 0:
+        message = ("ERROR: in calling \"" + method_name + "\",\n"
+                   + "the second argument is the speed at which to move.\n"
+                   + "It must be a NON-ZERO number, but in fact was 0.\n"
+                   + "No movement done!")
+        fancy_printing.print_colored(message, color="red")
+        return True
+
+    return False
