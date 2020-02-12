@@ -18,7 +18,7 @@ def main():
     # Un-comment the appropriate line below for what YOU want to TEST.
     # -------------------------------------------------------------------------
     # lab1a.main()
-    # lab2a.main()
+    lab2a.main()
 
 
 # -----------------------------------------------------------------------------

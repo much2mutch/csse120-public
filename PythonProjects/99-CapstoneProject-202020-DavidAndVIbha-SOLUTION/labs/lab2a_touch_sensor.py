@@ -47,12 +47,17 @@ def run_test_get_reading(touch_sensor):
     Tests the   get_reading   method of the   TouchSensor   class.
       :type touch_sensor: touch.TouchSensor
     """
+    print()
     print("--------------------------------------------------")
     print("Testing the   get_reading   method")
     print("  of the   TouchSensor   class.")
     print("--------------------------------------------------")
 
-    print("Stop this program by pressing  Control-C  when desired.")
+    print()
+    print("In the output that will appear, you should see:")
+    print("  1  when the physical Touch Sensor is pressed")
+    print("  0  when the physical Touch Sensor is NOT pressed")
+    print("Stop this test by pressing  Control-C  when desired.")
     input("Press the ENTER key when ready to start getting readings.")
     try:
         while True:
@@ -74,8 +79,9 @@ def run_test_get_reading(touch_sensor):
             time.sleep(0.5)
 
     except KeyboardInterrupt:
+        print()
         print("OK, you just did a keyboard interrupt (Control-C).")
-        print("No worries.  This allows the program to keep running from here.")
+        print("No worries. The program will keep running from here.")
 
 
 def run_test_is_pressed(touch_sensor):
@@ -83,11 +89,16 @@ def run_test_is_pressed(touch_sensor):
     Tests the   is_pressed   method of the   TouchSensor   class.
       :type touch_sensor: touch.TouchSensor
     """
+    print()
     print("--------------------------------------------------")
     print("Testing the   is_pressed   method")
     print("  of the   TouchSensor   class.")
     print("--------------------------------------------------")
 
+    print()
+    print("In the output that will appear, you should see:")
+    print("  True   when the physical Touch Sensor is pressed")
+    print("  False  when the physical Touch Sensor is NOT pressed")
     print("Stop this program by pressing  Control-C  when desired.")
     input("Press the ENTER key when ready to start getting readings.")
     try:
@@ -110,8 +121,9 @@ def run_test_is_pressed(touch_sensor):
             time.sleep(0.5)
 
     except KeyboardInterrupt:
+        print()
         print("OK, you just did a keyboard interrupt (Control-C).")
-        print("No worries.  This allows the program to keep running from here.")
+        print("No worries. The program will keep running from here.")
 
 
 def run_test_wait_until_pressed(touch_sensor):
@@ -119,20 +131,30 @@ def run_test_wait_until_pressed(touch_sensor):
     Tests the   wait_until_pressed   method of the   TouchSensor   class.
       :type touch_sensor: touch.TouchSensor
     """
+    print()
     print("--------------------------------------------------")
     print("Testing the   wait_until_pressed   method")
     print("  of the   TouchSensor   class.")
     print("--------------------------------------------------")
 
+    print()
     print("Press the ENTER key when ready to WAIT until the")
-    input("Touch Sensor is pressed (and eventually press it!)")
-    # -------------------------------------------------------------------------
-    # TODO: 6. Call the   wait_until_pressed   method on the given
-    #  TouchSensor object. Then print a simple message like "Pressed!"
-    # -------------------------------------------------------------------------
-    # SOLUTION CODE: Delete from the project given to students.
-    touch_sensor.wait_until_pressed()
-    print("Pressed!")
+    print("Touch Sensor is pressed.  Then, when you are ready,")
+    input("press the Touch Sensor, which should stop this test.")
+    try:
+        # -------------------------------------------------------------------------
+        # TODO: 6. Call the   wait_until_pressed   method on the given
+        #  TouchSensor object. Then print a simple message like "Pressed!"
+        # -------------------------------------------------------------------------
+        # SOLUTION CODE: Delete from the project given to students.
+        touch_sensor.wait_until_pressed()
+        print()
+        print("Pressed!")
+
+    except KeyboardInterrupt:
+        print()
+        print("OK, you just did a keyboard interrupt (Control-C).")
+        print("No worries. The program will keep running from here.")
 
 
 def run_test_wait_until_released(touch_sensor):
@@ -140,19 +162,23 @@ def run_test_wait_until_released(touch_sensor):
     Tests the   wait_until_released   method of the   TouchSensor   class.
       :type touch_sensor: touch.TouchSensor
     """
+    print()
     print("--------------------------------------------------")
     print("Testing the   wait_until_released   method")
     print("  of the   TouchSensor   class.")
     print("--------------------------------------------------")
 
     print("Press the ENTER key when ready to WAIT until the")
-    print("Touch Sensor is RELEASED.  (So press and hold down")
-    print("the Touch Sensor, then press the ENTER key.")
-    input("Then, when are ready, RELEASE the (and eventually press it!)")
+    print("Touch Sensor is RELEASED.  That is, press and hold down")
+    print("the Touch Sensor now, then press the ENTER key.")
+    print("Then, when you are ready, RELEASE the Touch Sensor")
+    input("which should stop this test.")
+
     # -------------------------------------------------------------------------
     # TODO: 7. Call the   wait_until_released   method on the given
     #  TouchSensor object. Then print a simple message like "Released!"
     # -------------------------------------------------------------------------
     # SOLUTION CODE: Delete from the project given to students.
     touch_sensor.wait_until_released()
+    print()
     print("Released!")

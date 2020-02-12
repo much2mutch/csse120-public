@@ -27,8 +27,8 @@ Winter term, 2019-2020.
 #  that imports a module that is in the  LIBS  sub-folder.
 #  Change this _TODO_ to DONE after you have seen how to do it.
 # -----------------------------------------------------------------------------
-import rosebot_drive_system
-import rosebot_touch_sensor
+import libs.rosebot_drive_system as drive
+import libs.rosebot_touch_sensor as touch
 
 
 ###############################################################################
@@ -45,5 +45,5 @@ class RoseBot(object):
         # TODO: 3. Once you understand the following code
         #  (ASK QUESTIONS AS NEEDED), change this _TODO_ to DONE.
         # ---------------------------------------------------------------------
-        self.drive_system = rosebot_drive_system.DriveSystem("B", "C")
-        self.touch_sensor = rosebot_touch_sensor.TouchSensor(1)
+        self.drive_system = drive.DriveSystem("B", "C")
+        self.touch_sensor = touch.TouchSensor(1)
