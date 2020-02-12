@@ -47,4 +47,3 @@ class RoseBot(object):
         # ---------------------------------------------------------------------
         self.drive_system = rosebot_drive_system.DriveSystem("B", "C")
         self.touch_sensor = rosebot_touch_sensor.TouchSensor(1)
-
