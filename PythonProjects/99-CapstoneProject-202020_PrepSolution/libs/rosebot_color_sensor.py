@@ -35,20 +35,12 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         self.sensor = rose_ev3.ColorSensor(port)
 
-    def get_reading(self):
+    def get_color(self):
         """
         Returns the color detected by the sensor, as best the sensor can judge
         from shining red, then green, then blue light and measuring the
         intensities returned.  The returned value is a string:
-          - 0: No Color
-                  (that is, cannot classify the color as one of the following)
-          - 1: Black
-          - 2: Blue
-          - 3: Green
-          - 4: Yellow
-          - 5: Red
-          - 6: White
-          - 7: Brown
+          - No Color, Black, Blue, Green, Yellow, Red, White, Brown
         :rtype: str
         """
         # ---------------------------------------------------------------------
@@ -59,7 +51,7 @@ class ColorSensor(object):
     def wait_for_color(self, color):
         """
         Sits in a loop, sleeping 0.05 seconds each time through the loop,
-        waiting for the given color (as an string) to be detected.
+        waiting for the given color (as a string) to be detected.
         The string can be in any case (lower, upper or mixed), e.g. BLaCk.
           :type color: str
         """
@@ -71,3 +63,17 @@ class ColorSensor(object):
             time.sleep(0.05)
             if target_color == self.sensor.get_color().lower():
                 break
+
+    def get_reflected_light_intensity(self):
+        """
+        Shines red light and returns the intensity of the reflected light.
+        The returned value is from 0 to 100,
+        but in practice more like 3 to 90+ in our classroom lighting with our
+        downward-facing sensor that is about 0.25 inches from the ground.
+        :return: Amount of light reflected 0 (no light reflected) to 100 (super bright)
+        :rtype: int
+        """
+        # ---------------------------------------------------------------------
+        # TODO: Implement this method.
+        # ---------------------------------------------------------------------
+        return self.sensor.get_reflected_light_intensity()
