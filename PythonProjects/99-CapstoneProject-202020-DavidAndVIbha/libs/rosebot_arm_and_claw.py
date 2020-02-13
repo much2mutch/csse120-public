@@ -11,7 +11,6 @@ Winter term, 2019-2020.
 # TODO: 1. In the above, put the names of EACH team member who contributes
 #  (in any way) to this module.
 
-
 # -----------------------------------------------------------------------------
 # TODO: 2. Note that this module uses two libraries from LIBS:
 #     rosebot_touch_sensor
@@ -63,6 +62,7 @@ class ArmAndClaw(object):
 
         # The arm motor should always use a 100% duty cycle for its speed.
         self.speed = 100
+
         self.arm_touch_sensor = touch_sensor
         self.arm_motor = rose_ev3.Motor(port, motor_type="medium")
         self.is_calibrated = False
@@ -119,3 +119,4 @@ class ArmAndClaw(object):
         # ---------------------------------------------------------------------
         # TODO: 8. Implement this method; it is a ONE-LINER!
         # ---------------------------------------------------------------------
+
