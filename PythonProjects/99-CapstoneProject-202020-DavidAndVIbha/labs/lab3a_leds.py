@@ -50,7 +50,6 @@ def run_test_leds_on_off(robot):
     print("Testing the  turn_off   and set_color   methods")
     print("  of the   Leds   class.")
     print("--------------------------------------------------")
-    print()
 
     print()
     print("In the output that will appear, you should see:")
