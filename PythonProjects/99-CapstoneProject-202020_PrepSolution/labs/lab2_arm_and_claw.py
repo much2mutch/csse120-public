@@ -15,11 +15,6 @@ import time
 
 
 def main():
-    """ Calls the desired TEST functions. """
-    test_arm_and_claw()
-
-
-def test_arm_and_claw():
     """ Test a robot's ARM AND CLAW. """
     print()
     print('--------------------------------------------------')

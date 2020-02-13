@@ -639,6 +639,42 @@ class Beeper(object):
 
 
 ###############################################################################
+#    SpeechMaker
+###############################################################################
+class SpeechMaker(object):
+    """
+    Creates an object that has a speak method to have the robot talk.
+    Note: this class could really be a static class, but we wanted to follow
+    the same pattern as other classes to keep it simple.
+    """
+    def __init__(self):
+        self._speech_maker = ev3.Sound
+
+    def speak(self, phrase):
+        """
+        Speaks the given phrase aloud.
+        The phrase must be short.
+        This method is blocking, meaning the next line of your code will not
+        run until the SpeechMaker is done (usually this IS what you want).
+        :param phrase: The string that you would like the robot to say.
+        :type  phrase:  str
+        """
+        self._speech_maker.speak(phrase).wait()
+
+    def speak_nonblocking(self, phrase):
+        """
+        Speaks the given phrase aloud. The phrase must be short.
+        This method does NOT block, that is, continues immediately to the next
+        statement while the sound is being played.
+        IMPORTANT:  speak()  does not appear to work correctly in all circumstances.
+        Use this method with a   time.sleep()  after a   speak_nonblocking  as needed.
+        :param phrase: The string that you would like the robot to say.
+        :type  phrase:  str
+        """
+        self._speech_maker.speak(phrase)
+
+
+###############################################################################
 #    ToneMaker
 ###############################################################################
 class ToneMaker(object):
@@ -729,39 +765,28 @@ class ToneMaker(object):
 
 
 ###############################################################################
-#    SpeechMaker
+#    WavFilePlayer
 ###############################################################################
-class SpeechMaker(object):
+class WavFilePlayer(object):
     """
-    Creates an object that has a speak method to have the robot talk.
+    Creates an object that has a play methods to play a .wav file.
     Note: this class could really be a static class, but we wanted to follow
     the same pattern as other classes to keep it simple.
     """
     def __init__(self):
-        self._speech_maker = ev3.Sound
+        self._wav_player = ev3.Sound
 
-    def speak(self, phrase):
+    def play(self, file_location):
         """
-        Speaks the given phrase aloud.
-        The phrase must be short.
-        This method is blocking, meaning the next line of your code will not
-        run until the SpeechMaker is done (usually this IS what you want).
-        :param phrase: The string that you would like the robot to say.
-        :type  phrase:  str
+        Plays properly formatted .wav files.
+        Based on the documentation the file must be a PCM signed 16-bit
+        little-endian .wav file.  You can try to convert normal audio files
+        using tools like: http://audio.online-convert.com/convert-to-wav
+        Warning: audio files get big.  The game is trial and error to find
+        one that works.  Your instructors are CERTAINLY not experts on what
+        actaully plays.
         """
-        self._speech_maker.speak(phrase).wait()
-
-    def speak_nonblocking(self, phrase):
-        """
-        Speaks the given phrase aloud. The phrase must be short.
-        This method does NOT block, that is, continues immediately to the next
-        statement while the sound is being played.
-        IMPORTANT:  speak()  does not appear to work correctly in all circumstances.
-        Use this method with a   time.sleep()  after a   speak_nonblocking  as needed.
-        :param phrase: The string that you would like the robot to say.
-        :type  phrase:  str
-        """
-        self._speech_maker.speak(phrase)
+        self._wav_player.play(file_location).wait()
 
 
 # Some notes and examples for when we move to ev3dev2...

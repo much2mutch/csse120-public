@@ -15,11 +15,6 @@ import time
 
 
 def main():
-    """ Calls the desired TEST functions. """
-    run_test_drive_system()
-
-
-def run_test_drive_system():
     """ Test a robot's DRIVE SYSTEM. """
     print()
     print('--------------------------------------------------')

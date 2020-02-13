@@ -1,7 +1,7 @@
 """
 Capstone Team Project.  Code to run on the EV3 robot (NOT on a laptop).
 
-This code defines the DriveSystem class, for making the robot move.
+This code defines the Leds class, which controls the robot LEDs.
 
 Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
@@ -15,7 +15,7 @@ import rosebot_ev3dev_api as rose_ev3
 
 
 ###############################################################################
-#    LEDs
+#    Leds
 ###############################################################################
 class Leds(object):
     """

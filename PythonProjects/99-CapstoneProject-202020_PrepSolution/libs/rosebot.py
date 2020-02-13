@@ -7,18 +7,22 @@ Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
 Winter term, 2019-2020.
 """
-# TODO: Put the name of EACH team member who contributes
+# TODO 0: Put the name of EACH team member who contributes
 #   to this module in the above.
 
-import rosebot_arm_and_claw
-import rosebot_brick_buttons
-import rosebot_color_sensor
-import rosebot_drive_system
-import rosebot_leds
-import rosebot_remote_control
-import rosebot_touch_sensor
 
-import rosebot_ev3dev_api
+import rosebot_touch_sensor     # Lab 1
+import rosebot_drive_system     # Lab 2
+import rosebot_arm_and_claw     # Lab 2
+import rosebot_leds             # Lab 3
+import rosebot_brick_buttons    # Lab 3
+import rosebot_remote_control   # Lab 3
+import rosebot_color_sensor     # Lab 4
+import rosebot_line_follower    # Lab 4
+import rosebot_infrared_proximity_sensor     # Lab 4
+import rosebot_beacon_seeker    # Lab 4
+import rosebot_camera_sensor    # Lab 5
+
 
 ###############################################################################
 #    RoseBot class.
@@ -34,13 +38,38 @@ import rosebot_ev3dev_api
 ###############################################################################
 class RoseBot(object):
     def __init__(self):
-        # TODO: Implement this class with your instructor.
+        # Lab 1
+        # ---------------------------------------------------------------------
+        # TODO 1: With your instructor, add subsystems needed for Lab 1.
+        # ---------------------------------------------------------------------
         self.drive_system = rosebot_drive_system.DriveSystem('B', 'C')
+
+        # Lab 2
+        # ---------------------------------------------------------------------
+        # TODO 2: With your instructor, add subsystems needed for Lab 2.
+        # ---------------------------------------------------------------------
         self.touch_sensor = rosebot_touch_sensor.TouchSensor(1)
         self.arm_and_claw = rosebot_arm_and_claw.ArmAndClaw('A', self.touch_sensor)
+
+        # Lab 3
+        # ---------------------------------------------------------------------
+        # TODO 3: With your instructor, add subsystems needed for Lab 3.
+        # ---------------------------------------------------------------------
         self.leds = rosebot_leds.Leds()
         self.brick_buttons = rosebot_brick_buttons.BrickButtons()
         self.remote_control = rosebot_remote_control.RemoteControl()
+
+        # Lab 4
+        # ---------------------------------------------------------------------
+        # TODO 4: With your instructor, add subsystems needed for Lab 4.
+        # ---------------------------------------------------------------------
         self.color_sensor = rosebot_color_sensor.ColorSensor(3)
-        # self.camera = rosebot_ev3dev_api.Camera()
-        self.infrared_proximity_sensor = rosebot_ev3dev_api.InfraredProximitySensor(4)
+        self.infrared_proximity_sensor = rosebot_infrared_proximity_sensor.InfraredProximitySensor(4)
+        self.line_follower = rosebot_line_follower.LineFollower(self.color_sensor, self.drive_system)
+        self.beacon_seeker = rosebot_beacon_seeker.BeaconSeeker(4, 1, self.drive_system)
+
+        # Lab 5
+        # ---------------------------------------------------------------------
+        # TODO 5: With your instructor, add subsystems needed for Lab 5.
+        # ---------------------------------------------------------------------
+        self.camera = rosebot_camera_sensor.CameraSensor(2)
