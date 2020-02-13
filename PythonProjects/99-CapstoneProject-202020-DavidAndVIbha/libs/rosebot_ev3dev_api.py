@@ -597,7 +597,7 @@ class RemoteControlChannel(object):
 ###############################################################################
 #    EV3 Brick Buttons
 ###############################################################################
-class BrickButtons(object):
+class LowerLevelBrickButtons(object):
     def __init__(self):
         """
         Creates the one and only brick button object.

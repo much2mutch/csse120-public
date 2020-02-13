@@ -1,17 +1,23 @@
 """
-Capstone Team Project.  Code to run on the EV3 robot (NOT on a laptop).
+Capstone Team Project.  Code to run on a ROBOT (NOT a laptop).
 
-This code defines the BrickButtons class, for the robot's remote
-control that detects when the arm and claw are in the fully-up position.
+This code defines the   BrickButtons  class  that controls
+the physical buttons on the front of the EV3 brick.
 
 Authors:  Your professors (for the framework)
-    and PUT_YOUR_NAMES_HERE.
+    and PUT_YOUR_NAME_HERE.
 Winter term, 2019-2020.
 """
-# TODO: Put the name of EACH team member who contributes
-#   to this module in the above.
+# TODO: 1. In the above, put the names of EACH team member who contributes
+#  (in any way) to this module.
 
-import rosebot_ev3dev_api as rose_ev3
+# -----------------------------------------------------------------------------
+# TODO: 2. Note that this module uses a library from LIBS:
+#  This module uses code that is in the "low-level" api in rosebot_ev3dev_api.
+#  Change this _TODO_ to DONE after you have seen how to do it.
+# -----------------------------------------------------------------------------
+import libs.rosebot_ev3dev_api as ev3dev
+import time
 
 
 ###############################################################################
@@ -26,8 +32,11 @@ class BrickButtons(object):
         Constructs the underlying low-level version of this brick buttons.
         """
         # ---------------------------------------------------------------------
-        # TODO: With your instructor, implement this method.
+        # TODO: 3. Read the following, ASKING QUESTIONS AS NEEDED.
+        #  Once you understand the code, change this _TODO_ to DONE.
         # ---------------------------------------------------------------------
+        self._low_level_buttons = ev3dev.LowerLevelBrickButtons()
+        self.left_or_right = left_or_right
 
     def is_up_pressed(self):
         """
@@ -35,7 +44,7 @@ class BrickButtons(object):
           :rtype: bool
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method.
+        # TODO: 4. Implement this method.
         # ---------------------------------------------------------------------
 
     def is_down_pressed(self):
@@ -44,7 +53,7 @@ class BrickButtons(object):
           :rtype: bool
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method.
+        # TODO: 5. Implement this method.
         # ---------------------------------------------------------------------
 
     def is_left_pressed(self):
