@@ -28,16 +28,18 @@ def main():
 
     # -------------------------------------------------------------------------
     # TODO: 3. The following constructs a RoseBot object, then sends it as an
-    #  argument to the TEST functions. In those TEST functions, you will access
-    #  the RoseBot object's   arm_and_claw   instance variable to make the
-    #  physical Arm (and associated Claw) move.
+    #  argument to the first TEST function. In that TEST functions, you will
+    #  access the RoseBot object's   arm_and_claw   instance variable to make
+    #  the physical Arm (and associated Claw) move.  The subsequent test
+    #  functions construct their own RoseBot, thus starting "fresh"
+    #  (i.e., with an uncalibrated ArmAndClaw).
     #  Change this _TODO_ to DONE after you understand the following code.
     # -------------------------------------------------------------------------
     robot = rb.RoseBot()
 
     run_test_calibrate(robot)
-    run_test_raise_and_lower(robot)
-    run_test_move_arm_to_position(robot)
+    run_test_raise_and_lower()
+    run_test_move_arm_to_position()
 
 
 def run_test_calibrate(robot):
@@ -53,7 +55,7 @@ def run_test_calibrate(robot):
 
     print()
     print("Press the ENTER key when ready for the robot to start moving.")
-    print("It should go all the way UP, then all the way DOWN.")
+    print("It should then go all the way UP, then all the way DOWN.")
     print("  If it does NOT do that and seems to be stuck,")
     input("  press Control-C to force this test to stop.")
     try:
@@ -70,7 +72,7 @@ def run_test_calibrate(robot):
         print("No worries. The program will keep running from here.")
 
 
-def run_test_raise_and_lower(robot):
+def run_test_raise_and_lower():
     """
     Tests the  raise   and  lower    methods of the ArmAndClaw class.
     """
@@ -81,26 +83,38 @@ def run_test_raise_and_lower(robot):
     print("------------------------------------------")
     print()
 
+    # Start with a fresh (uncalibrated) ArmAndClaw.
+    robot = rb.RoseBot()
+
     try:
         print("Press the ENTER key when ready for the robot")
-        print("to go UP all the way.")
+        print("to go ** DOWN ** all the way.")
+        print("Since it has not yet been calibrated, it will first")
+        print("go UP, then DOWN, to calibrate.")
         print("  If it does NOT do that and seems to be stuck,")
         input("  press Control-C to force this test to stop.")
 
         # ---------------------------------------------------------------------
         # TODO: 5. Replace the  pass  statement below with a call to
-        #  the   raise_arm   method on the arm_and_claw of the given RoseBot.
-        #  Then print a simple message like "Raised!"
+        #  the   lower_arm   method on the arm_and_claw of the given RoseBot.
+        #  Then print a simple message like "Lowered!"
         # ---------------------------------------------------------------------
         pass
 
         print("Press the ENTER key when ready for the robot")
-        print("to go DOWN all the way.")
+        print("to go ** UP ** all the way.")
         print("  If it does NOT do that and seems to be stuck,")
         input("  press Control-C to force this test to stop.")
 
         # ---------------------------------------------------------------------
         # TODO: 6. Replace the  pass  statement below with a call to
+        #  the   raise_arm   method on the arm_and_claw of the given RoseBot.
+        #  Then print a simple message like "Raised!"
+        # ---------------------------------------------------------------------
+        pass
+
+        # ---------------------------------------------------------------------
+        # TODO: 7. Replace the  pass  statement below with a call to
         #  the   lower_arm   method on the arm_and_claw of the given RoseBot.
         #  Then print a simple message like "Lowered!"
         # ---------------------------------------------------------------------
@@ -112,33 +126,44 @@ def run_test_raise_and_lower(robot):
         print("No worries. The program will keep running from here.")
 
 
-def run_test_move_arm_to_position(robot):
+def run_test_move_arm_to_position():
     """
-    Tests the  move_arm_to_position    methods of the ArmAndClaw class.
+    Tests the   move_arm_to_position   method of the ArmAndClaw class.
     """
-    print('--------------------------------------------------')
-    print('Testing the  move_arm_to_position  method of the robot')
-    print('--------------------------------------------------')
+    print()
+    print("-----------------------------------------=-")
+    print("Testing the   move_arm_to_position   method")
+    print("  of the   ArmAndClaw   class.")
+    print("-------------------------------------------")
+    print()
 
-    while True:
-        print("Enter an integer for the position to which")
-        desired_position = int(input("to move the arm (0 to about 5100): "))
-        if desired_position < 0 or desired_position > 5100:
-            print("Goodbye")
-            break
+    # Start with a fresh (uncalibrated) ArmAndClaw.
+    robot = rb.RoseBot()
+
+    # Positions to which to move the Arm, one at a time.
+    positions = [1200, 200, 1000, 2000, 1000, 500, 14 * 360, 0]
+    print()
+    print("READ the above tests to know what movement to expect")
+    print("in the following tests.")
+
+    try:
+        for k in range(len(positions)):
+            print()
+            print("Press the ENTER key when ready for the robot")
+            print("to move to position {}.".format(positions[k]))
+            print("Since it has not yet been calibrated, it will first")
+            print("go UP, then DOWN, to calibrate, then to the above position.")
+            print("  If it does NOT do that and seems to be stuck,")
+            input("  press Control-C to force this test to stop.")
+
+            # -----------------------------------------------------------------
+            # TODO: 8. Replace the  pass  statement below with a call to
+            #  the   move_arm_to_position   method on the arm_and_claw
+            #  of the given RoseBot, sending it positions[k].
+            # -----------------------------------------------------------------
+            pass
+
+    except KeyboardInterrupt:
         print()
-        input("Press the ENTER key when ready for the robot to start moving.")
-
-        # -------------------------------------------------------------------------
-        # TODO: 8. Call the  move_arm_to_position   of the robot
-        # NOTICE: Your move_arm_to_position should notice that the arm has NOT
-        # been calibrated and do a calibration.  You don't need to call calibrate
-        # from here, your library method should notice the lack of calibration and
-        # just do it before the move!
-        # -------------------------------------------------------------------------
-
-        # Solution to be removed
-        robot.arm_and_claw.move_arm_to_position(desired_position)
-
-
-main()
+        print("OK, you just did a keyboard interrupt (Control-C).")
+        print("No worries. The program will keep running from here.")
