@@ -3,7 +3,8 @@ Capstone Team Project.  Code to run on the EV3 robot (NOT on a laptop).
 
 This code defines the CameraSensor.
 
-Authors:  Your professors (for the framework) and PUT_YOUR_NAMES_HERE.
+Authors:  Your professors (for the framework)
+    and PUT_YOUR_NAMES_HERE.
 Winter term, 2019-2020.
 """
 # TODO: Put the name of EACH team member who contributes

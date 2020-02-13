@@ -15,15 +15,10 @@ import time
 
 
 def main():
-    """ Calls the desired TEST functions. """
-    test_digital_io()
-
-
-def test_digital_io():
-    """ Test a robot's Remote Control, brick buttons, and LEDs. """
+    """ Test a robot's Remote Control, Brick Buttons, and LEDs. """
     print()
     print('--------------------------------------------------')
-    print('Testing the  Remote Control, Brick Buttons, and LEDs  of a robot')
+    print(' Testing Remote Control, Brick Buttons, and LEDs')
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------

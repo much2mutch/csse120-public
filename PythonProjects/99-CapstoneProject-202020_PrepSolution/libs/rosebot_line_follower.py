@@ -6,7 +6,8 @@ facing sensor. The infrared sensor when it is in the mode does not emit light
 it only looks for the light coming from the Remote Control.  The remote control
 must be running in beacon mode (the top button) for this class to work.
 
-Authors:  Your professors (for the framework) and PUT_YOUR_NAMES_HERE.
+Authors:  Your professors (for the framework)
+    and PUT_YOUR_NAMES_HERE.
 Winter term, 2019-2020.
 """
 # TODO: Put the name of EACH team member who contributes
