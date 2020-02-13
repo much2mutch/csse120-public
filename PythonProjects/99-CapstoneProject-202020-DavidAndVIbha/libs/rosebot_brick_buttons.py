@@ -1,7 +1,7 @@
 """
 Capstone Team Project.  Code to run on the EV3 robot (NOT on a laptop).
 
-This code defines the RemoteControl class, for the robot's remote
+This code defines the BrickButtons class, for the robot's remote
 control that detects when the arm and claw are in the fully-up position.
 
 Authors:  Your professors (for the framework)
