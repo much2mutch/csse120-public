@@ -30,6 +30,9 @@ Winter term, 2019-2020.
 import libs.rosebot_drive_system as drive
 import libs.rosebot_touch_sensor as touch
 import libs.rosebot_arm_and_claw as arm
+import libs.rosebot_leds as leds
+import libs.rosebot_arm_and_claw as bb
+import libs.rosebot_remote_control as rc
 
 
 ###############################################################################
@@ -49,3 +52,6 @@ class RoseBot(object):
         self.drive_system = drive.DriveSystem("B", "C")
         self.touch_sensor = touch.TouchSensor(1)
         self.arm_and_claw = arm.ArmAndClaw(self.touch_sensor)
+        self.leds = leds.Leds()
+        self.brick_buttons = bb.BrickButtons()
+        self.remote_control = rc.RemoteControl()
