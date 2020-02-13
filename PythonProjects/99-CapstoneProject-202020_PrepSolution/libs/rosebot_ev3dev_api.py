@@ -54,6 +54,9 @@ class Motor(object):
         else:
             self._motor = ev3.MediumMotor('out' + port)
 
+        # Check that the motor is actually connected (crash now if not connected)
+        assert self._motor.connected
+
     def turn_on(self, speed):
         """
         Turns on the motor at the requested speed. Valid speeds:
@@ -90,8 +93,7 @@ class Motor(object):
 
     def reset_position(self):
         """
-
-        :return:
+        Sets the motors current position as 0.
         """
         self._motor.position = 0
 
@@ -103,18 +105,241 @@ class TouchSensor(object):
     def __init__(self, port=None):  # port must be 1, 2, 3, 4, or None (for autodetect)
         """
         Creates a TouchSensor.
-        :type port: int
+        :type port: int | None
         """
         if port is not None:
             self._touch_sensor = ev3.TouchSensor('in' + str(port))
         else:
             self._touch_sensor = ev3.TouchSensor()  # automatically determine the port
 
+        # Check that all the sensor is actually connected (crash now if not connected)
+        assert self._touch_sensor
+
     def is_pressed(self):
+
         """
         Returns True if this TouchSensor is pressed, else returns False
-        ":rtype bool"""
+        :return: Returns True if the touch sensor is being pressed.
+        :rtype bool
+        """
         return self._touch_sensor.is_pressed == 1
+
+
+###############################################################################
+#    LEDs
+###############################################################################
+class Led(object):
+    """
+    Represents a single LED object on the EV3 Brick.
+    Note: there are 2 LEDs and each LED has a red and a green component.
+    """
+
+    def __init__(self, left_or_right):
+        """
+          Constructs a single LED object. Valid left_or_right values:
+            "left" or "right"
+          :param left_or_right: Determines the LED side ("left" or "right")
+          :type left_or_right: str
+        """
+        if left_or_right == "left":
+            self.led_location = ev3.Leds.LEFT
+        elif left_or_right == "right":
+            self.led_location = ev3.Leds.RIGHT
+        else:
+            print("INVALID Led LOCATION!")
+
+    def turn_off(self):
+        """ Turns this Led off. """
+        self.set_color("off")
+
+    def set_color(self, color_name):
+        """
+        Sets this Led to the given color. Valid colors include:
+          "red", "green", "amber", "off"
+          :param color_name: Target color for the LED.
+          :type color_name: str
+        """
+        if color_name == "red":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.RED)
+        elif color_name == "green":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.GREEN)
+        elif color_name == "amber":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.AMBER)
+        elif color_name == "off":
+            ev3.Leds.set_color(self.led_location, ev3.Leds.BLACK)
+        else:
+            print("INVALID LED COLOR STRING")
+
+
+###############################################################################
+#    Remote Control
+###############################################################################
+class RemoteControlChannel(object):
+    """
+     Represents all of the buttons on the remote control.  This is used
+     to know if a button is being pressed on the remote control.
+     """
+
+    def __init__(self, channel):
+        """
+        Creates an object that can be used to check if a button is being
+        pressed on the remote control.  You might need as many as four of
+        these classes if you use all the channels of the remote.
+        Valid channels: 1, 2, 3, or 4
+        :param channel: Determines which channel of the remote control to use.
+        :type channel: int
+        """
+        self._remote_control = ev3.RemoteControl(channel=channel)
+
+        # Note: The IR sensor can be used in 3 different modes!
+        #   Proximity mode, Beacon seek mode, and remote control mode.
+        # The lower library tries to change it as needed automatically, so
+        #   here we just don't mess with it with the mode at all.
+
+    def red_up(self):
+        """
+        Returns True if the remote control red up button is pressed
+        :return: True if red_up is pressed for this channel, otherwise False.
+        :rtype bool
+        """
+        return self._remote_control.red_up
+
+    def red_down(self):
+        """
+        Returns True if the remote control red down button is pressed
+        :return: True if red_down is pressed for this channel, otherwise False.
+        :rtype bool
+        """
+        return self._remote_control.red_down
+
+    def blue_up(self):
+        """
+        Returns True if the remote control blue up button is pressed
+        :return: True if blue_up is pressed for this channel, otherwise False.
+        :rtype bool
+        """
+        return self._remote_control.blue_up
+
+    def blue_down(self):
+        """
+        Returns True if the remote control blue down button is pressed
+        :return: True if blue_down is pressed for this channel, otherwise False.
+        :rtype bool
+        """
+        return self._remote_control.blue_down
+
+
+###############################################################################
+#    EV3 Brick Buttons
+###############################################################################
+class BrickButtons(object):
+    def __init__(self):
+        """
+        Creates the one and only brick button object.
+        """
+        self._buttons = ev3.Button()
+
+    def up(self):
+        """
+        Returns True if the EV3 brick up button is pressed
+        :return: True if up button is pressed on the EV3 brick, otherwise False.
+        :rtype bool
+        """
+        return self._buttons.up
+
+    def down(self):
+        """
+        Returns True if the EV3 brick down button is pressed
+        :return: True if down button is pressed on the EV3 brick, otherwise False.
+        :rtype bool
+        """
+        return self._buttons.down
+
+    def left(self):
+        """
+        Returns True if the EV3 brick left button is pressed
+        :return: True if left button is pressed on the EV3 brick, otherwise False.
+        :rtype bool
+        """
+        return self._buttons.left
+
+    def right(self):
+        """
+        Returns True if the EV3 brick right button is pressed
+        :return: True if right button is pressed on the EV3 brick, otherwise False.
+        :rtype bool
+        """
+        return self._buttons.right
+
+    def backspace(self):
+        """
+        Returns True if the EV3 brick backspace button is pressed
+        :return: True if backspace button is pressed on the EV3 brick, otherwise False.
+        :rtype bool
+        """
+        return self._buttons.backspace
+
+
+###############################################################################
+#    Infrared (IR) Proximity (Distance) Sensor
+###############################################################################
+class InfraredProximitySensor(object):
+    """
+    The infrared sensor on the front of the robot emits infrared light
+    and uses the reflected information to estimate distance to the nearest
+    object in its field of vision.
+    """
+
+    def __init__(self, port=None):  # port must be 1, 2, 3, 4, or None (for autodetect)
+        """
+        Creates a InfraredSensor.
+        :type port: int | None
+        """
+        if port is not None:
+            self._ir_sensor = ev3.InfraredSensor('in' + str(port))
+        else:
+            self._ir_sensor = ev3.InfraredSensor()  # automatically determine the port
+
+        # Note: The IR sensor can be used in 3 different modes!
+        # self._ir_sensor.mode = "IR-PROX"
+        # self._ir_sensor.mode = "IR-SEEK"
+        # self._ir_sensor.mode = "IR-REMOTE"
+
+        # The ev3dev library will try to switch it for you, but here it's done explicitly.
+        self._ir_sensor.mode = "IR-PROX"  # This is probably not needed.
+
+        # Check that the ir_sensor is actually connected (crash now if not connected)
+        assert self._ir_sensor
+
+    def get_distance_raw(self):
+        """
+        Returns the distance to the nearest object in its field of vision,
+        as a integer between 0 and 100, where a value N indicates that the
+        distance to the nearest object is 70 * (N / 100) cm.  For example:
+           - numbers < 10 indicate that the object is less than 7 cm away
+           - 20 means 1/5 of 70, i.e., 14 cm
+           - 40 means 2/5 of 70, i.e., 28 cm
+           - 50 means 1/2 of 70, i.e., 35 cm
+           - greater than 70 is too far away to be useful
+               (more precisely, greater than 49 cm away)
+           - 100 is the maximum distance for the sensor, namely, 100 cm.
+        :return: Distance to the nearest object 0 (close) to 100 (far away)
+        :rtype: int
+        """
+        self._ir_sensor.mode = "IR-PROX"
+        return self._ir_sensor.proximity
+
+    def get_distance_in_inches(self):
+        """
+        Returns the distance to the nearest object in its field of vision,
+        in inches, where about 39.37 inches (which is 100 cm) means no object
+        is within its field of vision.
+        :return: Distance to the nearest object in inches (in)
+        :rtype: float
+        """
+        cm_per_inch = 2.54
+        distance = 70 / cm_per_inch * self.get_distance_raw() / 100
+        return distance
 
 
 ###############################################################################
@@ -125,14 +350,9 @@ class ColorSensor(object):
 
     def __init__(self, port=None):  # port must be 1, 2, 3, 4, or None (for autodetect)
         """
-                Creates a ColorSensor.
-                :type port: int
+        Creates a ColorSensor.
+        :type port: int | None
         """
-        if port is not None:
-            self._sensor = ev3.ColorSensor('in' + str(port))
-        else:
-            self._sensor = ev3.ColorSensor()  # automatically determine the port
-
         self.COLORS = (
             'No Color',
             'Black',
@@ -143,6 +363,14 @@ class ColorSensor(object):
             'White',
             'Brown',
         )
+
+        if port is not None:
+            self._sensor = ev3.ColorSensor('in' + str(port))
+        else:
+            self._sensor = ev3.ColorSensor()  # automatically determine the port
+
+        # Check that the ir_sensor is actually connected (crash now if not connected)
+        assert self._sensor
 
     def get_color(self):
         """
@@ -158,6 +386,8 @@ class ColorSensor(object):
           - 5: Red
           - 6: White
           - 7: Brown
+        :return: String representing the current color
+        :rtype: str
         """
         return self.COLORS[self.get_color()]
 
@@ -167,6 +397,8 @@ class ColorSensor(object):
         The returned value is from 0 to 100,
         but in practice more like 3 to 90+ in our classroom lighting with our
         downward-facing sensor that is about 0.25 inches from the ground.
+        :return: Amount of light reflected 0 (no light reflected) to 100 (super bright)
+        :rtype: int
         """
         return self._sensor.reflected_light_intensity
 
@@ -174,63 +406,10 @@ class ColorSensor(object):
         """
         Shines dimly lit blue light and returns the intensity
         of the ambient light.  The returned value is from 0 to 100.
+        :return: Amount of light present 0 (in a cave) to 100 (on the sun)
+        :rtype: int
         """
         return self._sensor.ambient_light_intensity
-
-
-###############################################################################
-#    Infrared (IR) Proximity (Distance) Sensor
-###############################################################################
-class InfraredProximitySensor(object):
-    """
-    The infrared sensor when it is in the mode in which it emits infrared light
-    and uses the reflected information to estimate distance to the nearest
-    object in its field of vision.
-    """
-
-    def __init__(self, port=None):  # port must be 1, 2, 3, 4, or None (for autodetect)
-        """
-                Creates a InfraredSensor.
-                :type port: int
-        """
-        if port is not None:
-            self._ir_sensor = ev3.InfraredSensor('in' + str(port))
-        else:
-            self._ir_sensor = ev3.InfraredSensor()  # automatically determine the port
-
-        # Note: The IR sensor can be used in 3 different modes!
-        # self._ir_sensor.mode = "IR-PROX"
-        # self._ir_sensor.mode = "IR-SEEK"
-        # self._ir_sensor.mode = "IR-REMOTE"
-
-        # The ev3dev library will try to switch it for you, but here it's done explicitly.
-        self._ir_sensor.mode = "IR-PROX"
-
-    def get_distance(self):
-        """
-        Returns the distance to the nearest object in its field of vision,
-        as a integer between 0 and 100, where a value N indicates that the
-        distance to the nearest object is 70 * (N / 100) cm.  For example:
-           - numbers < 10 indicate that the object is less than 7 cm away
-           - 20 means 1/5 of 70, i.e., 14 cm
-           - 40 means 2/5 of 70, i.e., 28 cm
-           - 50 means 1/2 of 70, i.e., 35 cm
-           - greater than 70 is too far away to be useful
-               (more precisely, greater than 49 cm away)
-           - 100 is the maximum distance for the sensor, namely, 100 cm.
-        """
-        self._ir_sensor.mode = "IR-PROX"
-        return self._ir_sensor.proximity
-
-    def get_distance_in_inches(self):
-        """
-        Returns the distance to the nearest object in its field of vision,
-        in inches, where about 39.37 inches (which is 100 cm) means no object
-        is within its field of vision.
-        """
-        cm_per_inch = 2.54
-        distance = 70 / cm_per_inch * self.get_distance() / 100
-        return distance
 
 
 ###############################################################################
@@ -238,34 +417,49 @@ class InfraredProximitySensor(object):
 ###############################################################################
 class InfraredBeaconSensor(object):
     """
-    The infrared sensor when it is in the mode in which it measures the
-    heading and distance to the Beacon when the Beacon is emitting
-    its signal continuously ("beacon mode") on one of its 4 channels (1 to 4).
+    The infrared sensor which it measures the heading and distance to the Beacon.
+    Note: the remote control can be put into Beacon mode (signal continuously)
+    on one of its 4 channels (1 to 4).
     """
 
     def __init__(self, port=None, channel=1):  # port must be 1, 2, 3, 4, or None (for autodetect)
         """
-                Creates a InfraredSensor.
-                :type port: int
+        Creates an InfraredBeaconSensor and puts it into a disabled state.
+        Note: it starts disabled to avoid conflicts with other uses of this sensor.
+        :type port: int | None
+        :type channel: int
         """
-        if port is not None:
-            self._ir_sensor = ev3.BeaconSeeker('in' + str(self.port), channel=channel)
+        self.port = port
+        self.channel = channel
+        self.has_been_enabled = False
+
+    def enable(self):
+        """
+            Enables the InfraredBeaconSensor.  By default the sensor is disabled, since the
+            same sensor serves multiple roles.  To avoid conflicts the InfraredBeaconSensor
+            is disabled by default.  This method enables the sensor as an IR Beacon Sensor.
+        """
+        if self.port is not None:
+            self._ir_sensor = ev3.BeaconSeeker('in' + str(self.port), channel=self.channel)
         else:
-            self._ir_sensor = ev3.BeaconSeeker(channel=channel)  # automatically determine the port
+            self._ir_sensor = ev3.BeaconSeeker(channel=self.channel)  # automatically determine the port
 
         # Note: The IR sensor can be used in 3 different modes!
         # self._ir_sensor.mode = "IR-PROX"
         # self._ir_sensor.mode = "IR-SEEK"
         # self._ir_sensor.mode = "IR-REMOTE"
 
+        # Check that the ir_sensor is actually connected (crash now if not connected)
+        assert self._sensor
+
         # The ev3dev library will try to switch it for you, but here it's done explicitly.
         self._ir_sensor.mode = "IR-SEEK"
+        self.has_been_enabled = True
 
     def get_heading_and_distance_to_beacon(self):
         """
-        Returns a 2-tuple containing the heading and distance to the Beacon.
-        Looks for signals at the frequency of the given channel,
-        or at the InfraredAsBeaconSensor's channel if channel is None.
+        Returns a 2 item tuple containing the heading and distance to the Beacon.
+        Looks for signals at the frequency of the given channel.
          - The heading is in degrees in the range -25 to 25 with:
              - 0 means straight ahead
              - negative degrees mean the Beacon is to the left
@@ -273,6 +467,8 @@ class InfraredBeaconSensor(object):
          - Distance is from 0 to 100, where 100 is about 70 cm
          - -128 means the Beacon is not detected.
         """
+        if not self.has_been_enabled:
+            self.enable()
         self._ir_sensor.mode = "IR-SEEK"
         return self._ir_sensor.heading_and_distance
 
@@ -281,6 +477,8 @@ class InfraredBeaconSensor(object):
         Returns the heading to the Beacon.
         Units are per the   get_heading_and_distance_to_beacon   method.
         """
+        if not self.has_been_enabled:
+            self.enable()
         self._ir_sensor.mode = "IR-SEEK"
         return self._ir_sensor.heading
 
@@ -289,6 +487,8 @@ class InfraredBeaconSensor(object):
         Returns the heading to the Beacon.
         Units are per the   get_heading_and_distance_to_beacon   method.
         """
+        if not self.has_been_enabled:
+            self.enable()
         self._ir_sensor.mode = "IR-SEEK"
         return self._ir_sensor.distance
 
@@ -306,9 +506,10 @@ class Camera(object):
         at: http://www.cmucam.org/projects/cmucam5/wiki/Teach_Pixy_an_object.
     """
 
-    def __init__(self, port=ev3.INPUT_2):
+    def __init__(self, port=2):
+        input_port = "in" + str(port)
         try:
-            self.low_level_camera = ev3.Sensor(port, driver_name="pixy-lego")
+            self._pixy_camera_sensor = ev3.Sensor(input_port, driver_name="pixy-lego")
         except AssertionError:
             print("Is the camera plugged into port 2?")
             print("If that is not the problem, then check whether the camera")
@@ -318,10 +519,30 @@ class Camera(object):
             print("  Make sure it says 'Lego' and not 'Arduino'.")
             print("Note: Only some of the cameras have this option;")
             print("the others are automatically OK in this regard.")
-        self.set_signature("SIG1")
+        self.set_color_signature()  # Default to color signature 1.
 
-    def set_signature(self, signature_name):
-        self.low_level_camera.mode = signature_name
+    def set_color_signature(self, signature_number=1):
+        """
+        Sets the color signature that will be returned by calls to get_biggest_blob
+        :param signature_number: Index of the color signature to find (1 to 8)
+        :type signature_number: int
+        """
+        if signature_number == 1:
+            self._pixy_camera_sensor.mode = "SIG1"
+        elif signature_number == 2:
+            self._pixy_camera_sensor.mode = "SIG2"
+        elif signature_number == 3:
+            self._pixy_camera_sensor.mode = "SIG3"
+        elif signature_number == 4:
+            self._pixy_camera_sensor.mode = "SIG4"
+        elif signature_number == 5:
+            self._pixy_camera_sensor.mode = "SIG5"
+        elif signature_number == 6:
+            self._pixy_camera_sensor.mode = "SIG6"
+        elif signature_number == 7:
+            self._pixy_camera_sensor.mode = "SIG7"
+        else:
+            print("Invalid signature value")
 
     def get_biggest_blob(self):
         """
@@ -338,10 +559,10 @@ class Camera(object):
         The Camera's color signature defaults to "SIG1", which is the color
         signature set by selecting the RED light when training the Pixy camera.
         """
-        return Blob(Point(self.low_level_camera.value(1),
-                          self.low_level_camera.value(2)),
-                    self.low_level_camera.value(3),
-                    self.low_level_camera.value(4))
+        return Blob(Point(self._pixy_camera_sensor.value(1),
+                          self._pixy_camera_sensor.value(2)),
+                    self._pixy_camera_sensor.value(3),
+                    self._pixy_camera_sensor.value(4))
 
 
 ###############################################################################
@@ -421,6 +642,12 @@ class Beeper(object):
 #    ToneMaker
 ###############################################################################
 class ToneMaker(object):
+    """
+    Creates an object that has a play_tone and play_tone_sequence methods to
+    have the robot play music using notes.
+    Note: this class could really be a static class, but we wanted to follow
+    the same pattern as other classes to keep it simple.
+    """
     def __init__(self):
         self._tone_maker = ev3.Sound
 
@@ -428,22 +655,21 @@ class ToneMaker(object):
         """
         Starts playing a tone at the given frequency (in Hz) for the given
         duration (in milliseconds).
-        Does NOT block, that is, continues immediately to the next statement
-        while the sound is being played. Returns a subprocess.Popen,
-        so if you want the sound-playing to block until the sound is completed
-        (e.g. if the next statement will immediately make another sound),
-        then use   tone  like this:
-             tone_player = ToneMaker()
-             tone_player.play_tone(400, 500).wait()
-        :rtype subprocess.Popen
+        This method is blocking, meaning the next line of your code will not
+        run until the ToneMaker is done playing (usually this IS what you want).
+        :param frequency: Frequency (Hertz) to play
+        :type frequency: float
+        :param duration: Length of time to play the tone in milliseconds (ms)
+        :type duration: float
         """
-        return self._tone_maker.tone(frequency, duration)
+        self._tone_maker.tone(frequency, duration).wait()
 
     def play_tone_sequence(self, tones):
         """
         Starts playing a sequence of tones, where each tone is a 3-tuple:
-          (frequency, duration, delay_until_next_tone_in_sequence)
-        Does NOT block; see   play_tone  above.
+          (frequency, duration ms, delay_until_next_tone_in_sequence ms)
+        This method is blocking, meaning the next line of your code will not
+        run until the ToneMaker is done playing (usually this IS what you want).
         Here is a cheerful example, from the ev3 documentation::
             tone_player = ToneMaker()
             tone_player.play_tone_sequence([
@@ -473,16 +699,44 @@ class ToneMaker(object):
         (311.13, 25, 200),
         (392, 350, 100), (311.13, 250, 100), (466.16, 25, 100),
         (392.00, 300, 150), (311.13, 250, 100), (466.16, 25, 100), (392, 700)
-        ]).wait()
-          :rtype subprocess.Popen
+        ])
+        :param tones: List of 3-tuple tones (frequency, duration_ms, delay_ms)
+        :type tones: list of tuple
         """
-        return self._tone_maker.tone(tones)
+        self._tone_maker.tone(tones).wait()
+
+    def play_tone_nonblocking(self, frequency, duration):
+        """
+        Same as the play_tone method, but...
+        Does NOT block, that is, continues immediately to the next statement
+        while the sound is being played.
+        :param frequency: Frequency (Hertz) to play
+        :type frequency: float
+        :param duration: Length of time to play the tone in milliseconds (ms)
+        :type duration: float
+        """
+        self._tone_maker.tone(frequency, duration)
+
+    def play_tone_sequence_nonblocking(self, tones):
+        """
+        Same as the play_tone_sequence method, but...
+        Does NOT block, that is, continues immediately to the next statement
+        while the sound is being played.
+        :param tones: List of 3-tuple tones (frequency, duration_ms, delay_ms)
+        :type tones: list of tuple
+        """
+        self._tone_maker.tone(tones)
 
 
 ###############################################################################
 #    SpeechMaker
 ###############################################################################
 class SpeechMaker(object):
+    """
+    Creates an object that has a speak method to have the robot talk.
+    Note: this class could really be a static class, but we wanted to follow
+    the same pattern as other classes to keep it simple.
+    """
     def __init__(self):
         self._speech_maker = ev3.Sound
 
@@ -490,171 +744,31 @@ class SpeechMaker(object):
         """
         Speaks the given phrase aloud.
         The phrase must be short.
-        Does NOT block, that is, continues immediately to the next statement
-        while the sound is being played. Returns a subprocess.Popen,
-        so if you want the sound-playing to block until the sound is completed
-        (e.g. if the next statement will immediately make another sound),
-        then use   speak  like this:
-             speech_player = SpeechMaker()
-             speech_player.speak().wait()
-        IMPORTANT:  speak().wait()  does not appear to work correctly in all
-        circumstances.  Put a   time.sleep()  after a   speak  as needed.
+        This method is blocking, meaning the next line of your code will not
+        run until the SpeechMaker is done (usually this IS what you want).
+        :param phrase: The string that you would like the robot to say.
         :type  phrase:  str
-        :rtype subprocess.Popen
         """
-        return self._speech_maker.speak(phrase)
+        self._speech_maker.speak(phrase).wait()
+
+    def speak_nonblocking(self, phrase):
+        """
+        Speaks the given phrase aloud. The phrase must be short.
+        This method does NOT block, that is, continues immediately to the next
+        statement while the sound is being played.
+        IMPORTANT:  speak()  does not appear to work correctly in all circumstances.
+        Use this method with a   time.sleep()  after a   speak_nonblocking  as needed.
+        :param phrase: The string that you would like the robot to say.
+        :type  phrase:  str
+        """
+        self._speech_maker.speak(phrase)
 
 
-###############################################################################
-#    SongMaker
-###############################################################################
-class SongMaker(object):
-    pass
-
-
-###############################################################################
-#    LEDs
-###############################################################################
-class Led(object):
-    """
-    Each Led has a RED and a GREEN component.
-    """
-    def __init__(self, left_or_right):
-        """
-          Constructs a single LED object. Valid left_or_right values:
-            "left" or "right"
-          :type left_or_right: str
-        """
-        if left_or_right == "left":
-            self.led_location = ev3.Leds.LEFT
-        elif left_or_right == "right":
-            self.led_location = ev3.Leds.RIGHT
-        else:
-            print("INVALID Led LOCATION!")
-
-    def turn_off(self):
-        """ Turns this Led off. """
-        self.set_color("off")
-
-    def set_color(self, color_name):
-        """
-        Sets this Led to the given color. Valid colors include:
-          "red", "green", "amber", "off"
-          :type color_name: str
-        """
-        if color_name == "red":
-            ev3.Leds.set_color(self.led_location, ev3.Leds.RED)
-        elif color_name == "green":
-            ev3.Leds.set_color(self.led_location, ev3.Leds.GREEN)
-        elif color_name == "amber":
-            ev3.Leds.set_color(self.led_location, ev3.Leds.AMBER)
-        elif color_name == "off":
-            ev3.Leds.set_color(self.led_location, ev3.Leds.BLACK)
-        else:
-            print("INVALID LED COLOR STRING")
-
-
-###############################################################################
-#    Remote Control
-###############################################################################
-class RemoteControlChannel(object):
-    """ Class to know if a button is pressed on the remote control. """
-    def __init__(self, channel_value):
-        """
-        Creates an object that can be used to check if a button is being
-        pressed on the remote control.  You might need as many as four of
-        these classes if you used all the channels of the remote.
-        Valid channels: 1, 2, 3, or 4
-        :type channel: int
-        """
-        self._remote_control = ev3.RemoteControl(channel=channel_value)
-
-        # Note: The IR sensor can be used in 3 different modes!
-        #   Proximity mode, Beacon seek mode, and remote control mode.
-        # The lower library tries to change it as needed automatically, so
-        #   here we just don't mess with it.
-
-    def red_up(self):
-        """
-        Returns True if the remote control red up button is pressed
-        :rtype bool
-        """
-        return self._remote_control.red_up
-
-    def red_down(self):
-        """
-        Returns True if the remote control red down button is pressed
-        :rtype bool
-        """
-        return self._remote_control.red_down
-
-    def blue_up(self):
-        """
-        Returns True if the remote control blue up button is pressed
-        :rtype bool
-        """
-        return self._remote_control.blue_up
-
-    def blue_down(self):
-        """
-        Returns True if the remote control blue down button is pressed
-        :rtype bool
-        """
-        return self._remote_control.blue_down
-
-
-###############################################################################
-#    EV3 Brick Buttons
-###############################################################################
-class BrickButtons(object):
-    def __init__(self):
-        """
-        Creates the one and only brick button object.
-        """
-        self._buttons = ev3.Button()
-
-    def up(self):
-        """
-        Returns True if the EV3 brick up button is pressed
-        :rtype bool
-        """
-        return self._buttons.up
-
-    def down(self):
-        """
-        Returns True if the EV3 brick down button is pressed
-        :rtype bool
-        """
-        return self._buttons.down
-
-    def left(self):
-        """
-        Returns True if the EV3 brick left button is pressed
-        :rtype bool
-        """
-        return self._buttons.left
-
-    def right(self):
-        """
-        Returns True if the EV3 brick right button is pressed
-        :rtype bool
-        """
-        return self._buttons.right
-
-    def backspace(self):
-        """
-        Returns True if the EV3 brick backspace button is pressed
-        :rtype bool
-        """
-        return self._buttons.backspace
-
-# Coming soon with ev3dev2...
+# Some notes and examples for when we move to ev3dev2...
 # From: https://python-ev3dev.readthedocs.io/en/ev3dev-stretch/index.html
 # import ev3dev2
-
 # ts = ev3dev2.sensor.lego.TouchSensor()
 # leds = ev3dev2.led.Leds()
-
 # while True:
 #     if ts.is_pressed:
 #         leds.set_color("LEFT", "GREEN")
@@ -662,12 +776,8 @@ class BrickButtons(object):
 #     else:
 #         leds.set_color("LEFT", "RED")
 #         leds.set_color("RIGHT", "RED")
-
-
 # m = ev3dev2.motor.LargeMotor(ev3dev2.motor.OUTPUT_A)
 # m.on_for_rotations(ev3dev2.motor.SpeedPercent(75), 5)
-
 # ev3dev2.sensor.INPUT_1
 # ev3dev2.sensor.lego.TouchSensor
-
 # pixy = ev3dev2.sensor.Sensor(ev3dev2.sensor.INPUT_2, driver_name="pixy-lego")
