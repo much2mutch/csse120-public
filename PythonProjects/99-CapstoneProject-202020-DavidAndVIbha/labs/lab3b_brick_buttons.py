@@ -67,6 +67,10 @@ def run_test_brick_buttons(robot):
             #  Replace the  pass  statement below with code that:
             #  will light the appropriate LEDs
             #  when buttons on the EV3 Brick are pressed:
+            #      [IF TEAM MEMBER HAS NOT YET DONE
+            #          lab3a_leds
+            #       then replace the following with PRINT statements for now
+            #       and return to LED action after   lab3a_leds   is done]
             #    - When up is pressed, light both LEDs green
             #    - When down is pressed, light both LEDs red
             #    - When left is pressed, light the left LED amber
