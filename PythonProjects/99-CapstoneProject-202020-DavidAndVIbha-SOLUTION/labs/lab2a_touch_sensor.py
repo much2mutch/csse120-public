@@ -151,6 +151,7 @@ def run_test_wait_until_pressed(touch_sensor):
         #  the   wait_until_pressed   method on the given TouchSensor object.
         #  Then print a simple message like "Pressed!"
         # ---------------------------------------------------------------------
+        pass
         # SOLUTION CODE: Delete from the project given to students.
         touch_sensor.wait_until_pressed()
         print()
