@@ -18,7 +18,7 @@ def main():
     """ Test a robot's color sensor and line following. """
     print()
     print('--------------------------------------------------')
-    print('Testing the Color and Infrared sensors of a robot')
+    print('Testing the Color sensor (in two modes) of a robot')
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------
@@ -44,13 +44,6 @@ def main():
     run_test_drive_until_color(robot)
     run_test_display_reflected_light_readings(robot)
     run_test_line_follower(robot)
-
-    # IR Sensor tests
-    run_test_display_ir_proximity_readings(robot)
-    run_test_display_until_distance(robot)
-    run_test_spin_towards_beacon(robot)
-    run_test_drive_towards_beacon(robot)
-    run_test_pick_up_beacon(robot)
 
 
 def run_test_display_color_names(robot):
@@ -139,89 +132,6 @@ def run_test_line_follower(robot):
     print('--------------------------------------------------')
     while True:
         time.sleep(0.05)
-        # -------------------------------------------------------------------------
-        # TODO: . Call the    method of the      of the robot
-        # -------------------------------------------------------------------------
-
-        # Solution to be removed
-
-
-
-def run_test_display_ir_proximity_readings(robot):
-    """
-    Tests the      methods of the   class.
-    """
-    print('--------------------------------------------------')
-    print('Testing the     methods of the robot')
-    print('--------------------------------------------------')
-    while True:
-        time.sleep(0.05)
-        # -------------------------------------------------------------------------
-        # TODO: . Call the    method of the      of the robot
-        # -------------------------------------------------------------------------
-
-        # Solution to be removed
-
-
-def run_test_display_until_distance(robot):
-    """
-    Tests the      methods of the   class.
-    """
-    print('--------------------------------------------------')
-    print('Testing the     methods of the robot')
-    print('--------------------------------------------------')
-    while True:
-        time.sleep(0.05)
-        # -------------------------------------------------------------------------
-        # TODO: . Call the    method of the      of the robot
-        # -------------------------------------------------------------------------
-
-        # Solution to be removed
-
-
-def run_test_spin_towards_beacon(robot):
-    """
-    Tests the      methods of the   class.
-    """
-    print('--------------------------------------------------')
-    print('Testing the     methods of the robot')
-    print('--------------------------------------------------')
-    while True:
-        time.sleep(0.05)
-        # -------------------------------------------------------------------------
-        # TODO: . Call the    method of the      of the robot
-        # -------------------------------------------------------------------------
-
-        # Solution to be removed
-
-
-def run_test_drive_towards_beacon(robot):
-    """
-    Tests the      methods of the   class.
-    """
-    print('--------------------------------------------------')
-    print('Testing the     methods of the robot')
-    print('--------------------------------------------------')
-    while True:
-        time.sleep(0.05)
-
-        # -------------------------------------------------------------------------
-        # TODO: . Call the    method of the      of the robot
-        # -------------------------------------------------------------------------
-
-        # Solution to be removed
-
-
-def run_test_pick_up_beacon(robot):
-    """
-    Tests the      methods of the   class.
-    """
-    print('--------------------------------------------------')
-    print('Testing the     methods of the robot')
-    print('--------------------------------------------------')
-    while True:
-        time.sleep(0.05)
-
         # -------------------------------------------------------------------------
         # TODO: . Call the    method of the      of the robot
         # -------------------------------------------------------------------------

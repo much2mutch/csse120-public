@@ -17,10 +17,11 @@ import rosebot_arm_and_claw     # Lab 2
 import rosebot_leds             # Lab 3
 import rosebot_brick_buttons    # Lab 3
 import rosebot_remote_control   # Lab 3
-import rosebot_color_sensor     # Lab 4
-import rosebot_line_follower    # Lab 4
+import rosebot_sound            # Lab 4
 import rosebot_infrared_proximity_sensor     # Lab 4
 import rosebot_beacon_seeker    # Lab 4
+import rosebot_color_sensor     # Lab 5
+import rosebot_line_follower    # Lab 5
 import rosebot_camera_sensor    # Lab 5
 
 
@@ -63,12 +64,18 @@ class RoseBot(object):
         # ---------------------------------------------------------------------
         # TODO 4: With your instructor, add subsystems needed for Lab 4.
         # ---------------------------------------------------------------------
-        self.color_sensor = rosebot_color_sensor.ColorSensor(3)
+        self.sound = rosebot_sound.Sound()
         self.infrared_proximity_sensor = rosebot_infrared_proximity_sensor.InfraredProximitySensor(4)
-        self.line_follower = rosebot_line_follower.LineFollower(self.color_sensor, self.drive_system)
         self.beacon_seeker = rosebot_beacon_seeker.BeaconSeeker(4, 1, self.drive_system)
 
         # Lab 5
+        # ---------------------------------------------------------------------
+        # TODO 4: With your instructor, add subsystems needed for Lab 5.
+        # ---------------------------------------------------------------------
+        self.color_sensor = rosebot_color_sensor.ColorSensor(3)
+        self.line_follower = rosebot_line_follower.LineFollower(self.color_sensor, self.drive_system)
+
+        # Lab 6
         # ---------------------------------------------------------------------
         # TODO 5: With your instructor, add subsystems needed for Lab 5.
         # ---------------------------------------------------------------------

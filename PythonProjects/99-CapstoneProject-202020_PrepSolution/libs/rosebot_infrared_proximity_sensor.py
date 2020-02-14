@@ -36,15 +36,16 @@ class InfraredProximitySensor(object):
         # ---------------------------------------------------------------------
         self.sensor = rose_ev3.InfraredProximitySensor(port)
 
-    def get_distance(self):
+    def get_distance_in_inches(self):
         """
         Returns the distance to the nearest object in its field of vision,
           in inches, where about 39.37 inches (which is 100 cm) means no object
           is within its field of vision.
+        :return: The distance    in inches     to the nearest object.
         :rtype: float
         """
         # ---------------------------------------------------------------------
-        # TODO: With your instructor, implement this method.
+        # TODO: Implement this method.
         # ---------------------------------------------------------------------
         return self.sensor.get_distance_in_inches()
 
@@ -52,12 +53,13 @@ class InfraredProximitySensor(object):
         """
         Sits in a loop, sleeping 0.05 seconds each time through the loop,
         waiting for the IR proximity sensor to be less than some threshold.
-          :type threshold_in_inches: float
+        :param threshold_in_inches: The distance threshold in inches.
+        :type threshold_in_inches: float
         """
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
         while True:
             time.sleep(0.05)
-            if self.get_reading() < threshold_in_inches:
+            if self.get_distance() < threshold_in_inches:
                 break
