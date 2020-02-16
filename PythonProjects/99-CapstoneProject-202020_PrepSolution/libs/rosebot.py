@@ -23,8 +23,8 @@ import rosebot_beacon_sensor    # Lab 4
 import rosebot_beacon_seeker    # Lab 4
 import rosebot_color_sensor     # Lab 5
 import rosebot_line_follower    # Lab 5
-import rosebot_camera_sensor    # Lab 5
-import rosebot_camera_tracker   # Lab 5
+import rosebot_camera_sensor    # Lab 6
+import rosebot_camera_tracker   # Lab 6
 
 
 ###############################################################################
@@ -40,6 +40,10 @@ import rosebot_camera_tracker   # Lab 5
 #   to make the RoseBot (and its associated Snatch3r robot) do things.
 ###############################################################################
 class RoseBot(object):
+    """
+    Top level of the EV3 robot stack.
+    """
+
     def __init__(self):
         # Lab 1
         # ---------------------------------------------------------------------
