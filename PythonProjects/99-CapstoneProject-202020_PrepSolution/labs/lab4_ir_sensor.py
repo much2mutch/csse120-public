@@ -15,7 +15,7 @@ import rosebot
 
 
 def main():
-    """ Test a robot's color sensor and line following. """
+    """ Test a robot's IR sensor (proximity and beacon seeking). """
     print()
     print('--------------------------------------------------')
     print('Testing the Infrared sensor (in two modes) of a robot')
@@ -42,8 +42,8 @@ def main():
     # run_test_sounds(robot)
     # run_test_proximity_readings(robot)
     # run_test_drive_until_distance(robot)
-    run_test_spin_until_beacon_seen(robot)
-    run_test_spin_to_track_beacon(robot)
+    # run_test_spin_until_beacon_seen(robot)
+    # run_test_spin_to_track_beacon(robot)
     # run_test_drive_towards_beacon(robot)
 
 
@@ -119,13 +119,14 @@ def run_test_proximity_readings(robot):
         #   Distance = 3.35 inches
         #   Distance = 1.09 inches
         #  Hint: print("Distance = {0:.2f} inches".format(some_value))
-        #  If the target is less than 5 inches away beep once every second.
+        #  Additionally...
+        #  If the target is less than 5 inches away beep!
         # -------------------------------------------------------------------------
 
         # Solution to be removed
-        distance = robot.infrared_proximity_sensor.get_distance_in_inches()
-        print(distance)
-        if distance < 5:
+        distance_in = robot.infrared_proximity_sensor.get_distance_in_inches()
+        print("Distance = {0:.2f} inches".format(distance_in))
+        if distance_in < 5:
             robot.sound.beep()
 
 
@@ -137,13 +138,17 @@ def run_test_drive_until_distance(robot):
     print('Testing the  wait_until_distance_less_than method of the robot')
     print('--------------------------------------------------')
     while True:
+        print()
+        speed = int(input("Enter an integer for the max wheel speed (1 to 100): "))
+        if speed == 0:
+            break
         requested_distance_away = int(input("Enter a distance threshold in inches: "))
         if requested_distance_away == 0:
             break
         input("Press the ENTER key when ready for the robot to start moving.")
 
         # -------------------------------------------------------------------------
-        # TODO: 9. Make the robot drive straight at a speed of 40, 40 at a wall.
+        # TODO: 9. Make the robot drive straight at the given speed at a wall.
         #  Call the wait_until_distance_less_than   method of the
         #  infrared_proximity_sensor of the robot to determine when the distance
         #  is below the requested value.
@@ -151,7 +156,7 @@ def run_test_drive_until_distance(robot):
         # -------------------------------------------------------------------------
 
         # Solution to be removed
-        robot.drive_system.go(40, 40)
+        robot.drive_system.go(speed, speed)
         robot.infrared_proximity_sensor.wait_until_distance_less_than(requested_distance_away)
         robot.drive_system.stop()
 
@@ -164,7 +169,10 @@ def run_test_spin_until_beacon_seen(robot):
     print('Testing the   spin_until_beacon_seen  method of the robot')
     print('--------------------------------------------------')
     while True:
-        time.sleep(0.05)
+        print()
+        speed = int(input("Enter an integer for the max wheel speed (1 to 100): "))
+        if speed == 0:
+            break
         heading_threshold = int(input("Once found for how long would you like to track the beacon? "))
         if heading_threshold == 0:
             break
@@ -183,7 +191,7 @@ def run_test_spin_until_beacon_seen(robot):
         # -------------------------------------------------------------------------
 
         # Solution to be removed
-        robot.beacon_seeker.spin_until_beacon_seen(heading_threshold)
+        robot.beacon_seeker.spin_until_beacon_seen(speed, heading_threshold)
         robot.sound.beep()
 
 
@@ -196,6 +204,10 @@ def run_test_spin_to_track_beacon(robot):
     print('Testing the spin_to_track_beacon method of the BeaconSeeker')
     print('--------------------------------------------------')
     while True:
+        print()
+        speed = int(input("Enter an integer for the max wheel speed (1 to 100): "))
+        if speed == 0:
+            break
         tracking_duration_s = int(input("How long would you like to track the beacon (seconds)? "))
         if tracking_duration_s == 0:
             break
@@ -214,7 +226,7 @@ def run_test_spin_to_track_beacon(robot):
         # -------------------------------------------------------------------------
 
         # Solution to be removed
-        robot.beacon_seeker.spin_to_track_beacon(tracking_duration_s)
+        robot.beacon_seeker.spin_to_track_beacon(speed, tracking_duration_s)
         robot.sound.beep()
 
 
@@ -232,6 +244,7 @@ def run_test_drive_towards_beacon(robot):
         # -------------------------------------------------------------------------
         # TODO: 12. Call the  drive_to_beacon  method of the      of the robot
         #  Once the beacon is found (distances near 0) make the robot beep.
+        #  Note: the drive_to_beacon will stop the motors, but make the beep here.
         # Info:
         #  - The heading is in degrees in the range -25 to 25 with:
         #      - 0 means straight ahead
@@ -243,6 +256,14 @@ def run_test_drive_towards_beacon(robot):
         # Solution to be removed
         robot.beacon_seeker.drive_to_beacon()
         robot.sound.beep()
+
+        # -------------------------------------------------------------------------
+        # TODO: 13. Optional
+        #  Once the beacon is found (distances near 0) make the pick up the beacon
+        #  with the arm.  If you have the remote control in the air with the arm
+        #  You win!  Note: this requires that the remote is in the stand so that it
+        #  can be pickup up easily.
+        # -------------------------------------------------------------------------
 
 
 main()

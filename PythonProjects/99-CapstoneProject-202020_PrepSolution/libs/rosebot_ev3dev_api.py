@@ -558,6 +558,8 @@ class Camera(object):
         was visible.
         The Camera's color signature defaults to "SIG1", which is the color
         signature set by selecting the RED light when training the Pixy camera.
+        :return: A Blob object for the biggest matching color blob.
+        :rtype: Blob
         """
         return Blob(Point(self._pixy_camera_sensor.value(1),
                           self._pixy_camera_sensor.value(2)),
@@ -569,10 +571,20 @@ class Camera(object):
 # Point (for the Camera class, as well as for general purposes.
 ###############################################################################
 class Point(object):
+    """
+    Represents a point in the camera space.
+    For a Pixy camera,
+      the x-coordinate is between 0 and 319 (0 left, 319 right)
+      the y-coordinate is between 0 and 199 (0 TOP, 199 BOTTOM).
+    """
     def __init__(self, x, y):
+        """
+        Constructs the Point (centroid of the Blob).
+        :type x: int
+        :type y: int
+        """
         self.x = x
         self.y = y
-
 
 ###############################################################################
 # Blob (for the Camera class).
@@ -584,10 +596,20 @@ class Blob(object):
     """
 
     def __init__(self, center, width, height):
+        """
+        Constructs the Blob (which is always a rectangle)
+        :param center: Centroid of the blob
+        :type center: Point
+        :param width: Width of this blob in pixels (1 to 320)
+        :param width: int
+        :param height: Height of this blob in pixels (1 to 200)
+        :param height: int
+        """
         self.center = center
         self.width = width
         self.height = height
-        self.screen_limits = Point(320, 240)
+        self.SCREEN_WIDTH = 320
+        self.SCREEN_HEIGHT = 240
 
     def __repr__(self):
         return "center: ({:3d}, {:3d})  width, height: {:3d} {:3d}.".format(
@@ -596,17 +618,23 @@ class Blob(object):
     def get_area(self):
         return self.width * self.height
 
+    def is_left_of_center(self):
+        return self.center.x < self.SCREEN_WIDTH / 2
+
+    def is_right_of_center(self):
+        return self.center.x > self.SCREEN_WIDTH / 2
+
     def is_against_left_edge(self):
         return self.center.x - (self.width + 1) / 2 <= 0
 
     def is_against_right_edge(self):
-        return self.center.x + (self.width / 2 + 1) / 2 >= self.screen_limits.x
+        return self.center.x + (self.width / 2 + 1) / 2 >= self.SCREEN_WIDTH
 
     def is_against_top_edge(self):
         return self.center.y - (self.height + 1) / 2 <= 0
 
     def is_against_bottom_edge(self):
-        return self.center.y + (self.height + 1) / 2 >= self.screen_limits.y
+        return self.center.y + (self.height + 1) / 2 >= self.SCREEN_HEIGHT
 
     def is_against_an_edge(self):
         return (self.is_against_left_edge()

@@ -15,10 +15,10 @@ import rosebot
 
 
 def main():
-    """ Test a robot's color sensor and line following. """
+    """ Test a robot's camera. """
     print()
     print('--------------------------------------------------')
-    print('Testing the Color sensor (in two modes) of a robot')
+    print('Testing the Camera of a robot')
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------
@@ -39,104 +39,93 @@ def main():
     #        RE-commenting out the previous test to reduce the testing.
     # -------------------------------------------------------------------------
 
-    # Color Sensor tests
-    run_test_display_color_names(robot)
-    run_test_drive_until_color(robot)
-    run_test_display_reflected_light_readings(robot)
-    run_test_line_follower(robot)
+    run_test_blob_readings(robot)
+    # run_test_spin_until_color_seen(robot)
+    # run_test_spin_to_track_color(robot)
 
 
-def run_test_display_color_names(robot):
+def run_test_blob_readings(robot):
     """
-    Tests the
-    """
-
-    """ Test a robot's COLOR SENSOR. """
-    print()
-    print('--------------------------------------------------')
-    print('Testing the  COLOR_SENSOR  of a robot:')
-    print('--------------------------------------------------')
-
-    # -------------------------------------------------------------------------
-    # Test the  get_reading   and   get_detected_color_name   methods
-    # of the  color_sensor  of the robot:
-    # -------------------------------------------------------------------------
-    print()
-    print("Testing the  GET_READING  and   GET_DETECTED_COLOR_NAME  methods")
-    print(" of the  COLOR_SENSOR  of the robot.")
-    input("Press the ENTER key when ready to start printing the color sensed.")
-
-    # -------------------------------------------------------------------------
-    # TODO: 3. With the robot's color_sensor, repeatedly:
-    #    -- Call its   get_reading   method and print the result (an integer)
-    #    -- Call its   get_detected_color_name   method
-    #         and print the result (a string that is the name of a color)
-    #  each time through the loop asking for input,
-    #  and stopping when the user enters a string other than the empty string.
-    # -------------------------------------------------------------------------
-
-
-def run_test_drive_until_color(robot):
-    """
-    Tests the
-    """
-    print()
-    print('--------------------------------------------------')
-    print('Testing the  COLOR_SENSOR  of a robot:')
-    print('--------------------------------------------------')
-
-    # -------------------------------------------------------------------------
-    # Test the  wait_until_color  method of the  color_sensor  of the robot:
-    # -------------------------------------------------------------------------
-    print()
-    print("Testing the  WAIT_UNTIL_COLOR  method")
-    print(" of the  COLOR_SENSOR  of the robot.")
-    input("Press the ENTER key when ready to wait until BLACK is sensed.")
-
-    # -------------------------------------------------------------------------
-    # TODO: 4. Call the  wait_until_color  method of the   color_sensor
-    #  of the robot, checking to be sure that when it senses black
-    #  (which you can simulate by lifting the robot) the code continues.
-    # -------------------------------------------------------------------------
-
-    # -------------------------------------------------------------------------
-    # TODO: 5. Add additional tests as needed to ensure that the
-    #  wait_until_color  method works correctly with each of the 7 colors
-    #  that it can sense.  Test strings (upper, lower and mixed case)
-    #  and numbers for the colors.
-    # -------------------------------------------------------------------------
-
-
-def run_test_display_reflected_light_readings(robot):
-    """
-    Tests the      methods of the   class.
+    Tests the   get_biggest_blob   methods of the Camera  class.
     """
     print('--------------------------------------------------')
-    print('Testing the     methods of the robot')
+    print('Testing the  get_biggest_blob   method of the camera of the robot')
     print('--------------------------------------------------')
     while True:
-        time.sleep(0.05)
+        time.sleep(1.0)
         # -------------------------------------------------------------------------
-        # TODO: . Call the    method of the      of the robot
+        # TODO: 8. Use the  get_biggest_blob  method of the  camera
+        #  of the robot to display Blob readings once per second.
+        #  Print the blob (it has a __repr__ method so it can be printed)
         # -------------------------------------------------------------------------
 
         # Solution to be removed
+        blob = robot.camera.get_biggest_blob()
+        print(blob)
 
 
-def run_test_line_follower(robot):
+def run_test_spin_until_color_seen(robot):
     """
-    Tests the      methods of the   class.
+    Tests the  spin_until_color_seen    method of the   class.
+    :type robot: rosebot.RoseBot
     """
     print('--------------------------------------------------')
-    print('Testing the     methods of the robot')
+    print('Testing the   spin_until_color_seen  method of the robot')
     print('--------------------------------------------------')
     while True:
-        time.sleep(0.05)
+        print()
+        speed = int(input("Enter an integer for the max wheel speed (1 to 100): "))
+        if speed == 0:
+            break
+        blob_area_threshold = int(input("What is your Blob area threshold? (900 for a 30x30)"))
+        if blob_area_threshold == 0:
+            break
+        input("Press the ENTER key when ready for the robot to start moving.")
+
         # -------------------------------------------------------------------------
-        # TODO: . Call the    method of the      of the robot
+        # TODO: 10. Call the  spin_until_color_seen  method of the   camera_tracker
+        #  of the robot passing in the blob_area_threshold.
+        #  Once the target is found make the robot beep.
         # -------------------------------------------------------------------------
 
         # Solution to be removed
+        robot.camera_tracker.spin_until_color_seen(speed, blob_area_threshold)
+        robot.sound.beep()
+
+
+def run_test_spin_to_track_color(robot):
+    """
+    Tests the  spin_until_beacon_seen and spin_to_track_beacon    methods of the   class.
+    :type robot: rosebot.RoseBot
+    """
+    print('--------------------------------------------------')
+    print('Testing the spin_to_track_beacon method of the BeaconSeeker')
+    print('--------------------------------------------------')
+    while True:
+        print()
+        speed = int(input("Enter an integer for the max wheel speed (1 to 100): "))
+        if speed == 0:
+            break
+        tracking_duration_s = int(input("How long would you like to track the color (seconds)? "))
+        if tracking_duration_s == 0:
+            break
+        input("Press the ENTER key when ready for the robot to start moving.")
+
+        # -------------------------------------------------------------------------
+        # TODO: 11. Call the  spin_to_track_beacon  method of the  beacon_seeker
+        #  of the robot passing in the tracking_duration_s
+        #  Once the tracking_duration_s is over make the robot beep.
+        # Info:
+        #  - The heading is in degrees in the range -25 to 25 with:
+        #      - 0 means straight ahead
+        #      - negative degrees mean the Beacon is to the left
+        #      - positive degrees mean the Beacon is to the right
+        #  - Distance is from 0 to 100, where 100 is about 70 cm
+        # -------------------------------------------------------------------------
+
+        # Solution to be removed
+        robot.camera_tracker.spin_to_track_color(speed, tracking_duration_s)
+        robot.sound.beep()
 
 
 main()
