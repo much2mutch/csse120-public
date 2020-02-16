@@ -25,7 +25,7 @@ def main():
     """ Tests the   DriveSystem   of a Snatch3r robot. """
     print()
     print("--------------------------------------------------")
-    print("Testing the  DRIVE SYSTEM  of a robot")
+    print("Testing the  DriveSystem class  of a RoseBot")
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
