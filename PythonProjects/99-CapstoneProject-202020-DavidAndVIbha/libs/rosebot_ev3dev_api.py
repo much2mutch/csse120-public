@@ -548,7 +548,6 @@ class LowerLevelLed(object):
         else:
             print("INVALID LED COLOR STRING")
 
-        ev3.Leds.set_color()
 
 ###############################################################################
 #    Remote Control

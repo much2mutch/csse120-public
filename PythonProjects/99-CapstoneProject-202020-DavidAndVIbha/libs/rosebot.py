@@ -31,7 +31,7 @@ import libs.rosebot_drive_system as drive
 import libs.rosebot_touch_sensor as touch
 import libs.rosebot_arm_and_claw as arm
 import libs.rosebot_leds as leds
-import libs.rosebot_arm_and_claw as bb
+import libs.rosebot_brick_buttons as bb
 import libs.rosebot_remote_control as rc
 
 
