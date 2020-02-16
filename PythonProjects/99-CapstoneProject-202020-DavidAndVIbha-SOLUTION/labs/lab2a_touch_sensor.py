@@ -25,16 +25,17 @@ def main():
     """ Tests the   TouchSensor   of a Snatch3r robot. """
     print()
     print("--------------------------------------------------")
-    print("Testing the  TOUCH SENSOR  of a robot")
+    print("Testing the  TouchSensor class  of a RoseBot")
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
-    # TODO: 3. The following constructs a   TouchSensor   object,
-    #  then sends it as an argument to the TEST functions. In those TEST
-    #  functions, you will access the methods of the TouchSensor object.
+    # TODO: 3. The following constructs a RoseBot object, then sends it as an
+    #  argument to the TEST functions. In those TEST functions, you will access
+    #  the RoseBot object's   touch_sensor   instance variable to access the
+    #  state of the physical Touch Sensor on the Snatch3r robot.
     #  Change this _TODO_ to DONE after you understand the following code.
     # -------------------------------------------------------------------------
-    touch_sensor = touch.TouchSensor(1)
+    robot = rb.RoseBot()
 
     run_test_get_reading(touch_sensor)
     run_test_is_pressed(touch_sensor)

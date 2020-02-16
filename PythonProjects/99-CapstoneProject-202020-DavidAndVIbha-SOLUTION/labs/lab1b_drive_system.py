@@ -21,11 +21,11 @@ def main():
     """ Tests the   DriveSystem   of a Snatch3r robot. """
     print()
     print("--------------------------------------------------")
-    print("Testing the  DRIVE SYSTEM  of a robot")
+    print("Testing the  DriveSystem class  of a RoseBot")
     print("--------------------------------------------------")
 
-    # -------------------------------------------------------------------------
-    # TODO: 2. The following constructs a RoseBot object, then sends it as an
+    ## -------------------------------------------------------------------------
+    # TODO: 3. The following constructs a RoseBot object, then sends it as an
     #  argument to the TEST functions. In those TEST functions, you will access
     #  the RoseBot object's   drive_system   instance variable to make the robot
     #  move. Change this _TODO_ to DONE after you understand the following code.

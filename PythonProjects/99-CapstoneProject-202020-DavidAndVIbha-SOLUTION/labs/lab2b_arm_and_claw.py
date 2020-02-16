@@ -23,7 +23,7 @@ def main():
     """ Tests the   ArmAndClaw   of a Snatch3r robot. """
     print()
     print("--------------------------------------------------")
-    print("Testing the  ArmAndClaw  of a robot")
+    print("Testing the  ArmAndClaw class  of a RoseBot")
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
