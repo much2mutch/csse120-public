@@ -12,7 +12,7 @@ Winter term, 2019-2020.
 #   to this module in the above.
 
 
-import rosebot_ev3dev_api as rose_ev3
+import libs.rosebot_ev3dev_api as rose_ev3
 import time
 
 ###############################################################################
