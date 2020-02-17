@@ -36,7 +36,6 @@ class BrickButtons(object):
         #  Once you understand the code, change this _TODO_ to DONE.
         # ---------------------------------------------------------------------
         self._low_level_buttons = ev3dev.LowerLevelBrickButtons()
-        self.left_or_right = left_or_right
 
     def is_up_pressed(self):
         """
