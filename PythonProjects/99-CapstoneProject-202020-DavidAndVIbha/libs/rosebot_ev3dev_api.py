@@ -477,9 +477,9 @@ class InfraredBeaconSensor(object):
 
 
 ###############################################################################
-# Camera
+# LowerLevelCamera
 ###############################################################################
-class Camera(object):
+class LowerLevelCamera(object):
     """
     A class for a Pixy camera.
     Use the   PixyMon    program to initialize the camera's firmware.
@@ -490,9 +490,15 @@ class Camera(object):
     """
 
     def __init__(self, port=2):
-        input_port = "in" + str(port)
+        self.port = port
+        # Enable only if the CameraSensor is actually used.
+        self._pixy_camera_sensor = None
+
+    def enable(self):
+        input_port = "in" + str(self.port)
         try:
-            self._pixy_camera_sensor = ev3.Sensor(input_port, driver_name="pixy-lego")
+            self._pixy_camera_sensor = ev3.Sensor(input_port,
+                                                  driver_name="pixy-lego")
         except AssertionError:
             print("Is the camera plugged into port 2?")
             print("If that is not the problem, then check whether the camera")
@@ -502,11 +508,12 @@ class Camera(object):
             print("  Make sure it says 'Lego' and not 'Arduino'.")
             print("Note: Only some of the cameras have this option;")
             print("the others are automatically OK in this regard.")
-        self.set_color_signature()  # Default to color signature 1.
+        self.set_color_signature(1)  # Default to color signature 1.
 
     def set_color_signature(self, signature_number=1):
         """
-        Sets the color signature that will be returned by calls to get_biggest_blob
+        Sets the color signature that will be returned by calls to
+           the   get_biggest_blob   method.
         :param signature_number: Index of the color signature to find (1 to 8)
         :type signature_number: int
         """
@@ -524,11 +531,15 @@ class Camera(object):
             self._pixy_camera_sensor.mode = "SIG6"
         elif signature_number == 7:
             self._pixy_camera_sensor.mode = "SIG7"
+        elif signature_number == 8:
+            self._pixy_camera_sensor.mode = "SIG8"
         else:
             print("Invalid signature value")
 
     def get_color_signature(self):
-        return self._pixy_camera_sensor.mode
+        """ Returns the current signature, as an integer (1 to 8) """
+        mode = self._pixy_camera_sensor.mode  # as a string, e.g. "SIG5"
+        return int(mode[3])  # as an int, e.g. 5
 
     def get_biggest_blob(self):
         """
