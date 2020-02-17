@@ -11,7 +11,6 @@ Winter term, 2019-2020.
 # TODO: Put the name of EACH team member who contributes
 #   to this module in the above.
 
-import time
 import libs.rosebot_camera_sensor as camera
 import libs.rosebot_drive_system as drive
 

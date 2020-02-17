@@ -16,7 +16,6 @@ Winter term, 2019-2020.
 #   (e.g. by implementing   wait_for_color   as specified below).
 ###############################################################################
 import libs.rosebot_ev3dev_api as ev3dev
-import time
 
 
 ###############################################################################

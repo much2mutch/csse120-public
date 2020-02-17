@@ -300,6 +300,12 @@ class InfraredProximitySensor(object):
         Creates a InfraredSensor.
         :type port: int | None
         """
+        self.port = port
+        # Not initialized at first to avoid conflicts with the other uses of IR sensor.
+        self._proximity_sensor = None
+        self.has_been_enabled = False
+
+    def enable(self):
         if port is not None:
             self._ir_sensor = ev3.InfraredSensor('in' + str(port))
         else:
@@ -315,6 +321,7 @@ class InfraredProximitySensor(object):
 
         # Check that the ir_sensor is actually connected (crash now if not connected)
         assert self._ir_sensor
+        self.has_been_enabled = True
 
     def get_distance_raw(self):
         """
@@ -331,6 +338,8 @@ class InfraredProximitySensor(object):
         :return: Distance to the nearest object 0 (close) to 100 (far away)
         :rtype: int
         """
+        if not self.has_been_enabled:
+            self.enable()
         self._ir_sensor.mode = "IR-PROX"
         return self._ir_sensor.proximity
 
