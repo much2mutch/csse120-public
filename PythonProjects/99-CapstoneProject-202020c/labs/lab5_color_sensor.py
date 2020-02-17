@@ -24,7 +24,8 @@ def main():
     # -------------------------------------------------------------------------
     # TODO: 2. Construct a robot, that is, a rosebot.RoseBot() object.
     # -------------------------------------------------------------------------
-    robot = rosebot.RoseBot()
+
+
 
     # -------------------------------------------------------------------------
     # STUDENTS: Do the work in this module as follows.
@@ -44,7 +45,7 @@ def main():
     # run_test_drive_until_color(robot)
     # run_test_display_reflected_light_readings(robot)
     # run_test_calibrate_line_follower(robot)
-    run_test_line_follower(robot)
+    # run_test_line_follower(robot)
 
 
 def run_test_display_color_names(robot):
@@ -72,13 +73,6 @@ def run_test_display_color_names(robot):
         #   No Color, Black, Blue, Green, Yellow, Red, White, Brown
         # -------------------------------------------------------------------------
 
-        # Solution to be removed
-        # DAVE: I do not understand the above TODO.
-        print("Color name =   {}.".format(
-            robot.color_sensor.get_color_as_name()))
-        print("Color number = {}.".format(
-            robot.color_sensor.get_color_as_number()))
-
 
 def run_test_drive_until_color(robot):
     """
@@ -101,10 +95,7 @@ def run_test_drive_until_color(robot):
     #  to ask the user to press Enter to continue.
     # -------------------------------------------------------------------------
 
-    # Solution to be removed.
-    robot.drive_system.go(35, 35)
-    robot.color_sensor.wait_for_color("black")
-    robot.drive_system.stop()
+
 
     # -------------------------------------------------------------------------
     # TODO: 5. Add additional tests as needed to ensure that the wait_until_color  method
@@ -116,13 +107,7 @@ def run_test_drive_until_color(robot):
     #   input("Press the ENTER key when ready to wait until " + color + " is sensed.")
     # -------------------------------------------------------------------------
 
-    # Solution to be removed.
-    colors = ["Blue", "green", "YELLOW", "ReD", "White", "Brown"]
-    for color in colors:
-        input("Press the ENTER key when ready to wait until " + color + " is sensed.")
-        robot.drive_system.go(35, 35)
-        robot.color_sensor.wait_for_color(color)
-        robot.drive_system.stop()
+
 
 
 def run_test_display_reflected_light_readings(robot):
@@ -150,9 +135,7 @@ def run_test_display_reflected_light_readings(robot):
         #  light reflected (white).  Test on both white and black!
         # -------------------------------------------------------------------------
 
-        # Solution to be removed
-        print("Reflected light percentage = {}.".format(
-            robot.color_sensor.get_reflected_light_intensity()))
+
 
         # -------------------------------------------------------------------------
         # TODO: 7. In addition to the number print either "White" or "Black" on the
@@ -185,13 +168,7 @@ def run_test_calibrate_line_follower(robot):
         #  black.
         # -------------------------------------------------------------------------
 
-        # Solution to be removed
-        robot.line_follower.calibrate()
-        black = robot.line_follower.black_reading
-        white = robot.line_follower.white_reading
-        average = (black + white) // 2
-        print("Black, White, Average: {:3} {:3} {:3}.".format(
-            black, white, average))
+
 
         # -------------------------------------------------------------------------
         # TODO: 9. After running this step update the initial white_reading and
@@ -221,8 +198,6 @@ def run_test_line_follower(robot):
         # TODO: 10. Call the follow_line_inside_ccw   method of the   line_follower   of the robot
         # -------------------------------------------------------------------------
 
-        # Solution to be removed
-        robot.line_follower.follow_line_inside_ccw(speed, duration_s)
 
         # -------------------------------------------------------------------------
         # TODO: 11. Optional
