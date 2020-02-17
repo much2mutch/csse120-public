@@ -42,7 +42,7 @@ def main():
     # run_test_sounds(robot)
     # run_test_proximity_readings(robot)
     # run_test_drive_until_distance(robot)
-    # run_test_spin_until_beacon_seen(robot)
+    run_test_spin_until_beacon_seen(robot)
     # run_test_spin_to_track_beacon(robot)
     # run_test_drive_towards_beacon(robot)
 
@@ -50,6 +50,7 @@ def main():
 def run_test_sounds(robot):
     """
     Tests the methods of the Sound  class.
+      :type robot: rosebot.RoseBot
     """
     print('--------------------------------------------------')
     print('Testing the methods of the Sound class of the robot')
@@ -105,6 +106,7 @@ def run_test_sounds(robot):
 def run_test_proximity_readings(robot):
     """
     Tests the   get_distance   methods of the infrared_proximity_sensor  class.
+        :type robot: rosebot.RoseBot
     """
     print('--------------------------------------------------')
     print('Testing the  get_distance   method of the robot')
@@ -146,6 +148,7 @@ def run_test_proximity_readings(robot):
 def run_test_drive_until_distance(robot):
     """
     Tests the  wait_until_distance_less_than    methods of the   class.
+        :type robot: rosebot.RoseBot
     """
     print('--------------------------------------------------')
     print('Testing the  wait_until_distance_less_than method of the robot')
@@ -180,6 +183,7 @@ def run_test_drive_until_distance(robot):
 def run_test_spin_until_beacon_seen(robot):
     """
     Tests the  spin_until_beacon_seen    method of the   class.
+      :type robot: rosebot.RoseBot
     """
     print('--------------------------------------------------')
     print('Testing the   spin_until_beacon_seen  method of the robot')
@@ -205,16 +209,20 @@ def run_test_spin_until_beacon_seen(robot):
         #      - positive degrees mean the Beacon is to the right
         #  - Distance is from 0 to 100, where 100 is about 70 cm
         # -------------------------------------------------------------------------
-
+        print("SKIP THIS ONE FOR NOW!")
         # Solution to be removed
         robot.beacon_seeker.spin_until_beacon_seen(speed, heading_threshold)
         robot.sound.beep()
+        # print("The distance to the beacon is about: {} cm.".format(
+        #     robot.beacon_sensor.get_distance()))
+        # print("The heading to the beacon is about:  {} degrees.".format(
+        #     robot.beacon_sensor.get_heading()))
 
 
 def run_test_spin_to_track_beacon(robot):
     """
     Tests the  spin_until_beacon_seen and spin_to_track_beacon    methods of the   class.
-    :type robot: rosebot.RoseBot
+        :type robot: rosebot.RoseBot
     """
     print('--------------------------------------------------')
     print('Testing the spin_to_track_beacon method of the BeaconSeeker')
@@ -249,7 +257,7 @@ def run_test_spin_to_track_beacon(robot):
 def run_test_drive_towards_beacon(robot):
     """
     Tests the  spin_until_beacon_seen and spin_to_track_beacon    methods of the   class.
-    :type robot: rosebot.RoseBot
+        :type robot: rosebot.RoseBot
     """
     print('--------------------------------------------------')
     print('Testing the drive_to_beacon method of the BeaconSeeker')
