@@ -41,9 +41,10 @@ def main():
 
     # Color Sensor tests
     # run_test_display_color_names(robot)
-    run_test_drive_until_color(robot)
-    run_test_display_reflected_light_readings(robot)
-    run_test_line_follower(robot)
+    # run_test_drive_until_color(robot)
+    # run_test_display_reflected_light_readings(robot)
+    # run_test_calibrate_line_follower(robot)
+    # run_test_line_follower(robot)
 
 
 def run_test_display_color_names(robot):
@@ -173,8 +174,9 @@ def run_test_calibrate_line_follower(robot):
     print('--------------------------------------------------')
     print('Testing the  calibrate   method of LineFollower')
     print('--------------------------------------------------')
+
     while True:
-        time.sleep(0.05)
+        input("Press ENTER when ready to do a calibration.")
         # -------------------------------------------------------------------------
         # TODO: 8. Call the  calibrate  method of the  line_follower    of the robot.
         #  After the calibration print the white_reading and the black_reading.
@@ -184,8 +186,12 @@ def run_test_calibrate_line_follower(robot):
         # -------------------------------------------------------------------------
 
         # Solution to be removed
-        print("Black = " + robot.line_follower.black_reading)
-        print("White = " + robot.line_follower.white_reading)
+        robot.line_follower.calibrate()
+        black = robot.line_follower.black_reading
+        white = robot.line_follower.white_reading
+        average = (black + white) // 2
+        print("Black, White, Average: {:3} {:3} {:3}.".format(
+            black, white, average))
 
         # -------------------------------------------------------------------------
         # TODO: 9. After running this step update the initial white_reading and
