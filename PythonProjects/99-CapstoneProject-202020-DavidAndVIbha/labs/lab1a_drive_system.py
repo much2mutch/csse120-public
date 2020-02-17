@@ -13,9 +13,8 @@ Winter term, 2019-2020.
 #  (in any way) to this module.
 
 # -----------------------------------------------------------------------------
-# TODO: 2. Note below how to write an IMPORT statement
-#  that imports a module that is in the  LIBS  sub-folder.
-#  Change this _TODO_ to DONE after you have seen how to do it.
+# TODO: 2. Note that you will use the  rosebot  library (shorthand: rb).
+#  Then change this _TODO_ to DONE.
 # -----------------------------------------------------------------------------
 import libs.rosebot as rb
 import time

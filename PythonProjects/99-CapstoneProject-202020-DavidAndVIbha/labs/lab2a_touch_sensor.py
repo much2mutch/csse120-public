@@ -13,11 +13,10 @@ Winter term, 2019-2020.
 #  (in any way) to this module.
 
 # -----------------------------------------------------------------------------
-# TODO: 2. Note below how to write an IMPORT statement
-#  that imports a module that is in the  LIBS  sub-folder.
-#  Change this _TODO_ to DONE after you have seen how to do it.
+# TODO: 2. Note that you will use the  rosebot  library (shorthand: rb).
+#  Then change this _TODO_ to DONE.
 # -----------------------------------------------------------------------------
-import libs.rosebot_touch_sensor as touch
+import libs.rosebot as rb
 import time
 
 
@@ -34,18 +33,18 @@ def main():
     #  functions, you will access the methods of the TouchSensor object.
     #  Change this _TODO_ to DONE after you understand the following code.
     # -------------------------------------------------------------------------
-    touch_sensor = touch.TouchSensor(1)
+    robot = rb.RoseBot()
 
-    run_test_get_reading(touch_sensor)
-    run_test_is_pressed(touch_sensor)
-    run_test_wait_until_pressed(touch_sensor)
-    run_test_wait_until_released(touch_sensor)
+    run_test_get_reading(robot)
+    run_test_is_pressed(robot)
+    run_test_wait_until_pressed(robot)
+    run_test_wait_until_released(robot)
 
 
-def run_test_get_reading(touch_sensor):
+def run_test_get_reading(robot):
     """
     Tests the   get_reading   method of the   TouchSensor   class.
-      :type touch_sensor: touch.TouchSensor
+       :type robot: rb.RoseBot
     """
     print()
     print("--------------------------------------------------")
@@ -82,10 +81,10 @@ def run_test_get_reading(touch_sensor):
         print("No worries. The program will keep running from here.")
 
 
-def run_test_is_pressed(touch_sensor):
+def run_test_is_pressed(robot):
     """
     Tests the   is_pressed   method of the   TouchSensor   class.
-      :type touch_sensor: touch.TouchSensor
+       :type robot: rb.RoseBot
     """
     print()
     print("--------------------------------------------------")
@@ -122,10 +121,10 @@ def run_test_is_pressed(touch_sensor):
         print("No worries. The program will keep running from here.")
 
 
-def run_test_wait_until_pressed(touch_sensor):
+def run_test_wait_until_pressed(robot):
     """
     Tests the   wait_until_pressed   method of the   TouchSensor   class.
-      :type touch_sensor: touch.TouchSensor
+       :type robot: rb.RoseBot
     """
     print()
     print("--------------------------------------------------")
@@ -153,10 +152,10 @@ def run_test_wait_until_pressed(touch_sensor):
         print("No worries. The program will keep running from here.")
 
 
-def run_test_wait_until_released(touch_sensor):
+def run_test_wait_until_released(robot):
     """
     Tests the   wait_until_released   method of the   TouchSensor   class.
-      :type touch_sensor: touch.TouchSensor
+       :type robot: rb.RoseBot
     """
     print()
     print("--------------------------------------------------")

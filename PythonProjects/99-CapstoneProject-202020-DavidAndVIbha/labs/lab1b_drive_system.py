@@ -13,6 +13,10 @@ Winter term, 2019-2020.
 # TODO: 1. In the above, put the names of EACH team member who contributes
 #  (in any way) to this module.
 
+# -----------------------------------------------------------------------------
+# TODO: 2. Note that you will use the  rosebot  library (shorthand: rb).
+#  Then change this _TODO_ to DONE.
+# -----------------------------------------------------------------------------
 import libs.rosebot as rb
 import time
 
@@ -25,7 +29,7 @@ def main():
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
-    # TODO: 2. The following constructs a RoseBot object, then sends it as an
+    # TODO: 3. The following constructs a RoseBot object, then sends it as an
     #  argument to the TEST functions. In those TEST functions, you will access
     #  the RoseBot object's   drive_system   instance variable to make the robot
     #  move. Change this _TODO_ to DONE after you understand the following code.
@@ -51,7 +55,7 @@ def run_test_go_straight_for_inches(robot):
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
-    # TODO: 3. The following makes a LIST of PAIRS, where each PAIR specifies
+    # TODO: 4. The following makes a LIST of PAIRS, where each PAIR specifies
     #  the  INCHES_TO_MOVE  and  SPEED_AT_WHICH_TO_MOVE.
     #  _
     #  Positive speeds mean move straight FORWARD; negative means BACKWARD.
@@ -84,7 +88,7 @@ def run_test_go_straight_for_inches(robot):
         input("the next test of GO_STRAIGHT_FOR_INCHES.")
 
         # ---------------------------------------------------------------------
-        # TODO: 4. To make the movement happen, call the
+        # TODO: 5. To make the movement happen, call the
         #  go_straight_for_inches  method on the   drive_system   of the robot,
         #  sending it the  inches_to_move  and  speed.
         #  _
@@ -111,7 +115,7 @@ def run_test_spin_in_place_for_seconds(robot):
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
-    # TODO: 5. The following makes a LIST of PAIRS, where each PAIR specifies
+    # TODO: 6. The following makes a LIST of PAIRS, where each PAIR specifies
     #  the  SECONDS_TO_SPIN  and  SPEED_AT_WHICH_TO_SPIN.
     #  _
     #  Positive speeds mean spin CLOCKWISE; negative means COUNTER-CLOCKWISE.
@@ -142,7 +146,7 @@ def run_test_spin_in_place_for_seconds(robot):
         input("the next test of SPIN_IN_PLACE_FOR_SECONDS.")
 
         # ---------------------------------------------------------------------
-        # TODO: 6. To make the movement happen, call the
+        # TODO: 7. To make the movement happen, call the
         #  spin_in_place_for_seconds  method on the  drive_system  of the robot,
         #  sending it the  seconds_to_spin  and  speed.
         # ---------------------------------------------------------------------
@@ -160,7 +164,7 @@ def run_test_spin_in_place_for_degrees(robot):
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
-    # TODO: 7. The following makes a LIST of PAIRS, where each PAIR specifies
+    # TODO: 8. The following makes a LIST of PAIRS, where each PAIR specifies
     #  the  DEGREES_TO_SPIN  and  SPEED_AT_WHICH_TO_SPIN.
     #  The DEGREES_TO_SPIN are the number of degrees that the ROBOT should spin.
     #  _
@@ -194,7 +198,7 @@ def run_test_spin_in_place_for_degrees(robot):
         input("the next test of SPIN_IN_PLACE_FOR_DEGREES.")
 
         # ---------------------------------------------------------------------
-        # TODO: 8. To make the movement happen, call the
+        # TODO: 9. To make the movement happen, call the
         #  spin_in_place_for_degrees  method on the  drive_system   of the
         #  robot, sending it the   degrees_robot_should_spin   and  speed.
         #  _
@@ -222,7 +226,7 @@ def run_test_turn_for_seconds(robot):
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
-    # TODO: 9. The following makes a LIST of PAIRS, where each PAIR specifies
+    # TODO: 10. The following makes a LIST of PAIRS, where each PAIR specifies
     #  the  SECONDS_TO_TURN  and  SPEED_AT_WHICH_TO_TURN.
     #  Positive speeds mean turn to the RIGHT (clockwise);
     #  negative means turn to the left (counter-clockwise).
@@ -252,7 +256,7 @@ def run_test_turn_for_seconds(robot):
         input("the next test of TURN_FOR_SECONDS.")
 
         # ---------------------------------------------------------------------
-        # TODO: 10. To make the movement happen, call the
+        # TODO: 11. To make the movement happen, call the
         #  turn_for_seconds  method on the  drive_system  of the robot,
         #  sending it the  seconds_to_turn  and  speed.
         # ---------------------------------------------------------------------
@@ -270,7 +274,7 @@ def run_test_turn_for_degrees(robot):
     print("--------------------------------------------------")
 
     # -------------------------------------------------------------------------
-    # TODO: 11. The following makes a LIST of PAIRS, where each PAIR specifies
+    # TODO: 12. The following makes a LIST of PAIRS, where each PAIR specifies
     #  the  DEGREES_TO_TURN  and  SPEED_AT_WHICH_TO_TURN.
     #  The DEGREES_TO_TURN are the number of degrees that the ROBOT should turn.
     #  _
