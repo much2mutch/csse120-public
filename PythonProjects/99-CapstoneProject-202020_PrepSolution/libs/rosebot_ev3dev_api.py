@@ -434,6 +434,7 @@ class InfraredBeaconSensor(object):
         """
         self.port = port
         self.channel = channel
+        self._ir_sensor = None  # Not initialized at first to avoid conflicts with the IR sensor.
         self.has_been_enabled = False
 
     def enable(self):
@@ -442,15 +443,10 @@ class InfraredBeaconSensor(object):
             same sensor serves multiple roles.  To avoid conflicts the InfraredBeaconSensor
             is disabled by default.  This method enables the sensor as an IR Beacon Sensor.
         """
-        # DAVE: This does not work.
-        # The ev3.BeaconSeeker constructor method
-        # wants a "sensor" (not sure that that means)
-        # but the code below sends it a string ("in4").
-        # The code then crashes.
         if self.port is not None:
-            self._ir_sensor = ev3.BeaconSeeker('in' + str(self.port), channel=self.channel)
+            self._ir_sensor = ev3.InfraredSensor('in' + str(self.port))
         else:
-            self._ir_sensor = ev3.BeaconSeeker(channel=self.channel)  # automatically determine the port
+            self._ir_sensor = ev3.InfraredSensor()  # automatically determine the port
 
         # Note: The IR sensor can be used in 3 different modes!
         # self._ir_sensor.mode = "IR-PROX"
@@ -458,47 +454,35 @@ class InfraredBeaconSensor(object):
         # self._ir_sensor.mode = "IR-REMOTE"
 
         # Check that the ir_sensor is actually connected (crash now if not connected)
-        assert self._sensor
+        assert self._ir_sensor.connected
 
         # The ev3dev library will try to switch it for you, but here it's done explicitly.
         self._ir_sensor.mode = "IR-SEEK"
         self.has_been_enabled = True
 
-    def get_heading_and_distance_to_beacon(self):
+    def get_heading_to_beacon(self):
         """
-        Returns a 2 item tuple containing the heading and distance to the Beacon.
-        Looks for signals at the frequency of the given channel.
-         - The heading is in degrees in the range -25 to 25 with:
+        Returns heading (-25, 25) to the beacon on the given channel.
+        - The heading is in degrees in the range -25 to 25 with:
              - 0 means straight ahead
              - negative degrees mean the Beacon is to the left
              - positive degrees mean the Beacon is to the right
-         - Distance is from 0 to 100, where 100 is about 70 cm
+        """
+        if not self.has_been_enabled:
+            self.enable()
+        self._ir_sensor.mode = "IR-SEEK"
+        return self._ir_sensor.value((self.channel - 1) * 2)
+
+    def get_distance_to_beacon(self):
+        """
+        Returns distance (0, 100) to the beacon on the given channel.
+        - Distance is from 0 to 100, where 100 is about 70 cm
          - -128 means the Beacon is not detected.
         """
         if not self.has_been_enabled:
             self.enable()
         self._ir_sensor.mode = "IR-SEEK"
-        return self._ir_sensor.heading_and_distance
-
-    def get_heading_to_beacon(self):
-        """
-        Returns the heading to the Beacon.
-        Units are per the   get_heading_and_distance_to_beacon   method.
-        """
-        if not self.has_been_enabled:
-            self.enable()
-        self._ir_sensor.mode = "IR-SEEK"
-        return self._ir_sensor.heading
-
-    def get_distance_to_beacon(self):
-        """
-        Returns the heading to the Beacon.
-        Units are per the   get_heading_and_distance_to_beacon   method.
-        """
-        if not self.has_been_enabled:
-            self.enable()
-        self._ir_sensor.mode = "IR-SEEK"
-        return self._ir_sensor.distance
+        return self._ir_sensor.value((self.channel - 1) * 2 + 1)
 
 
 ###############################################################################
