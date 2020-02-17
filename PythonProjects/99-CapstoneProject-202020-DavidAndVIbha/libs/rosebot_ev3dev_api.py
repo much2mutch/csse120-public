@@ -23,6 +23,7 @@ Winter term, 2019-2020.
 # STUDENTS:  *** Do NOT change ANYTHING in this module. ***
 ###############################################################################
 import ev3dev.ev3 as ev3
+import subprocess
 
 
 ###############################################################################
@@ -663,13 +664,19 @@ class Beeper(object):
     def beep(self):
         """
         Starts playing a BEEP sound.
+
+        This method is blocking, meaning the next line of your code will not
+        run until the Beeper is done (usually this IS what you want).
+        """
+        return self._beeper.beep().wait()
+
+    def beep_nonblocking(self):
+        """
+        Starts playing a BEEP sound.
+
         Does NOT block, that is, continues immediately to the next statement
-        while the sound is being played. Returns a subprocess.Popen,
-        so if you want the sound-playing to block until the sound is completed
-        (e.g. if the next statement will immediately make another sound),
-        then use   beep  like this:
-             beeper = Beeper()
-             beeper.beep().wait()
+        while the sound is being played. See also the   beep   method above.
+
         :rtype subprocess.Popen
         """
         return self._beeper.beep()
@@ -689,10 +696,11 @@ class SpeechMaker(object):
 
     def speak(self, phrase):
         """
-        Speaks the given phrase aloud.
-        The phrase must be short.
+        Speaks the given phrase aloud.  The phrase must be short.
+
         This method is blocking, meaning the next line of your code will not
         run until the SpeechMaker is done (usually this IS what you want).
+
         :param phrase: The string that you would like the robot to say.
         :type  phrase:  str
         """
@@ -701,12 +709,11 @@ class SpeechMaker(object):
     def speak_nonblocking(self, phrase):
         """
         Speaks the given phrase aloud. The phrase must be short.
-        This method does NOT block, that is, continues immediately to the next
-        statement while the sound is being played.
-        IMPORTANT:  speak()  does not appear to work correctly in all circumstances.
-        Use this method with a   time.sleep()  after a   speak_nonblocking  as needed.
-        :param phrase: The string that you would like the robot to say.
-        :type  phrase:  str
+
+        Does NOT block, that is, continues immediately to the next statement
+        while the sound is being played. See also the   speak   method above.
+
+        :rtype subprocess.Popen
         """
         self._speech_maker.speak(phrase)
 
@@ -728,8 +735,10 @@ class ToneMaker(object):
         """
         Starts playing a tone at the given frequency (in Hz) for the given
         duration (in milliseconds).
+
         This method is blocking, meaning the next line of your code will not
         run until the ToneMaker is done playing (usually this IS what you want).
+
         :param frequency: Frequency (Hertz) to play
         :type frequency: float
         :param duration: Length of time to play the tone in milliseconds (ms)
@@ -741,8 +750,10 @@ class ToneMaker(object):
         """
         Starts playing a sequence of tones, where each tone is a 3-tuple:
           (frequency, duration ms, delay_until_next_tone_in_sequence ms)
+
         This method is blocking, meaning the next line of your code will not
         run until the ToneMaker is done playing (usually this IS what you want).
+
         Here is a cheerful example, from the ev3 documentation::
             tone_player = ToneMaker()
             tone_player.play_tone_sequence([
@@ -781,8 +792,10 @@ class ToneMaker(object):
     def play_tone_nonblocking(self, frequency, duration):
         """
         Same as the play_tone method, but...
+
         Does NOT block, that is, continues immediately to the next statement
-        while the sound is being played.
+        while the sound is being played. See also the  play_tone  method above.
+
         :param frequency: Frequency (Hertz) to play
         :type frequency: float
         :param duration: Length of time to play the tone in milliseconds (ms)
@@ -793,8 +806,11 @@ class ToneMaker(object):
     def play_tone_sequence_nonblocking(self, tones):
         """
         Same as the play_tone_sequence method, but...
+
         Does NOT block, that is, continues immediately to the next statement
-        while the sound is being played.
+        while the sound is being played. See also the   play_tone_sequence
+        method above.
+
         :param tones: List of 3-tuple tones (frequency, duration_ms, delay_ms)
         :type tones: list of tuple
         """
@@ -816,14 +832,23 @@ class WavFilePlayer(object):
     def play(self, file_location):
         """
         Plays properly formatted .wav files.
+
         Based on the documentation the file must be a PCM signed 16-bit
         little-endian .wav file.  You can try to convert normal audio files
-        using tools like: http://audio.online-convert.com/convert-to-wav
+        using tools like: http://audio.online-convert.com/convert-to-wav.
+
         Warning: audio files get big.  The game is trial and error to find
         one that works.  Your instructors are CERTAINLY not experts on what
-        actaully plays.
+        actually plays.
         """
         self._wav_player.play(file_location).wait()
 
+    def play_nonblocking(self, file_location):
+        """
+        Same as the play method, but...
 
+         Does NOT block, that is, continues immediately to the next statement
+        while the sound is being played. See also the   play   method above.
+        """
+        self._wav_player.play(file_location)
 
