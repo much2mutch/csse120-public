@@ -372,7 +372,10 @@ class ColorSensor(object):
         # Check that the ir_sensor is actually connected (crash now if not connected)
         assert self._sensor
 
-    def get_color(self):
+    def get_color_as_number(self):
+        return self._sensor.color
+
+    def get_color_as_name(self):
         """
         Returns the color detected by the sensor, as best the sensor can judge
         from shining red, then green, then blue light and measuring the
@@ -389,7 +392,7 @@ class ColorSensor(object):
         :return: String representing the current color
         :rtype: str
         """
-        return self.COLORS[self.get_color()]
+        return self.COLORS[self.get_color_as_number()]
 
     def get_reflected_light_intensity(self):
         """
