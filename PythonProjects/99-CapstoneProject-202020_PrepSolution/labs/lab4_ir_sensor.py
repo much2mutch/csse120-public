@@ -158,6 +158,9 @@ def run_test_drive_until_distance(robot):
         requested_distance_away = int(input("Enter a distance threshold in inches: "))
         if requested_distance_away == 0:
             break
+        print("After this test begins, slowly move your hand closer")
+        print("  to the robot.  When your hand is the specified distance")
+        print("  away from the IR sensor, the robot should stop moving.")
         input("Press the ENTER key when ready for the robot to start moving.")
 
         # -------------------------------------------------------------------------
