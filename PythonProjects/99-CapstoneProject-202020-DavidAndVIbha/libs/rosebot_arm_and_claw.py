@@ -98,7 +98,7 @@ class ArmAndClaw(object):
     def raise_arm(self):
         """ Raises the Arm until its physical Touch Sensor is pressed. """
         # ---------------------------------------------------------------------
-        # TODO: 6. Implement this method; it is a ONE-LINER!
+        # TODO: 6. Implement this method; it is a THREE-LINER!
         # ---------------------------------------------------------------------
 
     def move_arm_to_position(self, desired_arm_position):
