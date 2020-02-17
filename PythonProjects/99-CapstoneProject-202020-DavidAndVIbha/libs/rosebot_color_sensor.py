@@ -11,7 +11,7 @@ Winter term, 2019-2020.
 """
 ###############################################################################
 # STUDENTS: This module is (mostly) ALREADY IMPLEMENTED.
-#   READ its code so that you know how to use a Beacon Sensor if you wish
+#   READ its code so that you know how to use a ColorSensor if you wish
 #   to do so.  You may also AUGMENT this module if you choose
 #   (e.g. by implementing   wait_for_color   as specified below).
 ###############################################################################
