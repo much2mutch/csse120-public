@@ -9,14 +9,12 @@ Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
 Winter term, 2019-2020.
 """
-# TODO: 1. In the above, put the names of EACH team member who contributes
-#  (in any way) to this module.
-
-# -----------------------------------------------------------------------------
-# TODO: 2. Note that this module uses a library from LIBS:
-#  This module uses code that is in the "low-level" api in rosebot_ev3dev_api.
-#  Change this _TODO_ to DONE after you have seen how to do it.
-# -----------------------------------------------------------------------------
+###############################################################################
+# STUDENTS: This module is (mostly) ALREADY IMPLEMENTED.
+#   READ its code so that you know how to use a Beacon Sensor if you wish
+#   to do so.  You may also AUGMENT this module if you choose
+#   (e.g. by implementing   wait_for_color   as specified below).
+###############################################################################
 import libs.rosebot_ev3dev_api as ev3dev
 import time
 
@@ -30,17 +28,13 @@ class ColorSensor(object):
       get_detected_color_name
       get_detected_color_number
       get_reflected_intensity
-         (and OPTIONALLY   wait_until_color  and other methods of your choosing)
+         (and OPTIONALLY  wait_until_color  and other methods of your choosing)
     """
     def __init__(self, port=3):
         """
         Constructs the underlying low-level ColorSensor.
           :type port: int
         """
-        # ---------------------------------------------------------------------
-        # TODO: 3. Read the following, ASKING QUESTIONS AS NEEDED.
-        #  Once you understand the code, change this _TODO_ to DONE.
-        # ---------------------------------------------------------------------
         self._low_level_color_sensor = ev3dev.LowerLevelColorSensor(port)
 
     def get_color_as_name(self):
@@ -51,10 +45,7 @@ class ColorSensor(object):
           - No Color, Black, Blue, Green, Yellow, Red, White, Brown
         :rtype: str
         """
-        # ---------------------------------------------------------------------
-        # TODO: 4. Implement this method, by calling the relevant method
-        #          on   self._low_level_color_sensor
-        # ---------------------------------------------------------------------
+        return self._low_level_color_sensor.get_color_as_name()
 
     def get_color_as_number(self):
         """
@@ -65,10 +56,7 @@ class ColorSensor(object):
             4 (Yellow),   5 (Red),   6 (White), 7 (Brown)
         :rtype: int
         """
-        # ---------------------------------------------------------------------
-        # TODO: 5. Implement this method, by calling the relevant method
-        #          on   self._low_level_color_sensor
-        # ---------------------------------------------------------------------
+        return self._low_level_color_sensor.get_color_as_number()
 
     def get_reflected_light_intensity(self):
         """
@@ -81,10 +69,22 @@ class ColorSensor(object):
                    0 (no light reflected) to 100 (super bright)
           :rtype: int
         """
-        # ---------------------------------------------------------------------
-        # TODO: 6. Implement this method, by calling the relevant method
-        #          on   self._low_level_color_sensor
-        # ---------------------------------------------------------------------
+        return self._low_level_color_sensor.get_reflected_light_intensity()
+
+    def get_ambient_light_intensity(self):
+        """
+        Returns the intensity of the ambient light (i.e., what the sensor
+        reads WITHOUT shining any light itself).
+
+        The returned value is from 0 to 100,
+        but in practice more like 3 to ?? in our classroom lighting with our
+        downward-facing sensor that is about 0.25 inches from the ground.
+
+          :return: Amount of ambient light
+                   0 (no light reflected) to 100 (super bright)
+          :rtype: int
+        """
+        return self._low_level_color_sensor.get_ambient_light_intensity()
 
     def wait_for_color(self, color):
         """
@@ -95,5 +95,5 @@ class ColorSensor(object):
           :type color: str
         """
         # ---------------------------------------------------------------------
-        # TODO: OPTIONALLY, implement this method.
+        # OPTIONALLY, implement this method.
         # ---------------------------------------------------------------------
