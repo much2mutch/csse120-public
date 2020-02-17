@@ -50,6 +50,7 @@ class BeaconSensor(object):
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
         self.beacon_sensor = rose_ev3.InfraredBeaconSensor(self.port, self.channel)
+        print("Enabled the beacon sensor")
         self.has_been_enabled = True
 
     def get_heading(self):

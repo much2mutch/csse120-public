@@ -40,6 +40,8 @@ class BeaconSeeker(object):
         """
         Spins the robot CW (left @ speed, right @ -speed) until the beacon is seen
         with an abs(heading) less than the given heading_threshold.
+        Hint: To avoid bad reading make sure you get at least 3 readings below the
+        threshold in a row to make sure it's a good and valid reading!
         Once the beacon heading is within the threshold the drive system should stop.
         :param speed: Motor speed to use 1 to 100
         :type speed: int
@@ -47,16 +49,25 @@ class BeaconSeeker(object):
         :type heading_threshold: float
         """
         self.drive_system.go(speed, -speed)
+        correct_headings = 0
         while True:
             time.sleep(0.05)
             # ---------------------------------------------------------------------
-            # TODO: Implement this method.
+            # TODO: Implement this method per the doc string above.
+            # Suggestion: Print the headings and number in a row that are below the
+            #  threshold.  Make sure you only stop when 3 or more are below the given
+            #  heading_threshold
             # ---------------------------------------------------------------------
 
             # Solution to be removed
             heading = self.beacon_sensor.get_heading()
+            print("Beacon Heading = {}  Threshold = {}  Correct = {}".format(heading, heading_threshold, correct_headings))
             if abs(heading) < heading_threshold:
-                break
+                correct_headings += 1
+                if correct_headings >= 3:
+                    break
+            else:
+                correct_headings = 0
         self.drive_system.stop()
 
     def spin_to_track_beacon(self, speed, duration_s):
@@ -90,12 +101,14 @@ class BeaconSeeker(object):
             if time.time() > start_time_s + duration_s:
                 break
             heading = self.beacon_sensor.get_heading()
+            print("Heading = {:}  Time = {:.1f}".format(heading, time.time() - start_time_s))
             if abs(heading) < 3:
-                self.drive_system.stop
+                self.drive_system.stop()
             elif heading < 0:
                 self.drive_system.go(-speed, speed)
             else:
-                self.drive_system.go(-speed, speed)
+                self.drive_system.go(speed, -speed)
+        self.drive_system.stop()
 
     def drive_to_beacon(self):
         """
@@ -103,8 +116,6 @@ class BeaconSeeker(object):
         until it is found (distance less than the threshold you think it acceptable).
         All parameters are determined within the method.
         """
-        if not self.has_been_enabled:
-            self.enable()
         forward_speed = 40
         turn_speed = 20
         distance_0_readings = 0
@@ -132,21 +143,23 @@ class BeaconSeeker(object):
             # ---------------------------------------------------------------------
 
             # Solution to be removed
-            current_heading, current_distance = self.beacon_sensor.get_heading_and_distance_to_beacon()
-            if current_distance == 100:
-                print("IR Remote not found")
+            current_distance = self.beacon_sensor.get_distance()
+            if current_distance == 100 or current_distance == -128:
+                print("IR Remote not found", current_distance)
                 self.drive_system.stop()
                 # self.drive(-turn_speed, turn_speed)
                 continue
 
+            current_heading = self.beacon_sensor.get_heading()
+            print("Heading = {}  Distance = {}".format(current_heading, current_distance))
             if abs(current_heading) < 2:
                 # Close enough of a heading to move forward
                 if current_distance > 0:
                     self.drive_system.go(forward_speed, forward_speed)
-                elif current_distance <= 2:
+                elif current_distance <= 1:
                     self.drive_system.stop()
                     distance_0_readings += 1
-                    if distance_0_readings > 5:
+                    if distance_0_readings > 6:
                         print("I got the beacon")
                         break  # Success!
             else:

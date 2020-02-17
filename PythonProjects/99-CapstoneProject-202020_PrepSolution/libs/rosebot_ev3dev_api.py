@@ -458,6 +458,7 @@ class InfraredBeaconSensor(object):
 
         # The ev3dev library will try to switch it for you, but here it's done explicitly.
         self._ir_sensor.mode = "IR-SEEK"
+        print("InfraredSensor mode set to IR-SEEK")
         self.has_been_enabled = True
 
     def get_heading_to_beacon(self):
@@ -470,7 +471,6 @@ class InfraredBeaconSensor(object):
         """
         if not self.has_been_enabled:
             self.enable()
-        self._ir_sensor.mode = "IR-SEEK"
         return self._ir_sensor.value((self.channel - 1) * 2)
 
     def get_distance_to_beacon(self):
@@ -481,7 +481,6 @@ class InfraredBeaconSensor(object):
         """
         if not self.has_been_enabled:
             self.enable()
-        self._ir_sensor.mode = "IR-SEEK"
         return self._ir_sensor.value((self.channel - 1) * 2 + 1)
 
 
