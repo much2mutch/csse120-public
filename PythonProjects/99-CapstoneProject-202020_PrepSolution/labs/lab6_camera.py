@@ -41,9 +41,9 @@ def main():
     # -------------------------------------------------------------------------
     robot.camera.enable()
 
-    run_test_blob_readings(robot)
+    # run_test_blob_readings(robot)
     # run_test_spin_until_color_seen(robot)
-    # run_test_spin_to_track_color(robot)
+    run_test_spin_to_track_color(robot)
 
 
 def run_test_blob_readings(robot):
@@ -79,7 +79,7 @@ def run_test_spin_until_color_seen(robot):
         speed = int(input("Enter an integer for the max wheel speed (1 to 100): "))
         if speed == 0:
             break
-        blob_area_threshold = int(input("What is your Blob area threshold? (900 for a 30x30)"))
+        blob_area_threshold = int(input("What is your Blob area threshold? (10000 for a 100x100) "))
         if blob_area_threshold == 0:
             break
         input("Press the ENTER key when ready for the robot to start moving.")

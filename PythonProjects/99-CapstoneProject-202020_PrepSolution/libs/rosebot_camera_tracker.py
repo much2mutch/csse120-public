@@ -96,9 +96,11 @@ class CameraTracker(object):
                 break
             blob = self.camera_sensor.get_biggest_blob()
             heading = blob.center.x - (blob.SCREEN_WIDTH / 2)
-            if abs(heading) < 5:
-                self.drive_system.stop
+            print("Heading = {}".format(heading))
+            if abs(heading) < 20:
+                self.drive_system.stop()
             elif heading < 0:
                 self.drive_system.go(-speed, speed)
             else:
-                self.drive_system.go(-speed, speed)
+                self.drive_system.go(speed, -speed)
+        self.drive_system.stop()
