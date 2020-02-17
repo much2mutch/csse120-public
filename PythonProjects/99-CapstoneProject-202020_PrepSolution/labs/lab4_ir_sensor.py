@@ -42,7 +42,10 @@ def main():
     # run_test_sounds(robot)
     # run_test_proximity_readings(robot)
     # run_test_drive_until_distance(robot)
-    run_test_spin_until_beacon_seen(robot)
+
+    # SKIP THE FOLLOWING FOR NOW.
+    
+    # run_test_spin_until_beacon_seen(robot)
     # run_test_spin_to_track_beacon(robot)
     # run_test_drive_towards_beacon(robot)
 
