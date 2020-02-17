@@ -12,8 +12,8 @@ Winter term, 2019-2020.
 #   to this module in the above.
 
 import time
-import libs.rosebot_beacon_sensor
-import libs.rosebot_drive_system
+import libs.rosebot_beacon_sensor as beacon
+import libs.rosebot_drive_system as drive
 
 ###############################################################################
 # STUDENTS: OPTIONALLY, extend the code in this module to contain methods like:
@@ -40,8 +40,8 @@ class BeaconSeeker(object):
     def __init__(self, beacon_sensor, drive_system):
         """
         Constructs BeaconSeeker to track beacon.
-          :type beacon_sensor: rosebot_beacon_sensor.BeaconSensor
-          :type drive_system: rosebot_drive_system.DriveSystem
+          :type beacon_sensor: beacon.BeaconSensor
+          :type drive_system:  drive.DriveSystem
         """
         self.beacon_sensor = beacon_sensor
         self.drive_system = drive_system
