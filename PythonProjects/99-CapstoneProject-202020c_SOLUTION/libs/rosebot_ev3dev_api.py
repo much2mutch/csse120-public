@@ -305,8 +305,7 @@ class InfraredProximitySensor(object):
         # self._ir_sensor.mode = "IR-SEEK"
         # self._ir_sensor.mode = "IR-REMOTE"
 
-        # The ev3dev library will try to switch it for you, but here it's done explicitly.
-        self._ir_sensor.mode = "IR-PROX"  # This is probably not needed.
+        # The ev3dev library will switch the mode for you, so no code added here.
 
         # Check that the ir_sensor is actually connected (crash now if not connected)
         assert self._ir_sensor
