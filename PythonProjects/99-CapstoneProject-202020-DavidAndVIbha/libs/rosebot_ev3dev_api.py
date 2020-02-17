@@ -527,6 +527,9 @@ class Camera(object):
         else:
             print("Invalid signature value")
 
+    def get_color_signature(self):
+        return self._pixy_camera_sensor.mode
+
     def get_biggest_blob(self):
         """
         A "blob" is a collection of connected pixels that are all in the color
@@ -535,12 +538,15 @@ class Camera(object):
         width and height of the blob.  For a Pixy camera, the x-coordinate is
         between 0 and 319 (0 left, 319 right) and the y-coordinate is between
         0 and 199 (0 TOP, 199 BOTTOM).  See the Blob class below.
+
         A Camera returns the largest Blob whose pixels fall within the Camera's
         current color signature.  A Blob whose width and height are zero
         indicates that no large enough object within the current color signature
         was visible.
+
         The Camera's color signature defaults to "SIG1", which is the color
         signature set by selecting the RED light when training the Pixy camera.
+
         :return: A Blob object for the biggest matching color blob.
         :rtype: Blob
         """
