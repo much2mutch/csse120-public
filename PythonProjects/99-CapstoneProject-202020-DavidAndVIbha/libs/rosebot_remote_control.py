@@ -8,12 +8,15 @@ Authors:  Your professors (for the framework)
     and PUT_YOUR_NAMES_HERE.
 Winter term, 2019-2020.
 """
-# TODO: Put the name of EACH team member who contributes
-#   to this module in the above.
-
-
+###############################################################################
+# STUDENTS: This module is (mostly) ALREADY IMPLEMENTED.
+#   READ its code so that you know how to use a RemoteControl if you wish
+#   to do so.  You may also AUGMENT this module if you choose
+#   (e.g. by implementing   wait_until_pressed   as specified below).
+###############################################################################
 import libs.rosebot_ev3dev_api as rose_ev3
 import time
+
 
 ###############################################################################
 #    RemoteControl
@@ -21,7 +24,7 @@ import time
 class RemoteControl(object):
     """
     Methods for the RemoteControl on the robot, including:
-      get_reading    is_pressed    wait_until_pressed
+       is_pressed    (optionally) wait_until_pressed
     """
     def __init__(self):
         """
@@ -30,9 +33,12 @@ class RemoteControl(object):
            remote_controls
         which is a list, in order, of the four possible remote control objects.
         """
-        # ---------------------------------------------------------------------
-        # TODO: With your instructor, implement this method.
-        # ---------------------------------------------------------------------
+        remote_control_1 = rose_ev3.RemoteControlChannel(1)
+        remote_control_2 = rose_ev3.RemoteControlChannel(2)
+        remote_control_3 = rose_ev3.RemoteControlChannel(3)
+        remote_control_4 = rose_ev3.RemoteControlChannel(4)
+        self.remote_controls = [remote_control_1, remote_control_2,
+                                remote_control_3, remote_control_4]
 
     def is_pressed(self, channel, button_name):
         """
@@ -41,9 +47,18 @@ class RemoteControl(object):
           "red_up", "red_down", "blue_up", "blue_down"
           :rtype: bool
         """
-        # ---------------------------------------------------------------------
-        # TODO: Implement this method.
-        # ---------------------------------------------------------------------
+        remote_control = self.remote_controls[channel - 1]
+        if button_name == "red_up":
+            return remote_control.red_up()
+        elif button_name == "red_down":
+            return remote_control.red_down()
+        elif button_name == "blue_up":
+            return remote_control.blue_up()
+        elif button_name == "blue_down":
+            return remote_control.blue_down()
+        else:
+            print("INVALID REMOTE CONTROL BUTTON NAME")
+            return False
 
     def wait_until_pressed(self, channel, button):
         """
@@ -51,5 +66,5 @@ class RemoteControl(object):
         waiting for the requested button to be pressed
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method.
+        # OPTIONALLY, implement this method.
         # ---------------------------------------------------------------------
