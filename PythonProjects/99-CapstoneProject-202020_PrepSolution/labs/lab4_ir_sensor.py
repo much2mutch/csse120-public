@@ -109,6 +109,16 @@ def run_test_proximity_readings(robot):
     print('--------------------------------------------------')
     print('Testing the  get_distance   method of the robot')
     print('--------------------------------------------------')
+
+    print()
+    print("As this test runs, repeatedly")
+    print("put your hand in front of the IR sensor.")
+    print("Keep it in place for a second or so.")
+    print("Then try another position.")
+    print("  REMINDER: The sensor is inconsistent")
+    print("  when < 4 inches or so from the object.")
+    input("Press ENTER when ready to begin this test.")
+
     while True:
         time.sleep(1.0)
         # -------------------------------------------------------------------------
@@ -127,6 +137,9 @@ def run_test_proximity_readings(robot):
         distance_in = robot.infrared_proximity_sensor.get_distance_in_inches()
         print("Distance = {0:.2f} inches".format(distance_in))
         if distance_in < 5:
+            print("Distance is < 5, so BEEP!")
+            print("  REMINDER: The sensor is inconsistent")
+            print("  when < 4 inches or so from the object.")
             robot.sound.beep()
 
 
