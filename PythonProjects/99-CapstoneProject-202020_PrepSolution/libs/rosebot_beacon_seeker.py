@@ -33,6 +33,7 @@ class BeaconSeeker(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        print("SKIP THIS CLASS FOR NOW.")
         self.beacon_sensor = beacon_sensor
         self.drive_system = drive_system
 

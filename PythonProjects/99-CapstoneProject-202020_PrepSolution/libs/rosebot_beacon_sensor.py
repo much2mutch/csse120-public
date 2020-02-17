@@ -37,6 +37,7 @@ class BeaconSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        print("SKIP THIS CLASS FOR NOW.")
         self.port = port
         self.channel = channel
         self.beacon_sensor = None  # To avoid conflicts only make the sensor if enabled.

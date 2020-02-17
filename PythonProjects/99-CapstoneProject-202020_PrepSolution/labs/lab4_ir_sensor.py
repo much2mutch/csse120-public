@@ -250,6 +250,7 @@ def run_test_spin_to_track_beacon(robot):
         # -------------------------------------------------------------------------
 
         # Solution to be removed
+        print("SKIP THIS ONE FOR NOW!")
         robot.beacon_seeker.spin_to_track_beacon(speed, tracking_duration_s)
         robot.sound.beep()
 
