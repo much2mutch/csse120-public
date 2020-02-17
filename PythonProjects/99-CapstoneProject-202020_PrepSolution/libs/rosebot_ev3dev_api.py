@@ -439,6 +439,11 @@ class InfraredBeaconSensor(object):
             same sensor serves multiple roles.  To avoid conflicts the InfraredBeaconSensor
             is disabled by default.  This method enables the sensor as an IR Beacon Sensor.
         """
+        # DAVE: This does not work.
+        # The ev3.BeaconSeeker constructor method
+        # wants a "sensor" (not sure that that means)
+        # but the code below sends it a string ("in4").
+        # The code then crashes.
         if self.port is not None:
             self._ir_sensor = ev3.BeaconSeeker('in' + str(self.port), channel=self.channel)
         else:
