@@ -15,17 +15,18 @@ def main():
    etc
 ------------------------------------------------
 
-Authors:  Your professors (for the framework)
-    and PUT_YOUR_NAME_HERE.
+Authors:  Your professors (for the framework).
 Winter term, 2019-2020.
 """
-# TODO: 1. In the above, put the names of ALL the members of your team,
-#  and make sure that ALL the members of your team READ this module!
+
+###############################################################################
+# STUDENTS:  *** READ this file. Understanding it is CRITICAL. ***
+#            *** But do NOT change ANYTHING in this module. ***
+###############################################################################
 
 # -----------------------------------------------------------------------------
-# TODO: 2. Note below how to write an IMPORT statement
+# Note below how to write an IMPORT statement
 #  that imports a module that is in the  LIBS  sub-folder.
-#  Change this _TODO_ to DONE after you have seen how to do it.
 # -----------------------------------------------------------------------------
 import libs.rosebot_drive_system as drive
 import libs.rosebot_touch_sensor as touch
@@ -33,6 +34,18 @@ import libs.rosebot_arm_and_claw as arm
 import libs.rosebot_leds as leds
 import libs.rosebot_brick_buttons as bb
 import libs.rosebot_remote_control as rc
+import libs.rosebot_color_sensor as color
+import libs.rosebot_infrared_proximity_sensor as proximity
+import libs.rosebot_camera_sensor as camera
+import libs.rosebot_sound as sound
+
+# -----------------------------------------------------------------------------
+# The following are OPTIONAL modules (implement them or not as you choose).
+# -----------------------------------------------------------------------------
+import libs.rosebot_beacon_sensor as b_sensor
+import libs.rosebot_beacon_seeker as b_seeker
+import libs.rosebot_line_follower as follower
+import libs.rosebot_camera_tracker as tracker
 
 
 ###############################################################################
@@ -45,13 +58,22 @@ class RoseBot(object):
         Constructs instances of each of the sub-systems of a Snatch3r robot
         and sets instance variables to them.
         """
-        # ---------------------------------------------------------------------
-        # TODO: 3. Once you understand the following code
-        #  (ASK QUESTIONS AS NEEDED), change this _TODO_ to DONE.
-        # ---------------------------------------------------------------------
         self.drive_system = drive.DriveSystem("B", "C")
         self.touch_sensor = touch.TouchSensor(1)
         self.arm_and_claw = arm.ArmAndClaw(self.touch_sensor)
         self.leds = leds.Leds()
         self.brick_buttons = bb.BrickButtons()
         self.remote_control = rc.RemoteControl()
+        self.color_sensor = color.ColorSensor(3)
+        self.infrared_proximity_sensor = proximity.InfraredProximitySensor(4)
+        self.camera = camera.CameraSensor(2)
+        self.sound = sound.Sound()
+
+        # The following are all OPTIONALLY implemented (your choice).
+        self.beacon_sensor = b_sensor.BeaconSensor(4, 1)
+        self.beacon_seeker = b_seeker.BeaconSeeker(self.beacon_sensor,
+                                                   self.drive_system)
+        self.line_follower = follower.LineFollower(self.color_sensor,
+                                                   self.drive_system)
+        self.camera_tracker = tracker.CameraTracker(self.camera,
+                                                    self.drive_system)
