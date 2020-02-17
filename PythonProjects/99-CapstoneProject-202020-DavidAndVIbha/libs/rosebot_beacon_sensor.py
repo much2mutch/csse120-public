@@ -12,11 +12,18 @@ from the Remote Control.  The remote control must be running in beacon mode
 Authors:  Your professors (for the framework).
 Winter term, 2019-2020.
 """
+
+###############################################################################
+# STUDENTS: This module is ALREADY IMPLEMENTED.
+#   READ its code so that you know how to use a Beacon Sensor if you wish
+#   to do so.  You may also AUGMENT this module if you choose.
+###############################################################################
+
 import libs.rosebot_ev3dev_api as ev3dev
 
 
 ###############################################################################
-#    BeaconSeeker
+#    BeaconSensor
 ###############################################################################
 class BeaconSensor(object):
     """
@@ -31,7 +38,7 @@ class BeaconSensor(object):
         """
         self.port = port
         self.channel = channel
-        # To avoid conflicts only make the sensor if enabled.
+        # To avoid conflicts, construct the underlying sensor only if enabled.
         self.beacon_sensor = None
         self.has_been_enabled = False
 
