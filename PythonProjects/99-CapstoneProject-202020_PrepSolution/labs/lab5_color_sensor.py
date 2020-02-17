@@ -40,7 +40,7 @@ def main():
     # -------------------------------------------------------------------------
 
     # Color Sensor tests
-    run_test_display_color_names(robot)
+    # run_test_display_color_names(robot)
     run_test_drive_until_color(robot)
     run_test_display_reflected_light_readings(robot)
     run_test_line_follower(robot)
@@ -56,9 +56,11 @@ def run_test_display_color_names(robot):
     while True:
         time.sleep(1.0)
         # -------------------------------------------------------------------------
-        # TODO: 3. Use the  get_color  method of the  color_sensor
-        #  of the robot to display the color that the sensor is above (i.e. the
-        #  color that the robot is sitting on). Do 1 print each second as follows:
+        # TODO: 3. Use the  get_color_as_name  method of the  color_sensor
+        #  of the robot AND the get_color_as_number method
+        #  to display the color that the sensor is above (i.e. the
+        #  color that the robot is sitting on).
+        #  Do 1 print each second as follows:
         #   Color = White
         #   Color = White
         #   Color = White
@@ -70,7 +72,11 @@ def run_test_display_color_names(robot):
         # -------------------------------------------------------------------------
 
         # Solution to be removed
-        print("Color = " + robot.color_sensor.get_color())
+        # DAVE: I do not understand the above TODO.
+        print("Color name =   {}.".format(
+            robot.color_sensor.get_color_as_name()))
+        print("Color number = {}.".format(
+            robot.color_sensor.get_color_as_number()))
 
 
 def run_test_drive_until_color(robot):
