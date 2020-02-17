@@ -18,7 +18,6 @@ Winter term, 2019-2020.
 #   READ its code so that you know how to use a Beacon Sensor if you wish
 #   to do so.  You may also AUGMENT this module if you choose.
 ###############################################################################
-
 import libs.rosebot_ev3dev_api as ev3dev
 
 
