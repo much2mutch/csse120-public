@@ -19,7 +19,6 @@ import rosebot_ev3dev_api as rose_ev3
 class CameraSensor(object):
     """
     """
-    camera: rose_ev3.Camera
 
     def __init__(self, port):
         """

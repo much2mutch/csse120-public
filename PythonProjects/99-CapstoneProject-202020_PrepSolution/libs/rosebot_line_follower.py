@@ -24,8 +24,6 @@ class LineFollower(object):
     """
     Methods using the reflected light intensity to drive the robot.
     """
-    color_sensor: rosebot_color_sensor.ColorSensor
-    drive_system: rosebot_drive_system.DriveSystem
 
     def __init__(self, color_sensor, drive_system):
         """

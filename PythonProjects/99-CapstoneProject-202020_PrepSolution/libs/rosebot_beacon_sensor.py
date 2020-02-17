@@ -27,7 +27,6 @@ class BeaconSensor(object):
     Methods for the forward-facing InfraredProximitySensor on the robot, including:
       get_distance     wait_until_distance_less_than
     """
-    beacon_sensor: rose_ev3.InfraredBeaconSensor
 
     def __init__(self, port, channel):
         """

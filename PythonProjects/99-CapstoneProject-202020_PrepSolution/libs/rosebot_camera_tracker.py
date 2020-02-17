@@ -28,8 +28,6 @@ class CameraTracker(object):
     """
     Methods using the camera to drive the robot.
     """
-    camera_sensor: rosebot_camera_sensor.CameraSensor
-    drive_system: rosebot_drive_system.DriveSystem
 
     def __init__(self, camera_sensor, drive_system):
         """

@@ -23,8 +23,6 @@ class BeaconSeeker(object):
     """
     Methods using the beacon sensor to drive the robot.
     """
-    beacon_sensor: rosebot_beacon_sensor.BeaconSensor
-    drive_system: rosebot_drive_system.DriveSystem
 
     def __init__(self, beacon_sensor, drive_system):
         """
