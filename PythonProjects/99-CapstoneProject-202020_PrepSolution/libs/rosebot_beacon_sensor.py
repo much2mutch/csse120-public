@@ -52,7 +52,7 @@ class BeaconSensor(object):
         self.beacon_sensor = rose_ev3.InfraredBeaconSensor(self.port, self.channel)
         self.has_been_enabled = True
 
-    def heading(self):
+    def get_heading(self):
         """
         Returns the heading to the beacon
          - The heading is in degrees in the range -25 to 25 with:
@@ -71,7 +71,7 @@ class BeaconSensor(object):
         # Solution to be removed
         return self.beacon_sensor.get_heading_to_beacon()
 
-    def distance(self):
+    def get_distance(self):
         """
         Returns the distance to the beacon
          - Distance is from 0 to 100, where 100 is about 70 cm
