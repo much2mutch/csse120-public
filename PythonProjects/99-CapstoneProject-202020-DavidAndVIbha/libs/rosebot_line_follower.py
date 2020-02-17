@@ -12,7 +12,7 @@ Winter term, 2019-2020.
 #   to this module in the above.
 
 import time
-import rosebot_ev3dev_api as ev3dev
+import libs.rosebot_ev3dev_api as ev3dev
 import libs.rosebot_color_sensor as color
 import libs.rosebot_drive_system as drive
 
