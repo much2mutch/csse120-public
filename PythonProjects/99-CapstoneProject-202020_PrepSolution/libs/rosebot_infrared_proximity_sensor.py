@@ -61,5 +61,5 @@ class InfraredProximitySensor(object):
         # ---------------------------------------------------------------------
         while True:
             time.sleep(0.05)
-            if self.get_distance() < threshold_in_inches:
+            if self.get_distance_in_inches() < threshold_in_inches:
                 break
