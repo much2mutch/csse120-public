@@ -23,6 +23,7 @@ def main():
 
     # -------------------------------------------------------------------------
     # TODO: 2. Construct a robot, that is, a rosebot.RoseBot() object.
+    #          Then  ** ENABLE ITS CAMERA. **
     # -------------------------------------------------------------------------
     robot = rosebot.RoseBot()
 
@@ -38,6 +39,7 @@ def main():
     #     5. When satisfied with your work, move onto the next test,
     #        RE-commenting out the previous test to reduce the testing.
     # -------------------------------------------------------------------------
+    robot.camera.enable()
 
     run_test_blob_readings(robot)
     # run_test_spin_until_color_seen(robot)
