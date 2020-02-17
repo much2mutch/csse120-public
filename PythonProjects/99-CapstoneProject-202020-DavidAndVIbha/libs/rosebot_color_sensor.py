@@ -41,7 +41,7 @@ class ColorSensor(object):
         # TODO: 3. Read the following, ASKING QUESTIONS AS NEEDED.
         #  Once you understand the code, change this _TODO_ to DONE.
         # ---------------------------------------------------------------------
-        self._low_level_color_sensor = ev3dev.ColorSensor(port)
+        self._low_level_color_sensor = ev3dev.LowerLevelColorSensor(port)
 
     def get_color_as_name(self):
         """
@@ -52,7 +52,8 @@ class ColorSensor(object):
         :rtype: str
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method.
+        # TODO: 4. Implement this method, by calling the relevant method
+        #          on   self._low_level_color_sensor
         # ---------------------------------------------------------------------
 
     def get_color_as_number(self):
@@ -65,7 +66,8 @@ class ColorSensor(object):
         :rtype: int
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method.
+        # TODO: 5. Implement this method, by calling the relevant method
+        #          on   self._low_level_color_sensor
         # ---------------------------------------------------------------------
 
     def get_reflected_light_intensity(self):
@@ -80,7 +82,8 @@ class ColorSensor(object):
           :rtype: int
         """
         # ---------------------------------------------------------------------
-        # TODO: Implement this method.
+        # TODO: 6. Implement this method, by calling the relevant method
+        #          on   self._low_level_color_sensor
         # ---------------------------------------------------------------------
 
     def wait_for_color(self, color):
