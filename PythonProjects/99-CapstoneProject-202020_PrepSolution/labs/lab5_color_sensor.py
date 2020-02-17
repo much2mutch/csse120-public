@@ -105,14 +105,14 @@ def run_test_drive_until_color(robot):
     robot.color_sensor.wait_for_color("black")
     robot.drive_system.stop()
 
-    # input("Press the ENTER key when ready to wait until _______ is sensed.")
-
     # -------------------------------------------------------------------------
     # TODO: 5. Add additional tests as needed to ensure that the wait_until_color  method
     #  works correctly with any of the 7 colors that it can sense.
     #  - Black, Blue, Green, Yellow, Red, White, Brown
     #  Test strings (upper, lower and mixed case).  Perhaps you could make a colors
     #  list and a loop to quickly test all colors.
+    #  Consider using a statement like:
+    #   input("Press the ENTER key when ready to wait until " + color + " is sensed.")
     # -------------------------------------------------------------------------
 
     # Solution to be removed.
@@ -150,7 +150,8 @@ def run_test_display_reflected_light_readings(robot):
         # -------------------------------------------------------------------------
 
         # Solution to be removed
-        print("Reflected light percentage = " + robot.color_sensor.get_reflected_light_intensity())
+        print("Reflected light percentage = {}.".format(
+            robot.color_sensor.get_reflected_light_intensity()))
 
         # -------------------------------------------------------------------------
         # TODO: 7. In addition to the number print either "White" or "Black" on the
