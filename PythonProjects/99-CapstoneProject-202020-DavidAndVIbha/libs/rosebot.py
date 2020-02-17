@@ -38,11 +38,12 @@ import libs.rosebot_color_sensor as color
 import libs.rosebot_infrared_proximity_sensor as proximity
 import libs.rosebot_camera_sensor as camera
 import libs.rosebot_sound as sound
+import libs.rosebot_beacon_sensor as b_sensor
 
 # -----------------------------------------------------------------------------
-# The following are OPTIONAL modules (implement them or not as you choose).
+# The following import OPTIONAL modules, which you will implement or not
+#   as you choose.  They contain "stubs" so they will not break any code as is.
 # -----------------------------------------------------------------------------
-import libs.rosebot_beacon_sensor as b_sensor
 import libs.rosebot_beacon_seeker as b_seeker
 import libs.rosebot_line_follower as follower
 import libs.rosebot_camera_tracker as tracker
@@ -68,9 +69,13 @@ class RoseBot(object):
         self.infrared_proximity_sensor = proximity.InfraredProximitySensor(4)
         self.camera = camera.CameraSensor(2)
         self.sound = sound.Sound()
-
-        # The following are all OPTIONALLY implemented (your choice).
         self.beacon_sensor = b_sensor.BeaconSensor(4, 1)
+
+        # ---------------------------------------------------------------------
+        # The following are OPTIONAL sub-systems, which you will implement
+        #   or not as you choose.  If you do not implement them,
+        #   then of course these sub-systems will not work.
+        # ---------------------------------------------------------------------
         self.beacon_seeker = b_seeker.BeaconSeeker(self.beacon_sensor,
                                                    self.drive_system)
         self.line_follower = follower.LineFollower(self.color_sensor,
