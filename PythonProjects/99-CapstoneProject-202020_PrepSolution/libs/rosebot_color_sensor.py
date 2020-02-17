@@ -46,7 +46,7 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self._sensor.get_color_as_name()
+        return self._sensor.get_color_as_name()
 
     def get_color_as_number(self):
         """
@@ -60,7 +60,7 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self._sensor.get_color_as_number()
+        return self._sensor.get_color_as_number()
 
     def wait_for_color(self, color):
         """
