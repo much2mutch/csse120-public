@@ -81,7 +81,7 @@ class LineFollower(object):
 
         # Solution to be removed
         start_time_s = time.time()
-        turn_intensity = 3  # Greater values do sharper turns
+        turn_intensity = 5  # Greater values do sharper turns
         light_threshold = (self.white_reading + self.black_reading) / 2
         while True:
             time.sleep(0.05)
@@ -89,9 +89,11 @@ class LineFollower(object):
             if time.time() > start_time_s + duration_s:
                 break
             if light_amount < light_threshold:
-                self.drive_system.go(max_speed, max_speed)
-            else:
+                # Robot on black
                 self.drive_system.go(max_speed / turn_intensity, max_speed)
+            else:
+                # Robot on white
+                self.drive_system.go(max_speed, max_speed)
         self.drive_system.stop()
 
     def stay_on_line(self, max_speed, duration_s):

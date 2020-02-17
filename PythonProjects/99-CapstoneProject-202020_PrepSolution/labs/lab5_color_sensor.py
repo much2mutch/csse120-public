@@ -44,7 +44,7 @@ def main():
     # run_test_drive_until_color(robot)
     # run_test_display_reflected_light_readings(robot)
     # run_test_calibrate_line_follower(robot)
-    # run_test_line_follower(robot)
+    run_test_line_follower(robot)
 
 
 def run_test_display_color_names(robot):
