@@ -33,9 +33,9 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.sensor = rose_ev3.ColorSensor(port)
+        self._sensor = rose_ev3.ColorSensor(port)
 
-    def get_color(self):
+    def get_color_as_name(self):
         """
         Returns the color detected by the sensor, as best the sensor can judge
         from shining red, then green, then blue light and measuring the
@@ -46,13 +46,28 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
-        self.sensor.get_color()
+        self._sensor.get_color_as_name()
+
+    def get_color_as_number(self):
+        """
+        Returns the color detected by the sensor, as best the sensor can judge
+        from shining red, then green, then blue light and measuring the
+        intensities returned.  The returned value is a number:
+          - 0 (No Color), 1 (Black), 2 (Blue),  3 (Green),
+            4 (Yellow),   5 (Red),   6 (White), 7 (Brown)
+        :rtype: int
+        """
+        # ---------------------------------------------------------------------
+        # TODO: With your instructor, implement this method.
+        # ---------------------------------------------------------------------
+        self._sensor.get_color_as_number()
 
     def wait_for_color(self, color):
         """
         Sits in a loop, sleeping 0.05 seconds each time through the loop,
         waiting for the given color (as a string) to be detected.
-        The string can be in any case (lower, upper or mixed), e.g. BLaCk.
+        The string can be in any case (lower, upper or mixed), e.g. BLaCk,
+        but must be a string (NOT a number representing a string).
           :type color: str
         """
         # ---------------------------------------------------------------------
@@ -61,7 +76,7 @@ class ColorSensor(object):
         target_color = color.lower()
         while True:
             time.sleep(0.05)
-            if target_color == self.sensor.get_color().lower():
+            if target_color == self.get_color_as_name().lower():
                 break
 
     def get_reflected_light_intensity(self):
@@ -76,4 +91,4 @@ class ColorSensor(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
-        return self.sensor.get_reflected_light_intensity()
+        return self._sensor.get_reflected_light_intensity()
