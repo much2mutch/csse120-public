@@ -39,16 +39,16 @@ class BeaconSensor(object):
         self.port = port
         self.channel = channel
         # To avoid conflicts, construct the underlying sensor only if enabled.
-        self.beacon_sensor = None
+        self.lower_level_beacon_sensor = None
         self.has_been_enabled = False
 
     def enable(self):
         """
         Enables the Infrared Sensor of the robot to be used with beacon sensor.
         """
-        self.beacon_sensor = ev3dev.InfraredBeaconSensor(self.port,
-                                                         self.channel)
-        print("Enabled the beacon sensor")
+        self.lower_level_beacon_sensor = ev3dev.InfraredBeaconSensor(
+            self.port, self.channel)
+        print("Enabled the Beacon Sensor.")
         self.has_been_enabled = True
 
     def get_heading(self):
@@ -63,16 +63,16 @@ class BeaconSensor(object):
         """
         if not self.has_been_enabled:
             self.enable()
-        return self.beacon_sensor.get_heading_to_beacon()
+        return self.lower_level_beacon_sensor.get_heading_to_beacon()
 
     def get_distance(self):
         """
         Returns the distance to the beacon
          - Distance is from 0 to 100, where 100 is about 70 cm
          - -128 means the Beacon is not detected.
-        :rtype: int
-        :return: Distance to the beacon
+          :rtype: int
+          :return: Distance to the beacon
         """
         if not self.has_been_enabled:
             self.enable()
-        return self.beacon_sensor.get_distance_to_beacon()
+        return self.lower_level_beacon_sensor.get_distance_to_beacon()
