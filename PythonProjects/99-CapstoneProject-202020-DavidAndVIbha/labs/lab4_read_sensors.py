@@ -26,12 +26,34 @@ def main():
     print("Testing the  various Sensors  of a robot")
     print("--------------------------------------------------")
 
+    # Change the following if you want the readings to appear
+    #   more slowly (try 1.0) or more quickly (try 0.1).
+    #   The default is half a second between readings.
+    seconds_between_readings = 0.5  # Default: 0.5 second between each reading.
+
+    print()
+    print("This program displays readings from most")
+    print("of the sensors on your Snatch3r robot.")
+    print("It also makes sounds.")
+    print("  1. If you want to SKIP readings from a")
+    print("     particular sensor, or sounds, either:")
+    print("      -- comment-out its call in MAIN, or")
+    print("      -- press Control-C when that sensor starts.")
+    print("  2. The readings are displayed at a rate of")
+    print("       {:5.2} seconds per reading, by default.".format(
+        seconds_between_readings))
+    print("     Change the number in MAIN (or in the function")
+    print("     function calls in MAIN), if you want them")
+    print("     more quickly or slowly.")
+
+    # Comment-out the tests/readings you want to skip.
     make_sounds()
-    print_touch_sensor_readings()
-    print_color_sensor_readings()
-    print_infrared_proximity_readings()
-    print_beacon_sensor_readings()
-    print_remote_control_readings()
+    print_touch_sensor_readings(seconds_between_readings)
+    print_color_sensor_readings(seconds_between_readings)
+    print_infrared_proximity_readings(seconds_between_readings)
+    print_beacon_sensor_readings(seconds_between_readings)
+    print_remote_control_readings(seconds_between_readings)
+    print_camera_readings(seconds_between_readings)
 
 
 def make_sounds():
@@ -92,7 +114,7 @@ def make_sounds():
         print("No worries. The program will keep running from here.")
 
 
-def print_touch_sensor_readings():
+def print_touch_sensor_readings(seconds_between_readings):
     robot = rb.RoseBot()  # Fresh RoseBot so that sensors do not conflict.
 
     print()
@@ -101,7 +123,8 @@ def print_touch_sensor_readings():
     print("--------------------------------------------------")
 
     print()
-    print("This function displays readings, once per second")
+    print("This function displays readings,")
+    print("once per {:5.2f} second,".format(seconds_between_readings))
     print("from the physical Touch Sensor that is underneath")
     print("the physical motor at the top of the Arm and Claw.")
 
@@ -125,7 +148,7 @@ def print_touch_sensor_readings():
         print("No worries. The program will keep running from here.")
 
 
-def print_color_sensor_readings():
+def print_color_sensor_readings(seconds_between_readings):
     robot = rb.RoseBot()  # Fresh RoseBot so that sensors do not conflict.
 
     print()
@@ -134,7 +157,8 @@ def print_color_sensor_readings():
     print("--------------------------------------------------")
 
     print()
-    print("This function displays readings, once per second,")
+    print("This function displays readings,")
+    print("once per {:5.2f} second,".format(seconds_between_readings))
     print("from the downward-facing physical Color Sensor.")
 
     print()
@@ -158,7 +182,7 @@ def print_color_sensor_readings():
         print("No worries. The program will keep running from here.")
 
 
-def print_infrared_proximity_readings():
+def print_infrared_proximity_readings(seconds_between_readings):
     robot = rb.RoseBot()  # Fresh RoseBot so that sensors do not conflict.
 
     print()
@@ -167,7 +191,8 @@ def print_infrared_proximity_readings():
     print("--------------------------------------------------")
 
     print()
-    print("This function displays readings, once per second,")
+    print("This function displays readings,")
+    print("once per {:5.2f} second,".format(seconds_between_readings))
     print("from the forward-facing physical Infrared Proximity")
     print("Sensor (the thing on the front of the claw).")
 
@@ -191,7 +216,7 @@ def print_infrared_proximity_readings():
         print("No worries. The program will keep running from here.")
 
 
-def print_beacon_sensor_readings():
+def print_beacon_sensor_readings(seconds_between_readings):
     robot = rb.RoseBot()  # Fresh RoseBot so that sensors do not conflict.
 
     print()
@@ -200,7 +225,8 @@ def print_beacon_sensor_readings():
     print("--------------------------------------------------")
 
     print()
-    print("This function displays readings, once per second,")
+    print("This function displays readings,")
+    print("once per {:5.2f} second,".format(seconds_between_readings))
     print("from the Beacon (the stand-alone remote-control thing).")
 
     print()
@@ -226,7 +252,7 @@ def print_beacon_sensor_readings():
         print("No worries. The program will keep running from here.")
 
 
-def print_remote_control_readings():
+def print_remote_control_readings(seconds_between_readings):
     robot = rb.RoseBot()  # Fresh RoseBot so that sensors do not conflict.
 
     print()
@@ -235,7 +261,8 @@ def print_remote_control_readings():
     print("--------------------------------------------------")
 
     print()
-    print("This function displays readings, once per second,")
+    print("This function displays readings,")
+    print("once per {:5.2f} second,".format(seconds_between_readings))
     print("from the Remote Control (the stand-alone thing).")
 
     print()
@@ -265,3 +292,58 @@ def print_remote_control_readings():
         print("OK, you just did a keyboard interrupt (Control-C).")
         print("No worries. The program will keep running from here.")
 
+def print_camera_readings(seconds_between_readings):
+    robot = rb.RoseBot()  # Fresh RoseBot so that sensors do not conflict.
+
+    print()
+    print("--------------------------------------------------")
+    print("Testing the  Camera  of a robot")
+    print("--------------------------------------------------")
+
+    print()
+    print("This function displays readings,")
+    print("once per {:5.2f} second,".format(seconds_between_readings))
+    print("from the Camera.")
+
+    print()
+    print("Before running this test, train your Camera")
+    print("on a colored object to get a good color model.")
+    print("Also, make sure the Camera is NOT in Arduino mode.")
+
+    print()
+    print("While this test is running, try putting the object")
+    print("that you used for training in front of the physical")
+    print("camera, then slowly moving it to various places")
+    print("to the left/right and up/down, as well as")
+    print("places out of the Camera's field of vision.")
+
+    print()
+    print("Stop this test by pressing  Control-C  when desired.")
+    input("Press the ENTER key when ready to start getting readings.")
+
+    try:
+        while True:
+            print("Distance (inches), heading (degrees): {:3} {:3}".format(
+                robot.beacon_sensor.get_distance(),
+                robot.beacon_sensor.get_heading()))
+            time.sleep(1)
+
+    except KeyboardInterrupt:
+        print()
+        print("OK, you just did a keyboard interrupt (Control-C).")
+        print("No worries. The program will keep running from here.")
+
+
+# -----------------------------------------------------------------------------
+# Calls  main  to start the ball rolling, unless this file is running by IMPORT.
+# The   try .. except   prevents error messages on the console from being
+# intermingled with ordinary output to the console.
+# -----------------------------------------------------------------------------
+try:
+    main()
+except Exception:
+    print("ERROR - While running this test,")
+    print("your code raised the following exception:")
+    print()
+    time.sleep(1)
+    raise
