@@ -155,8 +155,8 @@ class Sound(object):
         # File from http://www.moviesoundclips.net/ev3.Sound.php?id=288
         # Had to convert it to a PCM signed 16-bit little-endian .wav file
         # http://audio.online-convert.com/convert-to-wav
-        file_location_on_robot = "/home/robot/csse120/assets/awesome_pcm.wav"
-        self.wav_file_player.play(file_location_on_robot)
+        file_location_on_robot = "assets/awesome_pcm.wav"
+        self.play_wav_file(file_location_on_robot)
 
     def beep_nonblocking(self):
         """

@@ -238,7 +238,7 @@ class RemoteControlChannel(object):
 ###############################################################################
 #    EV3 Brick Buttons
 ###############################################################################
-class BrickButtons(object):
+class LowerLevelBrickButtons(object):
     def __init__(self):
         """
         Creates the one and only brick button object.
@@ -289,7 +289,7 @@ class BrickButtons(object):
 ###############################################################################
 #    Infrared (IR) Proximity (Distance) Sensor
 ###############################################################################
-class InfraredProximitySensor(object):
+class LowerLevelInfraredProximitySensor(object):
     """
     The infrared sensor on the front of the robot emits infrared light
     and uses the reflected information to estimate distance to the nearest
@@ -307,8 +307,8 @@ class InfraredProximitySensor(object):
         self.has_been_enabled = False
 
     def enable(self):
-        if port is not None:
-            self._ir_sensor = ev3.InfraredSensor('in' + str(port))
+        if self.port is not None:
+            self._ir_sensor = ev3.InfraredSensor('in' + str(self.port))
         else:
             self._ir_sensor = ev3.InfraredSensor()  # automatically determine the port
 

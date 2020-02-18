@@ -32,7 +32,7 @@ class InfraredProximitySensor(object):
         Constructs the underlying low-level InfraredProximitySensor.
           :type port: int
         """
-        self.port = 4
+        self.port = port
         self._low_level_proximity_sensor = \
             ev3dev.LowerLevelInfraredProximitySensor(port)
         # Note: The low-level LowerLevelInfraredProximitySensor object
