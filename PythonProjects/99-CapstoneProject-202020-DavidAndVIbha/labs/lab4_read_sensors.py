@@ -140,7 +140,7 @@ def print_touch_sensor_readings(seconds_between_readings):
             print("Pressed (True or False)? Value (0 or 1)?: {:5} {}".format(
                 str(robot.touch_sensor.is_pressed()),
                 robot.touch_sensor.get_reading()))
-            time.sleep(1)
+            time.sleep(seconds_between_readings)
 
     except KeyboardInterrupt:
         print()
@@ -174,7 +174,7 @@ def print_color_sensor_readings(seconds_between_readings):
                 robot.color_sensor.get_color_as_name(),
                 robot.color_sensor.get_color_as_number(),
                 robot.color_sensor.get_reflected_light_intensity()))
-            time.sleep(1)
+            time.sleep(seconds_between_readings)
 
     except KeyboardInterrupt:
         print()
@@ -208,7 +208,7 @@ def print_infrared_proximity_readings(seconds_between_readings):
         while True:
             print("Distance in inches: {:5.2f}".format(
                 robot.infrared_proximity_sensor.get_distance_in_inches()))
-            time.sleep(1)
+            time.sleep(seconds_between_readings)
 
     except KeyboardInterrupt:
         print()
@@ -244,7 +244,7 @@ def print_beacon_sensor_readings(seconds_between_readings):
             print("Distance (inches), heading (degrees): {:3} {:3}".format(
                 robot.beacon_sensor.get_distance(),
                 robot.beacon_sensor.get_heading()))
-            time.sleep(1)
+            time.sleep(seconds_between_readings)
 
     except KeyboardInterrupt:
         print()
@@ -285,7 +285,7 @@ def print_remote_control_readings(seconds_between_readings):
                     if robot.remote_control.is_pressed(red_switch, button):
                         msg = "Button {} with red switch at {} is pressed."
                         print(msg.format(button, red_switch))
-            time.sleep(0.05)
+            time.sleep(seconds_between_readings)
 
     except KeyboardInterrupt:
         print()
@@ -308,7 +308,8 @@ def print_camera_readings(seconds_between_readings):
     print()
     print("Before running this test, train your Camera")
     print("on a colored object to get a good color model.")
-    print("Also, make sure the Camera is NOT in Arduino mode.")
+    print("Also, make sure the Camera is NOT")
+    print("in Arduino mode.")
 
     print()
     print("While this test is running, try putting the object")
@@ -323,10 +324,9 @@ def print_camera_readings(seconds_between_readings):
 
     try:
         while True:
-            print("Distance (inches), heading (degrees): {:3} {:3}".format(
-                robot.beacon_sensor.get_distance(),
-                robot.beacon_sensor.get_heading()))
-            time.sleep(1)
+            blob = robot.camera.get_biggest_blob()
+            print(blob)
+            time.sleep(seconds_between_readings)
 
     except KeyboardInterrupt:
         print()
