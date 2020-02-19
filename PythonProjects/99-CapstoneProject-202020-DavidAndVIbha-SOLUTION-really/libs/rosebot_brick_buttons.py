@@ -45,6 +45,7 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: 4. Implement this method.
         # ---------------------------------------------------------------------
+        return self._low_level_buttons.up()
 
     def is_down_pressed(self):
         """
@@ -54,6 +55,7 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: 5. Implement this method.
         # ---------------------------------------------------------------------
+        return self._low_level_buttons.down()
 
     def is_left_pressed(self):
         """
@@ -63,6 +65,7 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        return self._low_level_buttons.left()
 
     def is_right_pressed(self):
         """
@@ -72,6 +75,7 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        return self._low_level_buttons.right()
 
     def is_backspace_pressed(self):
         """
@@ -81,3 +85,4 @@ class BrickButtons(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        return self._low_level_buttons.backspace()

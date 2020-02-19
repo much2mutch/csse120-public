@@ -94,12 +94,26 @@ class ArmAndClaw(object):
         # ---------------------------------------------------------------------
         # TODO: 5. Implement this method, WITH YOUR INSTRUCTOR.
         # ---------------------------------------------------------------------
+        self.raise_arm()
+        self.arm_motor.reset_position()
+        self.arm_motor.turn_on(-self.speed)
+        while True:
+            if abs(self.arm_motor.get_position()) >= 14 * 360:
+                self.arm_motor.turn_off()
+                break
+        self.arm_motor.reset_position()
+        self.is_calibrated = True
 
     def raise_arm(self):
         """ Raises the Arm until its physical Touch Sensor is pressed. """
         # ---------------------------------------------------------------------
         # TODO: 6. Implement this method; it is a THREE-LINER!
         # ---------------------------------------------------------------------
+        self.arm_motor.turn_on(self.speed)
+        while True:
+            if self.arm_touch_sensor.is_pressed():
+                self.arm_motor.turn_off()
+                break
 
     def move_arm_to_position(self, desired_arm_position):
         """
@@ -110,6 +124,21 @@ class ArmAndClaw(object):
         # ---------------------------------------------------------------------
         # TODO: 7. Implement this method, WITH YOUR INSTRUCTOR.
         # ---------------------------------------------------------------------
+        if not self.is_calibrated:
+            self.calibrate_arm()
+
+        if desired_arm_position > self.arm_motor.get_position():
+            self.arm_motor.turn_on(self.speed)
+            while True:
+                if self.arm_motor.get_position() >= desired_arm_position:
+                    self.arm_motor.turn_off()
+                    break
+        else:
+            self.arm_motor.turn_on(-self.speed)
+            while True:
+                if self.arm_motor.get_position() <= desired_arm_position:
+                    self.arm_motor.turn_off()
+                    break
 
     def lower_arm(self):
         """
@@ -119,4 +148,5 @@ class ArmAndClaw(object):
         # ---------------------------------------------------------------------
         # TODO: 8. Implement this method; it is a ONE-LINER!
         # ---------------------------------------------------------------------
+        self.move_arm_to_position(0)
 

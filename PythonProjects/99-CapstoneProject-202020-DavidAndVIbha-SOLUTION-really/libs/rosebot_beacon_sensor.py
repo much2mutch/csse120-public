@@ -26,7 +26,8 @@ import libs.rosebot_ev3dev_api as ev3dev
 ###############################################################################
 class BeaconSensor(object):
     """
-    Methods for the forward-facing InfraredProximitySensor on the robot,
+    Methods for the forward-facing Infrared Sensor on the robot,
+    when used in "
     including:
     """
     def __init__(self, port, channel):
@@ -45,8 +46,9 @@ class BeaconSensor(object):
         """
         Enables the Infrared Sensor of the robot to be used with beacon sensor.
         """
-        self._low_level_beacon_sensor = ev3dev.InfraredBeaconSensor(
+        self._low_level_beacon_sensor = ev3dev.LowerLevelInfraredBeaconSensor(
             self.port, self.channel)
+        self._low_level_beacon_sensor.enable()
         print("Enabled the Beacon Sensor.")
         self.has_been_enabled = True
 

@@ -241,7 +241,7 @@ def print_beacon_sensor_readings(seconds_between_readings):
 
     try:
         while True:
-            print("Distance (inches), heading (degrees): {:3} {:3}".format(
+            print("Distance (inches), heading (sort of degrees): {:3} {:3}".format(
                 robot.beacon_sensor.get_distance(),
                 robot.beacon_sensor.get_heading()))
             time.sleep(seconds_between_readings)
@@ -339,11 +339,11 @@ def print_camera_readings(seconds_between_readings):
 # The   try .. except   prevents error messages on the console from being
 # intermingled with ordinary output to the console.
 # -----------------------------------------------------------------------------
-try:
-    main()
-except Exception:
-    print("ERROR - While running this test,")
-    print("your code raised the following exception:")
-    print()
-    time.sleep(1)
-    raise
+# try:
+#     main()
+# except Exception:
+#     print("ERROR - While running this test,")
+#     print("your code raised the following exception:")
+#     print()
+#     time.sleep(1)
+#     raise

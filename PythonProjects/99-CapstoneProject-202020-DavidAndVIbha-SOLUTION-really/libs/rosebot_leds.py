@@ -37,8 +37,14 @@ class Led(object):
         # TODO: 3. Read the following, ASKING QUESTIONS AS NEEDED.
         #  Once you understand the code, change this _TODO_ to DONE.
         # ---------------------------------------------------------------------
-        self._low_level_led = ev3dev.LowerLevelLed()
+        self._low_level_led = ev3dev.LowerLevelLed(left_or_right)
         self.left_or_right = left_or_right
+
+    def set_color(self, color, percent_intensity=100):
+        self._low_level_led.set_color(color, percent_intensity)
+
+    def off(self):
+        self._low_level_led.set_color("off")
 
 
 ###############################################################################
@@ -62,12 +68,16 @@ class Leds(object):
         # ---------------------------------------------------------------------
         # TODO: With your instructor, implement this method.
         # ---------------------------------------------------------------------
+        self.left = Led("left")
+        self.right = Led("right")
 
     def turn_off(self):
         """ Turns both LEDs off. """
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        self.left.off()
+        self.right.off()
 
     def set_color(self, side, color_name):
         """
@@ -85,3 +95,11 @@ class Leds(object):
         # ---------------------------------------------------------------------
         # TODO: Implement this method.
         # ---------------------------------------------------------------------
+        if side == "left":
+            sensors = [self.left]
+        elif side == "right":
+            sensors = [self.right]
+        else:
+            sensors = [self.left, self.right]
+        for sensor in sensors:
+            sensor.set_color(color_name)

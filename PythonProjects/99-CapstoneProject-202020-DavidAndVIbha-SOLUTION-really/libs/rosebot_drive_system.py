@@ -90,6 +90,8 @@ class DriveSystem(object):
         #      self.right_motor.YOU_FIGURE_OUT_WHAT_GOES_HERE
         #  The "dot trick" should make it clear what to put in the YOU_FIGURE...
         # ---------------------------------------------------------------------
+        self.left_motor.turn_on(left_wheel_speed)
+        self.right_motor.turn_on(right_wheel_speed)
 
     def stop(self, stop_action="brake"):
         """
@@ -105,6 +107,8 @@ class DriveSystem(object):
         #      self.right_motor.YOU_FIGURE_OUT_WHAT_GOES_HERE
         #  The "dot trick" should make it clear what to put in the YOU_FIGURE...
         # ---------------------------------------------------------------------
+        self.left_motor.turn_off()
+        self.right_motor.turn_off()
 
     def go_straight_for_seconds(self, seconds, speed=50, stop_action="brake"):
         """
@@ -134,6 +138,9 @@ class DriveSystem(object):
         #         using the   time.sleep   function.
         #    3.  Stop the wheel-motors (using the  stop   method).
         # ---------------------------------------------------------------------
+        self.go(speed, speed)
+        time.sleep(seconds)
+        self.stop()
 
     def go_straight_for_inches(self, inches, speed=50, stop_action="brake"):
         """
@@ -213,6 +220,9 @@ class DriveSystem(object):
         #         using the   time.sleep   function.
         #    3.  Stop the wheel-motors (using the  stop   method).
         # ---------------------------------------------------------------------
+        self.go(speed, -speed)
+        time.sleep(seconds)
+        seconds.stop()
 
     def spin_in_place_for_degrees(self, degrees, speed=50, stop_action="brake"):
         """
@@ -306,6 +316,12 @@ class DriveSystem(object):
         #         using the   time.sleep   function.
         #    3.  Stop the wheel-motors (using the  stop   method).
         # ---------------------------------------------------------------------
+        if speed > 0:
+            self.go(speed, 0)
+        else:
+            self.go(0, speed)
+        time.sleep(seconds)
+        self.stop()
 
     def turn_for_degrees(self, degrees, speed=50, stop_action="brake"):
         """

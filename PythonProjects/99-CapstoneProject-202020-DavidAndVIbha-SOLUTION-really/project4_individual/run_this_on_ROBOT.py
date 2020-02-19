@@ -19,6 +19,8 @@ import libs.rosebot as rb
 import libs.mqtt_remote_method_calls as mqtt
 import project4_individual.robot_number as robot_number
 
+import labs.lab4_read_sensors as lab4
+
 
 # TODO: 2. READ and UNDERSTAND the following code.  ASK QUESTIONS as desired.
 def main():
@@ -74,20 +76,48 @@ class DelegateForRobotCode(object):
         print("Setting the MqttClient associated with this delegate.")
         self.mqtt_sender = mqtt_sender
 
-    def go(self, speed):
-        print_message_received("go", [speed])
-        self.robot.drive_system.go(speed, speed)
+    def go(self, left_speed, right_speed):
+        print_message_received("go", [left_speed, right_speed])
+        self.robot.drive_system.go(left_speed, right_speed)
 
     def stop(self):
         print_message_received("stop")
         self.robot.drive_system.stop()
 
+    def arm_calibrate(self):
+        print_message_received("arm_calibrate")
+        self.robot.arm_and_claw.calibrate_arm()
+
+    def arm_up(self):
+        print_message_received("arm_up")
+        self.robot.arm_and_claw.raise_arm()
+
+    def arm_down(self):
+        print_message_received("arm_down")
+        self.robot.arm_and_claw.lower_arm()
+
+    def arm_move(self, desired_arm_position):
+        print_message_received("arm_move", desired_arm_position)
+        self.robot.arm_and_claw.move_arm_to_position(desired_arm_position)
+
     # -------------------------------------------------------------------------
     # TODO: Add methods here as needed.
     # -------------------------------------------------------------------------
 
+    # SOLUTION: REMOVE before giving this to the students.
+    @staticmethod
+    def read_sensors():
+        print_message_received("read_sensors")
+        lab4.main()
 
+    def set_led(self, color, left_or_right):
+        self.robot.leds.set_color(left_or_right, color)
+
+# -----------------------------------------------------------------------------
 # TODO: 4. READ and UNDERSTAND the following code.  ASK QUESTIONS as desired.
+# -----------------------------------------------------------------------------
+
+
 # -----------------------------------------------------------------------------
 # TODO: Add more functions here as needed.
 # -----------------------------------------------------------------------------

@@ -57,6 +57,7 @@ class TouchSensor(object):
         #      self._low_level_touch_sensor.YOU_FIGURE_OUT_WHAT_GOES_HERE
         #  The "dot trick" should make it clear what to put in the YOU_FIGURE...
         # ---------------------------------------------------------------------
+        return self._low_level_touch_sensor.get_reading()
 
     def is_pressed(self):
         """
@@ -69,6 +70,7 @@ class TouchSensor(object):
         # TODO: 5. Implement this method, using code that includes a call
         #   to this TouchSensor object's   get_reading   method (see above).
         # ---------------------------------------------------------------------
+        return self.get_reading() == 1
 
     def wait_until_pressed(self):
         """
@@ -80,6 +82,10 @@ class TouchSensor(object):
         # TODO: 6. Implement this method, using code that includes a call
         #   to this TouchSensor object's   is_pressed   method (see above).
         # ---------------------------------------------------------------------
+        while True:
+            if self.is_pressed():
+                break
+            time.sleep(0.05)
 
     def wait_until_released(self):
         """
@@ -91,3 +97,7 @@ class TouchSensor(object):
         # TODO: 7. Implement this method, using code that includes a call
         #   to this TouchSensor object's   is_pressed   method (see above).
         # ---------------------------------------------------------------------
+        while True:
+            if not self.is_pressed():
+                break
+            time.sleep(0.05)
