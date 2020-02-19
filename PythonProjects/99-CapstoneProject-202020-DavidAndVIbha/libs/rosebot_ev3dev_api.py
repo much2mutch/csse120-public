@@ -420,7 +420,7 @@ class LowerLevelColorSensor(object):
 ###############################################################################
 #    IR Beacon Sensor
 ###############################################################################
-class InfraredBeaconSensor(object):
+class LowerLevelInfraredBeaconSensor(object):
     """
     The infrared sensor which it measures the heading and distance to the Beacon.
     Note: the remote control can be put into Beacon mode (signal continuously)
