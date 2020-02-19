@@ -26,12 +26,13 @@ def main():
     entry_box = ttk.Entry(frame)
 
     button1 = ttk.Button(frame, text="Do you like\nyour button HERE?")
-    button1['command'] = (lambda:
-                          print('Do you like green eggs and ham, Sam?'))
+    button1['command'] = lambda: question_callback(entry_box)
 
     button2 = ttk.Button(frame, text="or HERE?")
-    button2['command'] = (lambda:
-                          print("I DO like green eggs and ham, Sam I am!"))
+    button2['command'] = lambda: question_callback(entry_box)
+
+    button3 = ttk.Button(frame, text="or maybe HERE?")
+    button3['command'] = lambda: answer_callback(entry_box)
 
     # -------------------------------------------------------------------------
     # Here is the use of GRID with rows and columns:
@@ -39,9 +40,20 @@ def main():
     label.grid(row=0, column=0)
     entry_box.grid(row=0, column=1)
     button1.grid(row=0, column=2)
-    button2.grid(row=1, column=1)
+    button2.grid(row=1, column=0)
+    button3.grid(row=1, column=1, columnspan=2)
 
     root.mainloop()
+
+
+def question_callback(entry_box):
+    name = entry_box.get()
+    print("Do you like Green Eggs and Ham, {}?".format(name))
+
+
+def answer_callback(entry_box):
+    name = entry_box.get()
+    print("I DO like green eggs and ham, {} I am!".format(name))
 
 
 # -----------------------------------------------------------------------------
