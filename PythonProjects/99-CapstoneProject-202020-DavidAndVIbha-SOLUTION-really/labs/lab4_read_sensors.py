@@ -241,9 +241,9 @@ def print_beacon_sensor_readings(seconds_between_readings):
 
     try:
         while True:
-            print("Distance (inches), heading (sort of degrees): {:3} {:3}".format(
-                robot.beacon_sensor.get_distance(),
-                robot.beacon_sensor.get_heading()))
+            message = "Distance (inches), heading (sort of degrees): {:3} {:3}"
+            print(message.format(robot.beacon_sensor.get_distance(),
+                                 robot.beacon_sensor.get_heading()))
             time.sleep(seconds_between_readings)
 
     except KeyboardInterrupt:
@@ -292,6 +292,7 @@ def print_remote_control_readings(seconds_between_readings):
         print("OK, you just did a keyboard interrupt (Control-C).")
         print("No worries. The program will keep running from here.")
 
+
 def print_camera_readings(seconds_between_readings):
     robot = rb.RoseBot()  # Fresh RoseBot so that sensors do not conflict.
 
@@ -332,18 +333,3 @@ def print_camera_readings(seconds_between_readings):
         print()
         print("OK, you just did a keyboard interrupt (Control-C).")
         print("No worries. The program will keep running from here.")
-
-
-# -----------------------------------------------------------------------------
-# Calls  main  to start the ball rolling, unless this file is running by IMPORT.
-# The   try .. except   prevents error messages on the console from being
-# intermingled with ordinary output to the console.
-# -----------------------------------------------------------------------------
-# try:
-#     main()
-# except Exception:
-#     print("ERROR - While running this test,")
-#     print("your code raised the following exception:")
-#     print()
-#     time.sleep(1)
-#     raise
