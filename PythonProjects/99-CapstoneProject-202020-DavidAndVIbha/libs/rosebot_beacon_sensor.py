@@ -12,7 +12,6 @@ from the Remote Control.  The remote control must be running in beacon mode
 Authors:  Your professors (for the framework).
 Winter term, 2019-2020.
 """
-
 ###############################################################################
 # STUDENTS: This module is ALREADY IMPLEMENTED.
 #   READ its code so that you know how to use a Beacon Sensor if you wish
