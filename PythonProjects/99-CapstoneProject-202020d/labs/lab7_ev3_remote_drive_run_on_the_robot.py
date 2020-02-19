@@ -26,18 +26,14 @@ def main():
     # -------------------------------------------------------------------------
     # TODO: 2. Construct a robot, that is, a rosebot.RoseBot() object.
     # -------------------------------------------------------------------------
-    robot = rosebot.RoseBot()
 
     # -------------------------------------------------------------------------
     # TODO: 3. Construct an MQTT client passing in the robot as the argument.
     # -------------------------------------------------------------------------
-    mqtt_client = com.MqttClient(robot)
 
     # -------------------------------------------------------------------------
     # TODO: 4. Connect to talk to the laptop
     # -------------------------------------------------------------------------
-    # mqtt_client.connect_to_mqtt_to_talk_to_laptop()
-    mqtt_client.connect_to_mqtt_to_talk_to_laptop("broker.hivemq.com")  # Off campus use this broker
 
     # -------------------------------------------------------------------------
     # TODO: 5. Create a loop which can be shutdown
@@ -45,11 +41,6 @@ def main():
     #          That is set to False
     #          And add a method that can modify that field called shutdown
     # -------------------------------------------------------------------------
-
-    while True:
-        time.sleep(0.1)
-        if robot.should_shutdown:
-            break
 
 
 main()

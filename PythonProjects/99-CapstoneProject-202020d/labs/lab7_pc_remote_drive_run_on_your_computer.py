@@ -36,14 +36,13 @@ def main():
     # TODO: 2. Setup an mqtt_client.  Notice that since you don't need to receive any messages you do NOT need to have
     #  an argument  class.  Simply construct the MqttClient with no parameter in the constructor (easy).
     # -------------------------------------------------------------------------
-    mqtt_client = com.MqttClient()
+
 
 
     # -------------------------------------------------------------------------
     # TODO: 3. Connect to talk to the robot
     # -------------------------------------------------------------------------
-    # mqtt_client.connect_to_mqtt_to_talk_to_robot()
-    mqtt_client.connect_to_mqtt_to_talk_to_robot("broker.hivemq.com")  # Off campus use this broker
+
 
     root = tkinter.Tk()
     root.title("MQTT Remote")
@@ -121,39 +120,23 @@ def main():
 # -------------------------------------------------------------------------
 # TODO: 5. Implement the functions for the drive button callbacks.
 # -------------------------------------------------------------------------
-def send_drive_command(mqtt_client, left_speed_entry, right_speed_entry, left_direction, right_direction):
-    left_sp = left_direction * int(left_speed_entry.get())
-    right_sp = right_direction * int(right_speed_entry.get())
-    print("drive_system", "go", [left_sp, right_sp])
-    mqtt_client.send_message("drive_system", "go", [left_sp, right_sp])
+# def send_drive_command(mqtt_client, left_speed_entry, right_speed_entry, left_direction, right_direction):
+#     left_sp = left_direction * int(left_speed_entry.get())
+#     right_sp = right_direction * int(right_speed_entry.get())
+#     print("drive_system", "go", [left_sp, right_sp])
+#     mqtt_client.send_message("drive_system", "go", [left_sp, right_sp])
 
 
-def send_stop(mqtt_client):
-    print("drive_system", "stop")
-    mqtt_client.send_message("drive_system", "stop")
 
 # -------------------------------------------------------------------------
 # TODO: 6. Implement the functions for the arm callbacks.
 # -------------------------------------------------------------------------
-def send_up(mqtt_client):
-    print("arm_up")
-    mqtt_client.send_message("arm_and_claw", "raise_arm")
 
-
-def send_down(mqtt_client):
-    print("arm_down")
-    mqtt_client.send_message("arm_and_claw", "lower_arm")
 
 
 # -------------------------------------------------------------------------
 # TODO: 7. Implement the functions for the arm callbacks.
 # -------------------------------------------------------------------------
-def quit_program(mqtt_client, shutdown_ev3):
-    if shutdown_ev3:
-        print("shutdown")
-        mqtt_client.send_message("robot", "shutdown")
-    mqtt_client.close()
-    exit()
 
 
 # ----------------------------------------------------------------------
