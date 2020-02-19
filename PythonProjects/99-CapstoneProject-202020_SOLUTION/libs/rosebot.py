@@ -88,3 +88,10 @@ class RoseBot(object):
         # ---------------------------------------------------------------------
         self.camera = rosebot_camera_sensor.CameraSensor(2)
         self.camera_tracker = rosebot_camera_tracker.CameraTracker(self.camera, self.drive_system)
+
+        # Lab 7
+        self.should_shutdown = False
+
+    def shutdown(self):
+        print("Called shutdown")
+        self.should_shutdown = True

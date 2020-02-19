@@ -127,6 +127,7 @@ import json
 
 import collections
 import paho.mqtt.client as mqtt
+import set_robot_number
 
 
 class MqttClient(object):
@@ -191,6 +192,8 @@ class MqttClient(object):
           :type mqtt_broker_ip_address: str
           :type lego_robot_number: int
         """
+        if lego_robot_number is None:
+            lego_robot_number = set_robot_number.get_robot_number()
         lego_name = "lego" + str(lego_robot_number).zfill(2)
         self.subscription_topic_name = lego_name + "/" + subscription_suffix
         self.publish_topic_name = lego_name + "/" + publish_suffix
@@ -210,20 +213,23 @@ class MqttClient(object):
         print("Connecting to mqtt broker {}".format(mqtt_broker_ip_address), end="")
         self.client.loop_start()
 
-    def send_message(self, function_name, parameter_list=None):
+    def send_message(self, subsystem_name, method_name, parameter_list=None):
         """
         Sends a message to the MQTT broker using the publish_topic_name that was set by the connect method.
 
         What comes in:
-          function_name: the name of the method that you want to call (as a string) on the other end's delegate
+          subsystem_name: the of the robot subsystem that is being used.
+          method_name: the name of the method that you want to call (as a string) on the other end's delegate
           parameter_list: a List containing the arguments to that method call. Note: even single arguments should be
                           placed into a list.  Also objects in the list will be transferred using json, so objects in
                           the list must be serializable (int, float, string, etc all work fine but nothing fancy)
         Type hints:
-          :type function_name:  str
+          :type subsystem_name:  str
+          :type method_name:  str
           :type parameter_list: list of object | None
         """
-        message_dict = {"type": function_name}
+        message_dict = {"subsystem": subsystem_name,
+                        "method": method_name}
         if parameter_list:
             if isinstance(parameter_list, collections.Iterable):
                 message_dict["payload"] = parameter_list
@@ -268,23 +274,34 @@ class MqttClient(object):
             print("Unable to decode the received message as JSON")
             return
 
-        if "type" not in message_dict:
-            print("Received a messages without a 'type' parameter.")
+        if "subsystem" not in message_dict:
+            print("Received a messages without a 'subsystem' parameter.")
             return
-        message_type = message_dict["type"]
-        if hasattr(self.delegate, message_type):
-            method_to_call = getattr(self.delegate, message_type)
-            # Assumes that the user has the parameters correct.
-            if "payload" in message_dict:
-                message_payload = message_dict["payload"]
-                attempted_return = method_to_call(*message_payload)
+        subsystem_name = message_dict["subsystem"]
+        if hasattr(self.delegate, subsystem_name) or subsystem_name == "robot":
+            if subsystem_name == "robot":
+                subsystem = self.delegate  # Direct call on the robot object (no subsystem)
             else:
-                attempted_return = method_to_call()
-            if attempted_return:
-                print("The method {} returned a value. That's not really how this library works." +
-                      "The value {} was not magically sent back over".format(message_type, attempted_return))
+                subsystem = getattr(self.delegate, subsystem_name)
+            if "method" not in message_dict:
+                print("Received a messages without a 'method' parameter.")
+                return
+            method_name = message_dict["method"]
+            if hasattr(subsystem, method_name):
+                method_to_call = getattr(subsystem, method_name)
+                # Assumes that the user has the parameters correct.
+                if "payload" in message_dict:
+                    message_payload = message_dict["payload"]
+                    attempted_return = method_to_call(*message_payload)
+                else:
+                    attempted_return = method_to_call()
+                if attempted_return:
+                    print("The method {} returned a value. That's not really how this library works." +
+                          "The value {} was not magically sent back over".format(method_name, attempted_return))
+            else:
+                print("Attempt to call method {} which was not found.".format(method_name))
         else:
-            print("Attempt to call method {} which was not found.".format(message_type))
+            print("Attempt to call subsystem {} which was not found.".format(subsystem_name))
 
     def close(self):
         """
