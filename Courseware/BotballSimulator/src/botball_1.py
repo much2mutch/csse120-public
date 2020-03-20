@@ -1,4 +1,4 @@
-from simulation_robot import *
+from robot import motor, msleep, ao
 
 
 # Put your Botball program below here.  The main function
