@@ -7,6 +7,9 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+import testing_helper
+import time
+
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -1077,7 +1080,49 @@ def run_test_halfway_to():
     # print('Actual is:', p3.halfway_to(p3))
 
 
+###############################################################################
+# Our tests use the following to print error messages in red.
+# Do NOT change it.  You do NOT have to do anything with it.
+###############################################################################
+
+def print_expected_result_of_test(arguments, expected,
+                                  test_results, format_string, suffix=''):
+    testing_helper.print_expected_result_of_test(arguments, expected,
+                                                 test_results, format_string,
+                                                 suffix)
+
+
+def print_actual_result_of_test(expected, actual, test_results,
+                                precision=None):
+    testing_helper.print_actual_result_of_test(expected, actual,
+                                               test_results, precision)
+
+
+def print_summary_of_test_results(test_results):
+    testing_helper.print_summary_of_test_results(test_results)
+
+
+# To allow color-coding the output to the console:
+USE_COLORING = True  # Change to False to revert to OLD style coloring
+
+testing_helper.USE_COLORING = USE_COLORING
+if USE_COLORING:
+    # noinspection PyShadowingBuiltins
+    print = testing_helper.print_colored
+else:
+    # noinspection PyShadowingBuiltins
+    print = testing_helper.print_uncolored
+
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
+# The   try .. except   prevents error messages on the console from being
+# intermingled with ordinary output to the console.
 # -----------------------------------------------------------------------------
-main()
+try:
+    main()
+except Exception:
+    print('ERROR - While running this test,', color='red')
+    print('your code raised the following exception:', color='red')
+    print()
+    time.sleep(1)
+    raise
