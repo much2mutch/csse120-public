@@ -266,7 +266,7 @@ def run_test_clone():
         p3.x = 777
         p3.y = 555
         print()
-        print('Expected for p1: Point(999. 333)')
+        print('Expected for p1: Point(999, 333)')
         print('Actual for p1:  ', p1)
         print('Expected for p2: Point(11, 22)')
         print('Actual for p2:  ', p2)
@@ -311,7 +311,7 @@ def run_test_clone():
     # p3.x = 777
     # p3.y = 555
     # print()
-    # print('Expected for p1: Point(999. 333)')
+    # print('Expected for p1: Point(999, 333)')
     # print('Actual for p1:  ', p1)
     # print('Expected for p2: Point(11, 22)')
     # print('Actual for p2:  ', p2)
