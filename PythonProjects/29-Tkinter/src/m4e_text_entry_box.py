@@ -18,9 +18,8 @@ that uses a CONTROL VARIABLE.  The more complicated alternative
 is sometimes more convenient but never necessary.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Mark Hays, Amanda Stouder, Derek Whitley, and their colleagues.
+"""
 
 import tkinter
 from tkinter import ttk
@@ -35,9 +34,8 @@ def main():
     my_entry_box = ttk.Entry(frame1)
     my_entry_box.grid()
 
-    print_entry_button = ttk.Button(frame1, text='Print entry')
-    print_entry_button['command'] = (lambda:
-                                     print_contents(my_entry_box))
+    print_entry_button = ttk.Button(frame1, text="Print entry")
+    print_entry_button["command"] = lambda: print_contents(my_entry_box)
     print_entry_button.grid()
 
     root.mainloop()
@@ -72,16 +70,15 @@ def print_contents(entry_box):
 # To make a Button respond to a button-press by doing things with
 #   the CONTENTS of an ENTRY box:
 #
-#   1. Set a value to the Button's 'command' attribute,
+#   1. Set a value to the Button's "command" attribute,
 #        as described in the previous module.  For example:
 #
-#           button1['command'] = ...
+#           button1["command"] = ...
 #
 #   2. Use a LAMBDA expression to express WHAT the Button should do
 #      when pressed, as described in the previous module.  For example:
 #
-#           button1['command'] = (lambda:
-#                                 foo(...))
+#           button1["command"] = lambda: foo(...)
 #
 #   3. Construct and display a ttk.Entry prior to telling Button
 #        what its command is:
@@ -93,8 +90,8 @@ def print_contents(entry_box):
 #        is executed) take the ttk.Entry as an ARGUMENT.  For example:
 #
 #           entry1 = ttk.Entry(frame1)
-#           button1['command'] = (lambda:
-#                                 foo(entry1))
+#           button1["command"] = lambda: foo(entry1)
+#
 #   5. The function that the lambda function calls when the lambda
 #        function is executed can use the given Entry box to access
 #        the CONTENTS of the Entry box using its  GET  method.
@@ -112,8 +109,7 @@ def print_contents(entry_box):
 #    -- which is accessed via the Entry box's   get   method, as in:
 #          entry_box.get()
 #
-# Do not forget that   entry_box.get()   returns the contents of the
-# Entry box
+# Do not forget that   entry_box.get()   returns the contents of the Entry box
 #    ** at the TIME that the   entry_box.get()   expression runs. **
 #
 # Do not forget that   entry_box.get()   returns a STRING.

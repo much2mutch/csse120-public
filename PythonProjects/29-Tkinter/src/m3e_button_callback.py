@@ -7,9 +7,8 @@ Example showing for tkinter and ttk:
        with a CALLBACK function that is a LAMBDA (anonymous) function.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Mark Hays, Amanda Stouder, Derek Whitley, and their colleagues.
+"""
 
 import tkinter
 from tkinter import ttk
@@ -22,9 +21,8 @@ def main():
     frame1 = ttk.Frame(root, padding=10)
     frame1.grid()
 
-    print_stuff_button = ttk.Button(frame1, text='Print stuff')
-    print_stuff_button['command'] = (lambda:
-                                     do_stuff())
+    print_stuff_button = ttk.Button(frame1, text="Print stuff")
+    print_stuff_button["command"] = lambda: do_stuff()
     print_stuff_button.grid()
 
     root.mainloop()
@@ -37,10 +35,9 @@ def do_stuff():
     In this example, it is used as the function that is "CALLED BACK"
     when an event (namely, the pressing of a certain Button) occurs.
     """
-    letters = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
-               'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-               'w', 'x', 'y', 'z')
-    random_word = ''
+    letters = "abcdefghijklmnopqrstuvwxyz"
+
+    random_word = ""
     for _ in range(10):
         letter = letters[random.randrange(26)]
         random_word = random_word + letter
@@ -58,24 +55,23 @@ def do_stuff():
 #
 # To make a Button respond to a button-press:
 #
-#   1. Setting a value to the Button's 'command' attribute
+#   1. Setting a value to the Button's "command" attribute
 #      tells the Button to respond to a button press.  For example:
 #
-#           button1['command'] = ...
+#           button1["command"] = ...
 #
 #      tells the Button named  button1  to do the   ...   stuff
 #      when the button is pressed.
 #
 #      This is called "dictionary-like" notation.  Tkinter knows that
-#      when you put the special string    'command'    inside the
+#      when you put the special string    "command"    inside the
 #      square brackets, then you are telling the Button what to do
 #      when the Button is pressed.
 #
 #   2. To express WHAT the Button should do when pressed,
 #      use a  LAMBDA  expression, like this:
 #
-#           button1['command'] = (lambda:
-#                                 foo())
+#           button1["command"] = lambda: foo()
 #
 #      The LEFT-hand-side of the assignment tells the Button that
 #      it should execute the function defined by the RIGHT-hand-side
@@ -97,18 +93,6 @@ def do_stuff():
 #      Note that a lambda expression DEFINES a function that is EXECUTED
 #      LATER (here, when the Button is pressed).  It serves as a way
 #      to DEFINE a function INSIDE an assignment statement.
-#
-#      You don't have to break a lambda expression over two lines.
-#      For example:
-#           button1['command'] = lambda: foo()
-#
-#      is equivalent to:
-#           button1['command'] = (lambda:
-#                                 foo())
-#
-#      Here we choose to use the two-line form because it makes it look
-#      more like a DEF and gives a bit more space on a line
-#      for the body of the lambda expression.
 #
 ###############################################################################
 
