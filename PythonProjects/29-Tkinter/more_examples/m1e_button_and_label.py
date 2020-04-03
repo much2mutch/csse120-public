@@ -17,29 +17,28 @@ import random
 def main():
     # Root (main) window
     root = tkinter.Tk()
-    root.title('Hello!')
+    root.title("Hello!")
 
     # Frame
     frame1 = ttk.Frame(root)
     frame1.grid()
 
     # Label
-    label = ttk.Label(frame1, text='This is a Label above a Button')
+    label = ttk.Label(frame1, text="This is a Label above a Button")
     label.grid()
 
     # Two buttons
-    change_title_button = ttk.Button(frame1,
-                                     text='Change the Title (above)')
+    change_title_button = ttk.Button(frame1, text="Change the Title (above)")
     change_title_button.grid()
-    change_title_button['command'] = lambda: change_title(root)
+    change_title_button["command"] = lambda: change_title(root)
 
-    quit_button = ttk.Button(frame1, text='Quit')
+    quit_button = ttk.Button(frame1, text="Quit")
     quit_button.grid()
-    quit_button['command'] = lambda: close_window(root)
+    quit_button["command"] = lambda: close_window(root)
 
     # Another Label, with its text set another way
     label2 = ttk.Label(frame1)
-    label2['text'] = 'Later, we will put Labels BESIDE Buttons'
+    label2["text"] = "Later, we will put Labels BESIDE Buttons"
     label2.grid()
 
     root.mainloop()
@@ -47,9 +46,9 @@ def main():
 
 def change_title(root):
     # Make a new 8-letter title chosen randomly from 'A' to 'Z'.
-    new_title = ''
-    for k in range(8):  # @UnusedVariable
-        new_title = new_title + chr(ord('A') + random.randrange(26))
+    new_title = ""
+    for _ in range(8):
+        new_title = new_title + chr(ord("A") + random.randrange(26))
 
     root.title(new_title)
 
@@ -58,7 +57,7 @@ def close_window(root):
     root.destroy()
 
 
-# ----------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
-# ----------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 main()
