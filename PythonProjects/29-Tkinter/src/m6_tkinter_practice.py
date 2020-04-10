@@ -19,12 +19,11 @@ def main():
 
     # -------------------------------------------------------------------------
     # TODO: 3. After reading and understanding the m2e module,
-    #   ** put a Frame on the window. **
+    #    ** put a Frame on the window. **
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
-    # TODO: 4. After reading and understanding the m2e module,
-    #   ** put a Button on the Frame. **
+    # TODO: 4. Now ** put a Button on the Frame. **
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
@@ -39,7 +38,7 @@ def main():
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
     #        on the Console if the current string in the Entry box
-    #        is the string 'ok', but print "Goodbye" otherwise.
+    #        is the string "ok", but print "Goodbye" otherwise.
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
@@ -47,15 +46,14 @@ def main():
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
-    #
-    #    Pressing this new Button causes the STRING that the user typed
-    #    in the FIRST Entry box to be printed N times on the Console,
-    #      where N is the INTEGER that the user typed
-    #      in the SECOND Entry box.
-    #
+    #  _
+    #      Pressing this new Button causes the STRING that the user typed
+    #      in the FIRST Entry box to be printed N times on the Console,
+    #        where N is the INTEGER that the user typed
+    #        in the SECOND Entry box.
+    #   _
     #    If the user fails to enter an integer,
     #    that is a "user error" -- do NOT deal with that.
-    #
     # -------------------------------------------------------------------------
     ####################################################################
     # HINT:
@@ -68,7 +66,7 @@ def main():
 
     # -------------------------------------------------------------------------
     # TODO: 8. After reading and understanding the m5e module,
-    #   -- Make your GUI widgits appear in a grid (details do not matter).
+    #   -- Make your GUI widgets appear in a grid (details do not matter).
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------

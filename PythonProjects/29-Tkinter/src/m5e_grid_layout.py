@@ -3,9 +3,8 @@ Example showing for tkinter and ttk:
   -- How to layout objects using a grid of rows and columns.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Mark Hays, Amanda Stouder, Derek Whitley, and their colleagues.
+"""
 
 import tkinter
 from tkinter import ttk
@@ -26,13 +25,13 @@ def main():
     entry_box = ttk.Entry(frame)
 
     button1 = ttk.Button(frame, text="Do you like\nyour button HERE?")
-    button1['command'] = lambda: question_callback(entry_box)
+    button1["command"] = lambda: question_callback(entry_box)
 
     button2 = ttk.Button(frame, text="or HERE?")
-    button2['command'] = lambda: question_callback(entry_box)
+    button2["command"] = lambda: question_callback(entry_box)
 
     button3 = ttk.Button(frame, text="or maybe HERE?")
-    button3['command'] = lambda: answer_callback(entry_box)
+    button3["command"] = lambda: answer_callback(entry_box)
 
     # -------------------------------------------------------------------------
     # Here is the use of GRID with rows and columns:

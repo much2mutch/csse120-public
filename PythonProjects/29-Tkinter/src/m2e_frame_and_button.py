@@ -5,9 +5,8 @@ Example showing for tkinter and ttk:
   -- ttk.Button - a button in the ttk style
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Mark Hays, Amanda Stouder, Derek Whitley, and their colleagues.
+"""
 
 import tkinter
 from tkinter import ttk
@@ -19,7 +18,7 @@ def main():
     frame1 = ttk.Frame(root, padding=10)
     frame1.grid()
 
-    go_forward_button = ttk.Button(frame1, text='Forward')
+    go_forward_button = ttk.Button(frame1, text="Forward")
     go_forward_button.grid()
 
     root.mainloop()
@@ -48,7 +47,7 @@ def main():
 #            to make it appear on the screen.
 #
 #   4. Constructs a widget (here, a ttk.Button) on the Frame.
-#         Set its text to 'Forward'.
+#         Set its text to "Forward".
 #
 #   5. Displays the ttk.Button, again using the 'grid' layout.
 #
