@@ -2,7 +2,8 @@
 Example showing for tkinter and ttk:
   -- How to CONSTRUCT and DISPLAY a WIDGET, in this case:
   -- ttk.Frame - a container for other Widgets
-  -- ttk.Button - a button in the ttk style
+  -- ttk.Button - a button in the default ttk style
+  -- ttk.Label - a label in the default ttk style
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, and their colleagues.
@@ -21,13 +22,16 @@ def main():
     go_forward_button = ttk.Button(frame1, text="Forward")
     go_forward_button.grid()
 
+    label = ttk.Label(frame1, text="Curiouser and curiouser! said Alice.")
+    label.grid()
+
     root.mainloop()
 
 ###############################################################################
 #
 # EXPLANATION of the above:
 #
-# The 6 statements in main (above) do the following, respectively:
+# The 8 statements in main (above) do the following, respectively:
 #
 #   1. Constructs a tkinter.Tk.
 #        This is the top-level window, traditionally called 'root'.
@@ -51,7 +55,12 @@ def main():
 #
 #   5. Displays the ttk.Button, again using the 'grid' layout.
 #
-#   6. Runs the Event Loop.  tkinter maintains that loop.
+#   6. Constructs another widget (here, a ttk.Label) on the Frame.
+#         Set its text to "Curiouser and curiouser! said Alice.".
+#
+#   7. Displays the ttk.Label, again using the 'grid' layout.
+#
+#   8. Runs the Event Loop.  tkinter maintains that loop.
 #         This is a LOOP -- the code STAYS in here until the root window
 #         is closed (by the user, or by the program itself).
 #
@@ -65,6 +74,8 @@ def main():
 #        way, but nothing else happens.  That's because we haven't told
 #        tkinter/ttk what to do when the Forward button is pressed.
 #        You'll see how to do that in the next examples.
+#   -- There is also a label, directly below the button, with the words
+#        "Curiouser and curiouser! said Alice.",
 ###############################################################################
 
 
