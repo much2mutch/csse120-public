@@ -14,7 +14,6 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 import random
 import time
 
-
 # random.seed()  # Same as not setting the seed
 # random.seed(392)  # 392 was picked arbitrarily
 # t = time.time()  # The number of seconds since January 1, 1970, as a float

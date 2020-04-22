@@ -127,7 +127,7 @@ def wait_for_sentinel():
         print("The square root of {} is about {:0.5f}.\n".
               format(number, math.sqrt(number)))
         total = total + math.sqrt(number)
-        number = int(input('Enter a positive integer, or -1 to quit: '))
+        number = int(input("Enter a positive integer, or -1 to quit: "))
 
     print("The total of the square roots is", total)
 

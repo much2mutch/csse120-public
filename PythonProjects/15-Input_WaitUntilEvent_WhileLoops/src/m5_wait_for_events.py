@@ -65,9 +65,9 @@ def is_prime(n):
 def run_test_sum_until_prime_input():
     """ Tests the   wait_for_prime_input   function by calling it. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_until_prime_input   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_until_prime_input   function:")
+    print("--------------------------------------------------")
 
     sum_until_prime_input()
 
@@ -107,139 +107,139 @@ def run_test_next_prime():
     #   and compute the latter BY HAND (not by running your program).
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   next_prime   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   next_prime   function:")
+    print("--------------------------------------------------")
 
-    format_string = '    next_prime( {} )'
+    format_string = "    next_prime( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # Test 1:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 7
     print_expected_result_of_test([6], expected, test_results, format_string)
     actual = next_prime(6)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 2:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 11
     print_expected_result_of_test([7], expected, test_results, format_string)
     actual = next_prime(7)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 3:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 83
     print_expected_result_of_test([80], expected, test_results, format_string)
     actual = next_prime(80)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 4:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 156007
     print_expected_result_of_test([155922], expected, test_results,
                                   format_string)
     actual = next_prime(155922)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 5:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 156007
     print_expected_result_of_test([155921], expected, test_results,
                                   format_string)
     actual = next_prime(155921)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 6:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 156007
     print_expected_result_of_test([156003], expected, test_results,
                                   format_string)
     actual = next_prime(156003)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 7:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 156007
     print_expected_result_of_test([156006], expected, test_results,
                                   format_string)
     actual = next_prime(156006)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 8:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 156011
     print_expected_result_of_test([156007], expected, test_results,
                                   format_string)
     actual = next_prime(156007)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 9:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 156011
     print_expected_result_of_test([156009], expected, test_results,
                                   format_string)
     actual = next_prime(156009)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 10:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 156011
     print_expected_result_of_test([156010], expected, test_results,
                                   format_string)
     actual = next_prime(156010)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 11:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 156019
     print_expected_result_of_test([156011], expected, test_results,
                                   format_string)
     actual = next_prime(156011)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 12:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 3
     print_expected_result_of_test([2], expected, test_results, format_string)
     actual = next_prime(2)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # -------------------------------------------------------------------------
     # TODO: 3 (continued):
     #   PUT YOUR TEST   ** IN THE SPACE BETWEEN **   the
-    #   print('TEST STARTED!' ...) and print('TEST ENDED') lines below.
+    #   print("TEST STARTED!" ...) and print("TEST ENDED") lines below.
     # -------------------------------------------------------------------------
     # Test 13:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
 
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # SUMMARY of test results:
     print_summary_of_test_results(test_results)
@@ -282,139 +282,139 @@ def run_test_sum_to_next_prime():
     #   and compute the latter BY HAND (not by running your program).
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   sum_to_next_prime   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   sum_to_next_prime   function:")
+    print("--------------------------------------------------")
 
-    format_string = '    sum_to_next_prime( {} )'
+    format_string = "    sum_to_next_prime( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # Test 1:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 6 + 7  # which is 13
     print_expected_result_of_test([6], expected, test_results, format_string)
     actual = sum_to_next_prime(6)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 2:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 7 + 8 + 9 + 10 + 11  # which is 45
     print_expected_result_of_test([7], expected, test_results, format_string)
     actual = sum_to_next_prime(7)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 3:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 80 + 81 + 82 + 83  # which is 326
     print_expected_result_of_test([80], expected, test_results, format_string)
     actual = sum_to_next_prime(80)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 4:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 13412947
     print_expected_result_of_test([155922], expected, test_results,
                                   format_string)
     actual = sum_to_next_prime(155922)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 5:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 13568868
     print_expected_result_of_test([155921], expected, test_results,
                                   format_string)
     actual = sum_to_next_prime(155921)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 6:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 780025
     print_expected_result_of_test([156003], expected, test_results,
                                   format_string)
     actual = sum_to_next_prime(156003)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 7:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 156006 + 156007  # which is 312013
     print_expected_result_of_test([156006], expected, test_results,
                                   format_string)
     actual = sum_to_next_prime(156006)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 8:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 780045
     print_expected_result_of_test([156007], expected, test_results,
                                   format_string)
     actual = sum_to_next_prime(156007)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 9:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 468030
     print_expected_result_of_test([156009], expected, test_results,
                                   format_string)
     actual = sum_to_next_prime(156009)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 10:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 156010 + 156011  # which is 312021
     print_expected_result_of_test([156010], expected, test_results,
                                   format_string)
     actual = sum_to_next_prime(156010)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 11:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 1404135
     print_expected_result_of_test([156011], expected, test_results,
                                   format_string)
     actual = sum_to_next_prime(156011)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 12:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 2 + 3  # which is 5
     print_expected_result_of_test([2], expected, test_results, format_string)
     actual = sum_to_next_prime(2)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # -------------------------------------------------------------------------
     # TODO: 5 (continued):
     #   PUT YOUR TEST   ** IN THE SPACE BETWEEN **   the
-    #   print('TEST STARTED!' ...) and print('TEST ENDED') lines below.
+    #   print("TEST STARTED!" ...) and print("TEST ENDED") lines below.
     # -------------------------------------------------------------------------
     # Test 13:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
 
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # SUMMARY of test results:
     print_summary_of_test_results(test_results)
@@ -453,255 +453,255 @@ def sum_to_next_prime(m):
 def run_test_prime_gap():
     """ Tests the   prime_gap    function. """
     print()
-    print('--------------------------------------------------')
-    print('Testing the   prime_gap   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   prime_gap   function:")
+    print("--------------------------------------------------")
 
-    format_string = '    prime_gap( {} )'
+    format_string = "    prime_gap( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # Test 1:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 2
     print_expected_result_of_test([1], expected, test_results, format_string)
     actual = prime_gap(1)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 2:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 3
     print_expected_result_of_test([2], expected, test_results, format_string)
     actual = prime_gap(2)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 3:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 7
     print_expected_result_of_test([3], expected, test_results, format_string)
     actual = prime_gap(3)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 4:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 7
     print_expected_result_of_test([4], expected, test_results, format_string)
     actual = prime_gap(4)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 5:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 23
     print_expected_result_of_test([5], expected, test_results, format_string)
     actual = prime_gap(5)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 6:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 23
     print_expected_result_of_test([6], expected, test_results, format_string)
     actual = prime_gap(6)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 7:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 89
     print_expected_result_of_test([8], expected, test_results, format_string)
     actual = prime_gap(8)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 8:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 89
     print_expected_result_of_test([7], expected, test_results, format_string)
     actual = prime_gap(7)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 9:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 113
     print_expected_result_of_test([10], expected, test_results, format_string)
     actual = prime_gap(10)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 10:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 19609
     print_expected_result_of_test([45], expected, test_results, format_string)
     actual = prime_gap(45)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 11:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 19609
     print_expected_result_of_test([50], expected, test_results, format_string)
     actual = prime_gap(50)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 12:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 19609
     print_expected_result_of_test([52], expected, test_results, format_string)
     actual = prime_gap(52)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 13:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 31397
     print_expected_result_of_test([54], expected, test_results, format_string)
     actual = prime_gap(54)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 14:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 31397
     print_expected_result_of_test([56], expected, test_results, format_string)
     actual = prime_gap(56)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 15:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 31397
     print_expected_result_of_test([58], expected, test_results, format_string)
     actual = prime_gap(58)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 16:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 31397
     print_expected_result_of_test([60], expected, test_results, format_string)
     actual = prime_gap(60)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 17:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 31397
     print_expected_result_of_test([62], expected, test_results, format_string)
     actual = prime_gap(62)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 18:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 31397
     print_expected_result_of_test([64], expected, test_results, format_string)
     actual = prime_gap(64)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 19:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 31397
     print_expected_result_of_test([66], expected, test_results, format_string)
     actual = prime_gap(66)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 20:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 31397
     print_expected_result_of_test([68], expected, test_results, format_string)
     actual = prime_gap(68)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 21:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 31397
     print_expected_result_of_test([70], expected, test_results, format_string)
     actual = prime_gap(70)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 22:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 31397
     print_expected_result_of_test([72], expected, test_results, format_string)
     actual = prime_gap(72)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 23:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 155921
     print_expected_result_of_test([74], expected, test_results, format_string)
     actual = prime_gap(74)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 24:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 155921
     print_expected_result_of_test([80], expected, test_results, format_string)
     actual = prime_gap(80)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 25:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 370261
     print_expected_result_of_test([100], expected, test_results, format_string)
     actual = prime_gap(100)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 26:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 1357201
     print_expected_result_of_test([120], expected, test_results, format_string)
     actual = prime_gap(120)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 27:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 4652353
     print_expected_result_of_test([150], expected, test_results, format_string)
     actual = prime_gap(150)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # SUMMARY of test results:
     print_summary_of_test_results(test_results)
@@ -762,211 +762,211 @@ def run_test_wait_for_sum_of_cubes():
     #   and compute the latter BY HAND (not by running your program).
     # -------------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
-    print('Testing the   wait_for_sum_of_cubes   function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   wait_for_sum_of_cubes   function:")
+    print("--------------------------------------------------")
 
-    format_string = '    wait_for_sum_of_cubes( {} )'
+    format_string = "    wait_for_sum_of_cubes( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # Test 1:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 2
     print_expected_result_of_test([4.3], expected, test_results, format_string)
     actual = wait_for_sum_of_cubes(4.3)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 2:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 1
     print_expected_result_of_test([1], expected, test_results, format_string)
     actual = wait_for_sum_of_cubes(1)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 3:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 2
     print_expected_result_of_test([1.000000000001], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(1.000000000001)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 4:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 2
     print_expected_result_of_test([9], expected, test_results, format_string)
     actual = wait_for_sum_of_cubes(9)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 5:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 3
     print_expected_result_of_test([9.000000000001], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(9.000000000001)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 6:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 3
     print_expected_result_of_test([35.9999999999999], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(35.9999999999999)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 7:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 3
     print_expected_result_of_test([36], expected, test_results, format_string)
     actual = wait_for_sum_of_cubes(36)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 8:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 4
     print_expected_result_of_test([36.0000001], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(36.0000001)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 9:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 4
     print_expected_result_of_test([58], expected, test_results, format_string)
     actual = wait_for_sum_of_cubes(58)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 10:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 4
     print_expected_result_of_test([100], expected, test_results, format_string)
     actual = wait_for_sum_of_cubes(100)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 11:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 5
     print_expected_result_of_test([100.00000001], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(100.00000001)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 12:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 8
     print_expected_result_of_test([1000], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(1000)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 13:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 1
     print_expected_result_of_test([-4.2], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(-4.2)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 14:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 8
     print_expected_result_of_test([1296], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(1296)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 15:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 9
     print_expected_result_of_test([1296.00000001], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(1296.00000001)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 16:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 25
     print_expected_result_of_test([100000], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(100000)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 17:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 38
     print_expected_result_of_test([500000], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(500000)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # Test 18:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
     expected = 251
     print_expected_result_of_test([1000000000], expected, test_results,
                                   format_string)
     actual = wait_for_sum_of_cubes(1000000000)
     print_actual_result_of_test(expected, actual, test_results)
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # -------------------------------------------------------------------------
     # TODO: 8 (continued):
     #   PUT YOUR TEST   ** IN THE SPACE BETWEEN **   the
-    #   print('TEST STARTED!' ...) and print('TEST ENDED') lines below.
+    #   print("TEST STARTED!" ...) and print("TEST ENDED") lines below.
     #  __
     #  *** Use   wait_for_sum_of_cubes(30.33)   as your test here.
     #  Compute the expected answer BY HAND, as always.
     # -------------------------------------------------------------------------
     # Test 19:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
 
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # -------------------------------------------------------------------------
     # TODO: 8 (continued):
     #   PUT YOUR TEST   ** IN THE SPACE BETWEEN **  the
-    #   print('TEST STARTED!' ...) and print('TEST ENDED') lines below.
+    #   print("TEST STARTED!" ...) and print("TEST ENDED") lines below.
     # -------------------------------------------------------------------------
     # Test 20:
     print()
-    print('TEST STARTED!  Has it ended?')
+    print("TEST STARTED!  Has it ended?")
 
-    print('TEST ENDED!')
+    print("TEST ENDED!")
 
     # SUMMARY of test results:
     print_summary_of_test_results(test_results)
@@ -1024,7 +1024,7 @@ def wait_for_sum_of_cubes(x):
 ###############################################################################
 
 def print_expected_result_of_test(arguments, expected,
-                                  test_results, format_string, suffix=''):
+                                  test_results, format_string, suffix=""):
     testing_helper.print_expected_result_of_test(arguments, expected,
                                                  test_results, format_string,
                                                  suffix)
@@ -1059,8 +1059,8 @@ else:
 try:
     main()
 except Exception:
-    print('ERROR - While running this test,', color='red')
-    print('your code raised the following exception:', color='red')
+    print("ERROR - While running this test,", color="red")
+    print("your code raised the following exception:", color="red")
     print()
     time.sleep(1)
     raise

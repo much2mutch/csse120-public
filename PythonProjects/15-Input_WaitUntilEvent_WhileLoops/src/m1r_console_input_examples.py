@@ -14,15 +14,15 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #   putting your answers RIGHT HERE IN THIS DOCUMENT.
 #  __
 #   1. Write a line of code that would input an INTEGER from the
-#      console, storing the integer in a variable called 'm'.
+#      console, storing the integer in a variable called "m".
 #      Write your line here:
 #  __
 #   2. Write a line of code that would input a FLOAT from the console,
-#      storing the float in a variable called 'f'.
+#      storing the float in a variable called "f".
 #      Write your line here:
 #  __
 #   3. Write a line of code that would input an STRING from the console,
-#      storing the string in a variable called 's'.
+#      storing the string in a variable called "s".
 #      Write your line here:
 #  __
 #   4. What happens if you (the user) enter something OTHER than a
@@ -49,8 +49,8 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 def main():
     """ Calls the other functions in this module to demo CONSOLE IO. """
     input_a_string()
-    input_an_integer()
-    input_a_float()
+    # input_an_integer()
+    # input_a_float()
 
 
 ###############################################################################
@@ -58,16 +58,16 @@ def main():
 ###############################################################################
 def input_a_string():
     print()
-    print('--------------------------------------------------')
-    print('Demonstrating  CONSOLE INPUT   of a STRING:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Demonstrating  CONSOLE INPUT   of a STRING:")
+    print("--------------------------------------------------")
 
     # ----------- Using the   INPUT  function ---------------------------------
-    name = input('Enter your name: ')
+    name = input("Enter your name: ")
     # -------------------------------------------------------------------------
 
-    print('Hi, ' + name + '!  ', name, '!.  ', name)
-    print('  Sorry, I have the hiccups...')
+    print("Hi, " + name + "!  ", name, "!.  ", name)
+    print("  Sorry, I have the hiccups...")
 
 
 ###############################################################################
@@ -75,18 +75,18 @@ def input_a_string():
 ###############################################################################
 def input_an_integer():
     print()
-    print('--------------------------------------------------')
-    print('Demonstrating  CONSOLE INPUT   of an INTEGER:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Demonstrating  CONSOLE INPUT   of an INTEGER:")
+    print("--------------------------------------------------")
 
     # ----------- Using the   INPUT  and   INT   functions --------------------
-    age = int(input('How old are you? '))
+    age = int(input("How old are you? "))
     # -------------------------------------------------------------------------
-    print('That is ' + str(age * 12) + ' months!')
+    print("That is " + str(age * 12) + " months!")
     if age >= 18:
-        print('You are old enough to vote, nice!')
+        print("You are old enough to vote, nice!")
     else:
-        print('You will be able to vote in ' + str(18 - age) + ' years.')
+        print("You will be able to vote in " + str(18 - age) + " years.")
 
 
 ###############################################################################
@@ -94,21 +94,21 @@ def input_an_integer():
 ###############################################################################
 def input_a_float():
     print()
-    print('--------------------------------------------------')
-    print('Demonstrating  CONSOLE INPUT   of a FLOATING POINT number:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Demonstrating  CONSOLE INPUT   of a FLOATING POINT number:")
+    print("--------------------------------------------------")
 
     # ----------- Using the   INPUT  and   FLOAT   functions ------------------
-    money = float(input('How much money do you have? '))
+    money = float(input("How much money do you have? "))
     # -------------------------------------------------------------------------
 
     potatoes_today = round((money / 6.46) * 10)
     potatoes_1900 = round((money / 0.140) * 10)
 
-    print('According to Infoplease')
-    print('at http://www.infoplease.com/ipa/A0873707.html')
-    f_string1 = '  -- That would buy you {} pounds of potatoes in 2015.'
-    f_string2 = '  -- That would buy you {} pounds of potatoes in 1900!'
+    print("According to Infoplease")
+    print("at http://www.infoplease.com/ipa/A0873707.html")
+    f_string1 = "  -- That would buy you {} pounds of potatoes in 2015."
+    f_string2 = "  -- That would buy you {} pounds of potatoes in 1900!"
     print(f_string1.format(potatoes_today))
     print(f_string2.format(potatoes_1900))
 
