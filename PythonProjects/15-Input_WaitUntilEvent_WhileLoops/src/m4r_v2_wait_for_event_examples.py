@@ -1,6 +1,6 @@
 """
 This module demonstrates the WAIT-FOR-EVENT pattern using
-the ITCH pattern:
+the ITCH pattern (Initialize, Test, CHange something):
 
    Initialize as needed so that the CONDITION can be TESTED.
    while <some CONDITION>: # Test the CONDITION, continue WHILE it is true.
@@ -39,21 +39,22 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 
 import math
 import random
+import time
 import rosegraphics as rg
 
 
 def main():
     """ Demonstrates applications of the wait-for-event pattern. """
-    demonstrate_wait_for_circle_to_reach_edge()
-    demonstrate_wait_for_sentinel()
-    demonstrate_wait_for_small_enough_number()
+    # wait_for_circle_to_reach_edge()
+    # wait_for_sentinel()
+    wait_for_small_enough_number()
 
 
 # -----------------------------------------------------------------------------
 # Demonstrates waiting for a sequence of "growing" circles
 # to reach the edge of the window in which they are drawn.
 # -----------------------------------------------------------------------------
-def demonstrate_wait_for_circle_to_reach_edge():
+def wait_for_circle_to_reach_edge():
     """
     Demonstrates the   wait_for_event   pattern, where the event
     is that a growing graphical object has grown beyond the window size.
@@ -62,12 +63,12 @@ def demonstrate_wait_for_circle_to_reach_edge():
     until a circle extends beyond the border of the window.
     """
     print()
-    print('---------------------------------------------------------')
-    print('Demonstrating the WAIT FOR EVENT pattern in graphics:')
-    print('See the graphics window that pops up.')
-    print('---------------------------------------------------------')
+    print("---------------------------------------------------------")
+    print("Demonstrating the WAIT FOR EVENT pattern in graphics:")
+    print("See the graphics window that pops up.")
+    print("---------------------------------------------------------")
 
-    window = rg.RoseWindow(700, 450, 'Animation until a TOO-BIG circle')
+    window = rg.RoseWindow(700, 450, "Animation until a TOO-BIG circle")
 
     x = 20
     y = 50
@@ -83,7 +84,7 @@ def demonstrate_wait_for_circle_to_reach_edge():
     while right_edge < window.width and bottom_edge < window.height:
         # Construct and draw a purple circle.
         circle = rg.Circle(rg.Point(x, y), radius)
-        circle.fill_color = 'purple'
+        circle.fill_color = "purple"
         circle.attach_to(window)
 
         # Make the next circle be down, to the right, and bigger.
@@ -92,12 +93,12 @@ def demonstrate_wait_for_circle_to_reach_edge():
         y = y + 1
         radius = radius + (k / 100)
 
+        # Render. Allow a little time to elapse, else the animation flashes by.
+        window.render(0.01)
+
+        # Prepare the stopping condition for the WHILE statement above:
         right_edge = x + radius
         bottom_edge = y + radius
-
-        # Render.  Allow a little time to elapse,
-        #          else the animation flashes by.
-        window.render(0.01)
 
     window.close_on_mouse_click()
 
@@ -105,7 +106,7 @@ def demonstrate_wait_for_circle_to_reach_edge():
 # -----------------------------------------------------------------------------
 # Demonstrates waiting for a "sentinel" value to be input.
 # -----------------------------------------------------------------------------
-def demonstrate_wait_for_sentinel():
+def wait_for_sentinel():
     """
     Demonstrates the   wait_for_event   pattern, where the event
     is inputting a SENTINEL value to signal the end of user input.
@@ -116,53 +117,35 @@ def demonstrate_wait_for_sentinel():
     the user inputs the agreed-upon SENTINEL value of -1.
     """
     print()
-    print('----------------------------------------------')
-    print('Demonstrating the WAIT FOR SENTINEL pattern:')
-    print('----------------------------------------------')
+    print("----------------------------------------------")
+    print("Demonstrating the WAIT FOR SENTINEL pattern:")
+    print("----------------------------------------------")
 
     total = 0
-    number = int(input('Enter a positive integer, or -1 to quit: '))
+    number = int(input("Enter a positive integer, or -1 to quit: "))
     while number != -1:
-        print('The square root of {} is about {:0.5f}.\n'.
+        print("The square root of {} is about {:0.5f}.\n".
               format(number, math.sqrt(number)))
         total = total + math.sqrt(number)
         number = int(input('Enter a positive integer, or -1 to quit: '))
 
-    print('The total of the square roots is', total)
+    print("The total of the square roots is", total)
 
 
 # -----------------------------------------------------------------------------
-# Demonstrates waiting for a "small enough" random number
-# to be generated.
+# Demonstrates waiting for a "small enough" random number to be generated.
+# Start by setting the random "seed" for the sequence of pseudo-random numbers.
+# See the   m3e_random_numbers   module for details.
 # -----------------------------------------------------------------------------
-def demonstrate_wait_for_small_enough_number():
+t = time.time()  # The number of seconds since January 1, 1970, as a float
+random.seed((t * 10000) % 10000)  # The first 4 decimals of t
+
+
+def wait_for_small_enough_number(small_number=10, max_number=50, print_it=True):
     """
-    Demonstrates the   wait_for_event   pattern, by generating
-    random numbers between 1 and 50, inclusive,
-    and stopping when the following event occurs:
-      a number less than or equal to 10 is generated.
-    """
-    print()
-    print('----------------------------------------------------------')
-    print('Demonstrating WAIT FOR A SMALL ENOUGH')
-    print('  randomly generated number')
-    print('----------------------------------------------------------')
-
-    print('I will now genenerate random integers')
-    print('between 1 and 50, stopping when a generated')
-    print('random integer is less than or equal to 10.')
-    print()
-
-    n = wait_for_small_enough_number(10, 50)
-
-    print()
-    print(n, 'random integers between 1 and 50 were generated')
-    print('before one was less than or equal to 10.')
-
-
-def wait_for_small_enough_number(small_number, max_number):
-    """
-    What comes in:  Two non-negative integers.
+    What comes in:  Two optional positive integers,
+      with the second greater than the first,
+      and an optional indicator for whether to print intermediate results.
     What goes out:
       Returns the number of random integers that are generated,
       as described below.
@@ -171,15 +154,39 @@ def wait_for_small_enough_number(small_number, max_number):
            inclusive, where max_number is the second given integer.
       -- Stops when the random integer is less than or equal to
            small_number, where small_number is the first given integer.
-      -- Prints the random numbers as they are generated.
+      -- Optionally prints the random numbers as they are generated.
+
+    Note that, each time through the loop, the probability that the
+    stopping-event occurs is   small_number / max_number  (0.2 by default).
+    Probability theory tells us that the expected number of times that
+    the loop will run is max_number / small_number  (5 by default).
     """
+    if print_it:
+        print()
+        print("----------------------------------------------------------")
+        print("Demonstrating WAIT FOR A SMALL ENOUGH")
+        print("  randomly generated number")
+        print("----------------------------------------------------------")
+
+        print("I will now generate random integers between")
+        print("1 and {}, stopping when a generated random".format(max_number))
+        print("integer is less than or equal to {}.".format(small_number))
+        print()
+
     number = random.randrange(1, max_number + 1)
-    print(number)
+    if print_it:
+        print("   Randomly generated number: {}".format(number))
     count = 1
     while number > small_number:
         number = random.randrange(1, max_number + 1)
-        print(number)
         count = count + 1
+        if print_it:
+            print("   Randomly generated number: {}".format(number))
+
+    if print_it:
+        print("{} random integers between 1 and {} were generated".format(
+            count, max_number))
+        print()
 
     return count
 
