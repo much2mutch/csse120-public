@@ -66,6 +66,7 @@ def input_a_string():
     name = input("Enter your name: ")
     # -------------------------------------------------------------------------
 
+    print()
     print("Hi, " + name + "!  ", name, "!.  ", name)
     print("  Sorry, I have the hiccups...")
 
@@ -82,6 +83,8 @@ def input_an_integer():
     # ----------- Using the   INPUT  and   INT   functions --------------------
     age = int(input("How old are you? "))
     # -------------------------------------------------------------------------
+
+    print()
     print("That is " + str(age * 12) + " months!")
     if age >= 18:
         print("You are old enough to vote, nice!")
@@ -94,7 +97,7 @@ def input_an_integer():
 ###############################################################################
 def input_a_float():
     print()
-    print("--------------------------------------------------")
+    print("------yy--------------------------------------------")
     print("Demonstrating  CONSOLE INPUT   of a FLOATING POINT number:")
     print("--------------------------------------------------")
 
