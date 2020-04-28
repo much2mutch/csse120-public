@@ -8,7 +8,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ###############################################################################
 # The   random   module generates pseudo-random numbers.
 # It ships with Python, hence is convenient, but does NOT generate
-# psuedo-random numbers that are secure enough for cryptographic purposes.
+# pseudo-random numbers that are secure enough for cryptographic purposes.
 ###############################################################################
 
 import random
@@ -16,8 +16,8 @@ import time
 
 # random.seed()  # Same as not setting the seed
 # random.seed(392)  # 392 was picked arbitrarily
-# t = time.time()  # The number of seconds since January 1, 1970, as a float
-# random.seed((t * 10000) % 10000)  # The first 4 decimals of t
+t = time.time()  # The number of seconds since January 1, 1970, as a float
+random.seed((t * 10000) % 10000)  # The first 4 decimals of t
 
 
 def main():
