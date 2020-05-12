@@ -134,6 +134,7 @@ def main():
 
 class Animation(object):
     """ An animation of Ball objects (per the Ball class defined below). """
+
     def __init__(self):
         # Construct the GUI, which constructs and stores a Canvas.
         # Store that Canvas in THIS object too, so that animated objects can
