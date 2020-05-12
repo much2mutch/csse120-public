@@ -1,0 +1,1 @@
+Put all the code for your Capstone project in this folder.
