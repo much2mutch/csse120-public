@@ -1,0 +1,124 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>390</x><y>118</y><w>180</w><h>240</h></coordinates><panel_attributes>Game
+--
+
+  __init__(who_am_i)
+
+  start()
+
+  act_on_message_received()
+
+  send_xy(x, y)
+
+--
+
+  sender
+
+  ball</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>8</y><w>70</w><h>30</h></coordinates><panel_attributes>main
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>128</y><w>110</w><h>140</h></coordinates><panel_attributes>Ball
+--
+
+  move_to(x, y)
+
+--
+
+  diameter
+  id</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>438</y><w>250</w><h>160</h></coordinates><panel_attributes>Canvas (a tkinter class)
+--
+
+  create_oval(x1, y1, x2, y2, fill=color) : id
+
+  coords(x1, y1, x2, y2)
+
+--
+
+  width
+  height</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>29</y><w>80</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
+m2=constructs
+m1=calls start</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>139</y><w>270</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+m1=1..*
+m2=1
+constructs</panel_attributes><additional_attributes>250;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>129</y><w>120</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1
+constructs</panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>309</y><w>390</w><h>180</h></coordinates><panel_attributes>lt=&lt;-
+                constructs
+m1=1
+m2=1</panel_attributes><additional_attributes>370;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>820</x><y>259</y><w>80</w><h>200</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1
+m1pos=5,0
+m2pos=15,0
+</panel_attributes><additional_attributes>10;180;40;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>330</x><y>489</y><w>250</w><h>100</h></coordinates><panel_attributes>Note..
+bg=green
+
+  create_oval   puts the Ball on the Canvas
+
+   coords(x1, y1, x2, y2):  moves the Ball</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>150</x><y>38</y><w>150</w><h>280</h></coordinates><panel_attributes>GUI
+--
+
+  make_canvas() : Canvas
+
+  make_chooser()
+
+  start
+
+  send_xy
+
+--
+
+  root
+  frame
+  canvas
+  entry_for_x
+  entry_for_y
+  send_button
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>10</x><y>49</y><w>140</w><h>350</h></coordinates><panel_attributes>Note..
+bg=green
+
+  make_canvas:
+makes a Canvas
+that will have a
+filled circle on it.
+
+  make_chooser:
+makes two Entry
+boxes and a Button
+by which the user
+can send x and y
+coordinates to the
+other computer
+running this same
+program.
+
+When either computer
+receives a message
+with an x and y,
+it moves its filled
+circle to that x and y.</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>219</y><w>120</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1
+
+
+send_xy calls
+send_xy</panel_attributes><additional_attributes>100;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>10</y><w>270</w><h>100</h></coordinates><panel_attributes>Receiver
+--
+Runs in the background.
+When. it receives a message, it calls the
+   act_on_message
+method of the Game object.</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>80</y><w>60</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;40;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>570</x><y>259</y><w>210</w><h>150</h></coordinates><panel_attributes>Note..
+bg=green
+
+  send_xy. uses the sender to send
+  an x and y to the other computer.
+
+  act_on_message_received is
+  called when a message is received.
+  It then tells the Ball to move to
+  the x and y in the received message.</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>179</y><w>270</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1
+
+
+act_on_message_received
+calls move_to(x, y)</panel_attributes><additional_attributes>250;20;10;20</additional_attributes></element></diagram>

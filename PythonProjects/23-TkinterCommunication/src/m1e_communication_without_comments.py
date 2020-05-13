@@ -14,7 +14,7 @@ def main(who_am_i):
 class Game(object):
     def __init__(self, who_am_i):
         self.gui = GUI(self)
-        self.canvas = self.gui.canvas
+        canvas = self.gui.canvas
         receiver = communicator.Receiver(self)
         self.sender = communicator.Sender(receiver, "something_unique",
                                           who_am_i)
@@ -22,7 +22,7 @@ class Game(object):
             color = "blue"
         else:
             color = "red"
-        self.ball = Ball(color, self.canvas)
+        self.ball = Ball(color, canvas)
 
     def start(self):
         self.gui.start()

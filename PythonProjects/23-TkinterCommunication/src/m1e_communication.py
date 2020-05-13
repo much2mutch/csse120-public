@@ -76,7 +76,7 @@ class Game(object):
         # position (and anything else it might want to change).
 
         self.gui = GUI(self)
-        self.canvas = self.gui.canvas
+        canvas = self.gui.canvas
 
         # Make a Receiver and Sender for messages to/from other computers.
         receiver = communicator.Receiver(self)
@@ -88,7 +88,7 @@ class Game(object):
             color = "blue"
         else:
             color = "red"
-        self.ball = Ball(color, self.canvas)  # How each Ball gets the Canvas
+        self.ball = Ball(color, canvas)  # How each Ball gets the Canvas
 
     def start(self):
         # Called after the GUI, the Game, and all the animated objects
