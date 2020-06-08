@@ -2,12 +2,14 @@
 Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Derek Whitley, their colleagues, and PUT_YOUR_NAME_HERE.
+         Derek Whitley, their colleagues, and Seth Mutchler.
 """
 ###############################################################################
-# TODO: 1.
+# DONE: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ###############################################################################
+
+import rosegraphics as rg
 
 ###############################################################################
 # TODO: 2.
@@ -27,3 +29,51 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #  _
 #   Don't forget to COMMIT-and-PUSH when you are done with this module.
 ###############################################################################
+
+import math
+
+
+
+square_turtle = rg.SimpleTurtle("turtle")
+square_turtle.pen = rg.Pen("lightblue", 2)
+square_turtle.speed = 100
+
+octagon_turtle = rg.SimpleTurtle("turtle")
+octagon_turtle.pen = rg.Pen("DarkGoldenrod2", 2)
+octagon_turtle.speed = 100
+
+c_turtle = rg.SimpleTurtle("turtle")
+c_turtle.pen = rg.Pen("firebrick", 2)
+c_turtle.speed = 100
+
+size = 5
+
+window = rg.TurtleWindow()
+window.tracer(200)
+
+for k in range(1000):
+    square_turtle.draw_square(size)
+    square_turtle.pen_up()
+    square_turtle.left(45+(k**2))
+    square_turtle.forward(7)
+    square_turtle.right(45+k)
+    square_turtle.pen_down()
+
+    octagon_turtle.draw_regular_polygon(8, size)
+    octagon_turtle.pen_up()
+    octagon_turtle.left(45+2*k)
+    octagon_turtle.forward(5)
+    octagon_turtle.right(45+2*k)
+    octagon_turtle.pen_down()
+
+    c_turtle.draw_circle(size)
+    c_turtle.pen_up()
+    c_turtle.left(45+k)
+    c_turtle.forward(5)
+    c_turtle.right(45+k)
+    c_turtle.pen_down()
+
+    size = size + (k * 2)
+
+window.close_on_mouse_click()
+

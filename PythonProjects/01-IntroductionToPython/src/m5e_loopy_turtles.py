@@ -46,6 +46,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 """
 import rosegraphics as rg
 
+
 ###############################################################################
 # One window, for two examples.
 ###############################################################################
@@ -59,10 +60,10 @@ blue_turtle.pen = rg.Pen("midnight blue", 3)
 blue_turtle.speed = 20  # Fast
 
 # The first square will be 300 x 300 pixels:
-size = 150
+size = 250
 
 # Do the indented code 6 times.  Each time draws a square.
-for k in range(6):
+for k in range(15):
 
     # Put the pen down, then draw a square of the given size:
     blue_turtle.draw_square(size)
@@ -72,7 +73,7 @@ for k in range(6):
     blue_turtle.pen_up()
     blue_turtle.right(45)
     blue_turtle.forward(10)
-    blue_turtle.left(45)
+    blue_turtle.left(45 + k)
 
     # Put the pen down again (so drawing resumes).
     # Make the size for the NEXT square be 12 pixels smaller.
