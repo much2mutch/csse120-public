@@ -2,7 +2,7 @@
 An exercise that summarizes what you have learned in this Session.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Derek Whitley, their colleagues, and PUT_YOUR_NAME_HERE.
+         Derek Whitley, their colleagues, and Seth Mutchler.
 """
 ###############################################################################
 # TODO: 1.
@@ -36,3 +36,5 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #   As always, test by running the module.
 #   As always, COMMIT-and-PUSH when you are done with this module.
 ###############################################################################
+
+

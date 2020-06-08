@@ -150,7 +150,7 @@ boris.draw_square(80)
 ###############################################################################
 
 seth = rg.SimpleTurtle("turtle")
-seth.pen = rg.Pen("green",20)
+seth.pen = rg.Pen("green", 20)
 seth.draw_regular_polygon(7, 15)
 seth.draw_regular_polygon(7, 30)
 seth.draw_regular_polygon(7, 45)
