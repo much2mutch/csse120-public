@@ -4,7 +4,18 @@ Your chance to explore Loops and Turtles!
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Derek Whitley, their colleagues, and Seth Mutchler.
 """
+
+
+
+
+
+
 """
+BEGINNING
+
+
+
+
 ###############################################################################
 # DONE: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
@@ -83,7 +94,14 @@ Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Derek Whitley, their colleagues, and Seth Mutchler.
+         
+         
+         
+END
 """
+
+
+
 ###############################################################################
 # DONE: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
@@ -115,25 +133,31 @@ import math
 
 
 square_turtle = rg.SimpleTurtle("turtle")
-square_turtle.pen = rg.Pen("LightSteelBlue", 2)
+square_turtle.pen = rg.Pen("LightSteelBlue", 1)
 square_turtle.speed = 200
 
 octagon_turtle = rg.SimpleTurtle("turtle")
-octagon_turtle.pen = rg.Pen("DarkGoldenrod2", 2)
+octagon_turtle.pen = rg.Pen("DarkGoldenrod2", 1)
 octagon_turtle.speed = 200
 
 c_turtle = rg.SimpleTurtle("turtle")
-c_turtle.pen = rg.Pen("lightblue", 2)
+c_turtle.pen = rg.Pen("MediumPurple", 1)
 c_turtle.speed = 200
 
 size = 5
 
 window = rg.TurtleWindow()
 
-#window.tracer(200)
+window.tracer(20)
 
 for k in range(30):
 
+    square_turtle.draw_square(size)
+    square_turtle.right(90)
+    square_turtle.draw_square(size)
+    square_turtle.right(90)
+    square_turtle.draw_square(size)
+    square_turtle.right(90)
     square_turtle.draw_square(size)
     square_turtle.right(90)
     #square_turtle.pen_up()
@@ -161,7 +185,7 @@ for k in range(30):
     c_turtle.draw_circle(size)
     c_turtle.pen_up()
     c_turtle.left(45)
-    c_turtle.forward(2)
+    c_turtle.forward(20)
     c_turtle.right(90)
     c_turtle.pen_down()
 
