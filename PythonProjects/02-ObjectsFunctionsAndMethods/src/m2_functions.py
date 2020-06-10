@@ -3,11 +3,11 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Derek Whitley, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Derek Whitley, their colleagues, and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -17,7 +17,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ###############################################################################
 
 import rosegraphics as rg
-
+import math
 
 def main():
     """
@@ -25,13 +25,21 @@ def main():
     You write the tests per the _TODO_s below.
     """
     window = rg.TurtleWindow()
+
     # Put your TESTS immediately below this line, as directed by _TODO_s below.
+
+    tri_hy(5,10)
+    tri_hy(1,2)
+
+    two_turtles("red", 3)
+    two_turtles("blue", 7)
 
     window.close_on_mouse_click()
 
 
+
 ###############################################################################
-# TODO: 3a.  Define a function immediately below this _TODO_.
+# DONE: 3a.  Define a function immediately below this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
@@ -40,14 +48,19 @@ def main():
 #   You may name the function and its parameters whatever you wish,
 #   but choose DESCRIPTIVE (self-documenting) names.
 #
-# TODO: 3b.  In main, CALL your function TWICE (with different values
+# DONE: 3b.  In main, CALL your function TWICE (with different values
 #   for the arguments) and print the returned values,
 #   to test whether you defined the function correctly.
 ###############################################################################
 
+def tri_hy(s1,s2):
+    print(math.sqrt((s1**2) + (s2**2)))
+
+
+
 
 ###############################################################################
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# DONE: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. "red")
 #     -- a positive integer that represents the thickness of a Pen.
@@ -68,12 +81,24 @@ def main():
 #   You may name the function and its parameters whatever you wish,
 #   but choose DESCRIPTIVE (self-documenting) names.
 #
-# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+# DONE: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 ###############################################################################
 
+def two_turtles(color, thickness):
+    t1 = rg.SimpleTurtle()
+    t1.pen.color = "green"
+    t1.pen.thickness = thickness
+
+    t2 = rg.SimpleTurtle()
+    t2.pen.color = color
+    t2.pen.thickness = 5
+
+    t1.forward(100)
+    t2.backward(100)
+
 ###############################################################################
-# TODO: 5.
+# DONE: 5.
 #   COMMIT-and-PUSH your work (after changing this _TODO_ to DONE).
 #  _
 #   As a reminder, here is how you should do so:
