@@ -5,11 +5,11 @@ This module uses ROSEGRAPHICS to demonstrate:
   -- accessing their DATA via INSTANCE VARIABLES.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Derek Whitley, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Derek Whitley, their colleagues, and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -19,53 +19,54 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 ###############################################################################
 
 ###############################################################################
-# TODO: 3.
+# DONE: 3.
 #   RUN this program.  Then answer the following, FOLLOWING YOUR INSTRUCTOR
 #     and GETTING HELP AS NEED! (Ask questions!!!)
 #  _
 #     a. For the RoseGraphics coordinate system:
 #  _
 #        -- Where is the (0, 0) point on the screen?
-#              WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#              Top Left
 #  _
 #        -- In what direction on the screen does the positive X-axis point?
-#              WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#              left-to-right
 #  _
 #        -- In what direction on the screen does the positive Y-axis point?
-#              WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#              top-to-bottom
 #  _
 #     b. Write a line of code that constructs a RoseWindow object:
-#            WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#            window = rg.RoseWindow()
 #  +
 #     c. What is the default height of a RoseWindow?
 #        (Select RoseWindow in the code below, then  View ~ Quick Documentation
 #         to determine the answer to this question.)
-#            WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#            300px
 #  +
 #     d. Write a line of code that construct a RoseWindow object
 #        whose height is 100:
 #        (Use the   View ~ Quick Documentation   trick to figure it out)
-#            WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#            rg.RoseWindow(400,100)
 #  +
 #     e. Use the DOT trick to answer the following:
 #  +
 #          -- Write the names of two types of graphics objects that
 #             you can construct OTHER than Circle and Point:
-#                WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#                Arc & Ellipse
 #  +
 #          -- Write the names of three METHODs that Circle objects have:
-#                WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#                Attach to, move by, move to
 #  +
 #          -- Write the names of three INSTANCE VARIABLEs that Circle
 #             objects have:
-#                WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#                self, center, radius
 #  _
 #     f. What does a RoseWindow RENDER method do?
-#            WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#            Updates all the Shapes attached to RoseCanvas objects associated with this RoseWindow,
+#            then draws all those Shapes. After doing so, pauses the given number of seconds.
 #  _
 #     g. When is a RoseWindow close_on_mouse_click method call
 #        necessary?  Why?
-#            WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#            Otherwise window automatically closes
 #  _
 #   ASK QUESTIONS ** NOW ** if you do not understand how the
 #     RoseGraphics graphics system works.
@@ -77,6 +78,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 
 import rosegraphics as rg
 
+rg.RoseWindow.clo
 
 def main():
     """
@@ -107,8 +109,8 @@ def example2():
     # Construct some rg.Point objects.
     # Note: the y-axis goes DOWN from the TOP.
     # -------------------------------------------------------------------------
-    point1 = rg.Point(100, 150)
-    point2 = rg.Point(200, 50)
+    point1 = rg.Point(100, 5)
+    point2 = rg.Point(200, 100)
 
     # -------------------------------------------------------------------------
     # A RoseGraphics object is not associated with a window,
