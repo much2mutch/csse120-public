@@ -4,11 +4,11 @@ in its simplest classic forms:
    SUMMING:       total = total + number
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Derek Whitley, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Derek Whitley, their colleagues, and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2. Read the following, then change its _TODO_ to DONE.
+# DONE: 2. Read the following, then change its _TODO_ to DONE.
 #   Throughout these exercises, you must use  RANGE  statements.
 #   At this point of the course, you are restricted to the SINGLE-ARGUMENT
 #   form of RANGE statements, like this:
@@ -40,6 +40,21 @@ def run_test_sum_cosines():
     print("Testing the   sum_cosines   function:")
     print("--------------------------------------------------")
 
+    expected = 0.13416
+    actual = sum_cosines(3)
+    print("Test 1 expected",expected)
+    print("       actual",answer)
+
+    expected = 1.12415
+    actual = sum_cosines(2)
+    print("Test 1 expected",expected)
+    print("       actual",answer)
+
+    expected = 0.72435
+    actual = sum_cosines(6)
+    print("Test 1 expected",expected)
+    print("       actual",answer)
+
 
 def sum_cosines(n):
     """
@@ -54,6 +69,7 @@ def sum_cosines(n):
       :type n: int
       :rtype: float
     """
+    for k in range(n)
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
