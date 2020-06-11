@@ -28,3 +28,24 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #           - Move forward twice the given distance.
 #     d.  Calls main.
 ###############################################################################
+
+import rosegraphics as rg
+
+def t_move(turtle, color, dist):
+    turt = rg.SimpleTurtle(turtle)
+    turt.backward(dist)
+    turt.pen = rg.Pen(color, 3)
+    turt.left(90)
+    turt.forward(dist*2)
+
+
+
+def main():
+    window = rg.TurtleWindow()
+
+    t_move("classic", "blue", 40)
+    t_move("turtle", "red", 100)
+
+    window.close_on_mouse_click()
+
+main()

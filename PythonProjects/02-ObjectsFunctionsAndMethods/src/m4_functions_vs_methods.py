@@ -131,9 +131,15 @@ def try_methods():
       -- forward    50 units
       -- backward  100 units
     """
+    ttm = rg.SimpleTurtle()
+    ttm.pen = rg.Pen("Brown",5)
+    ttm.forward(150)
+    ttm.left(90)
+    ttm.forward(50)
+    ttm.backward(100)
 
     ###########################################################################
-    # TODO: 4. Implement and test this function, per its doc-string above.
+    # DONE: 4. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
     ###########################################################################
 
@@ -148,8 +154,13 @@ def try_functions():
      -- One jumps to (100, 200), then moves (while drawing) to (0, 0)
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
+
+    jump_and_move_turtle(200,100,300,30)
+    jump_and_move_turtle(100,200,0,0)
+    jump_and_move_turtle(-50,50,100,100)
+
     ###########################################################################
-    # TODO: 5. Implement and test this function, per its doc-string above.
+    # DONE: 5. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
     #  _
     #    NOTE: This function requires
@@ -194,8 +205,32 @@ def try_methods_and_functions():
 
       8. Draw a SQUARE whose sides are each of length 50.
     """
+
+    tmft = rg.SimpleTurtle()
+    tmft.pen = rg.Pen("blue",5)
+
+    tmft.backward(150)
+    tmft.speed = 1
+    draw_many_squares(tmft,2,100,30)
+
+    tmft.speed = 5
+    tmft.pen.color = "red"
+    draw_many_squares(tmft,10,50,15)
+
+    tmft.speed = 100
+    tmft.pen.thickness = 35
+    draw_many_squares(tmft,8,300,60)
+
+    tmft.pen = rg.Pen("black",3)
+
+    tmft.backward(200)
+
+    tmft.draw_circle(30)
+
+    tmft.draw_square(50)
+
     ###########################################################################
-    # TODO: 6. Implement and test this function, per its doc-string above.
+    # DONE: 6. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
     #  _
     #   NOTE: This function should ** CALL ** the
