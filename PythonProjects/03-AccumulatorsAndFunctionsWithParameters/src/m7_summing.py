@@ -130,18 +130,19 @@ def sum_square_roots(n):
       :rtype: float
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-FIRST DEVELOPMENT (TFD).
     #  ___
     #  No fair running the code of  sum_square_roots  to GENERATE
     #  test cases; that would defeat the purpose of TESTING!
     # -------------------------------------------------------------------------
+    total = 0
 
-    for k in range(n+1):
-        total = 0
-        total = total + math.sqrt(n*2)
-        return total
+    for k in range(n):
+        total = total + math.sqrt((k+1)*2)
+
+    return total
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
