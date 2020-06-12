@@ -17,7 +17,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet,
 #   for pedagogical reasons.
 ###############################################################################
-
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -43,17 +43,17 @@ def run_test_sum_cosines():
     expected = 0.13416
     actual = sum_cosines(3)
     print("Test 1 expected",expected)
-    print("       actual",answer)
+    print("       actual",actual)
 
     expected = 1.12415
     actual = sum_cosines(2)
     print("Test 1 expected",expected)
-    print("       actual",answer)
+    print("       actual",actual)
 
     expected = 0.72435
     actual = sum_cosines(6)
     print("Test 1 expected",expected)
-    print("       actual",answer)
+    print("       actual",actual)
 
 
 def sum_cosines(n):
@@ -69,7 +69,10 @@ def sum_cosines(n):
       :type n: int
       :rtype: float
     """
-    for k in range(n)
+    total = 0
+    for k in range(n+1):
+        total = total + math.cos(n)
+    return total
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
