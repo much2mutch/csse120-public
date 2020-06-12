@@ -14,6 +14,7 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
+    two_circles()
 
 
 def two_circles():
@@ -26,6 +27,18 @@ def two_circles():
            -- One is filled with some color and one is not filled.
     -- Waits for the user to press the mouse, then closes the window.
     """
+    window = rg.RoseWindow()
+    cent1 = rg.Point(10,10)
+    cent2 = rg.Point(30,30)
+    rad1 = 30
+    rad2 = 50
+    c1 = rg.Circle(cent1,rad1)
+    c2 = rg.Circle(cent2,rad2)
+    c1.fill_color = "blue"
+    c1.attach_to(window)
+    c2.attach_to(window)
+    window.close_on_mouse_click()
+
     # -------------------------------------------------------------------------
     # TODO: 2. Implement this function, per its green doc-string above.
     #     -- ANY two rg.Circle objects that meet the criteria are fine.
