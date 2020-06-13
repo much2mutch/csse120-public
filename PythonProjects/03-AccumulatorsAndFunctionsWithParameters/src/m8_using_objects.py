@@ -14,7 +14,9 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
-    two_circles()
+    # two_circles()
+    # lines()
+    circle_and_rectangle()
 
 
 def two_circles():
@@ -74,8 +76,24 @@ def lines():
 
     -- Waits for the user to press the mouse, then closes the window.
     """
+    window = rg.RoseWindow()
+    l1a = rg.Point(50,50)
+    l1b = rg.Point(10,100)
+    l2a = rg.Point(150,150)
+    l2b = rg.Point(30,300)
+    l1 = rg.Line(l1a,l1b)
+    l2 = rg.Line(l2a,l2b)
+    l2.thickness = 5
+    l1.attach_to(window)
+    l2.attach_to(window)
+    window.render()
+    l2mid = l2.get_midpoint()
+    print("midpoint is", l2mid)
+    print("midpoint x is", l2mid.x)
+    print("midpoint y is", l2mid.y)
+    window.close_on_mouse_click()
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its green doc-string above.
+    # DONE: 3. Implement this function, per its green doc-string above.
     #    -- ANY lines that meet the criteria are fine.
     #  Put a statement in   main   to test this function
     #    (by calling this function).
@@ -118,6 +136,38 @@ def circle_and_rectangle():
            75.0
            150.0
     """
+    window = rg.RoseWindow()
+    centerx = 100
+    centery = 150
+    circlecenter = rg.Point(centerx,centery)
+    circleradius = 50
+    circle = rg.Circle(circlecenter,circleradius)
+    circle.fill_color = "blue"
+    circle.attach_to(window)
+    rectanglecorner1 = rg.Point(200,30)
+    rectanglecorner2 = rg.Point(350,50)
+    rectangle = rg.Rectangle(rectanglecorner1,rectanglecorner2)
+    rectangle.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
+
+    print("for CIRCLE:")
+    print("outline thickness is")
+    print("fill color is")
+    print("center is")
+    print()
+
+    # -- Its outline thickness.
+    # -- Its fill color.
+    # -- Its center.
+    # -- Its center's x coordinate.
+    # -- Its center 's y coordinate.
+
+
+
+
+
     # -------------------------------------------------------------------------
     # TODO: 4. Implement this function, per its green doc-string above.
     #    -- ANY objects that meet the criteria are fine.
