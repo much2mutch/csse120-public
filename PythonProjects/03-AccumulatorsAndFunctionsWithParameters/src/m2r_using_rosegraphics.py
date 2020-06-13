@@ -78,7 +78,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 
 import rosegraphics as rg
 
-rg.RoseWindow.clo
+
 
 def main():
     """
