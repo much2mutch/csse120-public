@@ -144,6 +144,7 @@ def circle_and_rectangle():
     circle = rg.Circle(circlecenter,circleradius)
     circle.fill_color = "blue"
     circle.attach_to(window)
+
     rectanglecorner1 = rg.Point(200,30)
     rectanglecorner2 = rg.Point(350,50)
     rectangle = rg.Rectangle(rectanglecorner1,rectanglecorner2)
@@ -153,16 +154,18 @@ def circle_and_rectangle():
     window.close_on_mouse_click()
 
     print("for CIRCLE:")
-    print("outline thickness is")
-    print("fill color is")
-    print("center is")
-    print()
+    print("  outline thickness is", getattr(circle, "outline_thickness"))
+    print("  fill color is", getattr(circle,"fill_color"))
+    print("  center is", getattr(circle, "center"))
+    print("  center x is", centerx) # how do I do this with getattr?
+    print("  center y is", centery) # how do I do this with getattr?
 
-    # -- Its outline thickness.
-    # -- Its fill color.
-    # -- Its center.
-    # -- Its center's x coordinate.
-    # -- Its center 's y coordinate.
+    #rectanglecenter = rg.Rectangle.get_center()
+    print("for RECTANGLE:")
+    print("  outline thickness is", getattr(rectangle, "outline_thickness"))
+    print("  fill color is", getattr(rectangle,"fill_color"))
+    #print("  center is",getattr(rectangle, "center"))
+    #print("  center x is", rg.Rectangle.get_center.
 
 
 
