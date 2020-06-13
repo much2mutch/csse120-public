@@ -21,8 +21,10 @@ import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_sum_cosines()
-    run_test_sum_square_roots()
+    # run_test_sum_cosines()
+    # run_test_sum_square_roots()
+    test_function(4,sum_square_roots,35)
+
 
 
 def run_test_sum_cosines():
@@ -82,6 +84,13 @@ def sum_cosines(n):
     #  test cases; that would defeat the purpose of TESTING!
     # -------------------------------------------------------------------------
 
+def test_function(expected, function, x):
+    actual = function(x)
+    print("     expected", expected)
+    print("       actual", actual)
+    if expected != actual:
+        print("fix your code!")
+
 
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
@@ -97,6 +106,8 @@ def run_test_sum_square_roots():
     print("--------------------------------------------------")
     print("Testing the   sum_square_roots   function:")
     print("--------------------------------------------------")
+
+
 
     expected = 1.414
     actual = sum_square_roots(1)

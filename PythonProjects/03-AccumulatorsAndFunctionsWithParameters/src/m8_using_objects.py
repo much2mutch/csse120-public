@@ -92,6 +92,7 @@ def lines():
     print("midpoint x is", l2mid.x)
     print("midpoint y is", l2mid.y)
     window.close_on_mouse_click()
+
     # -------------------------------------------------------------------------
     # DONE: 3. Implement this function, per its green doc-string above.
     #    -- ANY lines that meet the criteria are fine.
@@ -154,25 +155,25 @@ def circle_and_rectangle():
     window.close_on_mouse_click()
 
     print("for CIRCLE:")
-    print("  outline thickness is", getattr(circle, "outline_thickness"))
-    print("  fill color is", getattr(circle,"fill_color"))
-    print("  center is", getattr(circle, "center"))
-    print("  center x is", centerx) # how do I do this with getattr?
-    print("  center y is", centery) # how do I do this with getattr?
+    print("  outline thickness is", circle.outline_thickness)
+    print("  fill color is", circle.fill_color)
+    print("  center is", circle.center)
+    print("  center x is", circle.center.x)
+    print("  center y is", circle.center.y)
 
-    #rectanglecenter = rg.Rectangle.get_center()
     print("for RECTANGLE:")
-    print("  outline thickness is", getattr(rectangle, "outline_thickness"))
-    print("  fill color is", getattr(rectangle,"fill_color"))
-    #print("  center is",getattr(rectangle, "center"))
-    #print("  center x is", rg.Rectangle.get_center.
+    print("  outline thickness is", rectangle.outline_thickness)
+    print("  fill color is", rectangle.fill_color)
+    print("  center is", rectangle.get_center())
+    print("  center x is", rectangle.get_center().x)
+    print("  center y is", rectangle.get_center().y)
 
 
 
 
 
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this function, per its green doc-string above.
+    # DONE: 4. Implement this function, per its green doc-string above.
     #    -- ANY objects that meet the criteria are fine.
     #  Put a statement in   main   to test this function
     #    (by calling this function).
