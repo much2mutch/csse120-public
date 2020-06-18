@@ -30,7 +30,7 @@ import builtins  # Never necessary, but here for pedagogical reasons
 # -----------------------------------------------------------------------------
 
 ##############################################################################
-# TODO: 2. Read the following, then change its _TODO_ to DONE.
+# DONE: 2. Read the following, then change its _TODO_ to DONE.
 #   Throughout these exercises, you must use  RANGE  statements.
 #   At this point of the course, you are restricted to the SINGLE-ARGUMENT
 #   form of RANGE statements, like this:
@@ -102,7 +102,7 @@ def run_test_sum_from():
     print("       actual (from my code):  ", answer_from_my_code)
 
 # -----------------------------------------------------------------------------
-# TODO: 3.
+# DONE: 3.
 #   When you have READ the above  run_test_sum_from  function,
 #   asking questions as needed, and you feel that you (mostly, at least)
 #   understand it, and you feel that you understand from the example:
@@ -129,8 +129,13 @@ def sum_from(m, n):
       :type n: int
       :rtype:  int
     """
+    total = 0
+    for k in range((n+1)-m):
+        total = total + (k+m)
+    return total
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # done: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #  _
     #  IMPORTANT:  Your solution MUST
@@ -145,7 +150,7 @@ def sum_from(m, n):
 def run_test_factorial():
     """ Tests the   factorial   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  factorial  function defined below.
     #   Include at least **   5   ** tests (we wrote two for you).
     #  ########################################################################
@@ -166,19 +171,43 @@ def run_test_factorial():
     print("       actual (from my code): ", answer_from_my_code)
 
     # Test 2:
-    answer_from_oracle = math.factorial(21)
-    answer_from_my_code = factorial(21)
+    answer_from_oracle = math.factorial(50)
+    answer_from_my_code = factorial(50)
     print("Test 2 expected (from oracle):", answer_from_oracle)
     print("       actual (from my code): ", answer_from_my_code)
 
+    # Test 3:
+    answer_from_oracle = math.factorial(10)
+    answer_from_my_code = factorial(10)
+    print("Test 3 expected (from oracle):", answer_from_oracle)
+    print("       actual (from my code): ", answer_from_my_code)
+
+    # Test 4:
+    answer_from_oracle = 7*6*5*4*3*2*1
+    answer_from_my_code = factorial(7)
+    print("Test 3 expected (from formula):", answer_from_oracle)
+    print("       actual (from my code): ", answer_from_my_code)
+
+    # Test 4:
+    answer_from_oracle = 6
+    answer_from_my_code = factorial(3)
+    print("Test 3 expected (by hand):", answer_from_oracle)
+    print("       actual (from my code): ", answer_from_my_code)
+
     # -------------------------------------------------------------------------
-    # TODO: 5 (continued).
+    # done: 5 (continued).
     #   Below this comment, add 3 more test cases, at least two of which
     #     ** uses  math.factorial  as an ORACLE for testing. **
     # -------------------------------------------------------------------------
 
 
 def factorial(n):
+
+    total = 1
+    for k in range(n):
+        total = total * (n-k)
+    return total
+
     """
     What comes in:  The sole argument is a non-negative integer n.
     What goes out:  Returns n!, that is, n x (n-1) x (n-2) x ... x 1.
@@ -191,7 +220,7 @@ def factorial(n):
       :rtype:  int
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  _
     #  IMPORTANT:  Your solution MUST
@@ -236,6 +265,36 @@ def run_test_count_cosines_from():
     print("Test 1 expected:", expected)
     print("       actual:  ", answer)
 
+    # Test 2:
+    expected = 3
+    answer = count_cosines_from(-2, 4, 0.5)
+    print("Test 2 expected:", expected)
+    print("       actual:  ", answer)
+
+    # Test 3:
+    expected = 5
+    answer = count_cosines_from(20, 30, 0.05)
+    print("Test 3 expected:", expected)
+    print("       actual:  ", answer)
+
+    # Test 4:
+    expected = 0
+    answer = count_cosines_from(-5, -2, 1)
+    print("Test 4 expected:", expected)
+    print("       actual:  ", answer)
+
+    # Test 5:
+    expected = 1
+    answer = count_cosines_from(6, 6, 0.3)
+    print("Test 5 expected:", expected)
+    print("       actual:  ", answer)
+
+    # Test 6:
+    expected = 0
+    answer = count_cosines_from(6, 6, 5)
+    print("Test 6 expected:", expected)
+    print("       actual:  ", answer)
+
     # -------------------------------------------------------------------------
     # TODO: 7 (continued).
     #   Below this comment, add 5 more test cases of your own choosing.
@@ -243,6 +302,13 @@ def run_test_count_cosines_from():
 
 
 def count_cosines_from(m, n, x):
+
+    count = 0
+    for k in range (n+1-m):
+        if math.cos(k+m) > x:
+            count = count + 1
+    return count
+
     """
     What comes in:  The three arguments are two non-negative integers
       m and n, with m <= n, and a number x.
@@ -267,7 +333,7 @@ def count_cosines_from(m, n, x):
       :rtype:  int
     """
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement and test this function.
+    # DONE: 8. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  _
     #  IMPORTANT: As in previous problems in this session,
@@ -279,7 +345,7 @@ def count_cosines_from(m, n, x):
 def run_test_sum_unit_fractions_from():
     """ Tests the   sum_unit_fractions_from   function. """
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement this TEST function.
+    # DONE: 9. Implement this TEST function.
     #   It TESTS the  sum_unit_fractions_from  function defined below.
     #   Include at least **   3   ** tests (we wrote one for you).
     #   Use the same 4-step process as for previous TEST functions.
@@ -295,13 +361,36 @@ def run_test_sum_unit_fractions_from():
     print("Test 1 expected:", expected, "(approximately)")
     print("       actual:  ", answer)
 
+    # Test 2:
+    expected = 1.83  # This is APPROXIMATELY the correct answer.
+    answer = sum_unit_fractions_from(1, 3)
+    print("Test 2 expected:", expected, "(approximately)")
+    print("       actual:  ", answer)
+
+    # Test 3:
+    expected = 0.065  # This is APPROXIMATELY the correct answer.
+    answer = sum_unit_fractions_from(60, 63)
+    print("Test 3 expected:", expected, "(approximately)")
+    print("       actual:  ", answer)
+
+    # Test 4:
+    expected = 0.2  # This is APPROXIMATELY the correct answer.
+    answer = sum_unit_fractions_from(5, 5)
+    print("Test 4 expected:", expected, "(approximately)")
+    print("       actual:  ", answer)
+
     # -------------------------------------------------------------------------
-    # TODO: 9 (continued).
+    # DONE: 9 (continued).
     #   Below this comment, add 2 more test cases of your own choosing.
     # -------------------------------------------------------------------------
 
 
 def sum_unit_fractions_from(m, n):
+    total = 0
+    for k in range (n+1-m):
+        total = total + 1/(k+m)
+    return round(total,3)
+
     """
     What comes in:  Two positive integers m and n with m <= n.
     What goes out:  Returns the sum:
@@ -318,7 +407,7 @@ def sum_unit_fractions_from(m, n):
       :rtype:  float
     """
     # -------------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  _
     #  IMPORTANT: As in previous problems in this session,
