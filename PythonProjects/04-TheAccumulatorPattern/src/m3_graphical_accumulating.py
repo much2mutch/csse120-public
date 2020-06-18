@@ -9,8 +9,8 @@ Additionally, it emphasizes that you must
 before you can implement a solution to the problem in Python.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Derek Whitley, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Derek Whitley, their colleagues, and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -26,7 +26,7 @@ import rosegraphics as rg
 # -----------------------------------------------------------------------------
 
 ##############################################################################
-# TODO: 2. Read the following, then change its _TODO_ to DONE.
+# DONE: 2. Read the following, then change its _TODO_ to DONE.
 #   Throughout these exercises, you must use  RANGE  statements.
 #   At this point of the course, you are restricted to the SINGLE-ARGUMENT
 #   form of RANGE statements, like this:
@@ -81,6 +81,20 @@ def run_test_draw_parallel_lines():
 
 
 def draw_parallel_lines(n, point, length, window):
+
+    x = point.x
+    y = point.y
+
+    for _ in range(n):
+        start = rg.Point(x,y)
+        end = rg.Point(x+length,y)
+
+        line = rg.Line(start,end)
+
+        line.attach_to(window)
+
+        y = y + 30
+    window.render()
     """
     What comes in: The four arguments are:
       -- A positive integer n.
@@ -109,7 +123,7 @@ def draw_parallel_lines(n, point, length, window):
       :rtype: None
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #  _
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -146,6 +160,20 @@ def run_test_draw_lines():
 
 
 def draw_lines(n, point, window):
+
+    x = point.x
+    y = point.y
+    y_dif = -100
+    for _ in range(n):
+        start = rg.Point(x,y)
+        end = rg.Point(x+100,y+y_dif)
+        line = rg.Line(start,end)
+
+        line.attach_to(window)
+        y_dif = y_dif + (200/n)
+
+    window.render()
+
     """
     What comes in: The three arguments are:
       -- A integer n that is at least 2.
@@ -174,7 +202,7 @@ def draw_lines(n, point, window):
       :rtype: None
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #  _
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
