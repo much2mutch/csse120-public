@@ -39,8 +39,8 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_draw_squares_from_circle()
-    run_test_draw_circles_from_rectangle()
+    # run_test_draw_squares_from_circle()
+    # run_test_draw_circles_from_rectangle()
     run_test_draw_lines_from_rectangles()
 
 
@@ -345,6 +345,85 @@ def run_test_draw_lines_from_rectangles():
 
 
 def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
+    # draw both rectangles
+    rectangle1.attach_to(window)
+    rectangle2.attach_to(window)
+
+    # define attributes of rectangles
+    r1_center = rectangle1.get_center() # rect. 1 center
+    r2_center = rectangle2.get_center() # rect. 2 center
+    r1_h = rectangle1.get_height()      # rect. 1 height
+    r1_w = rectangle1.get_width()       # rect. 1 width
+    r2_h = rectangle2.get_height()      # rect. 2 height
+    g2_w = rectangle2.get_width()       # rect. 2 width
+    r1_color = rectangle1.outline_color # rect. 1 outline color
+    r2_color = rectangle2.outline_color # rect. 2 outline color
+
+    # define starting attributes of points
+    p1x = r1_center.x                   # point 1 starting x
+    p1y = r1_center.y                   # point 1 starting y
+    p2x = r2_center.x                   # point 2 starting x
+    p2y = r2_center.y                   # point 2 starting y
+
+    # draw line 1
+    line = rg.Line(rg.Point(p1x,p1y),rg.Point(p2x,p2y))
+    line.thickness = 5
+    line.color = r1_color
+    color = line.color
+    line.attach_to(window)
+    # print(rg.Point(p1x,p1y))
+    # print("starting color is",line.color)
+    # print("r1 color is",r1_color)
+
+    # loop
+    for _ in range (n-1):
+
+        # point 1
+        p1x = p1x - (r1_w / 2)
+        p1y = p1y + (r1_h / 2)
+        point1 = rg.Point(p1x,p1y)
+        # print("p1 = ",point1)
+
+        # point 2
+        p2x = p2x - (r1_w / 2)
+        p2y = p2y + (r1_h / 2)
+        point2 = rg.Point(p2x,p2y)
+        # print("p2 = ",point2)
+
+        # create line
+        line = rg.Line(rg.Point(p1x,p1y),rg.Point(p2x,p2y))
+
+        # thickness
+        line.thickness = 5
+
+        # color
+        if color == r1_color:
+            # print("line color is r1; switching to r2")
+            color = r2_color
+        else:
+            # print("line color is r2; switching to r1")
+            color = r1_color
+        line.color = color
+
+        # attach to window
+        line.attach_to(window)
+
+        #
+
+        # color = line.color
+        # if color == r1_color:
+        #     print("color == r1_color")
+        #     line.color = r2_color
+        #     print("A",line.color)
+        # else:
+        #     print("color == r2_color")
+        #     line.color = r2_color
+        #     print("B",line.color)
+
+    # render final drawing
+    # print("rendering")
+    window.render()
+
     """
     What comes in:  Four arguments:
       -- Two rg.Rectangles.
