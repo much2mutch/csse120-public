@@ -354,8 +354,6 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     r2_center = rectangle2.get_center() # rect. 2 center
     r1_h = rectangle1.get_height()      # rect. 1 height
     r1_w = rectangle1.get_width()       # rect. 1 width
-    r2_h = rectangle2.get_height()      # rect. 2 height
-    g2_w = rectangle2.get_width()       # rect. 2 width
     r1_color = rectangle1.outline_color # rect. 1 outline color
     r2_color = rectangle2.outline_color # rect. 2 outline color
 
@@ -391,7 +389,7 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
         # print("p2 = ",point2)
 
         # create line
-        line = rg.Line(rg.Point(p1x,p1y),rg.Point(p2x,p2y))
+        line = rg.Line(point1,point2)
 
         # thickness
         line.thickness = 5
@@ -407,18 +405,6 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
 
         # attach to window
         line.attach_to(window)
-
-        #
-
-        # color = line.color
-        # if color == r1_color:
-        #     print("color == r1_color")
-        #     line.color = r2_color
-        #     print("A",line.color)
-        # else:
-        #     print("color == r2_color")
-        #     line.color = r2_color
-        #     print("B",line.color)
 
     # render final drawing
     # print("rendering")
