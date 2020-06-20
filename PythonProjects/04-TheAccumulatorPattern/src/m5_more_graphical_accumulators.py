@@ -446,7 +446,7 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
       :type window:     rg.RoseWindow
       """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Tests have been written for you (above).
     #  _
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
