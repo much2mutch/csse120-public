@@ -271,7 +271,7 @@ def problem1b(m, f):
         if is_prime(m+k):
             count = count + 1
             # print(k+1,": ",m+k,"is PRIME!     Count is ",count)
-        else:
+        # else:
             # print(k+1,": ",m+k,"is not prime.")
     return count
 
@@ -357,8 +357,16 @@ def problem1c(n):
            and the product of those numbers is 223092870,
            and the sum of the digits in 223092870 is 33.
     """
+    total = 1
+    for k in range (n-1):
+        if is_prime(k+2):
+            total = total*(k+2)
+    return sum_of_digits(total)
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #          Tests have been written for you (above).
     #  ########################################################################
     #  IMPORTANT:
