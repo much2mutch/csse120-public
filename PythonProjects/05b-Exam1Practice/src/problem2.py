@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -31,7 +31,7 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_problem2a()
+    # run_test_problem2a()
     run_test_problem2b()
 
 
@@ -84,26 +84,50 @@ def problem2a(circle, rectangle, window):
       -- An rg.RoseWindow.
     What goes out:  Nothing (i.e., None).
     Side effects:
-      -- Draws the given rg.Circle and rg.Rectangle
-           on the given rg.RoseWindow,
-           then waits for the user to click the window.
-      -- Then draws an rg.Line from the upper-right corner
-           of the rg.Rectangle to its lower-left corner,
-           with the line drawn as an arrow,
-           then waits for the user to click the window.
-      -- Changes the fill color of the given rg.Circle to the
-           outline color of the given rg.Rectangle,
-           then renders the window again
-           (with no waiting for a click from the user this time).
-      Must  ** NOT close **   the window.
+      # -- Draws the given rg.Circle and rg.Rectangle
+      #      on the given rg.RoseWindow,
+      #      then waits for the user to click the window.
+      # -- Then draws an rg.Line from the upper-right corner
+      #      of the rg.Rectangle to its lower-left corner,
+      #      with the line drawn as an arrow,
+      #      then waits for the user to click the window.
+      # -- Changes the fill color of the given rg.Circle to the
+      #      outline color of the given rg.Rectangle,
+      #      then renders the window again
+      #      (with no waiting for a click from the user this time).
+      # Must  ** NOT close **   the window.
 
     Type hints:
       :type circle:    rg.Circle
       :type rectangle: rg.Rectangle
       :type window:    rg.RoseWindow
     """
+
+    # -- Draws the given rg.Circle and rg.Rectangle
+    #      on the given rg.RoseWindow,
+    #      then waits for the user to click the window.
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+
+    # -- Then draws an rg.Line from the upper-right corner
+    #      of the rg.Rectangle to its lower-left corner,
+    #      with the line drawn as an arrow,
+    #      then waits for the user to click the window.
+    upper_right_corner = rectangle.get_upper_right_corner()
+    lower_left_corner = rectangle.get_lower_left_corner()
+    line = rg.Line(upper_right_corner,lower_left_corner)
+    line.arrow = "last"
+    line.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -173,8 +197,36 @@ def problem2b(rect, n, delta, win):
       :type delta:  int
       :type win:    rg.RoseWindow
     """
+
+    # initalizing variables
+    corner_1 = rect.get_upper_left_corner()
+    corner_2 = rect.get_lower_right_corner()
+    corner_1_x = corner_1.x
+    corner_1_y = corner_1.y
+    corner_2_x = corner_2.x
+    corner_2_y = corner_2.y
+
+    # 1st rectangle
+    rect.attach_to(win)
+
+    # subsequent rectangles
+    for k in range (n-1):
+        corner_1_x = corner_1.x - delta*(k+1)
+        corner_1_y = corner_1.y - delta*(k+1)
+        corner_2_x = corner_2.x + delta*(k+1)
+        corner_2_y = corner_2.y + delta*(k+1)
+        new_rect = rg.Rectangle(rg.Point(corner_1_x,corner_1_y),rg.Point(corner_2_x,corner_2_y))
+        new_rect.attach_to(win)
+        print(new_rect)
+    win.render()
+
+
+
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
