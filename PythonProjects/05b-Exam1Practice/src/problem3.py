@@ -95,15 +95,21 @@ def run_test_problem3a():
     print('Test 4 expected:', expected)
     print('       actual:  ', answer)
 
-    window3.close_on_mouse_click()
-
     # -------------------------------------------------------------------------
-    # TODO: 2 (continued).
+    # DONE: 2 (continued).
     #   Below this comment (or integrated with one of the above tests,
     #   your choice), add 1 more test case of your own choosing.
     # -------------------------------------------------------------------------
 
+    # Test 5 (it is on window 3):
+    point = rg.Point(100, 100)
+    expected = 62
+    answer = problem3a(window3, point, 8)
+    print()
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
 
+    window3.close_on_mouse_click()
 
 
 
@@ -139,8 +145,40 @@ def problem3a(window, point, n):
         :type point:  rg.Point
         :type n:      int
     """
+
+    # initalize variables
+    length = 50
+    point_x = point.x
+    point_y = point.y
+    thickness = 1
+    answer = 1
+
+    # draw first line
+    rg.Line(point,rg.Point(point_x,point_y+length)).attach_to(window)
+    # print("thickness is", thickness, "answer is", answer)
+
+    # draw subsequent lines
+    for _ in range(n-1):
+        point_x = point_x + 20
+        point_y = point_y + 10
+        if thickness < 13:
+            thickness = thickness + 2
+        # print("thickness is",thickness,"answer is",answer)
+        answer = answer + thickness
+        new_line = rg.Line(rg.Point(point_x,point_y),rg.Point(point_x,point_y+length))
+        new_line.thickness = thickness
+        new_line.attach_to(window)
+
+
+    # render window
+    window.render()
+
+    # answer
+    return answer
+
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -202,8 +240,33 @@ def problem3b(m, point1):
         :type m:      int
         :type point1: rg.Point
     """
+
+    # creates window
+    window = rg.RoseWindow(400,650)
+
+    # initalizes variables
+    total = 0
+    lines = 3
+    below = 0
+    point_1_x = point1.x
+    point_1_y = point1.y
+
+    # runs loop
+    for _ in range(m):
+        total = total + problem3a(window,rg.Point(point_1_x,point_1_y+below),lines)
+        lines = lines + 2
+        below = below + 60
+
+    # close on click
+    window.close_on_mouse_click()
+
+    # return
+    return total
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #  ########################################################################
     #  IMPORTANT:
