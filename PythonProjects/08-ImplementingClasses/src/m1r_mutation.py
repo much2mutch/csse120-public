@@ -3,10 +3,10 @@ This module demonstrates MUTATION and RE-ASSIGNMENT.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
          Derek Whitley, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ##############################################################################
-# TODO: 2. Read the code, then run it.
+# DONE: 2. Read the code, then run it.
 #   Make sure you understand WHY it prints what it does.
 #   ** ASK QUESTIONS IF ANY OF IT IS MYSTERIOUS TO YOU. **
 #   Once you understand the code completely, then change the _TODO_ to DONE.
