@@ -1,10 +1,13 @@
+# can't get the output to stop putting extra space after baby name before punctuation.
+
+
 """
 A   Baby   class and functions that use/test it.
 
 Authors: Dave Fisher, David Mutchler, Vibha Alangar, Matt Boutell,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import random
 
@@ -13,12 +16,12 @@ def main():
     """ Runs the tests of the   Baby   class. """
     print("UN-comment the following TESTS, one by one, when you are ready.")
     # UN-comment the following, one by one, when you are ready to TEST.
-    # run_test_1()
-    # run_test_2()
+    run_test_1()
+    run_test_2()
 
 
 ###############################################################################
-# TODO: 2.  In this module you will implement and test a   Baby  class.
+# Done: 2.  In this module you will implement and test a   Baby  class.
 #           Here is an OVERVIEW of the steps you will take to do so.
 #  _
 #    Step 2 (this step): Read this overview of this module.
@@ -31,7 +34,7 @@ def main():
 ###############################################################################
 
 ###############################################################################
-# TODO: 3. SPECIFICATION (read the following):
+# DONE: 3. SPECIFICATION (read the following):
 #   Here (below) are the methods that you must implement in your Baby class:
 #  ----------------------------------------------------------------------------
 #  _
@@ -92,7 +95,7 @@ def main():
 ###############################################################################
 
 ###############################################################################
-# TODO: 4. TESTS (read the following):
+# DONE: 4. TESTS (read the following):
 #  The two functions that follow this comment TEST the Baby class.
 #  For each of those two functions:
 #    1. READ the CODE in the function.
@@ -243,6 +246,81 @@ def run_test_2():
 #  _
 #      Fix errors as needed!  Do not hesitate to ASK QUESTIONS AS NEEDED.
 ###############################################################################
+
+class Baby(object):
+    """ generates baby that eats, sleeps, and has a name"""
+
+#   Constructor method (that is, the   __init__  method):
+#      What comes in:
+#         -- self
+#         -- a string for the name of the Baby
+#      What goes out:  Nothing (i.e., None).
+#      Side effects:
+#         -- Prints "Hello baby <your baby's name>!"
+#         -- Sets instance variables as needed
+#              [YOU FIGURE OUT WHAT IS NEEDED AS YOU IMPLEMENT THE METHODS!]
+#      Example:
+#          b = Baby("McKinley")
+#      causes the following to be printed on the Console:
+#          Hello baby McKinley!
+
+    def __init__(self, baby):
+        self.baby = baby
+        print("Hello baby", self.baby, "!")
+        self.hour_since_feeding = 0
+
+#  _
+#   feed_baby:
+#      What comes in:
+#         -- self
+#      What goes out:  Nothing (i.e., None).
+#      Side effects:
+#         -- Prints "Thank you for feeding baby <your baby's name>."
+#         -- Modifies instance variables as needed.
+#      Example:
+#          b = Baby("Joshua")
+#          b.feed_baby()
+#      causes the following to be printed on the Console:
+#          Hello baby Joshua!
+#          Thank you for feeding baby Joshua.
+#  _
+
+    def feed_baby(self):
+        print("Thank you for feeding baby", self.baby, ".")
+        self.hour_since_feeding = 0
+
+
+#   hour_passes
+#      What comes in:
+#         -- self
+#      What goes out:  Nothing (i.e., None).
+#      Side effects:
+#       -- If this is the FIRST time this method has been called
+#          since this Baby was created or last fed, then this method prints:
+# 	         "Baby <your baby's name> is sleeping."
+#  _
+#       -- If this is the SECOND time this method has been called
+#          since baby was created or last fed, then this method prints:
+# 	         "Baby <your baby's name> is awake.  Time for food."
+#  _
+#       -- If this is the THIRD (OR MORE) time this method has been called
+#          since baby was created or last fed, then this method prints:
+#            "Baby <your baby's name> is CRYING uncontrollably!  Feed the Baby!"
+#  _
+#       -- Modifies instance variables as needed.
+
+    def hour_passes(self):
+        if self.hour_since_feeding == 0:
+            print("Baby", self.baby, "is sleeping.")
+        else:
+            if self.hour_since_feeding == 1:
+                print("Baby", self.baby, "is awake. Time for food.")
+            else:
+                print("Baby", self.baby, "is CRYING uncontrollably! Feed the Baby!")
+        self.hour_since_feeding = self.hour_since_feeding + 1
+
+
+
 
 
 # -----------------------------------------------------------------------------
