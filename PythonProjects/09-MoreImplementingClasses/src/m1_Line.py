@@ -213,10 +213,11 @@ class Line(object):
           :type start: Point
           :type end:   Point
         """
-        self.start = Point.clone(start)
-        self.end = Point.clone(end)
+        self.start = start.clone()
+        self.end = end.clone()
+        self.start_orig = start.clone()
+        self.end_orig = end.clone()
         self.num_of_clones = 0
-        self.original = Line(self.start,self.end)
 
 
         # ---------------------------------------------------------------------
@@ -710,11 +711,11 @@ class Line(object):
             print(line2)  # Should print: Line[(0, 1), (10, 20)]
         """
 
-        return self.original()
-
+        self.start = self.start_orig.clone()
+        self.end = self.end_orig.clone()
 
         # ---------------------------------------------------------------------
-        # TODO: 13.
+        # DONE: 13.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
