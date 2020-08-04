@@ -8,8 +8,8 @@ for ITERATING through SEQUENCES, including:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import testing_helper
@@ -100,8 +100,13 @@ def sum_radii(circles):
       :type circles:  list | tuple of rg.Circle
       :rtype: int | float
     """
+    total = 0
+    for k in range(len(circles)):
+        total += circles[k].radius
+    return total
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ___
     #  Note: No fair using "slices" on ANY of these problems,
@@ -227,8 +232,15 @@ def count_last_n_odds(integers, n):
       :type n: int
       :rtype: int
     """
+    count = 0
+    for k in range(len(integers), len(integers)-n, -1):
+        if integers[k-1] % 2 != 0:
+            count = count + 1
+    return count
+
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #     If you have questions about the testing code, ask for help.
     # -------------------------------------------------------------------------
@@ -336,8 +348,14 @@ def index_of_first_negative(numbers):
       :type numbers: list | tuple of float | int
       :rtype: int
     """
+
+    for k in range(len(numbers)):
+        if numbers[k] < 0:
+            return k
+    return -1
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     #     If you have questions about the testing code, ask for help.
     # -------------------------------------------------------------------------
@@ -402,8 +420,14 @@ def contains_an_a(s):
       :type s: str
       :rtype: bool
     """
+    for k in range(len(s)):
+        if s[k] == "a":
+            return True
+    return False
+
+
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #     If you have questions about the testing code, ask for help.
     #  ___
@@ -524,8 +548,15 @@ def number_of_stutters(s):
     Type hints:
        :type s: str
     """
+    count = 0
+    for k in range(len(s)-1):
+        if s[k] == s[k+1]:
+            count += 1
+    return count
+
+
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 

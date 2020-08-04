@@ -11,8 +11,8 @@ It also demonstrates the distinction between:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 import testing_helper
@@ -27,7 +27,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #     - is_prime
 #   function defined below.  You do NOT need to understand its
 #   implementation, just its specification (per the doc-string).
@@ -173,8 +173,16 @@ def summary1a(sequence):
          then the returned value is 4, since 23, 29, 29, and 2
          are the 4 primes in the sequence.
     """
+
+    count = 0
+    for k in range(len(sequence)):
+        if is_prime(sequence[k]):
+            count += 1
+    return count
+
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     # -------------------------------------------------------------------------
 
 
@@ -290,8 +298,15 @@ def summary1b(seq):
          then the returned value is 83, since the primes in the sequence
          are 23, 29, 29, and 2, and 23 + 29 + 29 + 2 = 83.
     """
+    total = 0
+    for k in range(len(sequence)):
+        if is_prime(sequence[k]):
+            total += sequence[k]
+    return total
+
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     # -------------------------------------------------------------------------
 
 
@@ -416,8 +431,15 @@ def summary1c(sequence):
          then the returned value is 15, since the primes in the sequence
          are at INDICES 1, 2, 5 and 7, and 1 + 2 + 5 + 7 = 15.
     """
+
+    total = 0
+    for k in range(len(sequence)):
+        if is_prime(sequence[k]):
+            total += k
+    return total
+
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     # -------------------------------------------------------------------------
 
 
