@@ -4,8 +4,8 @@ by changing the values of instance variables.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -169,8 +169,14 @@ def RETURN_circle(circle, color):
     where the color is either a string that Rosegraphics understands
     or a rg.Color object.
     """
+
+    new_circle = circle.clone()
+    new_circle.fill_color = color
+    return new_circle
+
+
     # -------------------------------------------------------------------------
-    # TODO: 2. First, READ THE ABOVE TEST CODE.
+    # DONE: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
@@ -302,8 +308,12 @@ def MUTATE_circle(circle, color, n):
     Precondition: The first argument is a rg.Circle and the second
                   argument is a color appropriate for RoseGraphics.
     """
+
+    circle.fill_color = color
+    circle.center.x += n
+
     # -------------------------------------------------------------------------
-    # TODO: 3. First, READ THE ABOVE TEST CODE.
+    # DONE: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).

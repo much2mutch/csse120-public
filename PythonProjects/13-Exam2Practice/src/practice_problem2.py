@@ -3,8 +3,8 @@ PRACTICE Exam 2, practice_problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -109,8 +109,14 @@ def practice_problem2a(sequence, delta):
       :type sequence: [int]
       :type delta:    int
     """
+    new_seq = []
+    for k in range(len(sequence)):
+        new_seq.append(sequence[k] + delta)
+    return new_seq
+
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -121,7 +127,7 @@ def practice_problem2a(sequence, delta):
 
 def run_test_practice_problem2b():
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  practice_problem2b  function defined below.
     #   Include at least **   4    ** tests that, taken together,
     #   would form a    ** REASONABLY GOOD test set **
@@ -229,7 +235,7 @@ def run_test_practice_problem2b():
         test_results[1] = test_results[1] + 1
 
     # -------------------------------------------------------------------------
-    # TODO: 3 (continued): Add your ADDITIONAL test(s) below here.
+    # DONE: 3 (continued): Add your ADDITIONAL test(s) below here.
     #   You do NOT have to use the "fancy" parts of the above example tests,
     #   but you MUST test BOTH the returned value AND the mutated list.
     # -------------------------------------------------------------------------
@@ -256,8 +262,13 @@ def practice_problem2b(sequence, delta):
       :type sequence: [int]
       :type delta:    int
     """
+
+    for k in range(len(sequence)):
+        sequence[k] += delta
+
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     WRITE THE TESTS FIRST (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -364,8 +375,15 @@ def practice_problem2c(sequence):
     Type hints:
       :type sequence: [str]
     """
+    string = str()
+    for k in range(len(sequence)):
+        if len(sequence[k]) > 0:
+            place_holder_string = sequence[k]
+            string += place_holder_string[0]
+    return string
+
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -552,8 +570,17 @@ def practice_problem2d(list1, list2):
         :type list1: [int]]
         :type list2: [int]]
     """
+
+    for k in range(len(list1)):
+        list1[k] = list1[k]*2
+
+    new_list2 = []
+    for k in range(len(list2)):
+        new_list2.append(list2[k]*2)
+    return new_list2
+
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     #  -------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)

@@ -3,8 +3,8 @@ PRACTICE Exam 2, practice_problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -175,8 +175,17 @@ def practice_problem3a(circles):
     Type hints:
       :type sequence: [rg.Circle]
     """
+    #if len(circles) == 0:
+    #    return 1
+    product = 1
+    for k in range(len(circles)):
+        product = circles[k].center.x * product
+    return product
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -344,8 +353,14 @@ def practice_problem3b(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+    final = sequence[len(sequence)-1]
+    for k in range(len(sequence)-1):
+        if sequence[k] == final:
+            return True
+    return False
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ___
     #  IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -472,8 +487,15 @@ def practice_problem3c(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+
+    zeroes = []
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            zeroes.append(k)
+    return zeroes
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -595,6 +617,12 @@ def practice_problem3d(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+
+    # for k in range(len(sequence)):
+    #     if sequence[k] == 0:
+    #         return k
+    # return -1
+
     # -------------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #     The testing code is already written for you (above).
@@ -603,6 +631,7 @@ def practice_problem3d(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes for both parts of this problem combined.
     # -------------------------------------------------------------------------
+
 
     ###########################################################################
     # TODO: 6. Just ABOVE this _TODO_, you should have implemented
@@ -618,6 +647,11 @@ def practice_problem3d(sequence):
     #              practice_problem3c.
     #          This second solution should *** HAVE NO LOOP (no FOR). ***
     ###########################################################################
+
+    zeroes = practice_problem3c(sequence)
+    if len(zeroes) == 0:
+        return -1
+    return zeroes[0]
 
 
 def run_test_practice_problem3e():
@@ -745,8 +779,14 @@ def practice_problem3e(sequence):
     Type hints:
       :type sequence: list(float)    or tuple(float)
     """
+    total = 0
+    for k in range(0,len(sequence),2):
+        total += sequence[k]
+    return total
+
+
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -834,8 +874,14 @@ def practice_problem3f(sequence):
     Type hints:
       :type sequence: list | tuple | string
     """
+    doubles = []
+    for k in range(len(sequence)-1):
+        if sequence[k] == sequence[k+1]:
+            doubles.append(k)
+    return doubles
+
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement and test this function.
+    # DONE: 8. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -939,8 +985,15 @@ def practice_problem3g(sequence):
     Type hints:
       :type sequence: (list | tuple) of (float | int)
     """
+
+    largest = sequence[0]
+    for k in range(0,len(sequence),2):
+        if sequence[k] > largest:
+            largest = sequence[k]
+    return largest
+
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # DONE: 9. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -1077,8 +1130,15 @@ def practice_problem3h(circles):
     Type hints:
       :type circles: [rg.Circle]
     """
+
+    smallest = circles[0]
+    for k in range(len(circles)):
+        if circles[k].radius < smallest.radius:
+            smallest = circles[k]
+    return smallest
+
     # -------------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)

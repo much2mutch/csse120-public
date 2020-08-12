@@ -3,8 +3,8 @@ PRACTICE Exam 2, practice_problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -33,7 +33,7 @@ import testing_helper
 
 
 ###############################################################################
-# TODO: 2.  READ the   Point   class defined below.
+# DONE: 2.  READ the   Point   class defined below.
 #  Note especially its methods:
 #    clone
 #    distance_from
@@ -112,8 +112,8 @@ def main():
     # run_test_area()
     # run_test_bigger_triangle()
     # run_test_shrink_or_expand()
-    # run_test_return_doubled_triangle()
-    # run_test_get_largest_area()
+    run_test_return_doubled_triangle()
+    run_test_get_largest_area()
 
 
 ###############################################################################
@@ -158,8 +158,14 @@ class Triangle(object):
           :type b: Point
           :type c: Point
         """
+
+        self.a = a.clone()
+        self.b = b.clone()
+        self.c = c.clone()
+        self.largest_area = self.area()
+
         # ---------------------------------------------------------------------
-        # TODO: 3.
+        # DONE: 3.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -198,8 +204,16 @@ class Triangle(object):
         Type hints:
           :rtype: float
         """
+        s1 = self.a.distance_from(self.b)
+        s2 = self.b.distance_from(self.c)
+        s3 = self.c.distance_from(self.a)
+        s = (s1+s2+s3)/2
+        area = math.sqrt(s * (s-s1) * (s-s2) * (s-s3))
+        return area
+
+
         # ---------------------------------------------------------------------
-        # TODO: 4.
+        # DONE: 4.
         #   a. READ the above specification, including the Example AND HINT!
         #   __
         #      ************* READ THE HINT!!!!!!!!! *************
@@ -224,8 +238,13 @@ class Triangle(object):
           :type: triangle2: Triangle
           :rtype: bool
         """
+
+        if self.area() > triangle2.area():
+            return True
+        return False
+
         # ---------------------------------------------------------------------
-        # TODO: 5.
+        # DONE: 5.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -247,8 +266,18 @@ class Triangle(object):
          Type hints:
            :type: f: float
         """
+        self.a.x = self.a.x*f
+        self.a.y = self.a.y*f
+        self.b.x = self.b.x*f
+        self.b.y = self.b.y*f
+        self.c.x = self.c.x*f
+        self.c.y = self.c.y*f
+        if self.area() > self.largest_area:
+            self.largest_area = self.area()
+
+
         # ---------------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -270,8 +299,14 @@ class Triangle(object):
         Type hints:
           :rtype: Triangle:
         """
+
+        doubled_triangle = Triangle(self.a,self.b,self.c)
+        doubled_triangle.shrink_or_expand(2)
+        return doubled_triangle
+
+
         # -------------------------------------------------------------------------
-        # TODO: 7.
+        # DONE: 7.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -294,8 +329,11 @@ class Triangle(object):
         Type hints:
           :rtype: float:
         """
+
+        return self.largest_area
+
         # ---------------------------------------------------------------------
-        # TODO: 8.
+        # DONE: 8.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
