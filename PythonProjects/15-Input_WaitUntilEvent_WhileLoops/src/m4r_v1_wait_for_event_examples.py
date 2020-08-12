@@ -13,22 +13,22 @@ but using the ITCH pattern for WHILE loops.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # TODO: 2.  Read and run this program.  Then do the following problems,
 #   putting your answers RIGHT HERE IN THIS DOCUMENT.
 #  __
-#   1. True or False?  Write your answer here: _______
+#   1. True or False?  Write your answer here: ___True____
 #      In the approach demonstrated in this module, all the loops begin with:
 #         while True:
 #  __
 #   2. What 5-letter word causes the program to break out of a loop
 #      and continue execution below the loop?
-#          Write your answer here: ______
+#          Write your answer here: ___break__
 #  __
-#   3. True or False?  Write your answer here: _______
+#   3. True or False?  Write your answer here: _true______
 #      A  break  statement works in a  FOR   loop as well as in a  WHILE  loop.
 #  __
 #   4. Run and read the code below for:
@@ -36,19 +36,19 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #      Where in the loop are the   IF and break   statements:
 #      Choose your answer from:
 #          -- At the beginning of the loop
-#          -- In the middle of the loop
+#          -- In the middle of the loop THIS
 #          -- At the end of the loop
 #  __
 #   5. Is   demonstrate_wait_for_circle_to_reach_edge   100% clear to you?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] YES
 #  __
 #   6. Run and read the code below for:
 #            demonstrate_wait_for_sentinel.
-#      What number is used as the SENTINEL in that function? ________
+#      What number is used as the SENTINEL in that function? ___-1_____
 #  __
 #   7. Is the concept of a SENTINEL and the code for
 #      demonstrate_wait_for_sentinel   100% clear to you?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] YES
 #  __
 #   8. Run and read the code below for:
 #            wait_for_small_enough_number.
@@ -59,11 +59,11 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #          -- At the end of the loop
 #  __
 #   9. Is   wait_for_small_enough_number   100% clear to you?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] YES
 #  __
 #  10. Read the comment about   random.seed(...)   that begins at about
 #      line number 87 below.  Do you understand what  random.seed(...) does?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] YES
 #  __
 #   After you have PUT YOUR ANSWERS IN THIS COMMENT as described above,
 #     a. Find someone who has had THEIR answer checked.
@@ -88,11 +88,11 @@ import rosegraphics as rg
 def main():
     """ Demonstrates applications of the wait-for-event pattern. """
     wait_for_circle_to_reach_edge()
-    # wait_for_sentinel()
-    # wait_for_small_enough_number()
+    wait_for_sentinel()
+    wait_for_small_enough_number()
 
     # The rest of  main  is just for fun, for those interested:
-    # just_for_fun_long_waits()
+    just_for_fun_long_waits()
 
 
 # -----------------------------------------------------------------------------
