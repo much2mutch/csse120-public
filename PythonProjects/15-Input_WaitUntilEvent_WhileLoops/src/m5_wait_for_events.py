@@ -27,10 +27,10 @@ def main():
     print()
 
     # run_test_sum_until_prime_input()
-    run_test_next_prime()
+    # run_test_next_prime()
     # run_test_sum_to_next_prime()
-    run_test_prime_gap()
-    # run_test_wait_for_sum_of_cubes()
+    # run_test_prime_gap()
+    run_test_wait_for_sum_of_cubes()
 
 
 def is_prime(n):
@@ -777,7 +777,7 @@ def prime_gap(gap):
 
 
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #   The testing code is already written for you (above).
     #  __
     #  IMPLEMENTATION REQUIREMENT:
@@ -792,7 +792,7 @@ def prime_gap(gap):
 def run_test_wait_for_sum_of_cubes():
     """ Tests the   wait_for_sum_of_cubes    function. """
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement this TEST function.
+    # DONE: 8. Implement this TEST function.
     #   It TESTS the  wait_for_sum_of_cubes  function defined below.
     #   Include at least  ** 20 **  tests. (We supplied 18 tests for you.)
     #  __
@@ -982,7 +982,7 @@ def run_test_wait_for_sum_of_cubes():
     print("TEST ENDED!")
 
     # -------------------------------------------------------------------------
-    # TODO: 8 (continued):
+    # DONE: 8 (continued):
     #   PUT YOUR TEST   ** IN THE SPACE BETWEEN **   the
     #   print("TEST STARTED!" ...) and print("TEST ENDED") lines below.
     #  __
@@ -1043,8 +1043,18 @@ def wait_for_sum_of_cubes(x):
     Type hints:
       :type x: float  [or an int]
     """
+
+    cubes = 1
+    n = 1
+    while True:
+        if cubes >= x:
+            return n
+        cubes = cubes + (n+1)**3
+        n += 1
+
+
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # DONE: 9. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  __
     #  IMPLEMENTATION REQUIREMENT:
