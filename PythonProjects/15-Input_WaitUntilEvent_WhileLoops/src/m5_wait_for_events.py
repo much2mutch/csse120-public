@@ -27,7 +27,7 @@ def main():
     print()
 
     # run_test_sum_until_prime_input()
-    # run_test_next_prime()
+    run_test_next_prime()
     # run_test_sum_to_next_prime()
     run_test_prime_gap()
     # run_test_wait_for_sum_of_cubes()
@@ -267,11 +267,15 @@ def next_prime(m):
     Type hints:
       :type m: int
     """
-    maybe_prime = m
+
+    if m % 2 == 0:
+        maybe_prime = m+1
+    else:
+        maybe_prime = m+2
     while True:
-        maybe_prime += 1
         if is_prime(maybe_prime) == True:
             return maybe_prime
+        maybe_prime += 2
 
 
     # -------------------------------------------------------------------------
@@ -766,10 +770,10 @@ def prime_gap(gap):
     """
     gap_return = 2
     while True:
-        actual_gap = next_prime(gap_return) - gap_return
-        if actual_gap >= gap:
+        the_next_prime = next_prime(gap_return)
+        if the_next_prime - gap_return >= gap:
             return gap_return
-        gap_return = next_prime(gap_return)
+        gap_return = the_next_prime
 
 
     # -------------------------------------------------------------------------
