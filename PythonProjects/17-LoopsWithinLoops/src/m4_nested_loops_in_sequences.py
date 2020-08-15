@@ -4,8 +4,8 @@ in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -17,13 +17,13 @@ def main():
     print("Un-comment and re-comment calls in MAIN one by one as you work.")
 
     # run_test_sum_numbers()
-    # run_test_multiply_by_c()
+    run_test_multiply_by_c()
 
 
 def run_test_sum_numbers():
     """ Tests the    sum_numbers    function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  sum_numbers  function defined below.
     #   Include at least **   4   ** tests (we wrote 3 for you).
     # -------------------------------------------------------------------------
@@ -65,7 +65,7 @@ def run_test_sum_numbers():
     print_actual_result_of_test(expected, actual, test_results)
 
     # -------------------------------------------------------------------------
-    # TODO: 2 (continued): Add your ADDITIONAL test here:
+    # DONE: 2 (continued): Add your ADDITIONAL test here:
     # -------------------------------------------------------------------------
 
     # SUMMARY of test results:
@@ -82,8 +82,17 @@ def sum_numbers(seq_seq):
     Preconditions:  the given argument is a sequences of sequences,
                     and each item in the subsequences is a number.
     """
+    total = 0
+    for j in range(len(seq_seq)):
+        sequence = seq_seq[j]
+        for k in range(len(sequence)):
+            total += sequence[k]
+    return total
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  __
     #  NOTE: This is a classic SEQUENCE of SEQUENCES problem:
@@ -201,8 +210,13 @@ def multiply_by_c(c, sequence_of_lists):
        :type: c: float
        :type sequence_of_lists:  sequence of lists of numbers
        """
+
+    for j in range(len(sequence_of_lists)):
+        for k in range(len(sequence_of_lists[j])):
+            sequence_of_lists[j][k] = sequence_of_lists[j][k]*c
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     # -------------------------------------------------------------------------

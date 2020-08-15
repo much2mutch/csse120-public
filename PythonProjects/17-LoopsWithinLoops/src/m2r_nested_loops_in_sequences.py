@@ -4,8 +4,8 @@ in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         many others before them, and now PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         many others before them, and now Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # TODO: 2.  Read and run this program, examining the code and the output.

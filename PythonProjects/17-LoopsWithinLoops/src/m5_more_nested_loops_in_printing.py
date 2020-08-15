@@ -4,8 +4,8 @@ in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
 
     # run_test_alternating_brackets()
     # run_test_triangle_same_number_in_each_row()
-    # run_test_triangle_all_numbers_in_each_row()
+    run_test_triangle_all_numbers_in_each_row()
 
 
 def run_test_alternating_brackets():
@@ -49,8 +49,18 @@ def alternating_brackets(m, n):
        []
     Precondition:  m and n are positive integers with m >= n.
     """
+    for j in range(m-n+1):
+        l_or_r = '['
+        for k in range(m-j):
+            print(l_or_r,end='')
+            if l_or_r == '[':
+                l_or_r = ']'
+            else:
+                l_or_r = '['
+        print()
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #  IMPLEMENTATION RESTRICTION: ** You may NOT use string multiplication **.
     # -------------------------------------------------------------------------
@@ -88,8 +98,15 @@ def triangle_same_number_in_each_row(r):
        55555
     Precondition:  r is a non-negative integer.
     """
+
+    for j in range(r):
+        for k in range(j+1):
+            print(j+1,end='')
+        print()
+
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #  IMPLEMENTATION RESTRICTION: ** You may NOT use string multiplication **.
     # -------------------------------------------------------------------------
@@ -127,8 +144,15 @@ def triangle_all_numbers_in_each_row(r):
        12345
     Precondition:  r is a non-negative integer.
     """
+
+    for j in range(r):
+        for k in range(j+1):
+            print(k+1,end='')
+        print()
+
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #  IMPLEMENTATION RESTRICTION: ** You may NOT use string multiplication **.
     # -------------------------------------------------------------------------
