@@ -4,15 +4,15 @@ in the context of TWO-DIMENSIONAL GRAPHICS.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 
 def main():
     """ Calls the other functions to demonstrate them. """
-    run_test_draw_L()
+    # run_test_draw_L()
     run_test_draw_wall_on_right()
 
 
@@ -80,8 +80,38 @@ def draw_L(window, circle, r, c):
       :type c: int
     and m and n are small, positive integers.
     """
+
+    save_original = circle.clone()
+    original_x = save_original.center.x
+
+    x = circle.center.x
+    y = circle.center.y
+
+    diameter = 2*circle.radius
+
+    for j in range(r):
+        for k in range(3):
+            new_circle = rg.Circle(rg.Point(x,y,),circle.radius)
+            new_circle.fill_color = circle.fill_color
+            new_circle.attach_to(window)
+            x += diameter
+        x = original_x
+        y += diameter
+
+    for j in range(3):
+        for k in range(c+3):
+            new_circle = rg.Circle(rg.Point(x, y, ), circle.radius)
+            new_circle.fill_color = circle.fill_color
+            new_circle.attach_to(window)
+            x += diameter
+        x = original_x
+        y += diameter
+
+    window.render()
+
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
@@ -121,8 +151,30 @@ def draw_wall_on_right(rectangle, n, window):
       :type window: rg.RoseWindow
     and n is a small, positive integer.
     """
+
+    save_orig = rectangle.clone()
+
+    c1 = rectangle.corner_1
+    c2 = rectangle.corner_2
+    length = save_orig.corner_2.x-save_orig.corner_1.x
+    height = save_orig.corner_2.y-save_orig.corner_1.y
+
+    for j in range(n):
+        for k in range(j+1):
+            new_rect = rg.Rectangle(c1,c2)
+            new_rect.attach_to(window)
+            c1.x = c1.x - length
+            c2.x = c2.x - length
+            window.render(0.1)
+        c1.x = save_orig.corner_1.x
+        c2.x = save_orig.corner_2.x
+        c1.y = c1.y + height
+        c2.y = c2.y + height
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
