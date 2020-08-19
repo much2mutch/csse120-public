@@ -15,10 +15,10 @@ def main():
 
     # run_test_triangle_right_justified()
     # run_test_triangle_upside_down()
-    run_test_vee()
+    # run_test_vee()
     # run_test_numbers_constant_forward()
     # run_test_numbers_constant_backwards()
-    # run_test_numbers_increasing_forward()
+    run_test_numbers_increasing_forward()
 
 
 def run_test_triangle_right_justified():
@@ -230,7 +230,7 @@ def numbers_constant_forward(r, maxnum, n):
        111 222 333 444 555 666 777
        111 222 333 444 555 666 777
     Notice that there were r = 4 rows;
-    each row had numbers that went from 1 to maxnum = 7; and
+    each row had numbers that went from 1 to maxxnum = 7; and
     there were n occurrences of each number on each row.
 
     Here is another example,
@@ -241,8 +241,17 @@ def numbers_constant_forward(r, maxnum, n):
 
     Preconditions:  r, maxnum and n are positive integers.
     """
+
+    for j in range(r):
+        for k in range(maxnum):
+            for l in range(n):
+                print(k+1,end='')
+            print(" ",end='')
+        print()
+
+
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #  __
     #  HINT: What loop structure do you need for this problem?
@@ -282,8 +291,16 @@ def numbers_constant_backwards(r, maxnum, n):
        777 666 555 444 333 222 111
     Preconditions:  r, maxnum and n are positive integers.
     """
+
+    for j in range(r):
+        for k in range(maxnum):
+            for l in range(n):
+                print(maxnum-k,end='')
+            print(" ",end='')
+        print()
+
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #  __
     #  HINT: What loop structure do you need for this problem?
@@ -333,8 +350,16 @@ def numbers_increasing_forward(r, maxnum):
 
     Preconditions:  r and maxnum are positive integers.
     """
+
+    for j in range(r):
+        for k in range(maxnum):
+            for l in range(k+1):
+                print(k+1,end='')
+            print(" ",end='')
+        print()
+
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #          Some tests are already written for you (above).
     #  __
     #  HINT: What loop structure do you need for this problem?
