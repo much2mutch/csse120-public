@@ -12,7 +12,7 @@ import rosegraphics as rg
 
 def main():
     """ Calls the other functions to demonstrate them. """
-    # run_test_draw_L()
+    run_test_draw_L()
     run_test_draw_wall_on_right()
 
 
