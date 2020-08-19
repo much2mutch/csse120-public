@@ -13,9 +13,9 @@ def main():
     print()
     print("Un-comment and re-comment calls in MAIN one by one as you work.")
 
-    run_test_triangle_right_justified()
+    # run_test_triangle_right_justified()
     # run_test_triangle_upside_down()
-    # run_test_vee()
+    run_test_vee()
     # run_test_numbers_constant_forward()
     # run_test_numbers_constant_backwards()
     # run_test_numbers_increasing_forward()
@@ -120,8 +120,17 @@ def triangle_upside_down(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for j in range(r):
+        for k in range(j):
+            print(" ",end='')
+        for l in range(r-j):
+            print(l+1,end='')
+        print()
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #  IMPLEMENTATION RESTRICTION: ** You may NOT use string multiplication **.
     # -------------------------------------------------------------------------
@@ -167,8 +176,21 @@ def vee(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+
+    for j in range(r):
+        for k in range(j):
+            print(" ",end='')
+        for l in range(r-j):
+            print(l+1,end='')
+        print("-",end='')
+        for m in range(r-j):
+            print(r-j-m,end='')
+        print()
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #  IMPLEMENTATION RESTRICTION: ** You may NOT use string multiplication **.
     # -------------------------------------------------------------------------
