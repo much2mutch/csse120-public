@@ -50,14 +50,31 @@ def draw_upside_down_wall(rectangle, n, window):
     and n is nonnegative.
     """
 
-    rectangle.attach_to(window)
+    original = rectangle.clone()
+    x = rectangle.get_width()
+    y = rectangle.get_height()
     c1 = rectangle.corner_1
     c2 = rectangle.corner_2
 
     for j in range(n):
-        if j+1 % 2 != 0:
-            center = rg.Rectangle(c1,c2)
-            center.attach_to(window)
+        fill = 'blue'
+        for k in range(n-j):
+            new_rect = rg.Rectangle(c1,c2)
+            new_rect.fill_color = fill
+            new_rect.attach_to(window)
+            c1.move_by(x/2,-y)
+            c2.move_by(x/2,-y)
+        c1 = original.corner_1.clone()
+        c2 = original.corner_2.clone()
+        fill = 'red'
+        # print("orig c1 is ",original.corner_1)
+        for l in range(j):
+            c1.move_by((x/2),y)
+            c2.move_by((x/2),y)
+
+
+    window.render()
+
 
 
 
