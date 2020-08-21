@@ -4,8 +4,8 @@ in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -24,7 +24,7 @@ def main():
 def run_test_largest_number():
     """ Tests the    largest_number    function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  largest_number  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     # -------------------------------------------------------------------------
@@ -115,11 +115,22 @@ def run_test_largest_number():
     print_actual_result_of_test(expected, actual, test_results)
 
     # -------------------------------------------------------------------------
-    # TODO: 2 (continued): Add your ADDITIONAL test here:
+    # DONE: 2 (continued): Add your ADDITIONAL test here:
     # -------------------------------------------------------------------------
 
     # SUMMARY of test results:
     print_summary_of_test_results(test_results)
+
+
+def find_first(seq_seq):
+    largest = "no integers"
+    for j in range(len(seq_seq)):
+        if len(seq_seq[j]) != 0:
+            largest = seq_seq[j][0]
+            break
+    if largest == "no integers":
+        return None
+    return largest
 
 
 def largest_number(seq_seq):
@@ -147,8 +158,17 @@ def largest_number(seq_seq):
     and the given argument is a sequence of sequences,
     where each subsequence contains only numbers.
     """
+
+    largest = find_first(seq_seq)
+
+    for k in range(len(seq_seq)):
+        for l in range(len(seq_seq[k])):
+            if seq_seq[k][l] > largest:
+                largest = seq_seq[k][l]
+    return largest
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  __
     #  IMPLEMENTATION RESTRICTION:  You may NOT use the builtin functions:
@@ -161,7 +181,7 @@ def largest_number(seq_seq):
 def run_test_largest_negative_number():
     """ Tests the    largest_negative_number    function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function as needed.
+    # DONE: 4. Implement this TEST function as needed.
     #   It TESTS the  largest_negative_number  function defined below.
     #  __
     #  YOU decide whether or not you think that the tests below are adequate
@@ -316,6 +336,14 @@ def run_test_largest_negative_number():
     print_summary_of_test_results(test_results)
 
 
+def first_negative(seq_seq):
+    for k in range(len(seq_seq)):
+        if len(seq_seq[k]) != 0:
+            for l in range(len(seq_seq[k])):
+                if seq_seq[k][l] < 0:
+                    return seq_seq[k][l]
+    return None
+
 def largest_negative_number(seq_seq):
     """
     Returns the largest NEGATIVE number in the given sequence of
@@ -338,6 +366,23 @@ def largest_negative_number(seq_seq):
     and the given argument is a sequence of sequences,
     where each subsequence contains only numbers.
     """
+
+    largest = first_negative(seq_seq)
+    if largest == None:
+        return None
+
+    for j in range(len(seq_seq)):
+        if len(seq_seq[j]) != 0:
+            for k in range(len(seq_seq[j])):
+                if seq_seq[j][k] < 0:
+                    if seq_seq[j][k] > largest:
+                        largest = seq_seq[j][k]
+    return largest
+
+
+
+
+
     # -------------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
