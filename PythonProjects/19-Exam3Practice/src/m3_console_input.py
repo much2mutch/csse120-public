@@ -5,11 +5,11 @@ This problem provides practice at: *** INPUT from the CONSOLE. ***
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  [Note: same _TODO_ as its matching one in module m1.]
+# DONE: 2.  [Note: same _TODO_ as its matching one in module m1.]
 #  Students:
 #  __
 #  These problems have DIFFICULTY and TIME ratings:
@@ -44,7 +44,7 @@ def main():
 def run_test_input_it_all():
     """ Tests the   input_it_all    function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. READ the tests below.  They require that you input specific
+    # DONE: 3. READ the tests below.  They require that you input specific
     #   inputs (although your function should work for any valid inputs).
     #  After you read (and understand) the above, change this _TODO_ to DONE.
     # -------------------------------------------------------------------------
@@ -117,6 +117,9 @@ def input_it_all():
       This example returns the string
            "4 3.48 7.48 0.93 Peace & LovePeace & LovePeace & LovePeace & Love"
     """
+
+
+
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #          The testing code is already written for you (above).

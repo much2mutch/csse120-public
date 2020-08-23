@@ -5,11 +5,11 @@ This problem provides practice at:  *** IMPLEMENTING CLASSES. ***
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #  Students:
 #  __
 #  These problems have DIFFICULTY and TIME ratings:
@@ -39,7 +39,7 @@ import testing_helper
 
 
 ###############################################################################
-# TODO: 3.  READ the   Point   class defined below.
+# DONE: 3.  READ the   Point   class defined below.
 #  Note especially its methods:
 #    clone
 #    distance_from
@@ -121,7 +121,7 @@ def main():
     # run_test_get_distance()
     # run_test_swap_colors()
     # run_test_get_recent_color()
-    # run_test_get_bigger_size()
+    run_test_get_bigger_size()
 
 
 ###############################################################################
@@ -151,8 +151,13 @@ class Blob(object):
           :type c: str
           :type n: float
         """
+
+        self.color = c
+        self.size = n
+        self.most_recent_child_color = None
+
         # ---------------------------------------------------------------------
-        # TODO: 4.
+        # DONE: 4.
         #  a. READ specifications of this method (above).
         #     Also READ its tests (below) if you need additional clarification
         #     of the specification of this method.
@@ -164,8 +169,11 @@ class Blob(object):
         Mutates this Blob so that its  size  is 10 times what it was just
         before this method was called.
         """
+        self.size = self.size*10
+
+
         # ---------------------------------------------------------------------
-        # TODO: 5.
+        # DONE: 5.
         #  a. READ specifications of this method (above).
         #     Also READ its tests (below) if you need additional clarification
         #     of the specification of this method.
@@ -181,8 +189,12 @@ class Blob(object):
           :type other_blob: Blob
           :rtype: Blob
         """
+
+        self.most_recent_child_color = self.color
+        return Blob(self.color,other_blob.size)
+
         # ---------------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #  a. READ specifications of this method (above).
         #     Also READ its tests (below) if you need additional clarification
         #     of the specification of this method.
@@ -197,8 +209,11 @@ class Blob(object):
           :type other_blob: Blob
           :rtype: Point
         """
+
+        return Point(self.size,other_blob.size)
+
         # ---------------------------------------------------------------------
-        # TODO: 7.
+        # DONE: 7.
         #  a. READ specifications of this method (above).
         #     Also READ its tests (below) if you need additional clarification
         #     of the specification of this method.
@@ -219,8 +234,12 @@ class Blob(object):
           :type other_blob: Blob
           :rtype: float
         """
+
+        p1 = self.get_point(other_blob)
+        p2 = other_blob.get_point(self)
+        return p1.distance_from(p2)
         # ---------------------------------------------------------------------
-        # TODO: 8.
+        # DONE: 8.
         #  a. READ specifications of this method (above).
         #     Also READ its tests (below) if you need additional clarification
         #     of the specification of this method.
@@ -231,8 +250,17 @@ class Blob(object):
         """
         Swaps this Blob's color with the given other_blob's color.
         """
+
+
+        self_color = self.color
+        other_color = other_blob.color
+
+        self.color = other_color
+        other_blob.color = self_color
+
+
         # ---------------------------------------------------------------------
-        # TODO: 9.
+        # DONE: 9.
         #  a. READ specifications of this method (above).
         #     Also READ its tests (below) if you need additional clarification
         #     of the specification of this method.
@@ -245,8 +273,11 @@ class Blob(object):
         has most recently returned.  If this Blob's  make_child  method
         has not yet been called, returns None.
         """
+
+        return self.most_recent_child_color
+
         # ---------------------------------------------------------------------
-        # TODO: 10.
+        # DONE: 10.
         #  a. READ specifications of this method (above).
         #     Also READ its tests (below) if you need additional clarification
         #     of the specification of this method.
@@ -266,8 +297,14 @@ class Blob(object):
           :type more_blobs: List[Blob]
           :rtype: float
         """
+
+        for k in range(len(more_blobs)):
+            if self.size < more_blobs[k].size:
+                return more_blobs[k].size
+        return -1
+
         # ---------------------------------------------------------------------
-        # TODO: 11.
+        # DONE: 11.
         #  a. READ specifications of this method (above).
         #     Also READ its tests (below) if you need additional clarification
         #     of the specification of this method.

@@ -384,7 +384,7 @@ def largest_negative_number(seq_seq):
 
 
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #  __
     #  IMPLEMENTATION RESTRICTION:  You may NOT use the builtin functions:
@@ -760,8 +760,28 @@ def first_is_elsewhere_too(seq_seq):
       :type seq_seq: (list, tuple)
     and the given argument is a sequence of sequences.
     """
+
+    if len(seq_seq) == 0:
+        return False
+    if len(seq_seq[0]) == 0:
+        return False
+
+    for j in range(len(seq_seq)-1): # 2nd subsequence to end
+
+        for l in range(len(seq_seq[0])):  # running check for each item in subsequence 1
+
+            for k in range(len(seq_seq[j+1])): # looking at each subsequence starting at 2
+
+                if seq_seq[0][l] == seq_seq[j+1][k]: # if sub 1 item l equals sub j+1 item l
+                    return True
+    return False
+
+
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #  __
     #  IMPLEMENTATION RESTRICTION:

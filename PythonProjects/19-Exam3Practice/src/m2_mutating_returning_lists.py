@@ -6,11 +6,11 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  [Note: same _TODO_ as its matching one in module m1.]
+# DONE: 2.  [Note: same _TODO_ as its matching one in module m1.]
 #  Students:
 #  __
 #  These problems have DIFFICULTY and TIME ratings:
@@ -45,7 +45,7 @@ def main():
 def run_test_doubler():
     """ Tests the    doubler    function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. READ the tests that we supplied in this function, asking
+    # DONE: 3. READ the tests that we supplied in this function, asking
     #  questions as needed.  Once you UNDERSTAND the tests that we supplied,
     #  ADD ANOTHER ** GOOD ** TEST of your own for the  doubler  function,
     #  using the same style for testing as we did.
@@ -140,7 +140,7 @@ def run_test_doubler():
     print_actual_result_of_test(None, actual, test_results)
 
     # -------------------------------------------------------------------------
-    # TODO: 3 (continued). Write at least ** 1 GOOD ** additional test for the
+    # DONE: 3 (continued). Write at least ** 1 GOOD ** additional test for the
     #    doubler  function, following the style we used for the above tests.
     #
     # Test 4:  (PUT YOUR TEST BELOW THIS)
@@ -166,8 +166,14 @@ def doubler(seq_of_lists):
     Type hints:
       :type seq_of_lists: sequence of lists
     """
+
+    for j in range(len(seq_of_lists)):
+
+        for k in range(len(seq_of_lists[j])):
+            seq_of_lists[j][k] = seq_of_lists[j][k] * 2
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -180,7 +186,7 @@ def doubler(seq_of_lists):
 def run_test_zero_changer():
     """ Tests the    zero_changer    function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. READ the tests that we supplied in this function, asking
+    # DONE: 5. READ the tests that we supplied in this function, asking
     #  questions as needed.  Once you UNDERSTAND the tests that we supplied,
     #  ADD ANOTHER ** GOOD ** TEST of your own for the  zero_changer  function,
     #  using the same style for testing as we did.
@@ -293,7 +299,7 @@ def run_test_zero_changer():
     print_actual_result_of_test(None, actual, test_results)
 
     # -------------------------------------------------------------------------
-    # TODO: 5 (continued). Write at least ** 1 GOOD ** additional test for the
+    # DONE: 5 (continued). Write at least ** 1 GOOD ** additional test for the
     #  zero_changer  function, following the style we used for the above tests.
     #
     # Test 5:  (PUT YOUR TEST BELOW THIS)
@@ -327,8 +333,18 @@ def zero_changer(tuple_of_lists):
     Type hints:
       :type tuple_of_lists: tuple of list[int]
     """
+    count = 0                                       # initializes count
+
+    for j in range(len(tuple_of_lists)):            # runs equal to number of lists
+
+        for k in range(len(tuple_of_lists[j])):     # runs equal to length of tuple
+
+            if tuple_of_lists[j][k] == 0:           # if current item is zero...
+                count += 1                          # add one to count
+                tuple_of_lists[j][k] = count        # set current item to count
+
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
