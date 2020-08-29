@@ -118,6 +118,26 @@ def input_it_all():
            "4 3.48 7.48 0.93 Peace & LovePeace & LovePeace & LovePeace & Love"
     """
 
+    float_user = float(input("float please:"))
+    int_user = int(input("integer please:"))
+    string_user = input("string please:")
+
+    sum = float_user + int_user
+    sin = round(math.sin(sum),2)
+
+
+    repeat = str("")
+    for k in range(int_user):
+        repeat = repeat + string_user
+
+
+
+    output = str("")
+    output = output + str(int_user) + " " + str(float_user) + " " + str(sum) + " " + str(sin) + " " + repeat
+
+    return output
+
+
 
 
     # -------------------------------------------------------------------------
