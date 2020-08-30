@@ -6,11 +6,11 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Seth Mutchler.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  [Note: same _TODO_ as its matching one in module m1.]
+# DONE: 2.  [Note: same _TODO_ as its matching one in module m1.]
 #  Students:
 #  __
 #  These problems have DIFFICULTY and TIME ratings:
@@ -33,12 +33,13 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ###############################################################################
 
 import rosegraphics as rg
+import math
 
 
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_hourglass()
-    run_test_many_hourglasses()
+    # run_test_many_hourglasses()
 
 
 def run_test_hourglass():
@@ -65,6 +66,26 @@ def run_test_hourglass():
     hourglass(window2, 6, rg.Point(200, 350), 30, 'red')
 
     window2.close_on_mouse_click()
+
+
+def diagonal_of_circles(window, n, circle, color, line, dir, h, half_side):
+    for k in range(n):
+        c_clone = circle.clone()
+        c_clone.fill_color = color
+        l_clone = line.clone()
+        c_clone.move_by(half_side * dir * k, h * -dir * k)
+        l_clone.move_by(half_side * dir * k, h * -dir * k)
+        c_clone.attach_to(window)
+        l_clone.attach_to(window)
+
+
+def hourglass_helper(window, n, circle, color, line, dir, h, radius):
+    for k in range(n):
+        c = circle.clone()
+        l = line.clone()
+        c.move_by(-radius * k * dir, -h * k * dir)
+        l.move_by(-radius * k * dir, -h * k * dir)
+        diagonal_of_circles(window, n - k, c, color, l, dir, h, radius)
 
 
 def hourglass(window, n, point, radius, color):
@@ -103,6 +124,25 @@ def hourglass(window, n, point, radius, color):
     #    DIFFICULTY:      8
     #    TIME ESTIMATE:  25 minutes (warning: this problem is challenging)
     # -------------------------------------------------------------------------
+
+    circle = rg.Circle(point, radius)
+    circle.fill_color = color
+
+    left_side = rg.Point(point.x - radius, point.y)
+    right_side = rg.Point(point.x + radius, point.y)
+    line = rg.Line(left_side, right_side)
+
+    h = 0.5 * math.sqrt(3) * (radius * 2)
+
+    original_circle = circle.clone()
+    original_line = line.clone()
+
+    hourglass_helper(window, n, original_circle, color, original_line, 1, h, radius)
+    hourglass_helper(window, n, original_circle, color, original_line, -1, h, radius)
+
+    # ----------------------------------------------#
+
+    window.render()
 
 
 def run_test_many_hourglasses():
