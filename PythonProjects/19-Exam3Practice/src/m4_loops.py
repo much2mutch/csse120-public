@@ -7,10 +7,10 @@ This problem provides practice at:  LOOPS, including:
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
          and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  [Note: same _TODO_ as its matching one in module m1.]
+# DONE: 2.  [Note: same _TODO_ as its matching one in module m1.]
 #  Students:
 #  __
 #  These problems have DIFFICULTY and TIME ratings:
@@ -53,7 +53,7 @@ def main():
 def run_test_practice_problem3a():
     """ Tests the   practice_problem3a  function. """
     ###########################################################################
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  practice_problem3a  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     #  __
@@ -146,7 +146,7 @@ def run_test_practice_problem3a():
     st.SimpleTestCase.run_tests('practice_problem3a', tests)
 
     ###########################################################################
-    # TODO: 3 continued:  More tests:
+    # DONE: 3 continued:  More tests:
     #      YOU add at least **   1   ** additional test here.
     #  __
     #   You can use the   SimpleTestCase  class as above, or use
@@ -206,7 +206,7 @@ def practice_problem3a(start, stop, threshold):
       :type threshold: float
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ###########################################################################
@@ -215,11 +215,18 @@ def practice_problem3a(start, stop, threshold):
     #    TIME ESTIMATE:   5 minutes.
     ###########################################################################
 
+    list = []
+    for k in range(stop - start + 1):
+        if math.sin(start+k) + math.cos(start+k) > threshold:
+            list.append(start+k)
+    return list
+
+
 
 def run_test_practice_problem3b():
     """ Tests the   practice_problem3b  function. """
     ###########################################################################
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  practice_problem3b  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #  __
@@ -309,7 +316,7 @@ def run_test_practice_problem3b():
     st.SimpleTestCase.run_tests('practice_problem3b', tests)
 
     ###########################################################################
-    # TODO: 5 continued:  More tests:
+    # DONE: 5 continued:  More tests:
     #      YOU add at least **   2   ** additional tests here.
     #  __
     #   You can use the   SimpleTestCase  class as above, or use
@@ -396,6 +403,20 @@ def practice_problem3b(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ###########################################################################
+
+    list = []
+    count = 0
+    iterations = start
+    while count < n:
+        if math.sin(iterations) + math.cos(iterations) > threshold:
+            list.append(iterations)
+            count += 1
+        iterations += 1
+    return list
+
+
+
+
 
 
 # -----------------------------------------------------------------------------
