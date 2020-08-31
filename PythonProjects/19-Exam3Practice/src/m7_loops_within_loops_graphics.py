@@ -38,8 +38,8 @@ import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_hourglass()
-    # run_test_many_hourglasses()
+    # run_test_hourglass()
+    run_test_many_hourglasses()
 
 
 def run_test_hourglass():
@@ -114,7 +114,7 @@ def hourglass(window, n, point, radius, color):
     a color that rosegraphics understands.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          We provided some tests for you (above).
     #  ########################################################################
     #  BONUS: Avoid replicated code if you can.  Hint: You are allowed
@@ -219,6 +219,40 @@ def many_hourglasses(window, square, m, colors):
     #                         a correct "hourglass" function above)
     #    TIME ESTIMATE:  20 minutes (warning: this problem is challenging)
     # -------------------------------------------------------------------------
+
+    r = square.length_of_each_side / 2 # deriving radius
+
+    rect = square.get_bounding_box()
+    rect.attach_to(window)
+
+    center = rect.get_center() # setting center variable; will be mutated later
+    center_x = center.x
+    center_y = center.y
+
+    hourglass(window, 1, center, r, colors[0]) # creating 1st hourglass
+
+    for k in range(m - 1): # m-1 because we already created first
+        center_x += (3 + (2 * k)) * r # shifting center over
+
+        a = (k + 2) * r                     # horizontal side
+        f = math.sqrt(2 * (r ** 2))         # final amount of hypotenuse
+        c = ((2 + (2 * k)) * r) + f         # hypotenuse
+        b = math.sqrt((c ** 2) - (a ** 2))  # vertical side
+
+        c1_x = center_x - a # setting rectangle corners
+        c1_y = center_y - b
+        c2_x = center_x + a
+        c2_y = center_y + b
+
+        rect = rg.Rectangle(rg.Point(c1_x, c1_y), rg.Point(c2_x, c2_y)) # building rectangle
+        rect.attach_to(window)
+
+        hourglass(window, (k + 2), rect.get_center(), r, colors[(1 + k) % len(colors)]) # filling hourglass
+
+    window.render()
+
+
+# did I fuck up my math? See test 2, is that yellow not quite touching on top and bottom???
 
 
 # -----------------------------------------------------------------------------
